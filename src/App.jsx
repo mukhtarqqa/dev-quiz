@@ -446,7 +446,14 @@ export default function App() {
           <button className="app-title" onClick={() => setActiveScreen('menu')} style={{color:'inherit'}}>
             DEV<span>QUIZ</span>
           </button>
-          <div className="user-profile" style={{cursor:'pointer'}} onClick={() => setActiveScreen('profile')}>
+          <div className="user-profile" style={{
+            cursor:'pointer', 
+            border: '1px solid var(--border-mid)', 
+            padding: '4px 8px', 
+            borderRadius: '20px',
+            background: 'var(--bg-panel)',
+            transition: 'var(--t)'
+          }} onClick={() => setActiveScreen('profile')}>
             <div className="user-info">
               <span className="user-name">{currentUser.name}</span>
             </div>
