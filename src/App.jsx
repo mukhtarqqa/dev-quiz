@@ -155,7 +155,7 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
             {dynamicTests.map(t => (
               <div key={t.id} className="report-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <div style={{color:'var(--cyan)', fontWeight:'bold', fontSize:'.85rem'}}>{t.variantName}</div>
+                  <div style={{color:'var(--accent)', fontWeight:'bold', fontSize:'.85rem'}}>{t.variantName}</div>
                   <div style={{fontSize:'.7rem', color:'var(--text-sub)', marginTop:'4px'}}>Предмет: {t.subject} | Вопросов: {t.questions?.length}</div>
                 </div>
                 <button className="btn-text-danger" onClick={() => deleteTest(t.id)}>Delete</button>
@@ -232,7 +232,14 @@ export default function App() {
   const [feedbackMsg, setFeedbackMsg]         = useState({ text: '', type: '' });
   const [reports, setReports]                 = useState([]);
   const [dynamicTests, setDynamicTests]       = useState([]);
+  const [theme, setTheme]                     = useState(localStorage.getItem('devquiz_theme') || 'cyan');
+  const [stats, setStats]                     = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
   const timerRef = useRef(null);
+
+  useEffect(() => {
+    document.body.className = `theme-${theme}`;
+    localStorage.setItem('devquiz_theme', theme);
+  }, [theme]);
 
   const fetchDynamicTests = async () => {
     try {
@@ -313,6 +320,13 @@ export default function App() {
       const q = questions[qIndex];
       return [...prev, { q: q.q, opts: q.options, correct: q.correct, selected: idx, isCorrect }];
     });
+    if (idx !== -1) {
+      setStats(prev => {
+        const n = { solved: prev.solved + 1, score: prev.score + (isCorrect ? 1 : 0) };
+        localStorage.setItem('devquiz_stats', JSON.stringify(n));
+        return n;
+      });
+    }
   };
 
   const nextQuestion = () => {
@@ -429,11 +443,12 @@ export default function App() {
       {/* ── HEADER ── */}
       {isAuthenticated && currentUser && activeScreen !== 'admin' && (
         <header className="app-header">
-          <div className="app-title">DEV<span>QUIZ</span></div>
-          <div className="user-profile">
+          <button className="app-title" onClick={() => setActiveScreen('menu')} style={{color:'inherit'}}>
+            DEV<span>QUIZ</span>
+          </button>
+          <div className="user-profile" style={{cursor:'pointer'}} onClick={() => setActiveScreen('profile')}>
             <div className="user-info">
               <span className="user-name">{currentUser.name}</span>
-              <button className="btn-logout" onClick={() => signOut(auth)}>Sign out</button>
             </div>
             {currentUser.picture && <img src={currentUser.picture} className="user-avatar" alt=""/>}
           </div>
@@ -567,6 +582,56 @@ export default function App() {
             </div>
           </div>
 
+          {/* PROFILE */}
+          <div className={`screen ${activeScreen==='profile'?'active':''}`}>
+            <div className="screen-header">
+              <button className="btn-icon" onClick={() => setActiveScreen('menu')}><IconBack /></button>
+              <div className="screen-title">Profile</div>
+            </div>
+            
+            <div className="auth-card" style={{margin:'20px auto', width:'100%', padding:'38px 20px', alignItems:'center'}}>
+              {currentUser.picture && <img src={currentUser.picture} className="user-avatar" style={{width:'64px', height:'64px', marginBottom:'10px'}} alt=""/>}
+              <div style={{fontSize:'1.2rem', fontWeight:'700'}}>{currentUser.name}</div>
+              <div style={{color:'var(--text-sub)', fontSize:'.8rem', marginBottom:'24px'}}>{currentUser.email}</div>
+
+              <div style={{display:'flex', gap:'20px', width:'100%', justifyContent:'center', marginBottom:'34px'}}>
+                <div style={{textAlign:'center'}}>
+                  <div style={{fontSize:'1.4rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.solved}</div>
+                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>Вопросов</div>
+                </div>
+                <div style={{width:'1px', background:'var(--border)'}}></div>
+                <div style={{textAlign:'center'}}>
+                  <div style={{fontSize:'1.4rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.score}</div>
+                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>Верных</div>
+                </div>
+              </div>
+
+              <div className="section-title" style={{width:'100%'}}>Theme Color</div>
+              <div style={{display:'flex', gap:'16px', marginBottom:'34px'}}>
+                {['cyan', 'purple', 'green', 'orange'].map(c => (
+                  <button key={c} onClick={() => setTheme(c)} style={{
+                    width:'34px', height:'34px', borderRadius:'50%', 
+                    background: c === 'cyan' ? '#00e5ff' : c === 'purple' ? '#b620e0' : c === 'green' ? '#39ff7e' : '#ff6a00',
+                    border: theme === c ? '2px solid var(--text-main)' : '2px solid var(--border)',
+                    boxShadow: theme === c ? `0 0 12px var(--accent-glow)` : 'none',
+                    opacity: theme === c ? 1 : 0.6,
+                    transition:'all .2s'
+                  }} />
+                ))}
+              </div>
+
+              <button className="btn-action" onClick={() => window.open('https://t.me/047rw', '_blank')}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                </svg>
+                Поддержка TG: @047rw
+              </button>
+              <button className="btn-action" style={{marginTop:'12px', color:'var(--red)'}} onClick={() => signOut(auth)}>
+                Sign Out
+              </button>
+            </div>
+          </div>
+
           {/* ADMIN */}
           {activeScreen === 'admin' && isAdmin && (
             <div className="screen admin-screen active">
@@ -579,3 +644,4 @@ export default function App() {
     </div>
   );
 }
+
