@@ -233,6 +233,7 @@ export default function App() {
   const [reports, setReports]                 = useState([]);
   const [dynamicTests, setDynamicTests]       = useState([]);
   const [theme, setTheme]                     = useState(localStorage.getItem('devquiz_theme') || 'cyan');
+  const [lang, setLang]                       = useState(localStorage.getItem('devquiz_lang') || 'KZ');
   const [stats, setStats]                     = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
   const timerRef = useRef(null);
 
@@ -240,6 +241,10 @@ export default function App() {
     document.body.className = `theme-${theme}`;
     localStorage.setItem('devquiz_theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('devquiz_lang', lang);
+  }, [lang]);
 
   const fetchDynamicTests = async () => {
     try {
@@ -400,16 +405,22 @@ export default function App() {
   return (
     <div id="root">
 
-      {/* ── AUTH ── */}
+      {/* ── LANDING HERO (Visible to both based on state) ── */}
       {!isAuthenticated && (
-        <div id="auth-overlay">
-          <div className="auth-card">
-            <div className="auth-eyebrow">IT Assessment Platform</div>
-            <div className="auth-logo">DEV<span>QUIZ</span></div>
-            <div className="auth-desc">
-              Sign in to access technical assessments, track your performance, and compete across Python and Database topics.
+        <div className="main-layout" style={{justifyContent:'center', minHeight:'100dvh', paddingBottom:'60px'}}>
+          <div className="landing-hero">
+            <div className="landing-title">Master Your <span>IT Skills</span></div>
+            <div className="landing-subtitle">
+              Interactive technical assessments with real-time feedback and dynamic leaderboards.
             </div>
-            <button id="auth-btn" onClick={handleSignIn}>
+            
+            <div className="features-row">
+              <div className="feature-badge"><IconCode /> Dynamic Tests</div>
+              <div className="feature-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg> Real-time Analytics</div>
+              <div className="feature-badge"><IconDB /> Custom Progress</div>
+            </div>
+
+            <button id="auth-btn" onClick={handleSignIn} style={{maxWidth:'300px', margin:'0 auto'}}>
               <svg width="17" height="17" viewBox="0 0 48 48">
                 <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
                 <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -418,7 +429,7 @@ export default function App() {
               </svg>
               Continue with Google
             </button>
-            <div className="auth-tag">Secured · Academic Use Only</div>
+            <div className="auth-tag" style={{marginTop:'16px'}}>Secured · Academic Use Only</div>
           </div>
         </div>
       )}
@@ -466,15 +477,23 @@ export default function App() {
       {isAuthenticated && (
         <div className="main-layout">
 
-          {/* MENU */}
+          {/* MENU (Contains Landing Hero on top if logged in) */}
           <div className={`screen ${activeScreen==='menu'?'active':''}`}>
-            <div className="menu-header">
-              <div className="menu-greeting">Select Assessment</div>
-              <div className="menu-title">Choose a topic</div>
+            <div className="landing-hero" style={{paddingTop:'30px', paddingBottom:'10px'}}>
+              <div className="landing-title">Master Your <span>IT Skills</span></div>
+              <div className="features-row" style={{marginBottom:'16px'}}>
+                <div className="feature-badge"><IconCode /> Dynamic</div>
+                <div className="feature-badge"><IconDB /> Ranked</div>
+              </div>
+            </div>
+
+            <div className="menu-header" style={{paddingTop:0}}>
+              <div className="menu-greeting">Welcome back, {currentUser.name}!</div>
+              <div className="menu-title">Select Assessment ({lang})</div>
             </div>
             <div className="section-title">Available Subjects</div>
             <div className="subject-grid">
-              {SUBJECTS.map(s => (
+              {SUBJECTS.filter(s => s.lang === lang).map(s => (
                 <button key={s.key} className="subject-card" onClick={() => selectSubject(s.key)}>
                   <div className="subject-icon">{s.icon}</div>
                   <div className="subject-details">
@@ -613,12 +632,18 @@ export default function App() {
                 </div>
               </div>
 
+              <div className="section-title" style={{width:'100%'}}>Language / Язык</div>
+              <div className="lang-selector">
+                <button className={`lang-btn ${lang==='KZ'?'active':''}`} onClick={() => setLang('KZ')}>Қазақша</button>
+                <button className={`lang-btn ${lang==='RU'?'active':''}`} onClick={() => setLang('RU')}>Русский</button>
+              </div>
+
               <div className="section-title" style={{width:'100%'}}>Theme Color</div>
-              <div style={{display:'flex', gap:'16px', marginBottom:'34px'}}>
-                {['cyan', 'purple', 'green', 'orange'].map(c => (
+              <div style={{display:'flex', gap:'12px', marginBottom:'34px', flexWrap:'wrap', justifyContent:'center'}}>
+                {['cyan', 'purple', 'green', 'orange', 'pink', 'blue', 'yellow'].map(c => (
                   <button key={c} onClick={() => setTheme(c)} style={{
                     width:'34px', height:'34px', borderRadius:'50%', 
-                    background: c === 'cyan' ? '#00e5ff' : c === 'purple' ? '#b620e0' : c === 'green' ? '#39ff7e' : '#ff6a00',
+                    background: c === 'cyan' ? '#00e5ff' : c === 'purple' ? '#b620e0' : c === 'green' ? '#39ff7e' : c === 'orange' ? '#ff6a00' : c === 'pink' ? '#ff33a1' : c === 'blue' ? '#3388ff' : '#ffc107',
                     border: theme === c ? '2px solid var(--text-main)' : '2px solid var(--border)',
                     boxShadow: theme === c ? `0 0 12px var(--accent-glow)` : 'none',
                     opacity: theme === c ? 1 : 0.6,
