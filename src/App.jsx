@@ -59,33 +59,15 @@ const SUBJECTS = [
   { key: 'db_ru',     name: 'Database', lang: 'RU', icon: <IconDB /> },
 ];
 
-function AdminDashboard({ goBack, reports, onTestAdded, deleteReport }) {
+function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTests }) {
   const [tab, setTab] = useState('reports');
   const [subject, setSubject] = useState('python');
-  const [testList, setTestList] = useState([]);
-  const [isLoadingTests, setIsLoadingTests] = useState(false);
-
-  const fetchTests = async () => {
-    setIsLoadingTests(true);
-    try {
-      const snap = await getDocs(collection(db, "dynamic_tests"));
-      const list = [];
-      snap.forEach(d => list.push({ id: d.id, ...d.data() }));
-      setTestList(list);
-    } catch(e) { console.error(e); }
-    setIsLoadingTests(false);
-  };
-  
-  useEffect(() => {
-    if (tab === 'manage_tests') fetchTests();
-  }, [tab]);
 
   const deleteTest = async (id) => {
     if (!window.confirm("Удалить этот вариант?")) return;
     try {
       await deleteDoc(doc(db, "dynamic_tests", id));
       onTestAdded();
-      fetchTests();
     } catch(e) { alert("Ошибка удаления: " + e.message); }
   };
   const [variantName, setVariantName] = useState('');
@@ -169,9 +151,8 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport }) {
         )}
         {tab === 'manage_tests' && (
           <div className="reports-list">
-            {isLoadingTests && <p style={{fontSize:'.8rem',color:'var(--text-muted)'}}>Загрузка...</p>}
-            {!isLoadingTests && testList.length === 0 && <p style={{fontSize:'.8rem',color:'var(--text-muted)'}}>Динамические тесты не найдены.</p>}
-            {testList.map(t => (
+            {dynamicTests.length === 0 && <p style={{fontSize:'.8rem',color:'var(--text-muted)'}}>Динамические тесты не найдены.</p>}
+            {dynamicTests.map(t => (
               <div key={t.id} className="report-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <div style={{color:'var(--cyan)', fontWeight:'bold', fontSize:'.85rem'}}>{t.variantName}</div>
@@ -250,20 +231,24 @@ export default function App() {
   const [timerRunning, setTimerRunning]       = useState(false);
   const [feedbackMsg, setFeedbackMsg]         = useState({ text: '', type: '' });
   const [reports, setReports]                 = useState([]);
+  const [dynamicTests, setDynamicTests]       = useState([]);
   const timerRef = useRef(null);
 
   const fetchDynamicTests = async () => {
     try {
       const snap = await getDocs(collection(db, "dynamic_tests"));
       const ddb = JSON.parse(JSON.stringify(database));
+      const dynList = [];
       snap.forEach(doc => {
         const d = doc.data();
+        dynList.push({ id: doc.id, ...d });
         if (d.subject && d.variantName && d.questions) {
           if (!ddb[d.subject]) ddb[d.subject] = {};
           ddb[d.subject][d.variantName] = d.questions;
         }
       });
       setMergedDatabase(ddb);
+      setDynamicTests(dynList);
     } catch(e) { console.error(e); }
   };
 
@@ -585,7 +570,7 @@ export default function App() {
           {/* ADMIN */}
           {activeScreen === 'admin' && isAdmin && (
             <div className="screen admin-screen active">
-              <AdminDashboard goBack={() => setActiveScreen('menu')} reports={reports} onTestAdded={fetchDynamicTests} deleteReport={deleteReport} />
+              <AdminDashboard goBack={() => setActiveScreen('menu')} reports={reports} onTestAdded={fetchDynamicTests} deleteReport={deleteReport} dynamicTests={dynamicTests} />
             </div>
           )}
 
