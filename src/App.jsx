@@ -59,6 +59,99 @@ const SUBJECTS = [
   { key: 'db_ru',     name: 'Database', lang: 'RU', icon: <IconDB /> },
 ];
 
+const i18n = {
+  EN: {
+    authSubtitle: "IT Assessment Platform",
+    authDesc: "Sign in to access technical assessments, track your performance, and compete across Python and Database topics.",
+    authBtn: "Continue with Google",
+    authTag: "Secured · Academic Use Only",
+    greeting: "Welcome back",
+    selectAssesment: "Select Assessment",
+    chooseTopic: "Choose a topic",
+    availSubjects: "Available Subjects",
+    reportIssue: "Report Issue",
+    adminPanel: "Admin Panel",
+    profile: "Profile",
+    lang: "Language",
+    theme: "Theme Color",
+    support: "TG Support",
+    signOut: "Sign Out",
+    solvedQ: "Questions",
+    correctQ: "Correct",
+    selectVariant: "Select Variant",
+    variants: "variants",
+    nextQ: "Next Question →",
+    viewResults: "View Results →",
+    retake: "Retake",
+    dashboard: "Dashboard",
+    reviewWrong: "Review Incorrect Answers",
+    flawless: "// Flawless execution — all answers correct.",
+    timeUp: "Time's up.",
+    correct: "Correct.",
+    incorrect: "Incorrect.",
+  },
+  RU: {
+    authSubtitle: "Платформа IT-Тестирования",
+    authDesc: "Войдите, чтобы получить доступ к тестам по Python и БД, а также отслеживать свой прогресс.",
+    authBtn: "Войти через Google",
+    authTag: "Безопасно · Только для обучения",
+    greeting: "С возвращением",
+    selectAssesment: "Выбор теста",
+    chooseTopic: "Выберите предмет",
+    availSubjects: "Доступные предметы",
+    reportIssue: "Сообщить об ошибке",
+    adminPanel: "Панель админа",
+    profile: "Профиль",
+    lang: "Язык",
+    theme: "Цвет темы",
+    support: "Поддержка TG",
+    signOut: "Выйти",
+    solvedQ: "Вопросов",
+    correctQ: "Верных",
+    selectVariant: "Выберите вариант",
+    variants: "вариантов",
+    nextQ: "Следующий вопрос →",
+    viewResults: "Результаты →",
+    retake: "Перепройти",
+    dashboard: "В меню",
+    reviewWrong: "Разбор ошибок",
+    flawless: "// Идеальное выполнение — все ответы верны.",
+    timeUp: "Время вышло.",
+    correct: "Верно.",
+    incorrect: "Неверно.",
+  },
+  KZ: {
+    authSubtitle: "IT-Тесттеу Платформасы",
+    authDesc: "Python және деректер қоры бойынша тесттерге қол жеткізу, прогресті бақылау үшін кіріңіз.",
+    authBtn: "Google арқылы кіру",
+    authTag: "Қауіпсіз · Тек оқу үшін",
+    greeting: "Қайта оралуыңызбен",
+    selectAssesment: "Тестті таңдау",
+    chooseTopic: "Пәнді таңдаңыз",
+    availSubjects: "Қолжетімді пәндер",
+    reportIssue: "Ақаулық туралы хабарлау",
+    adminPanel: "Әкімші панелі",
+    profile: "Профиль",
+    lang: "Тіл",
+    theme: "Тақырып түсі",
+    support: "TG Қолдау",
+    signOut: "Шығу",
+    solvedQ: "Сұрақтар",
+    correctQ: "Дұрыс",
+    selectVariant: "Нұсқаны таңдаңыз",
+    variants: "нұсқа",
+    nextQ: "Келесі сұрақ →",
+    viewResults: "Нәтижелер →",
+    retake: "Қайталау",
+    dashboard: "Мәзірге",
+    reviewWrong: "Қателерді талдау",
+    flawless: "// Керемет нәтиже — барлық жауаптар дұрыс.",
+    timeUp: "Уақыт бітті.",
+    correct: "Дұрыс.",
+    incorrect: "Қате.",
+  }
+};
+
 function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTests }) {
   const [tab, setTab] = useState('reports');
   const [subject, setSubject] = useState('python');
@@ -233,9 +326,11 @@ export default function App() {
   const [reports, setReports]                 = useState([]);
   const [dynamicTests, setDynamicTests]       = useState([]);
   const [theme, setTheme]                     = useState(localStorage.getItem('devquiz_theme') || 'cyan');
-  const [lang, setLang]                       = useState(localStorage.getItem('devquiz_lang') || 'KZ');
+  const [lang, setLang]                       = useState(localStorage.getItem('devquiz_lang') || 'EN');
   const [stats, setStats]                     = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
   const timerRef = useRef(null);
+  
+  const text = i18n[lang] || i18n['EN'];
 
   useEffect(() => {
     document.body.className = `theme-${theme}`;
@@ -294,7 +389,7 @@ export default function App() {
 
   const handleTimeout = () => {
     if (isAnswered) return;
-    setFeedbackMsg({ text: 'Time\'s up.', type: 'error' });
+    setFeedbackMsg({ text: text.timeUp, type: 'error' });
     setTimerRunning(false);
     recordAnswer(-1, false);
     setIsAnswered(true);
@@ -315,8 +410,8 @@ export default function App() {
     setIsAnswered(true); setTimerRunning(false);
     const correct = questions[qIndex].correct;
     const ok = idx === correct;
-    if (ok) { setScore(s => s + 1); setFeedbackMsg({ text: 'Correct.', type: 'success' }); }
-    else { setFeedbackMsg({ text: 'Incorrect.', type: 'error' }); }
+    if (ok) { setScore(s => s + 1); setFeedbackMsg({ text: text.correct, type: 'success' }); }
+    else { setFeedbackMsg({ text: text.incorrect, type: 'error' }); }
     recordAnswer(idx, ok);
   };
 
@@ -405,31 +500,32 @@ export default function App() {
   return (
     <div id="root">
 
-      {/* ── LANDING HERO (Visible to both based on state) ── */}
+      {/* ── AUTH ── */}
       {!isAuthenticated && (
-        <div className="main-layout" style={{justifyContent:'center', minHeight:'100dvh', paddingBottom:'60px'}}>
-          <div className="landing-hero">
-            <div className="landing-title">Master Your <span>IT Skills</span></div>
-            <div className="landing-subtitle">
-              Interactive technical assessments with real-time feedback and dynamic leaderboards.
+        <div id="auth-overlay">
+          <div className="auth-card">
+            <div className="auth-eyebrow">{text.authSubtitle}</div>
+            <div className="auth-logo">DEV<span>QUIZ</span></div>
+            <div className="auth-desc">
+              {text.authDesc}
             </div>
             
-            <div className="features-row">
-              <div className="feature-badge"><IconCode /> Dynamic Tests</div>
-              <div className="feature-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg> Real-time Analytics</div>
-              <div className="feature-badge"><IconDB /> Custom Progress</div>
-            </div>
-
-            <button id="auth-btn" onClick={handleSignIn} style={{maxWidth:'300px', margin:'0 auto'}}>
+            <button id="auth-btn" onClick={handleSignIn}>
               <svg width="17" height="17" viewBox="0 0 48 48">
                 <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
                 <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
                 <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
                 <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
               </svg>
-              Continue with Google
+              {text.authBtn}
             </button>
-            <div className="auth-tag" style={{marginTop:'16px'}}>Secured · Academic Use Only</div>
+            <div className="auth-tag" style={{marginTop:'4px'}}>{text.authTag}</div>
+
+            <div className="lang-selector" style={{marginTop:'12px', marginBottom:0}}>
+              <button className={`lang-btn ${lang==='EN'?'active':''}`} onClick={() => setLang('EN')}>EN</button>
+              <button className={`lang-btn ${lang==='KZ'?'active':''}`} onClick={() => setLang('KZ')}>KZ</button>
+              <button className={`lang-btn ${lang==='RU'?'active':''}`} onClick={() => setLang('RU')}>RU</button>
+            </div>
           </div>
         </div>
       )}
@@ -477,23 +573,15 @@ export default function App() {
       {isAuthenticated && (
         <div className="main-layout">
 
-          {/* MENU (Contains Landing Hero on top if logged in) */}
+          {/* MENU */}
           <div className={`screen ${activeScreen==='menu'?'active':''}`}>
-            <div className="landing-hero" style={{paddingTop:'30px', paddingBottom:'10px'}}>
-              <div className="landing-title">Master Your <span>IT Skills</span></div>
-              <div className="features-row" style={{marginBottom:'16px'}}>
-                <div className="feature-badge"><IconCode /> Dynamic</div>
-                <div className="feature-badge"><IconDB /> Ranked</div>
-              </div>
+            <div className="menu-header">
+              <div className="menu-greeting">{text.greeting}, {currentUser.name}!</div>
+              <div className="menu-title">{text.selectAssesment}</div>
             </div>
-
-            <div className="menu-header" style={{paddingTop:0}}>
-              <div className="menu-greeting">Welcome back, {currentUser.name}!</div>
-              <div className="menu-title">Select Assessment ({lang})</div>
-            </div>
-            <div className="section-title">Available Subjects</div>
+            <div className="section-title">{text.availSubjects}</div>
             <div className="subject-grid">
-              {SUBJECTS.filter(s => s.lang === lang).map(s => (
+              {SUBJECTS.map(s => (
                 <button key={s.key} className="subject-card" onClick={() => selectSubject(s.key)}>
                   <div className="subject-icon">{s.icon}</div>
                   <div className="subject-details">
@@ -506,11 +594,11 @@ export default function App() {
             </div>
             <div className="action-panel">
               <button className="btn-action" onClick={() => setShowReportModal(true)}>
-                <IconAlert /> Report Issue
+                <IconAlert /> {text.reportIssue}
               </button>
               {isAdmin && (
                 <button className="btn-action primary" onClick={openAdmin}>
-                  <IconSettings /> Admin Panel
+                  <IconSettings /> {text.adminPanel}
                 </button>
               )}
             </div>
@@ -522,10 +610,10 @@ export default function App() {
               <button className="btn-icon" onClick={() => setActiveScreen('menu')}><IconBack /></button>
               <div className="screen-title">{subjectLabel(currentSubject)}</div>
               <div className="screen-badge">
-                {mergedDatabase[currentSubject] ? Object.keys(mergedDatabase[currentSubject]).length : 0} variants
+                {mergedDatabase[currentSubject] ? Object.keys(mergedDatabase[currentSubject]).length : 0} {text.variants}
               </div>
             </div>
-            <div className="section-title">Select Variant</div>
+            <div className="section-title">{text.selectVariant}</div>
             <div className="list-container">
               {mergedDatabase[currentSubject] && Object.keys(mergedDatabase[currentSubject]).map((key, i) => (
                 <button key={key} className="list-item" onClick={() => startQuiz(key)}>
@@ -566,7 +654,7 @@ export default function App() {
             {isAnswered && (
               <div className="quiz-footer">
                 <button className="btn-primary full-width" onClick={nextQuestion}>
-                  {qIndex + 1 < questions.length ? 'Next Question →' : 'View Results →'}
+                  {qIndex + 1 < questions.length ? text.nextQ : text.viewResults}
                 </button>
               </div>
             )}
@@ -580,13 +668,13 @@ export default function App() {
                 <div className="result-meta">{score} / {questions.length} correct</div>
               </div>
               {userAnswers.some(a => !a.isCorrect) && (
-                <div className="result-label">Review Incorrect Answers</div>
+                <div className="result-label">{text.reviewWrong}</div>
               )}
             </div>
 
             <div className="review-list">
               {userAnswers.every(a => a.isCorrect) ? (
-                <div className="empty-state">// Flawless execution — all answers correct.</div>
+                <div className="empty-state">{text.flawless}</div>
               ) : (
                 userAnswers.map((a, i) => !a.isCorrect && (
                   <div className="review-item" key={i}>
@@ -603,8 +691,8 @@ export default function App() {
             </div>
 
             <div className="result-actions">
-              <button className="btn-primary" onClick={restartQuiz}>Retake</button>
-              <button className="btn-secondary" onClick={quitQuiz}>Dashboard</button>
+              <button className="btn-primary" onClick={restartQuiz}>{text.retake}</button>
+              <button className="btn-secondary" onClick={quitQuiz}>{text.dashboard}</button>
             </div>
           </div>
 
@@ -612,7 +700,7 @@ export default function App() {
           <div className={`screen ${activeScreen==='profile'?'active':''}`}>
             <div className="screen-header">
               <button className="btn-icon" onClick={() => setActiveScreen('menu')}><IconBack /></button>
-              <div className="screen-title">Profile</div>
+              <div className="screen-title">{text.profile}</div>
             </div>
             
             <div className="auth-card" style={{margin:'20px auto', width:'100%', padding:'38px 20px', alignItems:'center'}}>
@@ -623,22 +711,23 @@ export default function App() {
               <div style={{display:'flex', gap:'20px', width:'100%', justifyContent:'center', marginBottom:'34px'}}>
                 <div style={{textAlign:'center'}}>
                   <div style={{fontSize:'1.4rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.solved}</div>
-                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>Вопросов</div>
+                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>{text.solvedQ}</div>
                 </div>
                 <div style={{width:'1px', background:'var(--border)'}}></div>
                 <div style={{textAlign:'center'}}>
                   <div style={{fontSize:'1.4rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.score}</div>
-                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>Верных</div>
+                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>{text.correctQ}</div>
                 </div>
               </div>
 
-              <div className="section-title" style={{width:'100%'}}>Language / Язык</div>
+              <div className="section-title" style={{width:'100%'}}>{text.lang}</div>
               <div className="lang-selector">
+                <button className={`lang-btn ${lang==='EN'?'active':''}`} onClick={() => setLang('EN')}>EN</button>
                 <button className={`lang-btn ${lang==='KZ'?'active':''}`} onClick={() => setLang('KZ')}>Қазақша</button>
                 <button className={`lang-btn ${lang==='RU'?'active':''}`} onClick={() => setLang('RU')}>Русский</button>
               </div>
 
-              <div className="section-title" style={{width:'100%'}}>Theme Color</div>
+              <div className="section-title" style={{width:'100%'}}>{text.theme}</div>
               <div style={{display:'flex', gap:'12px', marginBottom:'34px', flexWrap:'wrap', justifyContent:'center'}}>
                 {['cyan', 'purple', 'green', 'orange', 'pink', 'blue', 'yellow'].map(c => (
                   <button key={c} onClick={() => setTheme(c)} style={{
@@ -656,10 +745,10 @@ export default function App() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
                 </svg>
-                Поддержка TG: @047rw
+                {text.support}: @047rw
               </a>
               <button className="btn-action" style={{marginTop:'12px', color:'var(--red)'}} onClick={() => signOut(auth)}>
-                Sign Out
+                {text.signOut}
               </button>
             </div>
           </div>
