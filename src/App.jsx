@@ -51,6 +51,12 @@ const IconCheck = () => (
     <polyline points="20 6 9 17 4 12"/>
   </svg>
 );
+const IconMoon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>;
+const IconSun = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>;
+const IconPalette = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>;
+const IconGlobe = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>;
+const IconActivity = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>;
+const IconLogOut = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>;
 
 const SUBJECTS = [
   { key: 'python',    name: 'Python',   lang: 'KZ', icon: <IconCode /> },
@@ -89,6 +95,12 @@ const i18n = {
     timeUp: "Time's up.",
     correct: "Correct.",
     incorrect: "Incorrect.",
+    grpStats: "Statistics",
+    grpAppearance: "Appearance",
+    grpSystem: "System & Language",
+    mode: "Display Mode",
+    light: "Light",
+    dark: "Dark",
   },
   RU: {
     authSubtitle: "Платформа IT-Тестирования",
@@ -101,11 +113,11 @@ const i18n = {
     availSubjects: "Доступные предметы",
     reportIssue: "Сообщить об ошибке",
     adminPanel: "Панель админа",
-    profile: "Профиль",
+    profile: "Настройки Профиля",
     lang: "Язык",
     theme: "Цвет темы",
-    support: "Поддержка TG",
-    signOut: "Выйти",
+    support: "Поддержка Telegram",
+    signOut: "Выйти из аккаунта",
     solvedQ: "Вопросов",
     correctQ: "Верных",
     selectVariant: "Выберите вариант",
@@ -119,6 +131,12 @@ const i18n = {
     timeUp: "Время вышло.",
     correct: "Верно.",
     incorrect: "Неверно.",
+    grpStats: "Статистика",
+    grpAppearance: "Оформление",
+    grpSystem: "Система",
+    mode: "Тема оформления",
+    light: "Светлая",
+    dark: "Темная",
   },
   KZ: {
     authSubtitle: "IT-Тесттеу Платформасы",
@@ -131,11 +149,11 @@ const i18n = {
     availSubjects: "Қолжетімді пәндер",
     reportIssue: "Ақаулық туралы хабарлау",
     adminPanel: "Әкімші панелі",
-    profile: "Профиль",
+    profile: "Профиль параметрлері",
     lang: "Тіл",
     theme: "Тақырып түсі",
-    support: "TG Қолдау",
-    signOut: "Шығу",
+    support: "Telegram Қолдау",
+    signOut: "Жүйеден шығу",
     solvedQ: "Сұрақтар",
     correctQ: "Дұрыс",
     selectVariant: "Нұсқаны таңдаңыз",
@@ -149,6 +167,12 @@ const i18n = {
     timeUp: "Уақыт бітті.",
     correct: "Дұрыс.",
     incorrect: "Қате.",
+    grpStats: "Статистика",
+    grpAppearance: "Дизайн",
+    grpSystem: "Жүйе",
+    mode: "Режим",
+    light: "Ашық",
+    dark: "Қараңғы",
   }
 };
 
@@ -327,6 +351,7 @@ export default function App() {
   const [dynamicTests, setDynamicTests]       = useState([]);
   const [theme, setTheme]                     = useState(localStorage.getItem('devquiz_theme') || 'cyan');
   const [lang, setLang]                       = useState(localStorage.getItem('devquiz_lang') || 'EN');
+  const [mode, setMode]                       = useState(localStorage.getItem('devquiz_mode') || 'dark');
   const [stats, setStats]                     = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
   const timerRef = useRef(null);
   
@@ -334,8 +359,13 @@ export default function App() {
 
   useEffect(() => {
     document.body.className = `theme-${theme}`;
+    if (mode === 'light') document.body.classList.add('mode-light');
     localStorage.setItem('devquiz_theme', theme);
-  }, [theme]);
+  }, [theme, mode]);
+
+  useEffect(() => {
+    localStorage.setItem('devquiz_mode', mode);
+  }, [mode]);
 
   useEffect(() => {
     localStorage.setItem('devquiz_lang', lang);
@@ -698,58 +728,87 @@ export default function App() {
 
           {/* PROFILE */}
           <div className={`screen ${activeScreen==='profile'?'active':''}`}>
-            <div className="screen-header">
+            <div className="screen-header" style={{marginBottom:'24px'}}>
               <button className="btn-icon" onClick={() => setActiveScreen('menu')}><IconBack /></button>
               <div className="screen-title">{text.profile}</div>
             </div>
             
-            <div className="auth-card" style={{margin:'20px auto', width:'100%', padding:'38px 20px', alignItems:'center'}}>
-              {currentUser.picture && <img src={currentUser.picture} className="user-avatar" style={{width:'64px', height:'64px', marginBottom:'10px'}} alt=""/>}
-              <div style={{fontSize:'1.2rem', fontWeight:'700'}}>{currentUser.name}</div>
-              <div style={{color:'var(--text-sub)', fontSize:'.8rem', marginBottom:'24px'}}>{currentUser.email}</div>
-
-              <div style={{display:'flex', gap:'20px', width:'100%', justifyContent:'center', marginBottom:'34px'}}>
-                <div style={{textAlign:'center'}}>
-                  <div style={{fontSize:'1.4rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.solved}</div>
-                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>{text.solvedQ}</div>
-                </div>
-                <div style={{width:'1px', background:'var(--border)'}}></div>
-                <div style={{textAlign:'center'}}>
-                  <div style={{fontSize:'1.4rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.score}</div>
-                  <div style={{fontSize:'.6rem', textTransform:'uppercase', color:'var(--text-muted)', letterSpacing:'.1em'}}>{text.correctQ}</div>
+            <div className="settings-container">
+              {/* Account Hero */}
+              <div className="profile-hero">
+                {currentUser.picture && <img src={currentUser.picture} className="user-avatar" style={{width:'56px', height:'56px'}} alt=""/>}
+                <div>
+                  <div style={{fontSize:'1.1rem', fontWeight:'700', color:'var(--text-main)'}}>{currentUser.name}</div>
+                  <div style={{color:'var(--text-sub)', fontSize:'.85rem'}}>{currentUser.email}</div>
                 </div>
               </div>
 
-              <div className="section-title" style={{width:'100%'}}>{text.lang}</div>
-              <div className="lang-selector">
-                <button className={`lang-btn ${lang==='EN'?'active':''}`} onClick={() => setLang('EN')}>EN</button>
-                <button className={`lang-btn ${lang==='KZ'?'active':''}`} onClick={() => setLang('KZ')}>Қазақша</button>
-                <button className={`lang-btn ${lang==='RU'?'active':''}`} onClick={() => setLang('RU')}>Русский</button>
+              {/* Statistics */}
+              <div className="settings-group-label">{text.grpStats}</div>
+              <div className="settings-group">
+                <div className="settings-row">
+                  <div className="settings-row-title"><IconActivity /> {text.solvedQ}</div>
+                  <div style={{fontSize:'1rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.solved}</div>
+                </div>
+                <div className="settings-row">
+                  <div className="settings-row-title"><IconCheck /> {text.correctQ}</div>
+                  <div style={{fontSize:'1rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.score}</div>
+                </div>
               </div>
 
-              <div className="section-title" style={{width:'100%'}}>{text.theme}</div>
-              <div style={{display:'flex', gap:'12px', marginBottom:'34px', flexWrap:'wrap', justifyContent:'center'}}>
-                {['cyan', 'purple', 'green', 'orange', 'pink', 'blue', 'yellow'].map(c => (
-                  <button key={c} onClick={() => setTheme(c)} style={{
-                    width:'34px', height:'34px', borderRadius:'50%', 
-                    background: c === 'cyan' ? '#00e5ff' : c === 'purple' ? '#b620e0' : c === 'green' ? '#39ff7e' : c === 'orange' ? '#ff6a00' : c === 'pink' ? '#ff33a1' : c === 'blue' ? '#3388ff' : '#ffc107',
-                    border: theme === c ? '2px solid var(--text-main)' : '2px solid var(--border)',
-                    boxShadow: theme === c ? `0 0 12px var(--accent-glow)` : 'none',
-                    opacity: theme === c ? 1 : 0.6,
-                    transition:'all .2s'
-                  }} />
-                ))}
+              {/* Appearance */}
+              <div className="settings-group-label">{text.grpAppearance}</div>
+              <div className="settings-group">
+                <div className="settings-row">
+                  <div className="settings-row-title">{mode === 'dark' ? <IconMoon /> : <IconSun />} {text.mode}</div>
+                  <div className="lang-segment">
+                    <button className={mode === 'light' ? 'active' : ''} onClick={() => setMode('light')}>{text.light}</button>
+                    <button className={mode === 'dark' ? 'active' : ''} onClick={() => setMode('dark')}>{text.dark}</button>
+                  </div>
+                </div>
+                <div className="settings-row">
+                  <div className="settings-row-title"><IconPalette /> {text.theme}</div>
+                  <div className="theme-picker">
+                    {['cyan', 'purple', 'green', 'orange', 'pink', 'blue', 'yellow'].map(c => (
+                      <button key={c} onClick={() => setTheme(c)} className="theme-swatch" style={{
+                        background: c === 'cyan' ? '#00e5ff' : c === 'purple' ? '#b620e0' : c === 'green' ? '#39ff7e' : c === 'orange' ? '#ff6a00' : c === 'pink' ? '#ff33a1' : c === 'blue' ? '#3388ff' : '#ffc107',
+                        border: theme === c ? '2px solid var(--text-main)' : '1px solid var(--border)',
+                        boxShadow: theme === c ? `0 0 10px var(--accent-glow)` : 'none',
+                      }} />
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <a href="https://t.me/047rw" target="_blank" rel="noopener noreferrer" className="btn-action" style={{textDecoration:'none'}}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
-                </svg>
-                {text.support}: @047rw
-              </a>
-              <button className="btn-action" style={{marginTop:'12px', color:'var(--red)'}} onClick={() => signOut(auth)}>
-                {text.signOut}
-              </button>
+              {/* System */}
+              <div className="settings-group-label">{text.grpSystem}</div>
+              <div className="settings-group">
+                <div className="settings-row">
+                  <div className="settings-row-title"><IconGlobe /> {text.lang}</div>
+                  <div className="lang-segment">
+                    <button className={lang === 'EN' ? 'active' : ''} onClick={() => setLang('EN')}>EN</button>
+                    <button className={lang === 'KZ' ? 'active' : ''} onClick={() => setLang('KZ')}>KZ</button>
+                    <button className={lang === 'RU' ? 'active' : ''} onClick={() => setLang('RU')}>RU</button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Actions */}
+              <div className="settings-group">
+                <a href="https://t.me/047rw" target="_blank" rel="noopener noreferrer" className="settings-row" style={{textDecoration:'none', cursor:'pointer'}}>
+                  <div className="settings-row-title" style={{color:'var(--text-main)'}}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                    </svg>
+                    {text.support}
+                  </div>
+                  <IconArrow />
+                </a>
+                <button className="settings-row" style={{width:'100%', background:'none', border:'none', cursor:'pointer'}} onClick={() => signOut(auth)}>
+                  <div className="settings-row-title" style={{color:'var(--red)'}}><IconLogOut /> {text.signOut}</div>
+                </button>
+              </div>
+
             </div>
           </div>
 
