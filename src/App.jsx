@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { database } from './questions';
 import { auth, googleProvider, db } from './firebase';
 import { signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
-import { collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 const TIME_LIMIT = 20;
@@ -59,9 +59,35 @@ const SUBJECTS = [
   { key: 'db_ru',     name: 'Database', lang: 'RU', icon: <IconDB /> },
 ];
 
-function AdminDashboard({ goBack, reports, onTestAdded }) {
+function AdminDashboard({ goBack, reports, onTestAdded, deleteReport }) {
   const [tab, setTab] = useState('reports');
   const [subject, setSubject] = useState('python');
+  const [testList, setTestList] = useState([]);
+  const [isLoadingTests, setIsLoadingTests] = useState(false);
+
+  const fetchTests = async () => {
+    setIsLoadingTests(true);
+    try {
+      const snap = await getDocs(collection(db, "dynamic_tests"));
+      const list = [];
+      snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+      setTestList(list);
+    } catch(e) { console.error(e); }
+    setIsLoadingTests(false);
+  };
+  
+  useEffect(() => {
+    if (tab === 'manage_tests') fetchTests();
+  }, [tab]);
+
+  const deleteTest = async (id) => {
+    if (!window.confirm("Удалить этот вариант?")) return;
+    try {
+      await deleteDoc(doc(db, "dynamic_tests", id));
+      onTestAdded();
+      fetchTests();
+    } catch(e) { alert("Ошибка удаления: " + e.message); }
+  };
   const [variantName, setVariantName] = useState('');
   const [questions, setQuestions] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -113,6 +139,9 @@ function AdminDashboard({ goBack, reports, onTestAdded }) {
         <button className={`admin-tab ${tab==='add_test'?'active':''}`} onClick={() => setTab('add_test')}>
           Create Test
         </button>
+        <button className={`admin-tab ${tab==='manage_tests'?'active':''}`} onClick={() => setTab('manage_tests')}>
+          Manage Tests
+        </button>
       </div>
       <div className="admin-content">
         {tab === 'reports' && (
@@ -125,12 +154,30 @@ function AdminDashboard({ goBack, reports, onTestAdded }) {
                   <span>{r.userEmail}</span>
                 </div>
                 <div className="report-text">{r.text}</div>
-                {r.screen === 'quiz' && (
-                  <div className="report-info">
-                    <span className="badge">Screen</span> Quiz &nbsp;
-                    <span className="badge">Q</span> {r.qIndex + 1}
-                  </div>
-                )}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '12px' }}>
+                  {r.screen === 'quiz' ? (
+                    <div className="report-info">
+                      <span className="badge">Screen</span> Quiz &nbsp;
+                      <span className="badge">Q</span> {r.qIndex + 1}
+                    </div>
+                  ) : <div/>}
+                  <button className="btn-text-danger" onClick={() => deleteReport(r.id)}>Delete</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        {tab === 'manage_tests' && (
+          <div className="reports-list">
+            {isLoadingTests && <p style={{fontSize:'.8rem',color:'var(--text-muted)'}}>Загрузка...</p>}
+            {!isLoadingTests && testList.length === 0 && <p style={{fontSize:'.8rem',color:'var(--text-muted)'}}>Динамические тесты не найдены.</p>}
+            {testList.map(t => (
+              <div key={t.id} className="report-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div style={{color:'var(--cyan)', fontWeight:'bold', fontSize:'.85rem'}}>{t.variantName}</div>
+                  <div style={{fontSize:'.7rem', color:'var(--text-sub)', marginTop:'4px'}}>Предмет: {t.subject} | Вопросов: {t.questions?.length}</div>
+                </div>
+                <button className="btn-text-danger" onClick={() => deleteTest(t.id)}>Delete</button>
               </div>
             ))}
           </div>
@@ -304,11 +351,19 @@ export default function App() {
 
   const openAdmin = async () => {
     if (!isAdmin) return;
+    setActiveScreen('admin');
     try {
       const snap = await getDocs(query(collection(db, "reports"), orderBy("timestamp", "desc")));
       const reps = []; snap.forEach(doc => reps.push({ id: doc.id, ...doc.data() }));
-      setReports(reps); setActiveScreen('admin');
-    } catch(e) { alert('Failed to load reports'); }
+      setReports(reps);
+    } catch(e) { console.error('Failed to load reports', e); }
+  };
+
+  const deleteReport = async (id) => {
+    try {
+      await deleteDoc(doc(db, "reports", id));
+      setReports(prev => prev.filter(r => r.id !== id));
+    } catch(e) { console.error('Failed to delete report', e); }
   };
 
   const submitReport = async () => {
@@ -530,7 +585,7 @@ export default function App() {
           {/* ADMIN */}
           {activeScreen === 'admin' && isAdmin && (
             <div className="screen admin-screen active">
-              <AdminDashboard goBack={() => setActiveScreen('menu')} reports={reports} onTestAdded={fetchDynamicTests} />
+              <AdminDashboard goBack={() => setActiveScreen('menu')} reports={reports} onTestAdded={fetchDynamicTests} deleteReport={deleteReport} />
             </div>
           )}
 

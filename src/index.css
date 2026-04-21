@@ -60,7 +60,7 @@ body::before {
 .section-title::after { content:''; flex:1; height:1px; background:var(--border); }
 
 /* ─── Buttons ────────────────────────────────────────── */
-button { font-family:var(--font); cursor:pointer; background:none; border:none; }
+button { font-family:var(--font); color:inherit; cursor:pointer; background:none; border:none; }
 button:disabled { opacity:.4; cursor:not-allowed !important; }
 
 .btn-primary {
