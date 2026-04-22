@@ -1,7361 +1,7043 @@
 export const database = {
-
-    // ==============================================
-    // 🐍 ПӘН: PYTHON (9 Нұсқа)
-    // ==============================================
-    "python": {
-        
-        // --- 1-ші Нұсқа ---
-        "variant1": [
-            {
-                q: "Python кодын жол-жолымен орындайтын бағдарлама қалай аталады?",
-                options: ["Компилятор", "Интерпретатор", "Ассемблер", "Препроцессор", "Диспетчер"],
-                correct: 1
-            },
-            {
-                q: "Тармақталу үшін қандай оператор қолданылады?",
-                options: ["for", "break", "if", "switch", "return"],
-                correct: 2
-            },
-            {
-                q: "Қай дерек түрі өзгермейтін (immutable)?",
-                options: ["list", "dict", "set", "tuple", "bytearray"],
-                correct: 3
-            },
-            {
-                q: "Python тілінде түсіндірме (комментарий) қандай таңбамен белгіленеді?",
-                options: ["//", "/**/", "<!–", "#", "%"],
-                correct: 3
-            },
-            {
-                q: "Қай салыстыру операторы «тең» дегенді білдіреді?",
-                options: ["=", "==", "===", "eq", ":="],
-                correct: 1
-            },
-            {
-                q: "Жолдың (string) ұзындығын қалай аламыз?",
-                options: ["size()", "count()", "length()", "len()", "strlen()"],
-                correct: 3
-            },
-            {
-                q: "Шарт жалған болғанда орындалатын блок қалай аталады?",
-                options: ["if", "if not", "else", "return", "break"],
-                correct: 2
-            },
-            {
-                q: "Бірегей мәндерді сақтауға қандай дерек түрі қолайлы?",
-                options: ["list", "dict", "set", "tuple", "string"],
-                correct: 2
-            },
-            {
-                q: "Төмендегілердің қайсысы логикалық оператор?",
-                options: ["+", "and", "*", "/", "%"],
-                correct: 1
-            },
-            {
-                q: "Жолды бөліктерге бөлу үшін қандай әдіс қолданылады?",
-                options: ["cut()", "divide()", "split()", "break()", "open()"],
-                correct: 2
-            },
-            {
-                q: "lambda-функциясының синтаксисі қандай?",
-                options: ["lambda: x → y", "lambda x: өрнек", "lambda(x){ }", "func lambda(x)", "lambda->x"],
-                correct: 1
-            },
-            {
-                q: "map() функциясы не істейді?",
-                options: ["Мәндерді сүзгіден өткізеді", "Функцияны әр элементке қолданады", "Жолдарды біріктіреді", "Кездейсоқ сан қайтарады", "Тізімді сұрыптайды"],
-                correct: 1
-            },
-            {
-                q: "random модулін қалай импорттауға болады?",
-                options: ["include random", "using random", "import random", "attach random", "new random"],
-                correct: 2
-            },
-            {
-                q: "Файлды оқу үшін қалай ашамыз?",
-                options: ["open('f.txt', 'w')", "open('f.txt', 'r')", "open('f.txt', 'rw')", "open('f.txt', 'x')", "open_read('f.txt')"],
-                correct: 1
-            },
-            {
-                q: "read() әдісі не істейді?",
-                options: ["Мәтінді жазады", "Файлды жабады", "Мәтінді оқиды", "Файлды жояды", "Жолды түрлендіреді"],
-                correct: 2
-            },
-            {
-                q: "Класты қалай жариялаймыз?",
-                options: ["new class Example:", "class Example:", "class(Example);", "Example class:", "create class Example"],
-                correct: 1
-            },
-            {
-                q: "Нысан (объект) жасалған кезде қай әдіс шақырылады?",
-                options: ["start", "create", "init", "make", "class"],
-                correct: 2
-            },
-            {
-                q: "JSON файлының форматы қандай?",
-                options: ["Жолдар тізімі", "Екілік код", "Кілт–мән (key–value) түріндегі мәтін", "Кестелік деректер", "Тек сандар"],
-                correct: 2
-            },
-            {
-                q: "filter() функциясы не істейді?",
-                options: ["Тізімдерді көбейтеді", "Функцияны қолданып, шартқа сай элементтерді таңдайды", "Бос орындарды өшіреді", "Жолдарды біріктіреді", "Сөздік жасайды"],
-                correct: 1
-            },
-            {
-                q: "Қай модуль дата-мен (күн/уақыт) жұмыс істейді?",
-                options: ["random", "math", "datetime", "string", "datework"],
-                correct: 2
-            },
-            {
-                q: "PostgreSQL-де дерекқорды қандай командамен жасайды?",
-                options: ["NEW DATABASE name;", "CREATE DB name;", "CREATE DATABASE name;", "MAKE DATABASE name;", "DB CREATE name;"],
-                correct: 2
-            },
-            {
-                q: "Python тілінде SQL-сұранысты қалай орындаймыз?",
-                options: ["db.run()", "cursor.execute()", "sql.run()", "execute.sql()", "database.exec()"],
-                correct: 1
-            },
-            {
-                q: "Нөлге бөлу кезінде қандай қате түрі пайда болады?",
-                options: ["TypeError", "ZeroDivisionError", "NameError", "ValueError", "StopError"],
-                correct: 1
-            },
-            {
-                q: "SQLite дерекқорын қалай ашамыз?",
-                options: ["sqlite.load()", "sqlite.connect()", "sql.open()", "base.open()", "postgres.connect()"],
-                correct: 1
-            },
-            {
-                q: "Ерекшеліктерді (қателерді) өңдеуге қандай конструкция қолданылады?",
-                options: ["try–except", "check–catch", "error–fix", "protect–handle", "validate–except"],
-                correct: 0
-            },
-            {
-                q: "SQL-де түсіндірме (комментарий) қалай жазылады?",
-                options: ["#", "//", "–", "!!", "%%"],
-                correct: 2
-            },
-            {
-                q: "Мәліметтерді таңдап алу үшін қай оператор қолданылады?",
-                options: ["TAKE", "SELECT", "GET", "CHOOSE", "FETCH"],
-                correct: 1
-            },
-            {
-                q: "SQLite файлы көбіне қандай кеңейтілімге ие?",
-                options: [".db", ".sql", ".base", ".sq", ".sqlite3"],
-                correct: 4
-            },
-            {
-                q: "SQL-де кестені қалай жасаймыз?",
-                options: ["NEW TABLE", "CREATE TABLE", "MAKE TABLE", "TABLE CREATE", "ADD TABLE"],
-                correct: 1
-            },
-            {
-                q: "commit қалай орындалады?",
-                options: ["connect.commit()", "save.commit()", "commit.db()", "db.save()", "sql.end()"],
-                correct: 0
-            },
-            {
-                q: "PyQt5 қандай модульде орналасқан?",
-                options: ["pywindow", "QtPy", "PyQt5", "gui5", "pyui"],
-                correct: 2
-            },
-            {
-                q: "PyQt қосымшасын қалай құрамыз?",
-                options: ["app = QtApp()", "app = QApplication([])", "app = NewApp()", "app = WindowApp()", "app = CreateApp()"],
-                correct: 1
-            },
-            {
-                q: "Қай элемент түйме (кнопка) жасайды?",
-                options: ["QPushButton", "QButton", "QtButton", "PushBtn", "NewButton"],
-                correct: 0
-            },
-            {
-                q: "Qt Designer қандай файл жасайды?",
-                options: [".design", ".form", ".ui", ".qt", ".window"],
-                correct: 2
-            },
-            {
-                q: ".ui файлын қалай жүктейміз?",
-                options: ["load_ui()", "uic.loadUi()", "import.ui()", "designer.load()", "ui.open()"],
-                correct: 1
-            },
-            {
-                q: "Қосымшаның циклын қандай функция іске қосады?",
-                options: ["app.run()", "app.start()", "app.exec()", "app.go()", "app.launch()"],
-                correct: 2
-            },
-            {
-                q: "PyQt5-тегі сигнал деген не?",
-                options: ["Интерфейс функциясы", "Іске қосу командасы", "Элемент тудыратын оқиға", "Жаңарту әдісі", "Дерек түрі"],
-                correct: 2
-            },
-            {
-                q: "Слот деген не?",
-                options: ["Оқиға", "Сигналды өңдейтін функция (обработчик)", "Құрылымдық айнымалы", "Терезе компоненті", "Интерфейс стилі"],
-                correct: 1
-            },
-            {
-                q: "Сигналды слотқа қалай қосамыз?",
-                options: ["signal → slot", "connect(signal, slot)", "signal.connect(slot)", "slot.connect(signal)", "bind(signal, slot)"],
-                correct: 2
-            },
-            {
-                q: "Қарапайым терезені қалай жасаймыз?",
-                options: ["Window()", "QWindow()", "QWidget()", "RootWindow()", "BaseWindow()"],
-                correct: 2
-            }
+  // ==============================================
+  // 🐍 ПӘН: Web (9 Нұсқа)
+  // ==============================================
+  web: {
+    variant1: [
+      {
+        q: "HTML құжатының семантикалық құрылымын дұрыс сипаттайтыннұсқа:",
+        options: [
+          "<div> барлық контентті орналастыруға арналған әмбебап контейнер болып табылады",
+          "<span> құжат құрылымын толық анықтайтын негізгі тег ретінде пайдаланылады",
+          "<section> тек сыртқы көріністі безендіруге арналған элемент ретінде қолданылады",
+          "<header>, <main>, <footer> мазмұнды мағынасына қарай логикалық түрде бөледі",
+          "<b> мәтін құрылымын анықтайтын негізгі семантикалық элемент болып табылады",
         ],
-
-        // --- 2-ші Нұсқа ---
-        "variant2": [
-             {
-                q: "Бағдарламаның құрылымын анықтайтын ережелер жиынтығы қалай аталады?",
-                options: ["Логика", "Синтаксис", "Семантика", "Параметрлер", "Функционал"],
-                correct: 1
-            },
-            {
-                q: "Мәтінді сақтау үшін қай дерек түрі қолданылады?",
-                options: ["int", "float", "str", "list", "tuple"],
-                correct: 2
-            },
-            {
-                q: "Қай оператор тең емес екенін тексереді?",
-                options: ["=", "==", "!=", ":=", "><"],
-                correct: 2
-            },
-            {
-                q: "«Немесе» дегенді білдіретін логикалық оператор?",
-                options: ["and", "or", "not", "xor", "nor"],
-                correct: 1
-            },
-            {
-                q: "in операторы не істейді?",
-                options: ["Ұзындығын тексереді", "Элементтің бар-жоғын тексереді", "Циклді қайта іске қосады", "Мәндерді көбейтеді", "Айнымалыны жариялайды"],
-                correct: 1
-            },
-            {
-                q: "Жолдың шетіндегі бос орындарды өшіретін әдіс?",
-                options: ["trim()", "clear()", "strip()", "remove()", "space()"],
-                correct: 2
-            },
-            {
-                q: "Кілт–мән (key–value) жұптарын сақтайтын дерек түрі?",
-                options: ["list", "dict", "tuple", "set", "string"],
-                correct: 1
-            },
-            {
-                q: "Қай цикл шарт ақиқат болғанша орындала береді?",
-                options: ["for", "repeat", "while", "loop", "until"],
-                correct: 2
-            },
-            {
-                q: "Циклді ерте аяқтайтын кілт сөз?",
-                options: ["stop", "quit", "break", "exit", "leave"],
-                correct: 2
-            },
-            {
-                q: "Тізімнің соңына элемент қосатын әдіс?",
-                options: ["append()", "add()", "insert()", "push()", "extend()"],
-                correct: 0
-            },
-            {
-                q: "Санды екі есе арттыратын lambda-функцияны таңдаңыз:",
-                options: ["lambda x: x+x", "lambda(x, x2)", "lambda x => x+2", "lambda: 2x", "lambda(x) x*2"],
-                correct: 0
-            },
-            {
-                q: "reduce() функциясы не істейді?",
-                options: ["Жолдарды көбейтеді", "Элементтерді бір мәнге дейін тізбектей түрлендіреді", "Элементтерді сұрыптайды", "Элементтерді жояды", "Дерек түрін тексереді"],
-                correct: 1
-            },
-            {
-                q: "math модулінен тек sqrt функциясын қалай импорттаймыз?",
-                options: ["import math.sqrt", "import sqrt", "from math get sqrt", "from math import sqrt", "include math.sqrt"],
-                correct: 3
-            },
-            {
-                q: "Файлды қосып жазу (дозапись) режимінде ашу:",
-                options: ["open('f.txt', 'a')", "open('f.txt', 'd')", "open('f.txt', 'x')", "open('f.txt', 'r+')", "open('f.txt', '!')"],
-                correct: 0
-            },
-            {
-                q: "Файлды жабатын әдіс?",
-                options: ["stop()", "shutdown()", "done()", "close()", "exit()"],
-                correct: 3
-            },
-            {
-                q: "Person класын қалай жариялаймыз?",
-                options: ["def Person:", "make class Person:", "class Person:", "Person class():", "new Person:"],
-                correct: 2
-            },
-            {
-                q: "Объект атрибутына қалай жүгінеміз?",
-                options: ["obj:atr", "obj(atr)", "obj->atr", "obj.atr", "atr.obj"],
-                correct: 3
-            },
-            {
-                q: "JSON файлының ең жиі қолданылатын кеңейтілімі?",
-                options: [".dat", ".txt", ".conf", ".json", ".jfile"],
-                correct: 3
-            },
-            {
-                q: "Деректерді JSON-ға сериализациялайтын функция?",
-                options: ["json.write()", "json.serialize()", "json.dumps()", "json.data()", "json.pack()"],
-                correct: 2
-            },
-            {
-                q: "JSON-ды файлдан қалай жүктейміз?",
-                options: ["json.load()", "json.open()", "json.make()", "json.readjson()", "json.parsefile()"],
-                correct: 0
-            },
-            {
-                q: "Кестеден барлық жазбаларды таңдайтын команда?",
-                options: ["TAKE * FROM", "GET * FROM", "SELECT * FROM", "FETCH * FROM", "READ * FROM"],
-                correct: 2
-            },
-            {
-                q: "Қай SQL операторы жолды жояды?",
-                options: ["CUT", "DROP", "REMOVE", "DELETE", "ERASE"],
-                correct: 3
-            },
-            {
-                q: "Бар жоқ айнымалыға жүгінгенде қандай қате шығады?",
-                options: ["NameError", "TypeError", "ValueError", "IndexError", "ZeroDivisionError"],
-                correct: 0
-            },
-            {
-                q: "INSERT сұранысын қалай орындаймыз?",
-                options: ["cursor.add()", "cursor.send()", "cursor.execute()", "cursor.write()", "cursor.sql()"],
-                correct: 2
-            },
-            {
-                q: "Сұраныс нәтижесіндегі барлық жолдарды қалай аламыз?",
-                options: ["fetchall()", "getall()", "readall()", "take()", "list()"],
-                correct: 0
-            },
-            {
-                q: "SQLite-та логикалық мән (BOOLEAN) қандай тип ретінде сақталады?",
-                options: ["BOOLEAN", "BOOL", "LOGIC", "LOG", "INTEGER"],
-                correct: 4
-            },
-            {
-                q: "Бірегей мәндер сақталатын өріс қалай аталады?",
-                options: ["UNIQUE", "IDENTITY", "Special", "PK", "Number"],
-                correct: 0
-            },
-            {
-                q: "Тек бірегей мәндерді таңдайтын оператор?",
-                options: ["ONLY", "DISTINCT", "UNIQUE", "DIFFERENT", "CLEAR"],
-                correct: 1
-            },
-            {
-                q: "PyQt5-те графикалық интерфейс құру құралы қалай аталады?",
-                options: ["QtAssembler", "UI Maker", "Qt Designer", "PyWindow", "Interface Lab"],
-                correct: 2
-            },
-            {
-                q: "Басты терезе қай классқа жатады?",
-                options: ["QWidget", "QMainWindow", "WindowRoot", "QApplication", "RootFrame"],
-                correct: 1
-            },
-            {
-                q: "Түйме жасайтын функция?",
-                options: ["Button()", "MakeButton()", "QPushButton()", "NewButton()", "QButton()"],
-                correct: 2
-            },
-            {
-                q: "show() әдісі не істейді?",
-                options: ["Терезені жабады", "Терезені жояды", "Терезені көрсетеді", "Интерфейсті жаңартады", "Терезе жасайды"],
-                correct: 2
-            },
-            {
-                q: ".ui файлын қалай жүктейміз?",
-                options: ["load.ui()", "uic.importUi()", "uic.loadUi()", "app.loadUi()", "QtLoader.ui()"],
-                correct: 2
-            },
-            {
-                q: "Түйме оқиғасын функцияға қалай қосамыз?",
-                options: ["button.whenClick(func)", "button.do(func)", "button.connect(func)", "button.clicked.connect(func)", "button.push(func)"],
-                correct: 3
-            },
-            {
-                q: "QApplication деген не?",
-                options: ["Сигналдар модулі", "Бағдарламаның басты терезесі", "Стиль өңдеуші", "Қосымшаның негізгі объектісі", "Элементтер панелі"],
-                correct: 3
-            },
-            {
-                q: "Түйме басылғанда қай оқиға генерацияланады?",
-                options: ["pressed", "clicked", "run", "invoke", "do"],
-                correct: 1
-            },
-            {
-                q: "PyQt5-тегі слот деген не?",
-                options: ["Дерек түрі", "Сигналды өңдейтін әдіс", "Терезе", "Түйме", "Интерфейс"],
-                correct: 1
-            },
-            {
-                q: "Қарапайым виджетті қалай жасаймыз?",
-                options: ["Widget()", "NewWidget()", "QWidget()", "pyWidget()", "QtWidget()"],
-                correct: 2
-            },
-            {
-                q: "Қосымшаны қалай аяқтаймыз?",
-                options: ["exit.app()", "app.finish()", "close.app()", "app.quit()", "quit.window()"],
-                correct: 3
-            },
-            {
-                q: "Интерфейсті жаңартатын әдіс?",
-                options: ["update()", "refresh()", "reload()", "recreate()", "reset()"],
-                correct: 0
-            }
+        correct: 3,
+      },
+      {
+        q: "DOCTYPE декларациясының негізгі мақсаты:",
+        options: [
+          "CSS стиль файлдарын құжатқа дұрыс қосу механизмін анықтайды",
+          "JavaScript кодтарының орындалу ретін басқаруға арналған құрал болып табылады",
+          "HTML тегтерін қысқартуға мүмкіндік беретін арнайы синтаксисті іске қосады",
+          "Браузер кэшін тазалап, жаңа контентті қайта жүктеуді қамтамасыз етеді",
+          "Құжаттың қандай HTML стандартына сәйкес жазылғанын браузерге хабарлайды",
         ],
-
-        // --- 3-ші Нұсқа ---
-        "variant3": [
-             {
-                q: "Функцияға берілетін мән қалай аталады?",
-                options: ["объект", "параметр", "кілт", "сілтеме", "оператор"],
-                correct: 1
-            },
-            {
-                q: "Бөлшек сандарды сақтайтын дерек түрі?",
-                options: ["int", "float", "str", "bool", "list"],
-                correct: 1
-            },
-            {
-                q: "Қай оператор «үлкен немесе тең» дегенді білдіреді?",
-                options: [">>", ">>=", ">=", "=>", "!>="],
-                correct: 2
-            },
-            {
-                q: "Мәнді терістейтін логикалық оператор?",
-                options: ["not", "or", "and", "xor", "nor"],
-                correct: 0
-            },
-            {
-                q: "Жолды бас әріпке айналдыратын әдіс?",
-                options: ["big()", "upper()", "uppercase()", "top()", "cap()"],
-                correct: 1
-            },
-            {
-                q: "Реті бар және өзгеретін коллекцияны сақтауға қай түр қолайлы?",
-                options: ["tuple", "list", "set", "dict", "range"],
-                correct: 1
-            },
-            {
-                q: "Блокты белгілі бір рет санына қайталау үшін қандай оператор қолданылады?",
-                options: ["repeat", "until", "loop", "for", "do"],
-                correct: 3
-            },
-            {
-                q: "Ағымдағы итерацияны тоқтатып, келесісіне өтетін оператор?",
-                options: ["break", "stop", "skip", "continue", "exit"],
-                correct: 3
-            },
-            {
-                q: "Тізімнен мән бойынша элементті өшіретін әдіс?",
-                options: ["remove()", "delete()", "erase()", "pop()", "drop()"],
-                correct: 0
-            },
-            {
-                q: "Кортеждің (tuple) қай әдісі бар?",
-                options: ["append()", "add()", "insert()", "count()", "remove()"],
-                correct: 3
-            },
-            {
-                q: "map() функциясы не істейді?",
-                options: ["Тізімді жолға айналдырады", "Функцияны әр элементке қолданады", "Деректерді сұрыптайды", "Тізімдерді біріктіреді", "Шарт бойынша элементтерді жояды"],
-                correct: 1
-            },
-            {
-                q: "lambda синтаксисінің дұрыс жазылған нұсқасы:",
-                options: ["lambda x => x3", "lambda(x){x3}", "lambda x: x3", "lambda: x3", "lambda->x*3"],
-                correct: 2
-            },
-            {
-                q: "datetime модулін толық импорттау:",
-                options: ["using datetime", "include datetime", "import datetime", "take datetime", "load datetime"],
-                correct: 2
-            },
-            {
-                q: "Файлды тек жазу режимінде ашу:",
-                options: ["open('file.txt', 'r')", "open('file.txt', 'w')", "open('file.txt', 'rw')", "open('file.txt', 'c')", "open('file.txt', 'd')"],
-                correct: 1
-            },
-            {
-                q: "Файлдан бір жол оқитын әдіс?",
-                options: ["read()", "readline()", "readrow()", "readstr()", "read1()"],
-                correct: 1
-            },
-            {
-                q: "Объект жасалғанда шақырылатын функция?",
-                options: ["class", "new", "make", "init", "start"],
-                correct: 3
-            },
-            {
-                q: "Объект атрибуттарының тізімін қай әдіс қайтарады?",
-                options: ["vars()", "info()", "about()", "attrs()", "describe()"],
-                correct: 0
-            },
-            {
-                q: "pickle қандай форматпен жұмыс істейді?",
-                options: ["Тек жолдар", "Тек сөздіктер", "Екілік (binary) формат", "Тек сандар", "Тек тізімдер"],
-                correct: 2
-            },
-            {
-                q: "Екілік сериализация үшін қай модуль қолданылады?",
-                options: ["json", "pickle", "struct", "bin", "serial"],
-                correct: 1
-            },
-            {
-                q: "SQLite базасының жиі қолданылатын кеңейтілімі?",
-                options: [".txt", ".data", ".sql", ".db", ".lite"],
-                correct: 3
-            },
-            {
-                q: "SQL-де кесте жасаудың командасы?",
-                options: ["MAKE TABLE", "CREATE TABLE", "NEW TABLE", "TABLE ADD", "TABLE CREATE"],
-                correct: 1
-            },
-            {
-                q: "Бір шарт бойынша бір жазбаны қалай таңдаймыз?",
-                options: ["SELECT ONE", "SELECT ROW WHERE", "SELECT * WHERE", "SELECT FROM WHERE", "SELECT WHERE ROW"],
-                correct: 2
-            },
-            {
-                q: "ORDER BY операторы не істейді?",
-                options: ["Жолдарды сүзгіден өткізеді", "Жолдарды сұрыптайды", "Жолдарды біріктіреді", "Жолдарды жояды", "Жолдар қосады"],
-                correct: 1
-            },
-            {
-                q: "Кестелерді біріктіретін оператор?",
-                options: ["ADD", "JOIN", "LINK", "MERGE", "FUSE"],
-                correct: 1
-            },
-            {
-                q: "Python-да SQL командасын орындау:",
-                options: ["sql.run()", "db.send()", "cursor.execute()", "execute.command()", "run.sql()"],
-                correct: 2
-            },
-            {
-                q: "fetchone() не істейді?",
-                options: ["Барлық жолдарды алады", "Бір ғана жолды алады", "Жолды жояды", "Жолды жаңартады", "Жолды қайта жазады"],
-                correct: 1
-            },
-            {
-                q: "PostgreSQL-ге қосылуға қай функция қолданылады?",
-                options: ["sqlite3.connect()", "psycopg2.connect()", "sqldb.connect()", "postgres.open()", "pgsql.start()"],
-                correct: 1
-            },
-            {
-                q: "Транзакцияны аяқтау қалай жасалады?",
-                options: ["cursor.stop()", "db.end()", "connection.commit()", "write.commit()", "db.complete()"],
-                correct: 2
-            },
-            {
-                q: "PyQt5-те интерфейстерге жауапты модуль?",
-                options: ["PyInterface", "PyWindow", "PyQt5.QtWidgets", "QtMaker", "QtUI"],
-                correct: 2
-            },
-            {
-                q: "Виджетті қалай жасаймыз?",
-                options: ["QWidget()", "Window()", "Root()", "Widget()", "QtWidget()"],
-                correct: 0
-            },
-            {
-                q: "Қосымшаның негізгі циклын не іске қосады?",
-                options: ["window.loop()", "run.app()", "app.exec()", "exec.window()", "loop.start()"],
-                correct: 2
-            },
-            {
-                q: "Түймеге мәтін орнату:",
-                options: ["button.setText()", "button.writeText()", "button.textAdd()", "button.label()", "button.input()"],
-                correct: 0
-            },
-            {
-                q: "Qt Designer қандай файл жасайды?",
-                options: [".qtd", ".qt", ".ui", ".design", ".form"],
-                correct: 2
-            },
-            {
-                q: "Басу сигналына қосылу:",
-                options: ["button.click(func)", "button.pressed(func)", "button.whenClick(func)", "button.clicked.connect(func)", "button.action(func)"],
-                correct: 3
-            },
-            {
-                q: "Барлық элементтердің ата-аналық класы?",
-                options: ["QFrame", "QWidget", "QElement", "QBase", "WindowCore"],
-                correct: 1
-            },
-            {
-                q: "Сигнал деген не?",
-                options: ["Өңдеу әдісі", "Интерфейс оқиғасы", "Интерфейс", "Терезе стилі", "Дерек түрі"],
-                correct: 1
-            },
-            {
-                q: "Слот деген не?",
-                options: ["Оқиғаны өңдейтін әдіс", "Терезе", "Сурет", "Мәтіндік объект", "Атрибут"],
-                correct: 0
-            },
-            {
-                q: "Терезе өлшемін орнату үшін қандай әдіс қолданылады?",
-                options: ["setDimensions()", "setSize()", "setGeometry()", "size()", "resizeWindow()"],
-                correct: 2
-            },
-            {
-                q: "PyQt5 қосымшасын қалай аяқтаймыз?",
-                options: ["exit()", "stop()", "app.quit()", "quit.app()", "break()"],
-                correct: 2
-            },
-            {
-                q: "Виджетті жаңарту әдісі?",
-                options: ["refresh()", "update()", "recreate()", "redraw()", "reload()"],
-                correct: 1
-            }
+        correct: 4,
+      },
+      {
+        q: "<article>тегі қай жағдайда дұрыс қолданылады:",
+        options: [
+          "Навигациялық мәзір элементтерін топтастыру және орналастыру үшін қолданылады",
+          "Веб-беттің визуалды стилін өзгерту және дизайн беру мақсатында пайдаланылады",
+          "Өз алдына тәуелсіз, мағынасы бар контент блогын белгілеу үшін қолданылады",
+          "JavaScript кодтарын орындауға арналған контейнер ретінде қызмет атқарады",
+          "Пайдаланушы енгізетін формаларды безендіру және құрылымдау үшін қолданылады",
         ],
-
-        // --- 4-ші Нұсқа ---
-        "variant4": [
-             {
-                q: "Айнымалыны анықтамай тұрып қолданғанда қандай қате пайда болады?",
-                options: ["TypeError", "NameError", "IndexError", "ValueError", "SyntaxError"],
-                correct: 1
-            },
-            {
-                q: "not in операторы не істейді?",
-                options: ["Мәннің түрін тексереді", "Элементтің жоқтығын тексереді", "Мәнді меншіктейді", "Циклді қайта іске қосады", "Санның таңбасын (минус/плюс) өзгертеді"],
-                correct: 1
-            },
-            {
-                q: "Кілт–мәннің өзгермейтін коллекциясы қалай аталады?",
-                options: ["list", "tuple", "dict", "frozendict", "staticmap"],
-                correct: 3
-            },
-            {
-                q: "Жолдан барлық ішкіжол (подстрока) кездесулерін жоятын әдіс?",
-                options: ["remove()", "strip()", "replace()", "clear()", "delete()"],
-                correct: 2
-            },
-            {
-                q: "XOR логикалық операциясын орындайтын оператор?",
-                options: ["^^", "xor", "^", "<>", "!=="],
-                correct: 2
-            },
-            {
-                q: "type() функциясы не қайтарады?",
-                options: ["Объект ұзындығын", "Объект форматын", "Объектінің түрін (type)", "Объект мекенжайын", "Объект мәнін"],
-                correct: 2
-            },
-            {
-                q: "Тізімдегі элементтің индексін қайтаратын әдіс?",
-                options: ["index()", "find()", "search()", "detect()", "locate()"],
-                correct: 0
-            },
-            {
-                q: "Көптікке (set) элемент қосатын әдіс?",
-                options: ["append()", "add()", "push()", "insert()", "extend()"],
-                correct: 1
-            },
-            {
-                q: "if-тен кейін шарттар тізбектей тексерілетін блок қалай аталады?",
-                options: ["else if", "elif", "elseif", "nextif", "alt"],
-                correct: 1
-            },
-            {
-                q: "Жол тек цифрлардан тұратынын тексеретін әдіс?",
-                options: ["isnum()", "isdigit()", "numeric()", "isnumber()", "checkdigit()"],
-                correct: 1
-            },
-            {
-                q: "Санды квадратқа шығаратын lambda-функция?",
-                options: ["lambda x => x^2", "lambda(x): x**2", "lambda x: xx", "lam(x){x²}", "lambda: xx"],
-                correct: 2
-            },
-            {
-                q: "Кездейсоқ мәндермен жұмыс істейтін модуль?",
-                options: ["random", "rand", "rng", "chance", "generate"],
-                correct: 0
-            },
-            {
-                q: "Дұрыс синтаксисін көрсетіңіз:",
-                options: ["import math as m", "import as math m", "math import as m", "using math → m", "from math alias m"],
-                correct: 0
-            },
-            {
-                q: "JSON-ды жолдан оқу үшін қай әдіс қолданылады?",
-                options: ["json.decode()", "json.read()", "json.loads()", "json.open()", "json.try()"],
-                correct: 2
-            },
-            {
-                q: "Python объектісін JSON файлына жазу үшін:",
-                options: ["json.store()", "json.write()", "json.dump()", "json.push()", "json.save()"],
-                correct: 2
-            },
-            {
-                q: "pickle файлының форматы?",
-                options: ["Мәтіндік", "Екілік", "JSON", "XML", "Кестелік"],
-                correct: 1
-            },
-            {
-                q: "CSV-мен жұмыс істейтін модуль?",
-                options: ["csv", "table", "comma", "filecsv", "textcsv"],
-                correct: 0
-            },
-            {
-                q: "PostgreSQL дампының жиі қолданылатын кеңейтілімі?",
-                options: [".psql", ".pg", ".dump", ".sql", ".pgdata"],
-                correct: 3
-            },
-            {
-                q: "Шектеулі қатар санын таңдау үшін:",
-                options: ["SELECT FIRST n", "SELECT n ROWS", "SELECT * LIMIT n", "SELECT LIMIT n", "TAKE n"],
-                correct: 2
-            },
-            {
-                q: "UPDATE командасы не істейді?",
-                options: ["Деректерді жояды", "Деректерді жаңартады", "Кесте жасайды", "Кестенің атын өзгертеді", "Баған қосады"],
-                correct: 1
-            },
-            {
-                q: "Кестені толық жою үшін қандай команда қолданылады?",
-                options: ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "ERASE TABLE", "KILL TABLE"],
-                correct: 1
-            },
-            {
-                q: "0 мен 1 аралығында кездейсоқ санды қандай функция қайтарады?",
-                options: ["random.one()", "random.rand()", "random.random()", "random.float()", "random.value()"],
-                correct: 2
-            },
-            {
-                q: "LIKE операторы не істейді?",
-                options: ["Сандарды салыстырады", "Үлгі (шаблон) бойынша іздейді", "Жолдарды жояды", "Мән меншіктейді", "Кесте жасайды"],
-                correct: 1
-            },
-            {
-                q: "cursor-дан баған атауларын қалай аламыз?",
-                options: ["cursor.columns", "cursor.keys()", "cursor.fields()", "cursor.meta()", "cursor.colnames()"],
-                correct: 1
-            },
-            {
-                q: "SELECT * FROM table сұранысындағы * нені білдіреді?",
-                options: ["Тек жолдарды таңдау", "Тек бағандарды таңдау", "Барлығын таңдау", "Алғашқы 5 жолды таңдау", "Тек бірегей жолдарды таңдау"],
-                correct: 2
-            },
-            {
-                q: "PyQt5 қосымшасының терезелері үшін қай модуль жауап береді?",
-                options: ["PyQt5.Core", "PyQt5.UI", "PyQt5.QtWidgets", "PyQt5.Design", "PyQt5.App"],
-                correct: 2
-            },
-            {
-                q: "QMainWindow экземплярын жасау:",
-                options: ["win = QMainWindow()", "win = Window()", "win = MainWindow()", "win = QtMain()", "win = WindowMain()"],
-                correct: 0
-            },
-            {
-                q: "Терезе тақырыбын қалай орнатамыз?",
-                options: ["window.header('title')", "window.rename('title')", "window.caption('title')", "window.setWindowTitle('title')", "window.title('title')"],
-                correct: 3
-            },
-            {
-                q: "Түймені терезеге қалай қосамыз?",
-                options: ["window.add(button)", "button.attach(window)", "button.to(window)", "button.moveTo(window)", "window.push(button)"],
-                correct: 0
-            },
-            {
-                q: "Түйме орнын қалай орнатамыз?",
-                options: ["button.locate(x, y)", "button.setPosition(x, y)", "button.move(x, y)", "button.go(x, y)", "button.setXY()"],
-                correct: 2
-            },
-            {
-                q: "Терезені көрсетуге қолданылатын әдіс?",
-                options: ["draw()", "show()", "display()", "open()", "window()"],
-                correct: 1
-            },
-            {
-                q: "Сигналдар мен слоттар деген не?",
-                options: ["Интерфейс элементтерінің өзара әрекеттесу механизмі", "Файлдар құрылымы", "Мәлімет алмасу протоколдары", "Айнымалы түрлері", "Импорт модульдері"],
-                correct: 0
-            },
-            {
-                q: "Горизонталды layout қалай құрылады?",
-                options: ["QHBoxLayout()", "QHorizontal()", "LayoutH()", "HorizontalLayout()", "HLayout()"],
-                correct: 0
-            },
-            {
-                q: "Layout-қа виджетті қалай қосамыз?",
-                options: ["layout.insert(widget)", "layout.put(widget)", "layout.addWidget(widget)", "layout.widgetAdd(widget)", "layout.append(widget)"],
-                correct: 2
-            },
-            {
-                q: "Түйме басу сигналын қалай қосамыз?",
-                options: ["button.press(func)", "button.whenClick(func)", "button.clicked.connect(func)", "button.doClick(func)", "button.call(func)"],
-                correct: 2
-            },
-            {
-                q: "resize() әдісі не істейді?",
-                options: ["Түймені актив етеді", "Виджеттің өлшемін өзгертеді", "Түсін өзгертеді", "Виджетті өшіреді", "Тексті жаңартады"],
-                correct: 1
-            },
-            {
-                q: "QLineEdit өрісінен мәтінді алу:",
-                options: ["field.text()", "field.get()", "field.read()", "field.value()", "field.input()"],
-                correct: 0
-            },
-            {
-                q: "Мәтіндік өрісті тазарту:",
-                options: ["field.clr()", "field.clear()", "field.empty()", "field.delete()", "field.clean()"],
-                correct: 1
-            },
-            {
-                q: "Қосымшаны аяқтау:",
-                options: ["app.stop()", "exit.window()", "app.quit()", "quit()", "end.app()"],
-                correct: 2
-            },
-            {
-                q: "repaint() әдісі не істейді?",
-                options: ["Элементті толық қайта сызады", "Терезені жабады", "Элементті жояды", "Жаңа layout жасайды", "Виджет түрін өзгертеді"],
-                correct: 0
-            }
+        correct: 2,
+      },
+      {
+        q: "CSS каскадтылығыныңмәні:",
+        options: [
+          "Барлық стильдер кездейсоқ түрде ешқандай тәртіпсіз қолданылады",
+          "Тек сыртқы CSS файлдарындағы стильдер ғана ескерілетін жүйе болып табылады",
+          "Тек inline стильдер қолданылып, басқа стильдер ескерілмейтін механизм",
+          "Әртүрлі стильдердің басымдылығы есептеліп, қайсысы қолданылатыны анықталады",
+          "CSS кодтары тек бір рет орындалып, кейін өзгермейтін күйде сақталады",
         ],
-
-        // --- 5-ші Нұсқа ---
-        "variant5": [
-             {
-                q: "Мәселені шешуге арналған нұсқаулар тізбегі қалай аталады?",
-                options: ["Модель", "Алгоритм", "Құрылым", "Функция", "Бағдарлама"],
-                correct: 1
-            },
-            {
-                q: "Тек екі мәнді (ақиқат/жалған) сақтайтын дерек түрі?",
-                options: ["int", "float", "bool", "binary", "flag"],
-                correct: 2
-            },
-            {
-                q: "«Кіші немесе тең» операциясын қай оператор білдіреді?",
-                options: ["<<", "<=", "=<", "!<", "≤"],
-                correct: 1
-            },
-            {
-                q: "Жолдың бірінші әрпін бас әріпке айналдыратын әдіс?",
-                options: ["big()", "upper1()", "capitalize()", "head()", "cap()"],
-                correct: 2
-            },
-            {
-                q: "Жолдарды біріктіру үшін қай оператор қолданылады?",
-                options: ["&", "+", "*", "&&", "join"],
-                correct: 1
-            },
-            {
-                q: "Тізімге индекс бойынша элемент қосатын әдіс?",
-                options: ["add()", "set()", "insert()", "push()", "merge()"],
-                correct: 2
-            },
-            {
-                q: "Кем дегенде бір рет орындалатын цикл түрі?",
-                options: ["while", "for", "do-while", "repeat-until", "until-for"],
-                correct: 2
-            },
-            {
-                q: "Қалдық (остаток) алу үшін қай оператор қолданылады?",
-                options: ["//", "%", "mod", "div", "#"],
-                correct: 1
-            },
-            {
-                q: "Мән жоқ болса да қате шығармай, көптіктен (set) элемент өшіретін әдіс?",
-                options: ["remove()", "pop()", "clear()", "discard()", "erase()"],
-                correct: 3
-            },
-            {
-                q: "Жолдан ішкіжолды тауып, индексін қайтаратын әдіс?",
-                options: ["locate()", "find()", "detect()", "look()", "check()"],
-                correct: 1
-            },
-            {
-                q: "Параметрсіз lambda-функцияны таңдаңыз:",
-                options: ["lambda(): 5", "lambda 5", "lambda → 5", "lambda: 5", "lambda(None)"],
-                correct: 0
-            },
-            {
-                q: "Математикалық функциялар беретін модуль?",
-                options: ["mathtools", "numbers", "math", "calc", "numeric"],
-                correct: 2
-            },
-            {
-                q: "Бір модульден бірнеше функцияны импорттау:",
-                options: ["import a,b from module", "from module import a, b", "import (a,b) module", "using module(a,b)", "from module take a b"],
-                correct: 1
-            },
-            {
-                q: "Файлды екілік оқу режимінде ашу:",
-                options: ["open('f', 'db')", "open('f', 'b')", "open('f', 'rb')", "open('f', 'binary')", "open('f', 'bin')"],
-                correct: 2
-            },
-            {
-                q: "Файлдағы жолдар тізімін қай әдіс қайтарады?",
-                options: ["rows()", "lines()", "readlines()", "list()", "readrow()"],
-                correct: 2
-            },
-            {
-                q: "Объект жасалғанда init-ке дейін шақырылатын әдіс?",
-                options: ["start", "new", "prepare", "alloc", "class"],
-                correct: 1
-            },
-            {
-                q: "Объект әдістерінің тізімін алу:",
-                options: ["listmethods()", "dir()", "get()", "funcs()", "about()"],
-                correct: 1
-            },
-            {
-                q: "JSON Lines файлының жиі қолданылатын кеңейтілімі?",
-                options: [".jlines", ".jsonl", ".lines", ".jdata", ".jtxt"],
-                correct: 1
-            },
-            {
-                q: "Python объектісін pickle-ге сериализациялау:",
-                options: ["pickle.store()", "pickle.dump()", "pickle.save()", "pickle.write()", "pickle.export()"],
-                correct: 1
-            },
-            {
-                q: "CSV деректерін жүктеу:",
-                options: ["csv.read()", "csv.load()", "csv.reader()", "csv.parse()", "csv.open()"],
-                correct: 2
-            },
-            {
-                q: "Тек белгілі бір бағандарды таңдау:",
-                options: ["SELECT ONLY col1, col2", "SELECT col1 col2", "SELECT (col1, col2)", "SELECT col1, col2", "TAKE col1 col2"],
-                correct: 3
-            },
-            {
-                q: "Жолдарды шарт бойынша біріктіретін SQL операторы?",
-                options: ["MERGE", "JOIN", "GROUP", "LINK", "CONNECT"],
-                correct: 1
-            },
-            {
-                q: "Кесте бар болса ғана жоятын команда?",
-                options: ["DROP TABLE IF FOUND", "DROP TABLE IF EXIST", "DELETE TABLE IF EXISTS", "DROP TABLE IF EXISTS", "REMOVE TABLE IF EXISTS"],
-                correct: 3
-            },
-            {
-                q: "Диапазонға кірмейтін мәндері бар жолдарды таңдау:",
-                options: ["NOT BETWEEN", "OUT RANGE", "NOT RANGE", "NOT IN RANGE", "OUTSIDE"],
-                correct: 0
-            },
-            {
-                q: "Кесте құрылымын өзгертуге арналған команда?",
-                options: ["CHANGE TABLE", "MODIFY TABLE", "ALTER TABLE", "UPDATE STRUCT", "RESHAPE TABLE"],
-                correct: 2
-            },
-            {
-                q: "PostgreSQL-мен жұмыс істеуге арналған Python кітапханасы?",
-                options: ["sqlite3", "postgres", "psql", "psycopg2", "libpg"],
-                correct: 3
-            },
-            {
-                q: "Вертикалды layout құру:",
-                options: ["VBox()", "QVLayout()", "LayoutV()", "QVBoxLayout()", "VLayout()"],
-                correct: 3
-            },
-            {
-                q: "Layout қолданбай, виджетті терезеге қосу:",
-                options: ["window.attach(widget)", "window.insert(widget)", "widget.setParent(window)", "window.addWidget(widget)", "window.include(widget)"],
-                correct: 2
-            },
-            {
-                q: "Мәтіндік белгі (label) жасау:",
-                options: ["TextLabel()", "QLabel()", "QText()", "Label()", "QtLabel()"],
-                correct: 1
-            },
-            {
-                q: "Қаріп өлшемін өзгерту:",
-                options: ["font.resize()", "font.setPixelSize()", "font.textSize()", "font.updateSize()", "font.change()"],
-                correct: 1
-            },
-            {
-                q: "QLabel мәтінінің түсін өзгерту:",
-                options: ["label.setColor()", "label.setTextColor()", "label.setStyleSheet()", "label.color()", "label.setStyle()"],
-                correct: 2
-            },
-            {
-                q: "QLineEdit мәтіні өзгергенде қай оқиға туындайды?",
-                options: ["textChanged", "textInput", "onType", "write", "inputChanged"],
-                correct: 0
-            },
-            {
-                q: "Виджетті жоюға арналған әдіс?",
-                options: ["delete()", "remove()", "destroy()", "close()", "deleteLater()"],
-                correct: 4
-            },
-            {
-                q: "Терезе өлшемін алу:",
-                options: ["window.size()", "window.getSize()", "window.dimensions()", "window.measure()", "window.scale()"],
-                correct: 0
-            },
-            {
-                q: "Терезенің фиксированный өлшемін орнату:",
-                options: ["window.setFixedSize()", "window.sizeFix()", "window.lockSize()", "window.freezeSize()", "window.setLimit()"],
-                correct: 0
-            },
-            {
-                q: "raise_() әдісі не істейді?",
-                options: ["Терезені жартылай мөлдір етеді", "Терезені басқа терезелердің үстіне шығарады", "Терезені төмен жібереді", "Терезені максималды күйге келтіреді", "Интерфейсті қайта жүктейді"],
-                correct: 1
-            },
-            {
-                q: "Тінтуір координаталарын қалай аламыз?",
-                options: ["getCursor()", "QCursor.pos()", "Cursor.get()", "mouse.pos()", "cursor.coord()"],
-                correct: 1
-            },
-            {
-                q: "Терезе иконкасын орнату:",
-                options: ["window.setIcon()", "window.icon()", "window.setWindowIcon()", "window.loadIcon()", "window.applyIcon()"],
-                correct: 2
-            },
-            {
-                q: "Қосымшаны аяқтау:",
-                options: ["quit.window()", "stop()", "app.quit()", "app.close()", "end()"],
-                correct: 2
-            },
-            {
-                q: "repaint() әдісі не істейді?",
-                options: ["Тек мәтінді жаңартады", "Толық қайта сызу жасайды", "Қосымшаны қайта іске қосады", "Дерекқорды жаңартады", "Виджет түрін өзгертеді"],
-                correct: 1
-            }
+        correct: 3,
+      },
+      {
+        q: "Inline стильдің ерекшелігі:",
+        options: [
+          "Басқа стильдерге қарағанда ең төмен басымдыққа ие болып есептеледі",
+          "Тек бөлек CSS файл ішінде жазылып, HTML-ге байланыстырылып қолданылады",
+          "Бірден барлық элементтерге әсер ететін әмбебап стиль ретінде қолданылады",
+          "Тек media query ішінде ғана жазылып, экран өлшеміне тәуелді болады",
+          "Барлық стильдер арасында ең жоғары басымдыққа ие болып табылады",
         ],
-
-        // --- 6-шы Нұсқа ---
-        "variant6": [
-             {
-                q: "Бағдарламаны жазу ережелерін анықтайтын тіл элементі?",
-                options: ["Алгоритм", "Синтаксис", "Типизация", "Семантика", "Интерпретация"],
-                correct: 1
-            },
-            {
-                q: "Символдар жиынын сақтайтын дерек түрі?",
-                options: ["char", "int", "str", "list", "byte"],
-                correct: 2
-            },
-            {
-                q: "«Қатаң үлкен» дегенді білдіретін оператор?",
-                options: ["=>", ">>", ">", ">=", "<>"],
-                correct: 2
-            },
-            {
-                q: "Жолды кіші әріпке ауыстыратын әдіс?",
-                options: ["low()", "small()", "down()", "lower()", "tiny()"],
-                correct: 3
-            },
-            {
-                q: "Тізімнен индекс бойынша элемент өшіру әдісі?",
-                options: ["remove()", "erase()", "delete()", "pop()", "drop()"],
-                correct: 3
-            },
-            {
-                q: "Жолды n рет қайталайтын оператор?",
-                options: ["+", "*", "repeat", "**", "//"],
-                correct: 1
-            },
-            {
-                q: "Реті бар, өзгермейтін коллекция қай типке жатады?",
-                options: ["list", "tuple", "set", "dict", "array"],
-                correct: 1
-            },
-            {
-                q: "Қатыстылықты (принадлежность) тексеретін оператор?",
-                options: ["have", "include", "contains", "in", "exist"],
-                correct: 3
-            },
-            {
-                q: "Диапазонмен (range) бірге қолданылатын цикл?",
-                options: ["repeat", "for", "iterate", "while", "until"],
-                correct: 1
-            },
-            {
-                q: "Көптіктен барлық элементтерді өшіретін әдіс?",
-                options: ["drop()", "popAll()", "clear()", "reset()", "purge()"],
-                correct: 2
-            },
-            {
-                q: "lambda-функция қандай мақсатта қолданылады?",
-                options: ["Аты бар функциялар жасауға", "Глобал айнымалыларды жариялауға", "Қысқа анонимді функциялар жасауға", "Класстар жасауға", "Модульдер жасауға"],
-                correct: 2
-            },
-            {
-                q: "Күн мен уақытпен жұмыс істейтін модуль?",
-                options: ["timecalc", "datetime", "timer", "clock", "dtime"],
-                correct: 1
-            },
-            {
-                q: "Модульді бүркеншік атпен (alias) импорттау:",
-                options: ["import math -> m", "from math alias m", "import math as m", "math import m", "math->m"],
-                correct: 2
-            },
-            {
-                q: "Файлды әрі оқуға, әрі жазуға ашу режимі?",
-                options: ["'rw'", "'cr'", "'r+'", "'w?'", "'edit'"],
-                correct: 2
-            },
-            {
-                q: "Файлдағы курсорды жылжытатын әдіс?",
-                options: ["move()", "set()", "seek()", "goto()", "pointer()"],
-                correct: 2
-            },
-            {
-                q: "Объект атрибуттарының сөздігін қай әдіс қайтарады?",
-                options: ["attrs()", "getinfo()", "properties()", "dict", "vars()"],
-                correct: 3
-            },
-            {
-                q: "json.dumps() не істейді?",
-                options: ["JSON-ды файлдан оқиды", "Объектіні JSON-жолға түрлендіреді", "Файлды сөздікке айналдырады", "JSON файлын жасайды", "JSON объектілерін біріктіреді"],
-                correct: 1
-            },
-            {
-                q: "pickle екілік файлдарымен жұмыс істейтін модуль?",
-                options: ["json", "struct", "binary", "pickle", "serialize"],
-                correct: 3
-            },
-            {
-                q: "CSV-файлды оқу үшін қалай ашамыз?",
-                options: ["csv.open()", "open(file)", "open(file, 'csv')", "open(file, 'r')", "open(file, 'c')"],
-                correct: 3
-            },
-            {
-                q: "GROUP BY операторы не істейді?",
-                options: ["Кестелерді біріктіреді", "Жолдарды белгі бойынша топтастырады", "Жолдарды жояды", "Жолдарды сұрыптайды", "Бағандар қосады"],
-                correct: 1
-            },
-            {
-                q: "Кестедегі жолдар санын қай функция қайтарады?",
-                options: ["COUNT()", "SUM()", "SIZE()", "AMOUNT()", "LEN(*)"],
-                correct: 0
-            },
-            {
-                q: "Тек бірегей жолдарды таңдау үшін:",
-                options: ["UNIQUE *", "DISTINCT *", "FILTER UNIQUE", "SINGLE ROWS", "NEW LINES"],
-                correct: 1
-            },
-            {
-                q: "Шартқа сай жолдарды таңдайтын оператор?",
-                options: ["PICK", "WHERE", "MATCH", "FILTER", "TAKE"],
-                correct: 1
-            },
-            {
-                q: "Сұрыптауды кему ретімен орындайтын SQL операторы?",
-                options: ["SORT DESC", "ORDER BY ↓", "ORDER BY DESC", "DESCENDING BY", "SORT DOWN"],
-                correct: 2
-            },
-            {
-                q: "Файлға жазылатын кірістірілген база қайсысы?",
-                options: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Oracle"],
-                correct: 3
-            },
-            {
-                q: "PostgreSQL-ге арналған кітапхана?",
-                options: ["pgpython", "psycopg2", "sqlpg", "postsql", "postpy"],
-                correct: 1
-            },
-            {
-                q: "PyQt5 терезесін жасау:",
-                options: ["Window", "QWidget()", "QAppWindow()", "Main()", "UIWidget()"],
-                correct: 1
-            },
-            {
-                q: "QVBoxLayout-қа элемент қосу:",
-                options: ["layout.insert(widget)", "layout.push(widget)", "layout.addWidget(widget)", "layout.put(widget)", "layout.widgetAdd(widget)"],
-                correct: 2
-            },
-            {
-                q: "Виджет координаталарын орнату:",
-                options: ["widget.coords(x,y)", "widget.move(x,y)", "widget.setXY(x,y)", "widget.locate(x,y)", "widget.place(x,y)"],
-                correct: 1
-            },
-            {
-                q: "Түйме жасау:",
-                options: ["Button()", "QBtn()", "QPushButton()", "MakeButton()", "QtButton()"],
-                correct: 2
-            },
-            {
-                q: "QLabel-ден мәтінді алу:",
-                options: ["label.read()", "label.text()", "label.get()", "label.value()", "label.print()"],
-                correct: 1
-            },
-            {
-                q: "QLabel мәтінін өзгерту:",
-                options: ["setText()", "changeText()", "updateText()", "renameText()", "writeText()"],
-                correct: 0
-            },
-            {
-                q: "hide() әдісі не істейді?",
-                options: ["Виджетті жояды", "Виджетті жасырады", "Виджетті ерекшелейді", "Виджетті блоктайды", "Виджетті жылжытады"],
-                correct: 1
-            },
-            {
-                q: "Түймеге иконка орнату:",
-                options: ["button.icon()", "button.setIcon()", "button.setButtonIcon()", "button.applyIcon()", "button.useIcon()"],
-                correct: 1
-            },
-            {
-                q: "Негізгі циклға қай объект жауап береді?",
-                options: ["QLoop", "QApplication", "QMainWindow", "QThread", "QCycle"],
-                correct: 1
-            },
-            {
-                q: "Интерфейсті қайта сызу әдісі?",
-                options: ["reload()", "redraw()", "repaint()", "updateUi()", "reset()"],
-                correct: 2
-            },
-            {
-                q: "Қос рет шерту оқиғасын қалай өңдейміз?",
-                options: ["widget.doubleClick.connect()", "widget.dblclicked.connect()", "widget.doubleClicked.connect()", "widget.mouseDoubleClickEvent", "widget.onDoubleClick()"],
-                correct: 3
-            },
-            {
-                q: "Терезенің орнын алу:",
-                options: ["window.getPos()", "window.position()", "window.pos()", "window.coords()", "window.points()"],
-                correct: 2
-            },
-            {
-                q: "Layout-ты жою:",
-                options: ["layout.delete()", "delete layout", "layout.destroy()", "layout.deleteLater()", "layout.remove()"],
-                correct: 3
-            },
-            {
-                q: "Қосымшаны аяқтау:",
-                options: ["exit()", "app.quit()", "window.closeApp()", "shutdown()", "stop()"],
-                correct: 1
-            }
+        correct: 4,
+      },
+      {
+        q: "<nav> тегінің негізгі қызметі:",
+        options: [
+          "Веб-беттегі негізгі контент ақпаратын сақтау үшін арналған элемент",
+          "Суреттерді көрсету және графикалық контентті орналастыру үшін қолданылады",
+          "JavaScript кодтарын орындауға арналған арнайы контейнер болып табылады",
+          "Формаларды өңдеу және деректерді серверге жіберу үшін пайдаланылады",
+          "Навигациялық сілтемелерді топтастырып, қолданушыға бағыт береді",
         ],
-
-        // --- 7-ші Нұсқа ---
-        "variant7": [
-             {
-                q: "Бағдарламадағы ең кіші ақпараттық бірлік қалай аталады?",
-                options: ["символ", "оператор", "өрнек", "модуль", "токен"],
-                correct: 4
-            },
-            {
-                q: "Бүтін сандарды сақтайтын дерек түрі?",
-                options: ["float", "str", "int", "num", "digit"],
-                correct: 2
-            },
-            {
-                q: "Қатаң теңдік тексеретін оператор?",
-                options: ["=", ":=", "==", "eq", "==="],
-                correct: 2
-            },
-            {
-                q: "Жолдың оң жақ бос орындарын ғана өшіретін әдіс?",
-                options: ["rtrim()", "strip()", "right()", "rstrip()", "cutright()"],
-                correct: 3
-            },
-            {
-                q: "Тізімді орын-орнында (in-place) сұрыптайтын әдіс?",
-                options: ["sort()", "order()", "sorted()", "arrange()", "organize()"],
-                correct: 0
-            },
-            {
-                q: "Бүтін бөлікпен бөлуді жасайтын оператор?",
-                options: ["/", "div", "//", "%", "///"],
-                correct: 2
-            },
-            {
-                q: "Реті жоқ, бірегей элементтер типі?",
-                options: ["dict", "list", "tuple", "set", "unique"],
-                correct: 3
-            },
-            {
-                q: "Шартты терістейтін оператор?",
-                options: ["minus", "no", "!", "not", "invert"],
-                correct: 3
-            },
-            {
-                q: "break кездескенше шексіз орындалатын цикл?",
-                options: ["repeat", "loop", "for", "while", "until"],
-                correct: 3
-            },
-            {
-                q: "Тізімнің соңғы элементін өшіретін әдіс?",
-                options: ["remove()", "cut()", "pop()", "drop()", "erase()"],
-                correct: 2
-            },
-            {
-                q: "Екі параметрі бар lambda өрнегі?",
-                options: ["lambda(x,y){ }", "lambda x,y → x+y", "lambda x,y: x+y", "lambda(x+y)", "lambda: x,y"],
-                correct: 2
-            },
-            {
-                q: "Жүйелік уақытпен жұмыс істейтін модуль?",
-                options: ["clock", "datetime", "timer", "time", "sysclock"],
-                correct: 3
-            },
-            {
-                q: "Модульдің барлық функцияларын қалай импорттаймыз?",
-                options: ["import * from module", "from module import *", "module import all", "include module.all", "take module.*"],
-                correct: 1
-            },
-            {
-                q: "Жаңа файлды құру режимі?",
-                options: ["'r'", "'x'", "'w'", "'rw'", "'rw+'"],
-                correct: 2
-            },
-            {
-                q: "Файлдың барлығын бірден оқитын функция?",
-                options: ["readall()", "file.readall()", "read()", "getline()", "readfile()"],
-                correct: 2
-            },
-            {
-                q: "Объект жойылғанда шақырылатын әдіс?",
-                options: ["delete", "free", "destroy", "del", "gc"],
-                correct: 3
-            },
-            {
-                q: "json.load() не істейді?",
-                options: ["JSON жазады", "JSON-ды файлдан оқиды", "Жолды JSON-ға түрлендіреді", "Объектіні сериализациялайды", "JSON-ды тазалайды"],
-                correct: 1
-            },
-            {
-                q: "pickle.load() не қайтарады?",
-                options: ["JSON-объект", "Мәтіндік жол", "Сериализацияланған Python-объект", "Тек сөздік", "Тек тізім"],
-                correct: 2
-            },
-            {
-                q: "Python объектісін CSV-жолға қалай айналдырамыз?",
-                options: ["csv.convert()", "csv.dumps()", "csv.write()", "csv.export()", "қолмен join арқылы"],
-                correct: 4
-            },
-            {
-                q: "Бірнеше шартты қанағаттандыратын деректерді таңдау:",
-                options: ["WHERE A OR B", "WHERE A AND B", "WHERE MATCH A B", "FILTER A+B", "FILTER ALL A B"],
-                correct: 1
-            },
-            {
-                q: "Бағанның қосындысын есептеу:",
-                options: ["SUM(column)", "COUNT(column)", "TOTAL(column)", "PLUS(column)", "ADD(column)"],
-                correct: 0
-            },
-            {
-                q: "Диапазондағы мәндерге сәйкес жолдарды таңдау:",
-                options: ["INSIDE", "BETWEEN", "RANGE", "LIMIT", "BOUND"],
-                correct: 1
-            },
-            {
-                q: "HAVING не істейді? ",
-                options: ["Топтарды сүзгіден өткізеді", "Топтарды жояды", "Кесте жасайды", "Баған қосады", "Жолдарды сұрыптайды"],
-                correct: 0
-            },
-            {
-                q: "Шарт бойынша жолдарды жою:",
-                options: ["REMOVE FROM", "DELETE WHERE", "DELETE FROM table WHERE …", "CUT FROM table", "DROP WHERE"],
-                correct: 2
-            },
-            {
-                q: "Параметрленген SQL сұранысын орындау:",
-                options: ["cursor.execute(query, params)", "cursor.run(query, params)", "cursor.sql(query, params)", "execute(query%params)", "send(query,params)"],
-                correct: 0
-            },
-            {
-                q: "SQLite-ке қосылу:",
-                options: ["sqlite.connect()", "sql.connect()", "sqlite3.connect()", "pydb.connect()", "sqllite.connect()"],
-                correct: 2
-            },
-            {
-                q: "PyQt5-те басты терезені жасау:",
-                options: ["BaseWindow()", "QWindow()", "QMainWindow()", "QWidget()", "UIMain()"],
-                correct: 2
-            },
-            {
-                q: "Горизонталды контейнер:",
-                options: ["QHorizontal()", "QHBoxLayout()", "HorizontalBox()", "LayoutH()", "BoxH()"],
-                correct: 1
-            },
-            {
-                q: "Түйме әрекетін функцияға байлау:",
-                options: ["button.action = func", "button.call(func)", "button.clicked.connect(func)", "button.press(func)", "button.do(func)"],
-                correct: 2
-            },
-            {
-                q: "Виджеттің шрифтін орнату:",
-                options: ["setFont()", "widget.font()", "font.set()", "widget.setTextFont()", "style.setFont()"],
-                correct: 0
-            },
-            {
-                q: "Терезе енін алу:",
-                options: ["window.width()", "window.getWidth()", "window.xsize()", "window.x()", "window.size()[0]"],
-                correct: 0
-            },
-            {
-                q: "Терезенің минималды өлшемін орнату:",
-                options: ["window.minSize()", "window.setMinSize()", "window.setMinimumSize()", "window.limitSize()", "window.setSmallestSize()"],
-                correct: 2
-            },
-            {
-                q: "Тінтуір қозғалысы кезінде қай оқиға шақырылады?",
-                options: ["mouseMove", "onMouse", "mouseMoved", "mouseMoveEvent", "moveMouseEvent"],
-                correct: 3
-            },
-            {
-                q: "Layout-ты тазарту:",
-                options: ["layout.clear()", "layout.removeAll()", "layout.delete()", "layout.takeAt() циклында", "layout.flush()"],
-                correct: 3
-            },
-            {
-                q: "Таймерді тоқтату:",
-                options: ["timer.stop()", "timer.pause()", "timer.end()", "timer.quit()", "timer.kill()"],
-                correct: 0
-            },
-            {
-                q: "Виджет фонының түсін өзгерту:",
-                options: ["widget.color()", "widget.setBackground()", "widget.setStyleSheet()", "widget.styleColor()", "widget.bg()"],
-                correct: 2
-            },
-            {
-                q: "Консольге хабар шығару:",
-                options: ["echo()", "console.write()", "print()", "output()", "sysout()"],
-                correct: 2
-            },
-            {
-                q: "QComboBox-тан мәтінді алу:",
-                options: ["combo.value()", "combo.item()", "combo.currentText()", "combo.get()", "combo.read()"],
-                correct: 2
-            },
-            {
-                q: "Терезені экранның ортасына жылжыту:",
-                options: ["window.center()", "window.moveCenter()", "window.move() ортаны есептеп", "app.center(window)", "ui.center()"],
-                correct: 2
-            },
-            {
-                q: "Интерфейсті қайта жүктеу:",
-                options: ["reload()", "refreshUi()", "update()", "recreate()", "restartUi()"],
-                correct: 2
-            }
+        correct: 4,
+      },
+      {
+        q: "CSS specificity (артықшылық) дұрыс реті:",
+        options: [
+          "class селекторлары id селекторларынан жоғары басымдыққа ие болады",
+          "element селекторлары id селекторларынан жоғары басымдыққа ие болады",
+          "inline стильдер class селекторларынан төмен басымдыққа ие болады",
+          "inline > id > class > element ретімен басымдық анықталады",
+          "id селекторлары class селекторларынан төмен орналасады",
         ],
-
-        // --- 8-ші Нұсқа ---
-        "variant8": [
-             {
-                q: "Бағдарламаны жазудың рұқсат етілген формаларын анықтайтын ережелер жиынтығы?",
-                options: ["Логика", "Синтаксис", "Схема", "Алгоритм", "Құрылым"],
-                correct: 1
-            },
-            {
-                q: "True/False мәнін сақтайтын дерек түрі?",
-                options: ["bit", "boolean", "bool", "flag", "logic"],
-                correct: 2
-            },
-            {
-                q: "«Қатаң кіші» салыстыруы үшін қай оператор қолданылады?",
-                options: ["<=", "<", "<<", "<==", "≺"],
-                correct: 1
-            },
-            {
-                q: "Жолдағы ішкіжолдың қанша рет кездесетінін қайтаратын әдіс?",
-                options: ["count()", "num()", "occurrences()", "findall()", "total()"],
-                correct: 0
-            },
-            {
-                q: "Тізімді кері ретпен айналдыратын әдіс?",
-                options: ["reverse()", "flip()", "invert()", "swap()", "roll()"],
-                correct: 0
-            },
-            {
-                q: "Дәрежеге шығаратын оператор?",
-                options: ["^", "pow", "exp", "**", "^^"],
-                correct: 3
-            },
-            {
-                q: "Кілт–мән жұбын сақтайтын дерек түрі?",
-                options: ["set", "map", "dict", "pair", "tuple"],
-                correct: 2
-            },
-            {
-                q: "Логикалық өрнекті терістеу үшін қандай оператор қолданылады?",
-                options: ["!=", "not", "!", "inverse", "anti"],
-                correct: 1
-            },
-            {
-                q: "Шарт ақиқат болғанша орындалатын цикл?",
-                options: ["loop", "for", "repeat", "while", "do"],
-                correct: 3
-            },
-            {
-                q: "Тізімге бірден бірнеше элемент қосатын әдіс?",
-                options: ["addall()", "pushall()", "extend()", "merge()", "appendall()"],
-                correct: 2
-            },
-            {
-                q: "lambda-функция не істейді?",
-                options: ["Үлкен модульдер жасайды", "Анонимді шағын функциялар жасайды", "Дерекқор жасайды", "Файл жасайды", "Сыртқы процестер жасайды"],
-                correct: 1
-            },
-            {
-                q: "Математикалық тұрақтылармен жұмыс істейтін модуль?",
-                options: ["matplotlib", "random", "math", "algebra", "numbers"],
-                correct: 2
-            },
-            {
-                q: "math модулін ішінара импорттау:",
-                options: ["import math(parts)", "take math.partial", "from math import sin", "math import sin", "load math.sin"],
-                correct: 2
-            },
-            {
-                q: "Файлды аяғына қосып жазу үшін қандай режим керек?",
-                options: ["'c'", "'a'", "'t'", "'e'", "'add'"],
-                correct: 1
-            },
-            {
-                q: "Файл соңына жеткен-жетпегенін тексеретін әдіс?",
-                options: ["file.end()", "eof()", "file.eof()", "atEnd()", "read.end()"],
-                correct: 2
-            },
-            {
-                q: "Объектінің клас атауын қалай аламыз?",
-                options: ["type(obj).title", "obj.class.name", "class(obj).name", "typename(obj)", "obj.name"],
-                correct: 1
-            },
-            {
-                q: "json.loads() не істейді?",
-                options: ["JSON файлын жүктейді", "JSON-жолды объектіге түрлендіреді", "JSON файлын жасайды", "JSON-ды жояды", "JSON сақтайды"],
-                correct: 1
-            },
-            {
-                q: "pickle.dumps() не істейді?",
-                options: ["Объектіні екілік жолға түрлендіреді", "Объектіні файлдан жүктейді", "Екілік файлды жояды", "Мәтіндік формат жасайды", "Объектіні шығарады"],
-                correct: 0
-            },
-            {
-                q: "CSV үшін writer объектісін алу:",
-                options: ["csv.getwriter()", "csv.openwriter()", "csv.writer()", "csv.writerline()", "csv.out()"],
-                correct: 2
-            },
-            {
-                q: "Мәні берілгенге тең ЕМЕС жолдарды таңдау:",
-                options: ["WHERE !=", "WHERE NOT ==", "WHERE NOT VALUE", "WHERE NOTEQ", "WHERE NO MATCH"],
-                correct: 0
-            },
-            {
-                q: "Жолдарды топтастыратын команда?",
-                options: ["GROUP BY", "SORT BY", "ORDER BY", "MERGE BY", "FILTER BY"],
-                correct: 0
-            },
-            {
-                q: "Бағанның ең үлкен мәнін алу:",
-                options: ["PEAK()", "HIGH()", "MAX()", "TOP()", "MOST()"],
-                correct: 2
-            },
-            {
-                q: "INNER JOIN не істейді?",
-                options: ["Жолдарды жояды", "Тек сәйкес келетін жолдарды көрсетеді", "Барлық жолдарды көрсетеді", "Кесте жасайды", "Кестелерді бөледі"],
-                correct: 1
-            },
-            {
-                q: "Алғашқы N жолды таңдау:",
-                options: ["FIRST N", "ROWS(N)", "LIMIT N", "CUT N", "SELECT N"],
-                correct: 2
-            },
-            {
-                q: "IN операторы не істейді?",
-                options: ["Жолдарды салыстырады", "Мәннің тізімге кіретінін тексереді", "Жолдарды жояды", "Жолдарды жаңартады", "Жолдар қосады"],
-                correct: 1
-            },
-            {
-                q: "PostgreSQL-ге қосылу:",
-                options: ["Postgre.connect()", "DB.connect()", "psycopg2.connect()", "pgsql.open()", "post.connect()"],
-                correct: 2
-            },
-            {
-                q: "Түйме-виджетті жасау:",
-                options: ["QButton", "MakeButton()", "QPushButton()", "Qt.Btn()", "NewButton()"],
-                correct: 2
-            },
-            {
-                q: "Элементтерді вертикалды орналастыру:",
-                options: ["QVBoxLayout()", "QVertical()", "VerticalLayout()", "LayoutV()", "BoxV()"],
-                correct: 0
-            },
-            {
-                q: "Түйме өлшемін өзгерту:",
-                options: ["button.size()", "button.setSize()", "button.resize()", "button.changeSize()", "button.setDims()"],
-                correct: 2
-            },
-            {
-                q: "Пайдаланушыдан мәтіндік енгізу алу үшін қандай виджет қолданылады?",
-                options: ["QUserInput()", "QLineEdit()", "QTextForm()", "QInput()", "QFormEdit()"],
-                correct: 1
-            },
-            {
-                q: "Терезені жасыру:",
-                options: ["hideWindow()", "window.hide()", "window.invisible()", "conceal()", "window.remove()"],
-                correct: 1
-            },
-            {
-                q: "QLabel-де мәтін түсін орнату:",
-                options: ["label.setTextColor()", "label.color()", "label.setStyleSheet()", "label.setFontColor()", "label.paintColor()"],
-                correct: 2
-            },
-            {
-                q: "Виджетті қайта сызатын әдіс?",
-                options: ["reprint()", "repaint()", "redraw()", "drawagain()", "reset()"],
-                correct: 1
-            },
-            {
-                q: "Терезенің ағымдағы координаталарын алу:",
-                options: ["window.getPosition()", "window.coords()", "window.position()", "window.pos()", "window.loc()"],
-                correct: 3
-            },
-            {
-                q: "Түйме стилін орнату:",
-                options: ["button.setButtonStyle()", "button.style()", "button.setStyleSheet()", "button.setCSS()", "button.css()"],
-                correct: 2
-            },
-            {
-                q: "PyQt5-те қос рет шерту өңделетін әдіс?",
-                options: ["mouseDoubleClickEvent", "doubleClickAction()", "mouseClickDbl()", "eventDouble()", "double()"],
-                correct: 0
-            },
-            {
-                q: "QComboBox-тың ағымдағы индексін алу:",
-                options: ["combo.getIndex()", "combo.index()", "combo.currentIndex()", "combo.row()", "combo.get()"],
-                correct: 2
-            },
-            {
-                q: "Виджетті жою:",
-                options: ["widget.remove()", "widget.deleteLater()", "widget.destroy()", "widget.clean()", "widget.kill()"],
-                correct: 1
-            },
-            {
-                q: "Терезе иконкасын орнату:",
-                options: ["window.icon()", "window.loadIcon()", "window.setWindowIcon()", "window.useIcon()", "window.addIcon()"],
-                correct: 2
-            },
-            {
-                q: "Бағдарламаны аяқтау:",
-                options: ["finish()", "complete()", "app.quit()", "end()", "exit.window()"],
-                correct: 2
-            }
+        correct: 3,
+      },
+      {
+        q: "<main> тегі не үшін қолданылады:",
+        options: [
+          "Барлық CSS стильдерді сақтау және басқару үшін қолданылады",
+          "Қосымша мәзірлер мен навигациялық элементтерді құру үшін арналған",
+          "JavaScript кодтарын орындауға арналған негізгі контейнер болып табылады",
+          "Беттің негізгі мазмұнын көрсету және негізгі ақпаратты қамтиды",
+          "Қосымша файлдарды жүктеу және өңдеу үшін пайдаланылады",
         ],
-
-        // --- 9-шы Нұсқа ---
-        "variant9": [
-             {
-                q: "Логикалық тұрғыдан біріктірілген нұсқаулар тізбегі қалай аталады?",
-                options: ["Модуль", "Оператор", "Функция", "Блок", "Объект"],
-                correct: 2
-            },
-            {
-                q: "3.14 мәні қай типке жатады?",
-                options: ["int", "str", "float", "bool", "number"],
-                correct: 2
-            },
-            {
-                q: "«Қатаң тең емес» оператор?",
-                options: ["~=", "===", "!", "!=", "not="],
-                correct: 3
-            },
-            {
-                q: "Жол тек әріптерден тұратынын тексеретін әдіс?",
-                options: ["onlyletters()", "isalpha()", "letters()", "alpha()", "islet()"],
-                correct: 1
-            },
-            {
-                q: "Тізімнен индекс бойынша элементті өшіріп, оны қайтаратын әдіс?",
-                options: ["delete()", "remove()", "pop()", "cut()", "take()"],
-                correct: 2
-            },
-            {
-                q: "Тізімді өзімен өзі конкатенациялау үшін қандай оператор қолданылады?",
-                options: ["**", "++", "+", "merge", "join"],
-                correct: 2
-            },
-            {
-                q: "Қай дерек түрі өзгермейтін?",
-                options: ["list", "dict", "tuple", "set", "array"],
-                correct: 2
-            },
-            {
-                q: "Қатыстылықты тексеретін оператор?",
-                options: ["check", "have", "contain", "include", "in"],
-                correct: 4
-            },
-            {
-                q: "Қай цикл бастапқы шарт жалған болса, бір де бір рет орындалмайды?",
-                options: ["for", "while", "until", "repeat", "loop"],
-                correct: 0
-            },
-            {
-                q: "Тізімнен мәнді іздеп, индексін қайтаратын әдіс?",
-                options: ["check()", "find()", "index()", "locate()", "scan()"],
-                correct: 2
-            },
-            {
-                q: "lambda x: x-1 функциясы не істейді?",
-                options: ["x-ті 1-ге арттырады", "x-ті 1-ге көбейтеді", "x-тен 1-ді азайтады", "x-ті бөледі", "x-ті дәрежеге шығарады"],
-                correct: 2
-            },
-            {
-                q: "Пауза мен кідірістермен жұмыс істейтін модуль?",
-                options: ["datetime", "wait", "sleep", "time", "timer"],
-                correct: 3
-            },
-            {
-                q: "Бүкіл модульді импорттау үшін:",
-                options: ["get module", "from module import all", "import module", "include module", "take module"],
-                correct: 2
-            },
-            {
-                q: "Файлды тек екілік оқу режимінде ашу:",
-                options: ["'rb'", "'br'", "'r@b'", "'b'", "'r-b'"],
-                correct: 0
-            },
-            {
-                q: "Файлдан бір жолды оқу:",
-                options: ["read()", "read1()", "readline()", "getline()", "row()"],
-                correct: 2
-            },
-            {
-                q: "Объектіні жолға айналдырғанда қай әдіс шақырылады?",
-                options: ["str", "show", "print", "view", "info"],
-                correct: 0
-            },
-            {
-                q: "Python сөздігін JSON файлына қалай түрлендіреміз?",
-                options: ["json.write()", "json.export()", "json.dump()", "json.save()", "json.push()"],
-                correct: 2
-            },
-            {
-                q: "pickle.load() не істейді?",
-                options: ["Екілік объектіні файлдан жүктейді", "Екілік файл жасайды", "JSON-ды Python-ға түрлендіреді", "Файлды тазалайды", "Объектіні сериализациялайды"],
-                correct: 0
-            },
-            {
-                q: "CSV writer объектісін жасау:",
-                options: ["csv.writer()", "csv.write()", "csv.writeline()", "csv.makewriter()", "csv.format()"],
-                correct: 0
-            },
-            {
-                q: "AND және OR шарттарымен жолдарды таңдау:",
-                options: ["WHERE A AND B OR C", "FILTER A OR B AND C", "MATCH A AND B OR C", "SELECT CONDITION A B C", "ONLY WHERE A B C"],
-                correct: 0
-            },
-            {
-                q: "Орташа мәнді есептейтін функция?",
-                options: ["MID()", "AVERAGE()", "AVG()", "MEAN()", "BAL()"],
-                correct: 2
-            },
-            {
-                q: "Мәні «A» әрпінен басталатын жолдарды таңдау:",
-                options: ["WHERE name = 'A*'", "WHERE name START 'A'", "WHERE name LIKE 'A%'", "WHERE name MATCH 'A'", "WHERE name BEGIN 'A'"],
-                correct: 2
-            },
-            {
-                q: "FULL JOIN не істейді?",
-                options: ["Тек сәйкес келетін жолдарды біріктіреді", "Тек бірегей жолдарды қайтарады", "Екі кестенің барлық жолдарын біріктіреді", "Тек жоқ жолдарды қайтарады", "Кесте жасайды"],
-                correct: 2
-            },
-            {
-                q: "NULL мәні бар жолдарды таңдау:",
-                options: ["WHERE x = NULL", "WHERE x IS NULL", "WHERE x == NULL", "WHERE x EQUAL NULL", "WHERE NULL TRUE"],
-                correct: 1
-            },
-            {
-                q: "LIMIT операторы не істейді?",
-                options: ["Баған форматтарын орнатады", "Жолдар санын шектейді", "Жолды жояды", "Кесте жасайды", "Бағандар қосады"],
-                correct: 1
-            },
-            {
-                q: "Python-да PostgreSQL-ге қосылу:",
-                options: ["import post", "import psql", "psycopg2.connect()", "sqlpg.connect()", "pg.connect()"],
-                correct: 2
-            },
-            {
-                q: "Қарапайым виджетті жасау:",
-                options: ["Widget()", "PyWidget()", "QForm()", "QWidget()", "QtWidget()"],
-                correct: 3
-            },
-            {
-                q: "Торлы (grid) layout жасау:",
-                options: ["QGridLayout()", "QMatrix()", "QLayoutGrid()", "LayoutGrid()", "QGrid()"],
-                correct: 0
-            },
-            {
-                q: "Түйменің позициясын формада орнату:",
-                options: ["button.loc()", "button.pos(x,y)", "button.move(x,y)", "button.translate(x,y)", "button.shift(x,y)"],
-                correct: 2
-            },
-            {
-                q: "Терезені толық экранға шығару:",
-                options: ["window.expand()", "window.full()", "window.showFullScreen()", "window.screen()", "window.max()"],
-                correct: 2
-            },
-            {
-                q: "Терезе қаріпін орнату:",
-                options: ["window.setFont()", "window.font()", "window.fontSize()", "window.editFont()", "window.setFontStyle()"],
-                correct: 0
-            },
-            {
-                q: "Түйме мәтінін өзгерту:",
-                options: ["button.rename()", "button.setLabel()", "button.changeText()", "button.setText()", "button.text()"],
-                correct: 3
-            },
-            {
-                q: "QComboBox-та таңдалған элементтің мәтінін алу:",
-                options: ["combo.read()", "combo.selected()", "combo.get()", "combo.currentText()", "combo.value()"],
-                correct: 3
-            },
-            {
-                q: "Виджетті жасыру:",
-                options: ["hide()", "widget.hide()", "remove()", "widget.off()", "delete()"],
-                correct: 1
-            },
-            {
-                q: "Интерфейсті күштеп жаңарту:",
-                options: ["redraw()", "repaint()", "reprint()", "restyle()", "rebuild()"],
-                correct: 1
-            },
-            {
-                q: "Терезені жылжыту әдісі?",
-                options: ["window.setXY()", "move()", "window.position()", "window.go()", "window.translate()"],
-                correct: 1
-            },
-            {
-                q: "Терезе тақырыбын орнату:",
-                options: ["window.name()", "window.setWindowTitle()", "window.setLabel()", "window.caption()", "window.rename()"],
-                correct: 1
-            },
-            {
-                q: "Хабарлама диалогын жасау:",
-                options: ["QMessage()", "QMsgBox()", "QMessageBox()", "QBoxMessage()", "DialogMessage()"],
-                correct: 2
-            },
-            {
-                q: "Layout-ты дұрыс жою:",
-                options: ["layout.kill()", "layout.drop()", "layout.deleteLater()", "layout.remove()", "layout.end()"],
-                correct: 2
-            },
-            {
-                q: "PyQt5 қосымшасын аяқтау:",
-                options: ["shutdown()", "quit()", "app.quit()", "end()", "window.end()"],
-                correct: 2
-            }
-        ]
-    },
-
-    // ==============================================
-    // 🗄️ ПӘН: DATABASE (9 Нұсқа)
-    // ==============================================
-    "db": {
-
-        // --- 1-ші Нұсқа ---
-        "variant1": [
-             {
-                q: "Деректер базасын ең жақсы қалай сипаттауға болады?",
-                options: ["Дискідегі байланыссыз файлдар жиынтығы", "Белгілі бір ережелер бойынша қолжетімді деректердің ұйымдасқан құрылымы", "Мәтіндерді өңдеу бағдарламасы", "Желi арқылы деректер тасымалдау жүйесі", "Басқаруы жоқ кездейсоқ кестелер жиыны"],
-                correct: 1
-            },
-            {
-                q: "Деректер базасының негізгі мақсаты қандай?",
-                options: ["Құрылымдалған деректерді сақтау және басқару", "Құжаттарды басып шығару", "Құрылымсыз суреттерді архивтеу", "Тек математикалық есептеулер орындау", "ОЖ жұмысын жылдамдату"],
-                correct: 0
-            },
-            {
-                q: "Деректер базасындағы кесте деген не?",
-                options: ["Операциялық жүйенің жеке файлы", "Деректер байланыстарының электрондық схемасы", "Деректерсіз тек бағандар тізімі", "Құрылымсыз тек жолдар тізімі", "Деректер сақталатын жолдар мен бағандардан тұратын құрылым"],
-                correct: 4
-            },
-            {
-                q: "Кестедегі жол қалай аталады?",
-                options: ["Өріс", "Индекс", "Жазба", "Кілт", "Секция"],
-                correct: 2
-            },
-            {
-                q: "Кестедегі баған қалай аталады?",
-                options: ["Өріс", "Индекс", "Жазба", "Байланыс", "Байланыс атрибуты"],
-                correct: 0
-            },
-            {
-                q: "Төмендегілердің қайсысы деректер базасының түрлері?",
-                options: ["Кестелік және парақтық", "Реляциялық және құжаттық", "Есептік және графикалық", "Тек желілік және файлдық", "Жазық және құрылымдық"],
-                correct: 1
-            },
-            {
-                q: "Реляциялық деректер базасын не сипаттайды?",
-                options: ["Деректер график түрінде сақталады", "Деректер арасында байланыс жоқ", "Тек бинарлық файлдар сақталады", "Деректер кестелер түрінде және олардың арасындағы қатынастармен сақталады", "Барлық деректер бір файлда"],
-                correct: 3
-            },
-            {
-                q: "Деректер базасының негізгі түсініктеріне не жатады?",
-                options: ["Қапшық, терезе, принтер", "Тақырып, қаріп, стиль", "Кесте, жазба, өріс", "Блокнот, файл, себет", "Парақ, терезе, ұяшық"],
-                correct: 2
-            },
-            {
-                q: "МҚБЖ (СУБД) туралы дұрыс тұжырым?",
-                options: ["Бұл тек деректер енгізуге арналған құрылғы", "Бұл суреттер сақтайтын құрал", ".db кеңейтілуі бар файл түрі", "Бұл тек бағдарламалау тілі", "Бұл деректер базаларын басқаруға арналған бағдарлама"],
-                correct: 4
-            },
-            {
-                q: "МҚБЖ қандай рөл атқарады?",
-                options: ["Тек диаграммалар сызады", "Деректерді құруды, сақтауды және өңдеуді қамтамасыз етеді", "Тек есептерді басып шығарады", "Тек резервтік көшірмелер жасайды", "Тек пайдаланушыларды басқарады"],
-                correct: 1
-            },
-            {
-                q: "SQL деген не?",
-                options: ["Операциялық жүйе", "Реляциялық дерекқорларға арналған құрылымдалған сұраныстар тілі", "Графикалық редактор", "Веб беттердің белгілеу тілі", "Кесте жасау бағдарламасы"],
-                correct: 1
-            },
-            {
-                q: "SQL әдетте қандай дерекқор түрімен қолданылады?",
-                options: ["Реляциялық", "Файлдық", "Құжаттық", "Графтық", "Нейрондық"],
-                correct: 0
-            },
-            {
-                q: "NoSQL деректер базалары туралы дұрыс тұжырым?",
-                options: ["Олар тек кестелер қолданады", "Тек офлайн жұмыс істейді", "Бұл SQL-дің ескірген нұсқасы", "Үлкен деректерге жарамайды", "Бұл деректермен икемді жұмыс істейтін нереляциялық жүйелер отбасы"],
-                correct: 4
-            },
-            {
-                q: "SQL мен NoSQL арасындағы негізгі айырмашылық?",
-                options: ["SQL желісіз жұмыс істейді, NoSQL тек желіде", "SQL тек сандарды, NoSQL тек жолдарды сақтайды", "SQL — қатаң кестелер мен схемалар, NoSQL — икемді деректер модельдері", "Айырмашылық жоқ", "SQL жаңартуды қолдамайды"],
-                correct: 2
-            },
-            {
-                q: "Деректер базасының құрылымы нені сипаттайды?",
-                options: ["Тек пайдаланушылар санын", "Оперативті жад көлемін", "Есептерді басып шығару форматын", "Кестелер жиынтығын, олардың өрістерін және байланыстарын", "Барлық пайдаланушылардың құқықтарын"],
-                correct: 3
-            },
-            {
-                q: "Қай команда жаңа деректер базасын жасайды?",
-                options: ["NEW DATABASE", "MAKE DATABASE", "CREATE DATABASE", "ADD DATABASE", "BUILD DATABASE"],
-                correct: 2
-            },
-            {
-                q: "Қай команда жаңа кесте жасайды?",
-                options: ["CREATE TABLE", "NEW TABLE", "INSERT TABLE", "BUILD TABLE", "MAKE TABLE"],
-                correct: 0
-            },
-            {
-                q: "Кесте жасау барысында не анықталады?",
-                options: ["Тек қатынау режимі", "Кесте атауы, өріс атаулары және деректер типтері", "Тек пайдаланушылар", "Тек индекстер", "Тек байланыстар"],
-                correct: 1
-            },
-            {
-                q: "Деректер базасының құрылымын ең жақсы сипаттайтын жауап?",
-                options: ["Кездейсоқ кестелер жиыны", "Логикалық түрде ұйымдасқан өзара байланысты кестелер жиыны", "Тек бір кесте", "Байланысы жоқ файлдар жиыны", "Құжаттары бар қапшықтар жиыны"],
-                correct: 1
-            },
-            {
-                q: "Өрістің деректер түрін не үшін көрсетеді?",
-                options: ["Интерфейсті өзгерту үшін", "Сұрыптауды шектеу үшін", "Басып шығаруды жылдамдату үшін", "Пайдаланушылар санын шектеу үшін", "Рұқсат етілген мәндер мен операцияларды анықтау үшін"],
-                correct: 4
-            },
-            {
-                q: "INSERT не істейді?",
-                options: ["Кесте жасайды", "Жаңа жолдар қосады", "Кестені жояды", "Бағандарды өзгертеді", "Деректерді сұрыптайды"],
-                correct: 1
-            },
-            {
-                q: "UPDATE командасы не істейді?",
-                options: ["Деректерді таңдау", "Кесте жою", "Бар жазбаларды жаңарту", "Индекс жасау", "ДҚ тазалау"],
-                correct: 2
-            },
-            {
-                q: "DELETE не үшін қолданылады?",
-                options: ["ДҚ жою", "Индекстер жою", "Бағандар жою", "Таңдалған жолдарды жою", "Схема жою"],
-                correct: 3
-            },
-            {
-                q: "SELECT не істейді?",
-                options: ["ДҚ жасайды", "Деректерді таңдайды", "Деректерді жояды", "Құрылымды өзгертеді", "Кестені архивтейді"],
-                correct: 1
-            },
-            {
-                q: "Қай оператор жолдарды фильтрлейді?",
-                options: ["WHERE", "ORDER BY", "GROUP BY", "LIMIT", "FILTER"],
-                correct: 0
-            },
-            {
-                q: "Қай оператор сұрыптау орнатады?",
-                options: ["SELECT", "ORDER BY", "FILTER BY", "GROUP BY", "SET ORDER"],
-                correct: 1
-            },
-            {
-                q: "ORDER BY не үшін қолданылады?",
-                options: ["Кестені таңдау", "Жолдарды жою", "Жолдарды сұрыптау", "Кестелерді біріктіру", "Индекс жасау"],
-                correct: 2
-            },
-            {
-                q: "Жолдар санын шектеу үшін не қолданылады?",
-                options: ["LIMIT", "STOP", "END", "CUT", "SHORT"],
-                correct: 0
-            },
-            {
-                q: "SELECT * FROM table нені білдіреді?",
-                options: ["Бір жолды таңдау", "Барлық деректер базаларын таңдау", "Кестені жою", "Кесте жасау", "Кестенің барлық бағандарын таңдау"],
-                correct: 4
-            },
-            {
-                q: "WHERE туралы не дұрыс?",
-                options: ["Құрылымды анықтайды", "Шарт бойынша жолдарды таңдайды", "Тек сандар үшін қолданылады", "Тек жолдар үшін", "Тек алғашқы кілттер үшін"],
-                correct: 1
-            },
-            {
-                q: "Деректер базасын жобалауда объект деген не?",
-                options: ["Физикалық сервер", "Индекс", "Пайдаланушы", "Пәндік облыс мәні (Объект)", "Сұраныс"],
-                correct: 3
-            },
-            {
-                q: "Атрибут деген не?",
-                options: ["Байланыс", "Объектің қасиеті", "ДҚ атауы", "Пайдаланушылар жиыны", "Индекс атауы"],
-                correct: 1
-            },
-            {
-                q: "Байланыс (relationship) деген не?",
-                options: ["Кез келген баған", "Объекттер арасындағы қатынас", "Өріс атауы", "Сұрыптау белгісі", "Пайдаланушы рөлі"],
-                correct: 1
-            },
-            {
-                q: "Байланыс кардиналдылығы деген не?",
-                options: ["Объекттер арасындағы қатынастың экземплярлар саны бойынша түрі", "Кестедегі жолдар саны", "Бағандардың максимумы", "Пайдаланушылар максимумы", "Индекстер максимумы"],
-                correct: 0
-            },
-            {
-                q: "«Бірден көпке» байланысына мысал:",
-                options: ["Бір студент — көп топ", "Бір ЖОО — бір студент", "Бір студент — бір құжат", "Көп студент — көп ЖОО", "Бір топ — көп студент"],
-                correct: 4
-            },
-            {
-                q: "ER-диаграмма нені сипаттайды?",
-                options: ["Сервер баптауларын", "Тек пайдаланушылар құқықтарын", "Объектілерді, атрибуттарды және байланыстарды", "Тек индекстерді", "Интерфейс түсін"],
-                correct: 2
-            },
-            {
-                q: "Объекттер мен атрибуттар қай кезеңде анықталады?",
-                options: ["Физикалық басып шығару", "Логикалық жобалау", "Резервтік көшіру", "МҚБЖ орнату", "Желіні баптау"],
-                correct: 1
-            },
-            {
-                q: "Логикалық жобалаудың мақсаты:",
-                options: ["Кестелер және олардың байланыстары түріндегі деректер моделі", "Резервтік көшірме форматы", "Операциялық жүйені орнату", "Порттарды баптау", "Интерфейс шрифтін таңдау"],
-                correct: 0
-            },
-            {
-                q: "Нормализация не үшін қажет?",
-                options: ["Басып шығаруды жылдамдату", "Кестелерді жою", "Индекс санын көбейту", "Деректерді шифрлау", "Артықтықты және аномалияларды азайту"],
-                correct: 4
-            },
-            {
-                q: "Реляциялық модель туралы не дұрыс?",
-                options: ["Деректер — графиктер", "Деректер тек бір кестеде", "Байланыстар тек файлдар арқылы", "Кестелер байланыспайды", "Деректер — қатынас арқылы байланысқан кестелер"],
-                correct: 4
-            }
+        correct: 3,
+      },
+      {
+        q: "Flexbox-тың негізгі мақсаты:",
+        options: [
+          "Суреттердің өлшемін автоматты түрде өзгерту және қысу үшін қолданылады",
+          "HTML құрылымын толық өзгертіп, жаңа элементтер қосуға мүмкіндік береді",
+          "JavaScript кодтарын орындауға арналған арнайы жүйе болып табылады",
+          "Элементтерді икемді түрде орналастырып, туралау мүмкіндігін береді",
+          "Файлдарды сақтау және сервермен байланыс орнату үшін пайдаланылады",
         ],
-
-        // --- 2-ші Нұсқа ---
-        "variant2": [
-             {
-                q: "Бастапқы кілт деген не?",
-                options: ["Кез келген баған", "Жазбаның бірегей идентификаторы", "Құпиясөз", "ДҚ атауы", "Пайдаланушының аты"],
-                correct: 1
-            },
-            {
-                q: "Бастапқы кілттің басты қасиеті:",
-                options: ["Мәндер қайталана алады", "Тек мәтін", "Барлық мәндер NULL", "Бірегейлік және NOT NULL", "Тек сандар"],
-                correct: 3
-            },
-            {
-                q: "Сыртқы кілт деген не?",
-                options: ["Байланыссыз өріс", "Басқа кестенің PK-на сілтеме жасайтын өріс", "ДҚ атауы", "Пайдаланушының аты", "Сұрыптауға арналған өріс"],
-                correct: 1
-            },
-            {
-                q: "Сыртқы кілт не үшін қолданылады?",
-                options: ["Есептерді басып шығару", "Сұрыптау", "Сілтемелік тұтастық", "Шифрлау", "Индекстерді жою"],
-                correct: 2
-            },
-            {
-                q: "Индекс деген не?",
-                options: ["Сервер есебі", "Пайдаланушы аты", "Іздеуді жеделдететін құрылым", "Архив", "ДҚ ішіндегі бума"],
-                correct: 2
-            },
-            {
-                q: "Индекс өнімділікке қалай әсер етеді?",
-                options: ["Әрқашан оқуды баяулатады", "Іздеуді жылдамдатады, жазуды баяулатады", "Әсер етпейді", "Қоюды жылдамдатады", "Жоюды жылдамдатады"],
-                correct: 1
-            },
-            {
-                q: "Бастапқы кілт қалай көрсетіледі?",
-                options: ["PRIMARY KEY", "MAIN KEY", "CREATE INDEX", "CREATE PK", "ROOT KEY"],
-                correct: 0
-            },
-            {
-                q: "Сыртқы кілт қалай көрсетіледі?",
-                options: ["FOREIGN KEY ... REFERENCES ...", "ONLY KEY", "MAIN FOREIGN", "PRIMARY FOREIGN", "OUTER KEY"],
-                correct: 0
-            },
-            {
-                q: "Сілтемелік тұтастық нені қамтамасыз етеді?",
-                options: ["Кез келген мәліметті жою", "Байланысты кестелердің үйлесімділігін", "Жылдам көшіру", "Сұрыптау", "Пайдаланушылар бойынша бөлу"],
-                correct: 1
-            },
-            {
-                q: "Индекс туралы дұрыс тұжырым:",
-                options: ["Әрқашан автоматты түрде құрылады", "Тек PK үшін жасалады", "Кесте атауы", "Іздеуге тыйым салады", "Бір немесе бірнеше бағанға жасалуы мүмкін"],
-                correct: 4
-            },
-            {
-                q: "SELECT командасының мақсаты:",
-                options: ["Мәліметтерді таңдау", "Кесте құру", "Кестені жою", "Индекс құру", "Мәндерді тастау"],
-                correct: 0
-            },
-            {
-                q: "WHERE тәжірибеде не үшін керек?",
-                options: ["Құрылымды сипаттау", "Жолдарды фильтрациялау", "ДҚ құру", "Индекстерді жою", "Есеп қалыптастыру"],
-                correct: 1
-            },
-            {
-                q: "Сұрыптау операторы:",
-                options: ["SORT", "ORDER BY", "GROUP", "FILTER", "SORT BY"],
-                correct: 1
-            },
-            {
-                q: "Кему ретімен сұрыптауды қалай көрсету керек?",
-                options: ["ORDER BY field UP", "ORDER BY field DESC", "ORDER BY field MINUS", "ORDER BY field DOWN", "ORDER BY field NEG"],
-                correct: 1
-            },
-            {
-                q: "INSERT не істейді?",
-                options: ["Жолды жояды", "Пайдаланушы жасайды", "Құрылымды өзгертеді", "ДҚ жасайды", "Жазба қосады"],
-                correct: 4
-            },
-            {
-                q: "UPDATE не үшін қолданылады?",
-                options: ["Сұрыптау", "Индекс қосу", "Кесте құру", "ДҚ жою", "Мәндерді өзгерту"],
-                correct: 4
-            },
-            {
-                q: "DELETE не істейді?",
-                options: ["Таңдалған жолдарды жояды", "Бағандарды жояды", "Бүкіл ДҚ-ны жояды", "Мәлімет типін өзгертеді", "Кілттерді тастайды"],
-                correct: 0
-            },
-            {
-                q: "Реляциялық модель туралы не дұрыс?",
-                options: ["Кілттер жоқ", "Кестелер кілттер арқылы байланысады", "Барлық мәлімет бір жолда", "Байланыстар тек мәтіндік сипаттамада", "Кестелер байланыссыз"],
-                correct: 1
-            },
-            {
-                q: "“Күрделі сұраныстар” нені білдіреді?",
-                options: ["Бір кесте", "Бірнеше оператор мен кестені бірге қолдану", "Шартсыз сұраныстар", "Тек DELETE", "Тек UPDATE"],
-                correct: 1
-            },
-            {
-                q: "Күрделі сұраныстар құрамына жиі не кіреді?",
-                options: ["PRINT, EXIT", "SELECT, WHERE, JOIN, ORDER BY", "CREATE, DROP", "BACKUP, RESTORE", "IMPORT, EXPORT"],
-                correct: 1
-            },
-            {
-                q: "ER-диаграммалардың мақсаты:",
-                options: ["Декор үшін", "Есептер жасау", "Физикалық модельді алмастыру", "Серверді баптау", "ДҚ құрылымын визуалды көрсету"],
-                correct: 4
-            },
-            {
-                q: "Сапалы логикалық жобалаудың нәтижесі:",
-                options: ["Байланыссыз кестелер", "Нормаланған кестелер және дұрыс байланыстар", "Пайдаланушылар тізімі", "Есептер жинағы", "Тек индекстер"],
-                correct: 1
-            },
-            {
-                q: "Мәліметтер типі туралы не дұрыс?",
-                options: ["Қате тип қателер тудырады", "Міндетті емес", "Өнімділікке әсер етпейді", "Тек кілттерге қажет", "Тек SQL-да қолданылады"],
-                correct: 0
-            },
-            {
-                q: "CREATE TABLE не істейді?",
-                options: ["Кестені өрістер және атрибуттарымен бірге құрады", "Кестені жояды", "Жолдарды жаңартады", "Жолдарды сұрыптайды", "Есеп құрады"],
-                correct: 0
-            },
-            {
-                q: "PK қалай көрсетіледі?",
-                options: ["column MAIN KEY", "column PRIMARY KEY", "column ONLY KEY", "column UNIQUE ONLY", "column FIRST KEY"],
-                correct: 1
-            },
-            {
-                q: "Сыртқы кілт қалай көрсетіледі?",
-                options: ["FOREIGN KEY (field) REFERENCES table(field)", "OUT KEY", "EXTERNAL KEY", "LINK KEY", "CHILD KEY"],
-                correct: 0
-            },
-            {
-                q: "Кестелер арасындағы индекстер не береді?",
-                options: ["Қолжетімділікті азайтады", "Іздеуді және қосылуларды жеделдетеді", "Жаңартуға тыйым салады", "Байланыстарды өшіреді", "Мәлімет типін өзгертеді"],
-                correct: 1
-            },
-            {
-                q: "ДҚ құрылымын неге түсіну қажет?",
-                options: ["Жазбаларды санау үшін", "Резервтік көшірмені жеңілдету үшін", "Тексерулерді өшіру үшін", "Байланыстарды сауатты жобалау үшін", "Индекс қосу үшін"],
-                correct: 3
-            },
-            {
-                q: "МҚБЖ-ның рөлі:",
-                options: ["Тек файл сақтайды", "Мәліметтерді, қолжетімділікті және тұтастықты басқарады", "Тек есептер басып шығарады", "Қауіпсіздікке әсер етпейді", "Тек кестелер жасайды"],
-                correct: 1
-            },
-            {
-                q: "Студент неге «кесте–жазба–өріс» ұғымын түсінуі керек?",
-                options: ["Стандартсыз белгілер қолдану үшін", "ДҚ өлшемін азайту үшін", "Құжаттаманы алмастыру үшін", "Желі жылдамдату үшін", "Мәлімет құрылымын дұрыс модельдеу үшін"],
-                correct: 4
-            },
-            {
-                q: "ДҚ схемасы деген не?",
-                options: ["Пайдаланушы интерфейсі", "Жадыдағы физикалық орналасуы", "Кестелер, өрістер және байланыстардың құрылымдық сипаттамасы", "Барлық SQL-сұраныстар тізімі", "Терезе интерфейсінің графикалық көрінісі"],
-                correct: 2
-            },
-            {
-                q: "Бірегей индекс деген не?",
-                options: ["Жаңартуға тыйым салатын индекс", "Қайталанатын мәндерді сақтай алатын индекс", "Бағанда мәндердің бірегейлігін қамтамасыз ететін индекс", "Тек сыртқы кілттерге жасалады", "Тек сұрыптауды жеделдетеді"],
-                correct: 2
-            },
-            {
-                q: "Қай кілт түрі әр жолдың бірегейлігін қамтамасыз етеді?",
-                options: ["Secondary key", "Foreign key", "Composite index", "Primary key", "Logical key"],
-                correct: 3
-            },
-            {
-                q: "FOREIGN KEY не үшін қажет?",
-                options: ["Кестелер арасындағы сілтемелік тұтастық үшін", "Сұрыптауды жеделдету үшін", "Уақытша мәліметтерді сақтау үшін", "Есептерді автоматты жасау үшін", "Дубликаттарды жою үшін"],
-                correct: 0
-            },
-            {
-                q: "Қандай мәлімет түрі күндерді сақтауға жарайды?",
-                options: ["VARCHAR", "BOOLEAN", "DATE", "CHAR", "TIMEONLY"],
-                correct: 2
-            },
-            {
-                q: "SQL оператор LIMIT не істейді?",
-                options: ["Кесте өлшемін шектейді", "Белгілі жолдарды жояды", "Баған санын шектейді", "Пайдаланушылар қолжетімділігін шектейді", "Қайтарып берілетін жолдар санын шектейді"],
-                correct: 4
-            },
-            {
-                q: "«1-ден көпке» кардиналдылығы нені білдіреді?",
-                options: ["Бір кестеде бір ғана жазба бар", "Әр жазба бір ғана жазбамен байланысады", "Кестелер байланыссыз", "Бір жазба басқа кестенің бірнеше жазбасымен байланысады", "Жазбалар циклмен байланысқан"],
-                correct: 3
-            },
-            {
-                q: "SQL ORDER BY не істейді?",
-                options: ["Мәліметтерді топтастырады", "Сұрыптайды", "Мәліметтерді жояды", "Сыртқы кілттер жасайды", "Мәлімет типтерін тексереді"],
-                correct: 1
-            },
-            {
-                q: "Мәтіндік мәндер сақтау үшін қандай тип қолданылады?",
-                options: ["INT", "CHAR/VARCHAR", "FLOAT", "BOOLEAN", "BLOB"],
-                correct: 1
-            },
-            {
-                q: "Төмендегілердің қайсысы NoSQL дерекқоры?",
-                options: ["MySQL", "PostgreSQL", "MongoDB", "Oracle", "MariaDB"],
-                correct: 2
-            }
+        correct: 3,
+      },
+      {
+        q: "display: none қасиеті:",
+        options: [
+          "Элементті толық көрінетін күйге келтіріп, экранда көрсетуге мүмкіндік береді",
+          "Элементтің тек түсін өзгертіп, басқа қасиеттеріне әсер етпейді",
+          "Элементтің орнын сақтап, бірақ көрінбеуін қамтамасыз етеді",
+          "Элементті толық жойып, құжат ағынынан алып тастайды",
+          "Элементке анимация қосып, қозғалыс эффектілерін береді",
         ],
-
-        // --- 3-ші Нұсқа ---
-        "variant3": [
-             {
-                q: "Кестеге жол қосуға арналған SQL операторы:",
-                options: ["PUSH", "INSERT INTO", "ADD ROW", "WRITE", "ROW CREATE"],
-                correct: 1
-            },
-            {
-                q: "ER-диаграмма деген не?",
-                options: ["Сервер жүктемесі диаграммасы", "Жады қолдану графигі", "Нысандар, атрибуттар және байланыстар моделі", "Қолданба құрылымының сызбасы", "Транзакциялар жоспары"],
-                correct: 2
-            },
-            {
-                q: "ER-диаграммада нысан қандай элементпен белгіленеді?",
-                options: ["Эллипс", "Ромб", "Үшбұрыш", "Тіктөртбұрыш", "Байланыс сызығы"],
-                correct: 3
-            },
-            {
-                q: "Кестеден жазба жоюға арналған оператор:",
-                options: ["REMOVE", "DROP", "ERASE", "DELETE", "CLEAR"],
-                correct: 3
-            },
-            {
-                q: "DROP TABLE не істейді?",
-                options: ["Барлық жолдарды жояды, бірақ кестені қалдырады", "Тек индекстерді жояды", "Кестені толық жояды", "Кестені тазартады, құрылымын қалдырады", "Тек байланыстарды жояды"],
-                correct: 2
-            },
-            {
-                q: "ДҚ-да индекс деген не?",
-                options: ["Мәлімет іздеуді жеделдететін құрылым", "Резервтік көшірме тәсілі", "Кестенің графикалық көрінісі", "Қолжетімділік бақылау жүйесі", "Қателер кестесі"],
-                correct: 0
-            },
-            {
-                q: "ER-диаграммада «атрибут» деген не?",
-                options: ["Кестелер арасындағы байланыс түрі", "Нысанның қасиеті", "Бірегей кілт", "Алғашқы жазба", "Мәлімет түріне шектеу"],
-                correct: 1
-            },
-            {
-                q: "DML-командалар деген не?",
-                options: ["ДҚ құрылымын құру командалары", "Пайдаланушыларды басқару командалары", "Мәліметтермен жұмыс командалары (INSERT, UPDATE, DELETE)", "Сервер баптау командалары", "Резервтік көшіру командалары"],
-                correct: 2
-            },
-            {
-                q: "SQL DISTINCT нені білдіреді?",
-                options: ["Мәліметтерді сұрыптау", "Шарт бойынша фильтрация", "Кесте құрылымын өзгерту", "Кестелерді біріктіру", "Тек бірегей мәндерді таңдау"],
-                correct: 4
-            },
-            {
-                q: "ДҚ нормализациясы деген не?",
-                options: ["Кестелерді біріктіру", "Қосымша индекстер құру", "Артық мәліметті жою процесі", "Жаңа мәлімет типтерін қосу", "ДҚ-ны басқа серверге көшіру"],
-                correct: 2
-            },
-            {
-                q: "Агрегаттық функция не істейді?",
-                options: ["Кестені өзгертеді", "Жолдар жиынымен есептеулер орындайды", "Индекс жасайды", "Жолдарды жояды", "Мәтінді JSON-ға түрлендіреді"],
-                correct: 1
-            },
-            {
-                q: "Қай функция мәндердің қосындысын есептейді?",
-                options: ["AVG", "COUNT", "SUM", "MIN", "TOTAL"],
-                correct: 2
-            },
-            {
-                q: "Қай функция максималды және минималды мәнді қайтарады?",
-                options: ["MIN, MAX", "MAX, SUM", "МИНИМУМ, МАКСИМУМ", "AVG, SUM", "HIGH, LOW"],
-                correct: 0
-            },
-            {
-                q: "Жолдар санын есептейтін функция:",
-                options: ["COUNT", "SUM", "MIN", "AVG", "NUMBER"],
-                correct: 0
-            },
-            {
-                q: "Жолдарды топтастыру операторы:",
-                options: ["ORDER BY", "GROUP BY", "LIMIT", "WHERE", "GROUPING"],
-                correct: 1
-            },
-            {
-                q: "Топтарды фильтрациялау үшін:",
-                options: ["WHERE", "HAVING", "ORDER BY", "LIMIT", "FILTER GROUP"],
-                correct: 1
-            },
-            {
-                q: "SELECT ішінде GROUP BY-ға кірмейтін баған болса не болады?",
-                options: ["SQL өзі топтастырады", "Елемейді", "NULL болады", "Қате", "Автоматты түрде агрегаттық болады"],
-                correct: 3
-            },
-            {
-                q: "Орташа мәнді есептейтін функция:",
-                options: ["SUM", "COUNT", "AVG", "MIN", "MEAN"],
-                correct: 2
-            },
-            {
-                q: "Терезелік функция агрегаттық функциядан несімен ерекшеленеді?",
-                options: ["Жолдарды жояды", "Тек GROUP BY талап етеді", "Мәлімет түрін өзгертеді", "Жолдарды бір жолға біріктірмейді", "Тек мәтінмен жұмыс істейді"],
-                correct: 3
-            },
-            {
-                q: "OVER() не істейді?",
-                options: ["Кестені сұрыптайды", "Есептеу үшін терезе анықтайды", "Жолдарды фильтрлейді", "Дубликаттарды жояды", "Жаңа кесте жасайды"],
-                correct: 1
-            },
-            {
-                q: "OVER() ішіндегі PARTITION BY … нені білдіреді?",
-                options: ["Фильтрация", "Сұрыптау", "Уақытша кесте жасау", "Терезені топтарға бөлу", "Бағандарды жою"],
-                correct: 3
-            },
-            {
-                q: "Қай оператор терезелік болып табылады?",
-                options: ["SUM(sales) OVER()", "SELECT OVER()", "LIMIT OVER()", "DELETE OVER()", "WINDOW SUM()"],
-                correct: 0
-            },
-            {
-                q: "ROW_NUMBER() OVER() не істейді?",
-                options: ["Мәндерді қосады", "Жолдарды нөмірлейді", "Жолдарды фильтрлейді", "NULL-дарды жояды", "Индекс жасайды"],
-                correct: 1
-            },
-            {
-                q: "OVER() ішіндегі ORDER BY не істейді?",
-                options: ["Фильтрлейді", "Топтастырады", "Терезе ішіндегі ретті анықтайды", "Дубликаттарды жояды", "Мәндерді нөлдейді"],
-                correct: 2
-            },
-            {
-                q: "SUM(value) OVER() не қайтарады?",
-                options: ["Орташа", "Әр жол үшін жалпы қосынды", "Минимум", "NULL", "Жолдар арасындағы айырмашылық"],
-                correct: 1
-            },
-            {
-                q: "PARTITION BY жоқ болса, терезе:",
-                options: ["Барлық жолдар үшін ортақ", "Қате", "Нөлдік", "Жергілікті", "Кездейсоқ"],
-                correct: 0
-            },
-            {
-                q: "INNER JOIN не істейді?",
-                options: ["Екі кестенің барлық жолдарын қайтарады", "Сәйкес келетін жолдарды қайтарады", "Тек сол жақ кестені", "Тек оң жақ кестені", "Жолдарды көбейтеді"],
-                correct: 1
-            },
-            {
-                q: "LEFT JOIN қайтарады:",
-                options: ["Тек сәйкес келетіндерді", "Барлық оң жақ жолдарды", "Сол жақ кестенің барлық жолдары сәйкес келетіндер", "Декарттық көбейтінді", "Сәйкес келмейтіндерді ғана"],
-                correct: 2
-            },
-            {
-                q: "FULL JOIN қайтарады:",
-                options: ["Тек сәйкес келетіндер", "Тек сол жақ", "Тек оң жақ", "Екі кестенің барлық жолдары", "Тек NULL мәндері"],
-                correct: 3
-            },
-            {
-                q: "CROSS JOIN не істейді?",
-                options: ["Кілт бойынша байланыстырады", "Дубликаттарды жояды", "Декарттық көбейтінді жасайды", "Фильтрация жасайды", "Сұрыптайды"],
-                correct: 2
-            },
-            {
-                q: "NATURAL JOIN не бойынша біріктіреді?",
-                options: ["Атауы бірдей бағандар бойынша", "Тек бастапқы кілт арқылы", "Тек мәтіндік бағандар", "Тек сандық бағандар", "Бірінші кездескен баған бойынша"],
-                correct: 0
-            },
-            {
-                q: "SELF JOIN — бұл:",
-                options: ["Екі түрлі кестені біріктіру", "Кестенің өзімен өзі бірігуі", "Төменгі сұраныс", "Уақытша кесте", "Сыртқы ДҚ-мен біріктіру"],
-                correct: 1
-            },
-            {
-                q: "JOIN үшін қандай оператор қажет?",
-                options: ["ON немесе USING", "HAVING", "GROUP BY", "LIMIT", "ORDER BY"],
-                correct: 0
-            },
-            {
-                q: "RIGHT JOIN қайтарады:",
-                options: ["Тек сәйкес келетіндер", "Тек сол жақ", "Оң жақтың барлық жолдары + сол жақтағы сәйкес келетіндер", "Барлық жолдар", "Тек сәйкес келмейтіндер"],
-                correct: 2
-            },
-            {
-                q: "Ең жиі қолданылатын JOIN:",
-                options: ["FULL", "CROSS", "NATURAL", "INNER", "RIGHT"],
-                correct: 3
-            },
-            {
-                q: "JOIN арқылы екіден көп кестені біріктіруге бола ма?",
-                options: ["Иә", "Жоқ", "Тек ішкі сұраныспен", "Тек NATURAL JOIN", "Тек SELECT * ішінде"],
-                correct: 0
-            },
-            {
-                q: "Ішкі сұраныс деген не?",
-                options: ["JOIN түрі", "Басқа сұраныстың ішіндегі сұраныс", "Шектеу", "Функция", "Индекс"],
-                correct: 1
-            },
-            {
-                q: "Коррелирленген ішкі сұраныс деген:",
-                options: ["Тәуелсіз", "Сыртқы жолға тәуелді", "Тек SELECT-та", "Тек HAVING-де", "Тек JOIN-да"],
-                correct: 1
-            },
-            {
-                q: "WHERE ішінде ішкі сұраныспен жиі қолданылатын оператор:",
-                options: ["IN", "LIMIT", "JOIN", "TOP", "NEXT"],
-                correct: 0
-            },
-            {
-                q: "EXISTS не тексереді?",
-                options: ["Мәлімет түрін", "Ішкі сұраныста кем дегенде бір жолдың бар-жоғын", "Бірегейлікті", "Байланыстарды", "Кесте өлшемін"],
-                correct: 1
-            }
+        correct: 3,
+      },
+      {
+        q: "<section> пен <div> айырмашылығы:",
+        options: [
+          "Екеуі де бірдей қызмет атқарып, ешқандай айырмашылығы жоқ элементтер болып табылады",
+          "<div> толық семантикалық мәнге ие болып, құрылымды анықтайтын негізгі элемент",
+          "<section> тек визуалды стиль беру үшін қолданылатын қарапайым контейнер",
+          "<div> тек мәтіндік ақпаратты көрсетуге арналған арнайы элемент болып табылады",
+          "<section> мағыналық бөлімді білдіреді, ал <div> бейтарап контейнер ретінде қолданылады",
         ],
-
-        // --- 4-ші Нұсқа ---
-        "variant4": [
-             {
-                q: "COUNT(*) функциясы не қайтарады?",
-                options: ["Нөлге тең емес мәндердің саны", "Жолдар саны", "Бірегей мәндердің саны", "Бағандар саны", "Кестелер саны"],
-                correct: 1
-            },
-            {
-                q: "SQL-де GROUP BY операторы не істейді?",
-                options: ["Жолдарды сұрыптайды", "Жолдарды шарт бойынша біріктіреді", "Агрегаттық есептеу үшін жолдарды топтарға бөледі", "Шарт бойынша сүзгіден өткізеді", "Қайталанатын жолдарды өшіреді"],
-                correct: 2
-            },
-            {
-                q: "Қай функция бірегей мәндердің санын қайтарады?",
-                options: ["COUNT", "COUNT(DISTINCT col)", "UNIQUE", "MIN", "GROUP_COUNT"],
-                correct: 1
-            },
-            {
-                q: "MAX() агрегаттық функциясы не істейді?",
-                options: ["Ең кіші мәнді табады", "Сомасын табады", "Ең үлкен мәнді табады", "Орташа мәнді табады", "NULL мәнін табады"],
-                correct: 2
-            },
-            {
-                q: "Неге SELECT-те агрегаттық емес бағанды GROUP BY-сыз қолдануға болмайды?",
-                options: ["SQL ондайды өңдей алмайды", "Нәтижеде екіұштылық (двусмысленность) пайда болады", "Сұраным өте баяу орындалады", "Мәндер NULL-ға айналады", "Кесте блокталады"],
-                correct: 1
-            },
-            {
-                q: "HAVING не үшін қолданылады?",
-                options: ["Сұрыптау үшін", "Жолдарды сүзгілеу үшін", "Топтарды сүзгілеу үшін", "Бағандарды жою үшін", "Индекстер құру үшін"],
-                correct: 2
-            },
-            {
-                q: "AVG() OVER() не қайтарады?",
-                options: ["Бүкіл кесте бойынша орташа мән", "Жолдарды біріктірмей орташа мән", "Жолдардың санын", "Топ бойынша максимум", "Сұрыптау функциясын"],
-                correct: 1
-            },
-            {
-                q: "Егер PARTITION BY да, ORDER BY да көрсетілмесе, қандай терезе (window) қолданылады?",
-                options: ["Ешқандай", "Кездейсоқ", "Барлық жолдар жиыны", "Тек бірінші жол", "Тек соңғы жол"],
-                correct: 2
-            },
-            {
-                q: "SUM(value) OVER(PARTITION BY category) терезелік функциясы не істейді?",
-                options: ["Бүкіл кесте бойынша соманы қайтарады", "Алдыңғы жолдың сомасын қайтарады", "Әр санат (category) бойынша соманы есептейді", "Бірегей мәндердің сомасын есептейді", "Басқа кестемен JOIN жасайды"],
-                correct: 2
-            },
-            {
-                q: "RANK() функциясы ROW_NUMBER() функциясынан несімен ерекшеленеді?",
-                options: ["Бірдей мәндер болғанда реттілікте орындарды өткізіп жібереді", "Тек жолдарды сұрыптайды", "Дубликаттарды өшіреді", "Топтарды біріктіреді", "Сұрыптауды жылдамдатады"],
-                correct: 0
-            },
-            {
-                q: "DENSE_RANK() не істейді?",
-                options: ["Рангтарды (дәрежелерді) жіберіп алмай, жолдарды нөмірлейді", "Әрқашан 1 қайтарады", "Жолдарды өшіреді", "Топтар жасайды", "Деректерді біріктіреді"],
-                correct: 0
-            },
-            {
-                q: "Қай JOIN тек сәйкес келетін жолдарды қайтарады?",
-                options: ["RIGHT JOIN", "LEFT JOIN", "FULL JOIN", "INNER JOIN", "CROSS JOIN"],
-                correct: 3
-            },
-            {
-                q: "FULL OUTER JOIN не істейді?",
-                options: ["Кілт бойынша тек сәйкес келетіндерін біріктіреді", "Тек сәйкес келмейтін жолдарды қайтарады", "Екі кестенің барлық жолдарын қайтарады", "Тек сол жақ кестені қайтарады", "Тек оң жақ кестені қайтарады"],
-                correct: 2
-            },
-            {
-                q: "CROSS JOIN не үшін қолданылады?",
-                options: ["Кілттер бойынша біріктіру үшін", "Дубликаттарды өшіру үшін", "Декарттық көбейтінді (Cartesian product) алу үшін", "Сүзгілеу үшін", "Индексация үшін"],
-                correct: 2
-            },
-            {
-                q: "Қай JOIN кестені өз-өзімен біріктіреді?",
-                options: ["NATURAL JOIN", "SELF JOIN", "RIGHT JOIN", "CROSS JOIN", "UNION JOIN"],
-                correct: 1
-            },
-            {
-                q: "NATURAL JOIN мынаған сүйенеді:",
-                options: ["Атауы бірдей бағандарға", "Біріншілік кілттерге", "Тек сандық өрістерге", "Тек мәтіндік өрістерге", "Кездейсоқ өріске"],
-                correct: 0
-            },
-            {
-                q: "USING ON-ның орнына не істейді?",
-                options: ["Бағанды өшіреді", "Бірдей атаулы бағандар бойынша кестелерді біріктіреді", "Индекс жасайды", "Жолдарды сүзеді", "Жолдарды сұрыптайды"],
-                correct: 1
-            },
-            {
-                q: "SELECT ішіндегі ішкі сұраным (подзапрос) не істейді?",
-                options: ["Жаңа кесте жасайды", "Әр жол үшін мән қайтарады", "Кестенің құрылымын өзгертеді", "Жолдарды өшіреді", "Деректер типтерін түрлендіреді"],
-                correct: 1
-            },
-            {
-                q: "Коррелирленген подзапрос деген не?",
-                options: ["Негізгі кестемен байланысы жоқ подзапрос", "Сыртқы сұранымның ағымдағы жолына тәуелді подзапрос", "Тек HAVING ішінде болатын подзапрос", "Тек SELECT ішінде", "Тек JOIN ішінде"],
-                correct: 1
-            },
-            {
-                q: "WHERE ішіндегі подзапроспен жиі қай оператор қолданылады?",
-                options: ["INTO", "LIKE", "IN", "DROP", "JOIN"],
-                correct: 2
-            },
-            {
-                q: "EXISTS не істейді?",
-                options: ["Деректер типін тексереді", "Ең аз дегенде бір жолдың бар-жоғын тексереді", "Жолдарды санайды", "Кестелерді біріктіреді", "NULL мәндерді өшіреді"],
-                correct: 1
-            },
-            {
-                q: "ANY не істейді?",
-                options: ["Шарт подзапростың кез келген мәні үшін орындалса, TRUE қайтарады", "Соманы қайтарады", "JOIN орындайды", "Мәндерді өшіреді", "NULL-дарды сүзеді"],
-                correct: 0
-            },
-            {
-                q: "ALL не істейді?",
-                options: ["Мәнді подзапростың әр мәнімен салыстырады", "Жолдарды өшіреді", "Кестелерді біріктіреді", "Жолдарды санайды", "Максимумды табады"],
-                correct: 0
-            },
-            {
-                q: "FROM ішінде подзапрос қолдануға бола ма?",
-                options: ["Иә", "Жоқ", "Тек PostgreSQL-де", "Тек JOIN-пен", "Тек агрегаттармен"],
-                correct: 0
-            },
-            {
-                q: "UNION не істейді?",
-                options: ["Дубликаттарды өшірмей жолдарды біріктіреді", "Жолдарды біріктіріп, дубликаттарды өшіреді", "Сұрыптау жасайды", "Сүзгілеу жасайды", "JOIN орындайды"],
-                correct: 1
-            },
-            {
-                q: "UNION ALL не істейді?",
-                options: ["Дубликаттарды өшіреді", "Жолдарды біріктіріп, дубликаттарды сақтап қояды", "Жолдарды сұрыптайды", "Жолдарды сүзгіден өткізеді", "Деректер типін өзгертеді"],
-                correct: 1
-            },
-            {
-                q: "INTERSECT не қайтарады?",
-                options: ["Екі жиыннан бірегей жолдарды", "Екі сұранымның ортақ жолдарын", "Декарттық көбейтінді", "NULL бар жолдарды", "Бірінші кестені"],
-                correct: 1
-            },
-            {
-                q: "EXCEPT не қайтарады?",
-                options: ["Барлық жолдарды", "Бірінші жиында бар, бірақ екіншісінде жоқ жолдарды", "Екінші жиынның жолдарын", "Декарттық көбейтінді", "Дубликаттарды"],
-                correct: 1
-            },
-            {
-                q: "CTE (WITH) деген не?",
-                options: ["Сұранымның уақытша нәтижесі", "Баған", "Индекс", "JOIN", "Шарт"],
-                correct: 0
-            },
-            {
-                q: "Оконная рамка ROWS BETWEEN 1 PRECEDING AND CURRENT ROW не істейді?",
-                options: ["Тек ағымдағы жолды есептейді", "Алдыңғы және ағымдағы жолды есептейді", "Барлық жолдарды есептейді", "Келесі бөлік (partition) жолдарын есептейді", "Тек NULL-дарды есептейді"],
-                correct: 1
-            },
-            {
-                q: "LAG() не істейді?",
-                options: ["Келесі мәнді қайтарады", "Алдыңғы мәнді қайтарады", "Соманы қайтарады", "Жолдарды өшіреді", "Топтарды біріктіреді"],
-                correct: 1
-            },
-            {
-                q: "LEAD() не істейді?",
-                options: ["Алдыңғы мәнді қайтарады", "Келесі мәнді қайтарады", "Максимумды қайтарады", "Дубликаттарды өшіреді", "Деректерді түрлендіреді"],
-                correct: 1
-            },
-            {
-                q: "STRING_AGG() агрегаттық функциясы не істейді?",
-                options: ["Сандарды қосады", "Жолдарды бір мәтінге біріктіреді", "Бос орындарды өшіреді", "Жолдарды сұрыптайды", "NULL қайтарады"],
-                correct: 1
-            },
-            {
-                q: "Қай функция жинақтаушы (накопительный) соманы алуға мүмкіндік береді?",
-                options: ["SUM()", "SUM() OVER(ORDER BY col)", "COUNT()", "MIN()", "SUM(DISTINCT)"],
-                correct: 1
-            },
-            {
-                q: "Қай JOIN әр кестедегі жолдар санынан да көп жол қайтара алады?",
-                options: ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL JOIN", "CROSS JOIN"],
-                correct: 4
-            },
-            {
-                q: "SELF JOIN не істейді?",
-                options: ["Кестені бөледі", "Кестені өз-өзімен біріктіреді", "Жолдарды өшіреді", "Сұрыптау орындайды", "Агрегаттық есептеу жасайды"],
-                correct: 1
-            },
-            {
-                q: "USING(a, b) не істейді?",
-                options: ["Екі бірдей аталған баған бойынша кестелерді біріктіреді", "Деректерді сұрыптайды", "NULL-ды өшіреді", "Ішкі сұрау жасайды", "Жолдарды біріктіреді"],
-                correct: 0
-            },
-            {
-                q: "HAVING ішіндегі подзапрос не істейді?",
-                options: ["Топтар ішіндегі жолдарды сүзеді", "Деректерді сұрыптайды", "Жаңа кесте жасайды", "Дубликаттарды өшіреді", "Индекстер жасайды"],
-                correct: 0
-            },
-            {
-                q: "Қай сұраным бөлім бойынша орташа жалақыдан жоғары жалақы алатын қызметкерлерді қайтарады?",
-                options: ["salary > AVG(salary)", "salary > (SELECT AVG(salary) FROM employees GROUP BY dept)", "salary > ALL employees", "salary > SUM(salary)", "salary > MIN(salary)"],
-                correct: 1
-            },
-            {
-                q: "COUNT() OVER(PARTITION BY dept) терезелік функциясы не істейді?",
-                options: ["Барлық қызметкерлердің санын есептейді", "Әр бөлімдегі қызметкерлер санын есептейді", "Тек бірегей қызметкерлерді санайды", "Тек NULL-дарды санайды", "Бөлімдерді біріктіреді"],
-                correct: 1
-            }
+        correct: 4,
+      },
+      {
+        q: "Media query не үшін қолданылады:",
+        options: [
+          "JavaScript кодтарын жазу және олардың орындалуын басқару үшін қолданылады",
+          "HTML құрылымын толық өзгерту және жаңа элементтер қосу үшін арналған",
+          "Сервермен байланыс орнатып, деректер алмасуды жүзеге асыру үшін пайдаланылады",
+          "Экран өлшеміне байланысты стильдерді өзгерту және бейімдеу үшін қолданылады",
+          "Файлдарды сақтау және оларды жүктеу процесін басқару үшін арналған",
         ],
-
-        // --- 5-ші Нұсқа ---
-        "variant5": [
-             {
-                q: "ANY — бұл:",
-                options: ["Подзапростың кез келген мәнімен салыстыру", "Шектеу", "Функция", "JOIN түрі", "Сұрыптау түрі"],
-                correct: 0
-            },
-            {
-                q: "Оконный AVG() бар сұраным не қайтарады?",
-                options: ["Бүкіл бөлім бойынша орташа жалақы", "Барлық қызметкерлер бойынша орташа жалақы", "Бөлім ішінде, жұмысқа қабылдану күні бойынша сұрыпталған жинақталған орташа жалақы", "Ішкі сұраудан алынған орташа жалақы", "Ең төменгі жалақы"],
-                correct: 2
-            },
-            {
-                q: "UNION ALL:",
-                options: ["Дубликаттарды өшірмей біріктіреді", "Дубликаттарды өшіреді", "Тек бірегей жолдарды біріктіреді", "Ішкі сұрау жасайды", "Қайталануларға тыйым салады"],
-                correct: 0
-            },
-            {
-                q: "ALL бар сұранымның нәтижесі:",
-                options: ["Барлық бөлімдердің қызметкерлері", "Ең төмен жалақысы бар қызметкерлер", "3-бөлімнің қызметкерлері", "Жалақысы бөлім қызметкерлерінің барлық жалақысынан жоғары қызметкерлер", "Бірдей жалақысы бар қызметкерлер"],
-                correct: 3
-            },
-            {
-                q: "UNION бар сұранымның нәтижесі:",
-                options: ["Тек VIP-клиенттердің қалалары", "Тек қоймалар арасында жоқ қалалар", "VIP-клиенттердің қалалары + қоймалар тізімінде жоқ қалалар", "Клиенттер мен қоймалар арасындағы ортақ қалалар", "Тек қоймалар қалалары"],
-                correct: 2
-            },
-            {
-                q: "INTERSECT не қайтарады?",
-                options: ["Барлық жолдарды", "Екі жиынның ортақ жолдарын", "Декартова көбейтінді", "NULL", "Тек бірінші жолдарды"],
-                correct: 1
-            },
-            {
-                q: "EXCEPT не орындайды?",
-                options: ["Біріктіруді", "Қиылысуды", "Екінші жиынды бірінші жиыннан алуды (айырып тастайды)", "Сұрыптауды", "Көбейту (дублирование)"],
-                correct: 2
-            },
-            {
-                q: "UNION-дағы сұранымдарға қойылатын талап:",
-                options: ["Бағандар саны бірдей болу керек", "Кестелер бірдей болу керек", "Бір JOIN болуы керек", "Тек мәтіндік бағандар", "Міндетті түрде ORDER BY болуы керек"],
-                correct: 0
-            },
-            {
-                q: "JOIN-ды UNION-пен бірге қолдануға бола ма?",
-                options: ["Иә", "Жоқ", "Тек CTE ішінде", "Тек INTERSECT-пен", "Тек ішкі сұраумен"],
-                correct: 0
-            },
-            {
-                q: "UNION кезінде ORDER BY қайда қолданылады?",
-                options: ["Әр сұранымға бөлек", "Тек бір рет — соңында", "Тек бірінші сұранымда", "Тек екінші сұранымда", "Ешқашан"],
-                correct: 1
-            },
-            {
-                q: "UNION-дағы деректер типтері қандай болуы керек?",
-                options: ["Бірдей", "Тек сандық", "Тип бойынша үйлесімді", "Тек мәтіндік", "Атаулары бірдей"],
-                correct: 2
-            },
-            {
-                q: "HAVING және подзапроспен жазылған сұранымның соңғы нәтижесі:",
-                options: ["Барлық өнімдер", "Ең төмен сатылымы бар өнімдер", "Барлық өнімдер бойынша орташа сатылым деңгейінен жоғары сатылым сомасы бар өнімдер", "Тек NULL мәндері бар өнімдер", "Тек нөлдік сатылымы бар өнімдер"],
-                correct: 2
-            },
-            {
-                q: "RANK() бар сұраным не істейді?",
-                options: ["Барлық клиенттердің тапсырыстарын шығарады", "Рангсыз тек сұрыптайды", "≥5 тапсырысы бар клиенттердің тапсырыстарын шығарып, сомасы бойынша ранг береді", "Тек клиенттерді ғана қайтарады, тапсырыстарды емес", "Клиенттерді аты бойынша сұрыптайды"],
-                correct: 2
-            },
-            {
-                q: "Екі бос жиынның UNION-ы не қайтарады?",
-                options: ["NULL", "Қате", "Бос жиын", "Бір NULL", "Бір бос жолдан тұратын жиын"],
-                correct: 2
-            },
-            {
-                q: "ALL-сыз таза UNION не қайтарады?",
-                options: ["Екі жиыннан бірегей жолдарды", "Декартова көбейтінді", "Барлық жолдарды", "Дубликаттарды", "Тек бірінші жиынның жолдарын"],
-                correct: 0
-            },
-            {
-                q: "HAVING SUM(salary) > 50000 бар сұраным не қайтарады?",
-                options: ["Барлық департаменттерді", "Жиынтық жалақысы 50000-нан жоғары департаменттерді", "Тек бір департаментті", "Қате", "NULL мәндері бар департаменттерді"],
-                correct: 1
-            },
-            {
-                q: "SUM() OVER(PARTITION BY region) не істейді?",
-                options: ["Әрбір сатушы бойынша сатылым сомасын", "Жалпы сатылым сомасын", "Ең аз соманы", "Әр жол үшін өз өңірі бойынша сатылым сомасын", "Жыл бойынша жалпы сатылымды"],
-                correct: 3
-            },
-            {
-                q: "LEFT JOIN + WHERE B.id IS NULL не қайтарады?",
-                options: ["Сәйкес келетін жолдарды", "A кестесінен B-де сәйкестігі жоқ жолдарды", "Декартова көбейтінді", "Қате", "B кестесінің барлық жолдарын"],
-                correct: 1
-            },
-            {
-                q: "salary > AVG(salary) подзапросы не істейді?",
-                options: ["Ең жоғары жалақы алатын қызметкерлерді табады", "Жалақысы орташа жалақыдан жоғары қызметкерлерді табады", "Максимал жалақысы бар қызметкерлерді табады", "Қызметкерлерді өшіреді", "Ең төмен жалақысы бар қызметкерлерді табады"],
-                correct: 1
-            },
-            {
-                q: "INTERSECT нәтижесі:",
-                options: ["Барлық қалалар", "Клиенттердің қалалары", "Клиенттер мен жеткізушілерде де бар қалалар", "Жеткізушілерде жоқ қалалар", "Тек жеткізушілер қалалары"],
-                correct: 2
-            },
-            {
-                q: "PostgreSQL-де индекс деген не?",
-                options: ["Кестенің көшірмесі", "Іздеуді жылдамдататын құрылым", "Транзакция типі", "Баптаулар кестесі", "Резервтік көшіру құралы"],
-                correct: 1
-            },
-            {
-                q: "LIKE 'abc%' үшін қай индекс түрі қолайлы?",
-                options: ["Hash", "GIN", "B-tree", "BRIN", "GiST"],
-                correct: 2
-            },
-            {
-                q: "Неге индекстердің көп болуы INSERT-ті баяулатуы мүмкін?",
-                options: ["Индекстер RAM-ды көбейтеді", "Индекстер SELECT-ті блоктайды", "Әр INSERT сайын индекстер жаңартылады", "Индекстер ескі деректерді өшіреді", "Индекстер VACUUM-ды жылдамдатады"],
-                correct: 2
-            },
-            {
-                q: "Қашан индекс UPDATE операцияларын баяулатуы мүмкін?",
-                options: ["Кесте бос болғанда", "Индекстер өте көп болғанда", "Кесте уақытша (temporary) болғанда", "SELECT тым жылдам болғанда", "Материалданған VIEW болғанда"],
-                correct: 1
-            },
-            {
-                q: "Орындау жоспарын көрсететін команда қайсы?",
-                options: ["SHOW PLAN", "PLAN VIEW", "EXPLAIN", "LOOK PLAN", "DESCRIBE PLAN"],
-                correct: 2
-            },
-            {
-                q: "EXPLAIN ANALYZE не көрсетеді?",
-                options: ["Кез келген қателерді", "Сұранымның нақты орындалу уақытын", "Индекстер санын", "Транзакция логтарын", "Кесте өлшемін"],
-                correct: 1
-            },
-            {
-                q: "Неге SELECT * қолдану зиян болуы мүмкін?",
-                options: ["PostgreSQL-де тыйым салынған", "Қажетсіз қосымша деректерді жүктейді", "Индекстерді өшіреді", "VACUUM-ды баяулатады", "Қол жеткізу құқықтарын бұзады"],
-                correct: 1
-            },
-            {
-                q: "IN операторы индекс қолдана ала ма?",
-                options: ["Жоқ", "Иә", "Тек сандарда", "Тек жолдық типтерде", "Тек NULL-да"],
-                correct: 1
-            },
-            {
-                q: "LIKE қашан индекс қолданбайды?",
-                options: ["Жол ұзын болғанда", "Үлгі % таңбасынан басталғанда", "Баған мәтіндік болғанда", "Индекс B-tree болғанда", "COLLATE қолданылғанда"],
-                correct: 1
-            },
-            {
-                q: "column + 1 = 10 өрнегі индекс қолданбауының себебі неде?",
-                options: ["Индекстер тек жолдармен жұмыс істейді", "Арифметикада индекс өшіріледі", "Функционалдық өрнектер толық сканерлеуді талап етеді", "Индексті қолмен жаңарту керек", "Тек бірегей индекстер қолданылады"],
-                correct: 2
-            },
-            {
-                q: "VIEW не үшін қолданылады?",
-                options: ["Деректердің көшірмесін сақтау үшін", "Күрделі сұранымдарды жеңілдету үшін", "VACUUM-ды жылдамдату үшін", "Индекстер жасау үшін", "Логтарды сақтау үшін"],
-                correct: 1
-            },
-            {
-                q: "VIEW ішінде JOIN қолдануға бола ма?",
-                options: ["Жоқ", "Тек біреуін", "Иә", "Тек INNER", "Тек LEFT"],
-                correct: 2
-            },
-            {
-                q: "MATERIALIZED VIEW-дің айырмашылығы неде?",
-                options: ["SELECT-ті қолдамайды", "Деректерді физикалық түрде сақтайды", "Әр секунд сайын автоматты жаңарады", "JOIN-ды қамти алмайды", "Индекстерді қажет етпейді"],
-                correct: 1
-            },
-            {
-                q: "REFRESH MATERIALIZED VIEW не істейді?",
-                options: ["Деректерді қайта есептейді", "Кестені өшіреді", "Индекстер жасайды", "БД-ны қайта жүктейді", "Ескі деректерді өшіреді"],
-                correct: 0
-            },
-            {
-                q: "VIEW-ға деректер енгізуге бола ма (INSERT)?",
-                options: ["Әрқашан", "Ешқашан", "Кейде, егер құрылымы қарапайым болса", "Тек суперпайдаланушы", "Тек индекстер болғанда"],
-                correct: 2
-            },
-            {
-                q: "VIEW-ға қолжетімділікті не үшін шектейді?",
-                options: ["БД өлшемін кішірейту үшін", "Құпия өрістерді жасыру үшін", "Индексацияны жылдамдату үшін", "Транзакцияларды өшіру үшін", "SELECT-ті жылдамдату үшін"],
-                correct: 1
-            },
-            {
-                q: "VIEW техникалық өрістерді жасыра ала ма?",
-                options: ["Жоқ", "Тек уақытша өрістерді", "Иә", "Тек админге", "Тек GRANT арқылы"],
-                correct: 2
-            },
-            {
-                q: "MATERIALIZED VIEW қашан тиімдірек?",
-                options: ["Деректер жиі өзгергенде", "Алдын ала есептелген деректерді тез оқу керек болғанда", "Кесте кішкентай болғанда", "Индекстер болмағанда", "Сыртқы кілт керек болғанда"],
-                correct: 1
-            },
-            {
-                q: "Партиционирование деген не?",
-                options: ["Деректерді архивтеу", "Кестені бөліктерге бөлу", "Индексация", "Репликация", "VIEW жасау"],
-                correct: 1
-            },
-            {
-                q: "Партиционирование нені жылдамдатады?",
-                options: ["UPDATE", "Диапазон бойынша SELECT", "VACUUM", "JOIN", "INSERT"],
-                correct: 1
-            }
+        correct: 3,
+      },
+      {
+        q: "Responsive дизайнның негізгі принципі:",
+        options: [
+          "Барлық құрылғыларға бірдей өлшемдегі интерфейсті қолдануды талап етеді",
+          "Тек desktop құрылғыларға арналған дизайн жасау принципіне негізделеді",
+          "Тек мобильді құрылғыларға бейімделген интерфейс жасауды көздейді",
+          "Әртүрлі экран өлшемдеріне бейімделетін икемді дизайн құруды қамтамасыз етеді",
+          "Тек CSS Grid технологиясын қолдануға негізделген тәсіл болып табылады",
         ],
-
-        // --- 6-шы Нұсқа ---
-        "variant6": [
-             {
-                q: "Партиционирование түрлері:",
-                options: ["Тек LIST", "Тек RANGE", "RANGE, LIST, HASH", "Тек HASH", "Тек B-tree"],
-                correct: 2
-            },
-            {
-                q: "Ата-ана (parent) кесте не үшін керек?",
-                options: ["Барлық деректерді сақтайды", "Құрылымды және бөлу ережелерін сақтайды", "Индекстерді сақтайды", "Лог баптауларын сақтайды", "VIEW сақтайды"],
-                correct: 1
-            },
-            {
-                q: "PARTITION BY не істейді?",
-                options: ["Партицияларды өшіреді", "Кесте жасайды", "Бөлудің (partioning) тәсілін анықтайды", "Статистиканы жаңартады", "Индексті қайта жасайды"],
-                correct: 2
-            },
-            {
-                q: "RANGE-партиция таңдаудағы негізгі критерий қандай?",
-                options: ["Әліпби бойынша бөлу", "Біріншілік кілт форматы", "Күн (date) немесе сандар диапазоны мәндері", "Индекс түрі", "Кесте атауы"],
-                correct: 2
-            },
-            {
-                q: "Партициялау кілтін дұрыс таңдау неге маңызды?",
-                options: ["Бэкаптың көлемін анықтайды", "Сұранымда қай партициялар қолданылатынын анықтайды", "Пайдаланушы рөлін көрсетеді", "EXPLAIN-ды жылдамдатады", "VACUUM жылдамдығын арттырады"],
-                correct: 1
-            },
-            {
-                q: "Партициялар өз индекстеріне ие бола ала ма?",
-                options: ["Жоқ", "Тек LIST", "Иә", "Тек HASH", "Тек бірегей кілттер"],
-                correct: 2
-            },
-            {
-                q: "Деректер ешбір партицияға сәйкес келмесе не болады?",
-                options: ["PostgreSQL жаңа партиция жасайды", "Қате шығады", "Ата-ана кестеде сақталады", "Локқа жазылады", "MATERIALIZED VIEW-ға жазылады"],
-                correct: 1
-            },
-            {
-                q: "Кейін партициялар қосуға бола ма?",
-                options: ["Жоқ", "Тек деректер енгізілгенге дейін", "Иә", "Тек суперпайдаланушы", "Тек VACUUM кезінде"],
-                correct: 2
-            },
-            {
-                q: "Constraint деген не?",
-                options: ["Индекс түрі", "Деректердің тұтастығын қамтамасыз ететін шектеу", "Триггер түрі", "Транзакция режимі", "Тапсырма жоспарлаушысы"],
-                correct: 1
-            },
-            {
-                q: "CHECK не үшін қажет?",
-                options: ["Құқықтарды баптау үшін", "Мәндерді ережелер бойынша тексеру үшін", "Лог жүргізу үшін", "Архивтеу үшін", "Индексация үшін"],
-                correct: 1
-            },
-            {
-                q: "PRIMARY KEY мен UNIQUE арасындағы айырмашылық:",
-                options: ["PRIMARY KEY NULL-ға рұқсат етеді", "UNIQUE әрқашан жылдамырақ", "PRIMARY KEY NULL-ға тыйым салады", "Екеуі бірдей", "PRIMARY KEY тек жадта сақталады"],
-                correct: 2
-            },
-            {
-                q: "Рөлдерді не үшін бөледі (разделяют роли)?",
-                options: ["Жадты үнемдеу үшін", "Қауіпсіздік үшін", "UPDATE-ті жылдамдату үшін", "WAL-ды өшіру үшін", "SELECT-ті жылдамдату үшін"],
-                correct: 1
-            },
-            {
-                q: "GRANT не істейді?",
-                options: ["Кестені өшіреді", "Құқықтар береді", "БД-ны форматтайды", "Индекстерді жаңартады", "Резервтік көшіру жасайды"],
-                correct: 1
-            },
-            {
-                q: "REVOKE не істейді?",
-                options: ["Бұрын берілген құқықтарды кері алады", "ANALYZE іске қосады", "Жаңа пайдаланушы жасайды", "Кестені қайта жасайды", "VIEW жасайды"],
-                correct: 0
-            },
-            {
-                q: "Тек бір кестеге құқық беруге бола ма?",
-                options: ["Жоқ", "Иә", "Тек суперпайдаланушы", "Тек VIEW-ға", "Тек партицияға"],
-                correct: 1
-            },
-            {
-                q: "Шифрлау мен хештеудің айырмашылығы?",
-                options: ["Хештеуді кері ашуға болады", "Хештеу қайтымсыз", "Шифрлау әрқашан баяу", "Айырмашылығы жоқ", "Шифрлауды VIEW-де қолдануға болмайды"],
-                correct: 1
-            },
-            {
-                q: "Пайдаланушыдан кейбір бағандарды жасыруға бола ма?",
-                options: ["Жоқ", "Иә, VIEW арқылы", "Тек триггерлер арқылы", "Тек VACUUM арқылы", "Тек партиция арқылы"],
-                correct: 1
-            },
-            {
-                q: "pg_dump не үшін керек?",
-                options: ["Логтарды талдау үшін", "Резервтік көшіру (бэкап) үшін", "VACUUM үшін", "Индексация үшін", "Мониторинг үшін"],
-                correct: 1
-            },
-            {
-                q: "pg_restore не істейді?",
-                options: ["Бэкап жасайды", "Деректерді қалпына келтіреді", "Дампты өшіреді", "Кестелерді салыстырады", "SELECT-ті жылдамдатады"],
-                correct: 1
-            },
-            {
-                q: "plain және custom форматтарының айырмашылығы:",
-                options: ["Plain — бинарлық", "Custom — мәтіндік", "Plain — SQL, custom — архивтелген формат", "Екеуі бірдей", "Plain — тек кестелер, custom — тек схемалар"],
-                correct: 2
-            },
-            {
-                q: "Бір кестенің ғана дампын жасауға бола ма?",
-                options: ["Жоқ", "Тек pgAdmin арқылы", "Иә", "Тек суперпайдаланушы", "Тек индекстермен бірге"],
-                correct: 2
-            },
-            {
-                q: "Базаны дамптан қалай қалпына келтіреді?",
-                options: ["DELETE + INSERT", "pg_restore немесе psql арқылы", "VACUUM арқылы", "ANALYZE арқылы", "REFRESH MATERIALIZED VIEW арқылы"],
-                correct: 1
-            },
-            {
-                q: "Қалпына келтірудің дұрыстығын қалай тексеруге болады?",
-                options: ["БД-ны қайта жүктеу", "Қалпына келтіру алдындағы және кейінгі деректерді салыстыру", "Индекстерді жаңарту", "Журналдарды тазалау", "EXPLAIN ANALYZE жасау"],
-                correct: 1
-            },
-            {
-                q: "Бар база үстіне қалпына келтіруге бола ма?",
-                options: ["Жоқ", "Иә, егер құрылымы сәйкес келсе", "Тек plain формат", "Тек админ", "Тек база бос болғанда"],
-                correct: 1
-            },
-            {
-                q: "CRON не істейді?",
-                options: ["Linux-та тапсырмалар жоспарлаушысы", "Селекттерді оңтайландырғыш", "Архиватор", "Транзакциялар менеджері", "VACUUM жоспарлаушысы"],
-                correct: 0
-            },
-            {
-                q: "CRON арқылы SQL орындауға бола ма?",
-                options: ["Жоқ", "Иә, psql арқылы", "Тек GUI арқылы", "Тек Windows-та", "Тек pgAgent арқылы"],
-                correct: 1
-            },
-            {
-                q: "pgAgent не үшін қолданылады?",
-                options: ["Логтарды талдау үшін", "SQL-тапсырмаларды жоспарлау үшін", "Партициялар жасау үшін", "WAL баптау үшін", "Кестелерді мониторингтеу үшін"],
-                correct: 1
-            },
-            {
-                q: "pgAgent қателерін қайдан көруге болады?",
-                options: ["Кесте статистикасынан", "pgAgent логтарынан", "VIEW-дан", "Жүйелік рөлдерден", "Партициялардан"],
-                correct: 1
-            },
-            {
-                q: "PostgreSQL-де лог деңгейлері қандай?",
-                options: ["LOW, MED, HIGH", "RED, YELLOW, GREEN", "ERROR, WARNING, INFO", "START, STOP, RELOAD", "DEBUG, TRACE"],
-                correct: 2
-            },
-            {
-                q: "Ұзақ орындалатын сұранымдарды логтауды не үшін қосады?",
-                options: ["Индекстерді өшіру үшін", "Баяу сұранымдарды табу үшін", "Жүктемені азайту үшін", "INSERT-ті жылдамдату үшін", "UPDATE-ті жылдамдату үшін"],
-                correct: 1
-            },
-            {
-                q: "PostgreSQL-де VACUUM деген не?",
-                options: ["Резервтік көшіру жасау", "Қолданылмайтын жолдарды тазарту", "Кестелерді индексациялау", "Партицияларға бөлу", "Рөлдерді жаңарту"],
-                correct: 1
-            },
-            {
-                q: "ANALYZE не үшін қолданылады?",
-                options: ["Кесте статистикасын жаңарту үшін", "Индекстер жасау үшін", "Резервтік көшіру үшін", "CRON тапсырмаларын жоспарлау үшін", "Деректерді шифрлау үшін"],
-                correct: 0
-            },
-            {
-                q: "EXPLAIN ANALYZE-сіз EXPLAIN не істейді?",
-                options: ["Нақты орындалу уақытын көрсетеді", "Сұранымның орындалу жоспарын көрсетеді", "VACUUM орындайды", "Индекстерді қайта жасайды", "Дамптарды салыстырады"],
-                correct: 1
-            },
-            {
-                q: "B-tree индекс деген не?",
-                options: ["Мәтіндік іздеуге арналған индекс", "Диапазон және теңдік бойынша іздеуге арналған индекс", "Тек сандарға арналған индекс", "JSON үшін индекс", "Функциялар үшін индекс"],
-                correct: 1
-            },
-            {
-                q: "GIN индекс деген не?",
-                options: ["Диапазон бойынша тез іздеу", "Толықмәтіндік (full-text) іздеу және массивтер үшін индекс", "Тек сандарға арналған индекс", "Тек жолдарға арналған индекс", "Кестені резервтік көшіру"],
-                correct: 1
-            },
-            {
-                q: "BRIN индекс деген не?",
-                options: ["Кіші кестелерге арналған индекс", "Үлкен және мәндері ретті (последовательные) кестелерге арналған индекс", "JSON үшін индекс", "Мәтіндер үшін индекс", "Партициялар үшін индекс"],
-                correct: 1
-            },
-            {
-                q: "UNIQUE constraint не үшін керек?",
-                options: ["SELECT-ті жылдамдату үшін", "Бағандағы мәндердің бірегейлігін қамтамасыз ету үшін", "Деректерді шифрлау үшін", "Резервтік көшіру үшін", "Тапсырмаларды жоспарлау үшін"],
-                correct: 1
-            },
-            {
-                q: "FOREIGN KEY не үшін қолданылады?",
-                options: ["Резервтік көшіру үшін", "Кестелерді байланыстырып, тұтастықты қамтамасыз ету үшін", "VACUUM-ды жылдамдату үшін", "Деректерді шифрлау үшін", "Рөлдерді бөлу үшін"],
-                correct: 1
-            },
-            {
-                q: "NOT NULL constraint деген не?",
-                options: ["Бірегейлікке шектеу", "Бағанды міндетті түрде толтыруға шектеу", "Деректер типіне шектеу", "Индекстерге шектеу", "VIEW-ға шектеу"],
-                correct: 1
-            },
-            {
-                q: "pg_hba.conf не істейді?",
-                options: ["Индекстерді баптайды", "Аутентификация мен қолжетімділікті баптайды", "CRON тапсырмаларын баптайды", "Журналдарды баптайды", "Партицияларды баптайды"],
-                correct: 1
-            }
+        correct: 3,
+      },
+      {
+        q: "meta viewport не үшін қажет:",
+        options: [
+          "CSS файлдарын дұрыс қосу және стильдерді басқару үшін қолданылады",
+          "JavaScript кодтарын орындау және сценарийлерді іске қосу үшін қажет",
+          "HTML құрылымының дұрыстығын тексеру және қателерді анықтау үшін пайдаланылады",
+          "Мобильді құрылғыларда бет масштабын басқару және бейімдеу үшін қолданылады",
+          "Тек SEO оңтайландыру мақсатында қолданылатын қосымша тег болып табылады",
         ],
-
-        // --- 7-ші Нұсқа ---
-        "variant7": [
-             {
-                q: "PostgreSQL-дегі деректерді шифрлау дегеніміз не?",
-                options: ["Деректерді бинарлы түрде сақтау", "Деректерді қорғалған форматқа түрлендіру", "Қатынауды шектеу", "Тапсырмаларды жоспарлау", "VIEW құру"],
-                correct: 1
-            },
-            {
-                q: "Құпиясөзді хештеу дегеніміз не?",
-                options: ["Құпиясөзді қауіпсіз мәнге түрлендіру", "Құпиясөзді база арқылы салыстыру", "Кестені шифрлау", "Индекс жасау", "Резервтік көшірме құру"],
-                correct: 0
-            },
-            {
-                q: "PostgreSQL-дегі ROLE деген не?",
-                options: ["Индекс түрі", "Пайдаланушы немесе пайдаланушылар тобы", "Партиция түрі", "Тапсырма жоспарлағыш", "Тұтастық шектеуі"],
-                correct: 1
-            },
-            {
-                q: "GRANT OPTION не үшін қолданылады?",
-                options: ["Индекс құру үшін", "Привилегияларды беру құқығын тапсыру үшін", "Деректерді шифрлау үшін", "Резервтік көшіру үшін", "Сұрауларды мониторингілеу үшін"],
-                correct: 1
-            },
-            {
-                q: "pg_stat_activity не істейді?",
-                options: ["Белсенді сессияларды көрсетеді", "Резервтік көшірме жасайды", "Кестелерді индекстейді", "CRON тапсырмаларын жоспарлайды", "Деректерді шифрлайды"],
-                correct: 0
-            },
-            {
-                q: "REFRESH MATERIALIZED VIEW CONCURRENTLY не үшін керек?",
-                options: ["Ескі деректерді жояды", "Материалданған көріністі блоктамай жаңартады", "Жаңа VIEW құрады", "Индексті қайта жасайды", "VACUUM орындайды"],
-                correct: 1
-            },
-            {
-                q: "Партиционирлеудегі pruning дегеніміз не?",
-                options: ["Ескі кестелерді жою", "Тек қажет партицияларды оқу", "Жаңа индекстерді жасау", "Деректерді шифрлау", "Constraint тексеру"],
-                correct: 1
-            },
-            {
-                q: "HASH-партиционирлеуді қашан қолданған дұрыс?",
-                options: ["Күн диапазондары үшін", "Деректерді партициялар арасында біркелкі бөлу үшін", "Мәтіндік деректер үшін", "Үлкен индекстер үшін", "Резервтік көшіру үшін"],
-                correct: 1
-            },
-            {
-                q: "pgAgent тапсырмасының орындалуын қалай тексеруге болады?",
-                options: ["EXPLAIN арқылы", "pgAgent логтары арқылы", "VACUUM арқылы", "REFRESH MATERIALIZED VIEW арқылы", "ANALYZE арқылы"],
-                correct: 1
-            },
-            {
-                q: "WARNING лог деңгейі не үшін?",
-                options: ["Қатерлі қателер үшін", "Ескерту және ықтимал мәселелер үшін", "SELECT туралы ақпарат үшін", "Резервтік көшіру үшін", "Партициялар құру үшін"],
-                correct: 1
-            },
-            {
-                q: "ERROR лог не көрсетеді?",
-                options: ["Сәтті орындалған сұраулар", "Қатерлі қателер", "Ескертулер", "Баяу сұраулар", "Партициялар"],
-                correct: 1
-            },
-            {
-                q: "Long query logging деген не?",
-                options: ["Барлық SELECT логтау", "Ұзақ орындалатын сұрауларды логтау", "Қателерді логтау", "Партицияларды логтау", "Индекстерді логтау"],
-                correct: 1
-            },
-            {
-                q: "pg_stat_user_tables не көрсетеді?",
-                options: ["Пайдаланушылар күйі", "Кестелер статистикасы", "Қате логтары", "Индекстер тізімі", "CRON баптаулары"],
-                correct: 1
-            },
-            {
-                q: "pgAdmin не істейді?",
-                options: ["PostgreSQL басқару", "Деректерді шифрлау", "CRON жоспарлау", "VIEW құру", "Кестелерді индекстеу"],
-                correct: 0
-            },
-            {
-                q: "Linux жүйесінде автоматты бэкапты қалай орнатуға болады?",
-                options: ["EXPLAIN арқылы", "CRON арқылы", "VACUUM арқылы", "pg_stat_activity арқылы", "REFRESH MATERIALIZED VIEW арқылы"],
-                correct: 1
-            },
-            {
-                q: "WAL деген не?",
-                options: ["Дерекқордағы болашақ өзгерістер журналы", "Партиция түрі", "Индекс түрі", "Тапсырма жоспарлағыш", "Тұтастық шектеуі"],
-                correct: 0
-            },
-            {
-                q: "pg_basebackup не істейді?",
-                options: ["Дерекқордың толық резервтік көшірмесін жасайды", "Индекс жасайды", "CRON жоспарлайды", "VIEW жасайды", "Constraint тексереді"],
-                correct: 0
-            },
-            {
-                q: "ROLLBACK деген не?",
-                options: ["Транзакцияны растау", "Транзакцияны болдырмау", "Индекс жасау", "Резервтік көшіру", "VIEW жасау"],
-                correct: 1
-            },
-            {
-                q: "COMMIT не істейді?",
-                options: ["Транзакцияны болдырмау", "Транзакцияны растау", "Индекс жасау", "VIEW жасау", "Партиция жасау"],
-                correct: 1
-            },
-            {
-                q: "PostgreSQL-дегі SERIAL деген не?",
-                options: ["Мәтін түрі", "Авто-инкремент бүтін сан", "Күн түрі", "Массив түрі", "Партиция түрі"],
-                correct: 1
-            },
-            {
-                q: "REINDEX деген не?",
-                options: ["Жаңа кесте құру", "Индексті қайта құру", "Constraint жаңарту", "Партиция жасау", "VIEW жасау"],
-                correct: 1
-            },
-            {
-                q: "pg_stat_replication не көрсетеді?",
-                options: ["Репликация статистикасын", "Резервтік көшіру жасайды", "Индекстер құрады", "CRON жоспарлайды", "VIEW басқарады"],
-                correct: 0
-            },
-            {
-                q: "TRUNCATE деген не?",
-                options: ["Кестеден деректерді журналсыз жою", "Базаны толық жою", "Резервтік көшіру", "Индекс жасау", "Партиция жасау"],
-                correct: 0
-            },
-            {
-                q: "TEMPORARY кесте деген не?",
-                options: ["Әрқашан сақталатын кесте", "Тек ағымдағы сессияда болатын кесте", "Шектеулері бар кесте", "VIEW-мен кесте", "Бэкапқа арналған кесте"],
-                correct: 1
-            },
-            {
-                q: "pg_stat_activity.wait_event не үшін?",
-                options: ["Белсенді сессияларды және блокировкаларды талдау", "Индекстер құру", "Резервтік көшіру", "Деректерді шифрлау", "MATERIALIZED VIEW жаңарту"],
-                correct: 0
-            },
-            {
-                q: "CREATE ROLE WITH LOGIN не істейді?",
-                options: ["Кіру мүмкіндігі жоқ роль жасайды", "Кіру құқығы бар пайдаланушы жасайды", "VIEW жасайды", "Партиция жасайды", "Индекс жасайды"],
-                correct: 1
-            },
-            {
-                q: "SERIALIZABLE оқшаулау деңгейі деген не?",
-                options: ["Ең төмен оқшаулау", "Аномалияларды болдырмайтын ең жоғары оқшаулау деңгейі", "Индекстерге арналған деңгей", "VIEW үшін деңгей", "CRON үшін деңгей"],
-                correct: 1
-            },
-            {
-                q: "ALTER TABLE ... ADD CONSTRAINT не істейді?",
-                options: ["Кесте жасайды", "Тұтастық шектеуін қосады", "Индекс жасайды", "VIEW жасайды", "Партиция жасайды"],
-                correct: 1
-            },
-            {
-                q: "pg_ctl не істейді?",
-                options: ["PostgreSQL серверін басқарады", "Индекс жасайды", "Бэкап жасайды", "VIEW жасайды", "CRON жасайды"],
-                correct: 0
-            },
-            {
-                q: "EXCLUDE constraint деген не?",
-                options: ["Бірегейлік шектеуі", "Мәндердің ережелер бойынша қиылысуын болдырмайтын шектеу", "NULL шектеуі", "VIEW шектеуі", "Партиция шектеуі"],
-                correct: 1
-            },
-            {
-                q: "Қай бэкап тәсілі жүйенің қолжетімсіздік уақытын ең азайтады?",
-                options: ["Cold storage", "Hot-backup", "Offline-backup", "Лог архивтеу", "Көшірмелеуге дейін диск фрагментациясы"],
-                correct: 1
-            },
-            {
-                q: "Логикалық деректер бұзылуының басты себебі?",
-                options: ["Қолданба қателері", "RAM қатесі", "CPU қызып кетуі", "Порттың блокталуы", "Сервер бөлмесінің жарығы"],
-                correct: 0
-            },
-            {
-                q: "Консистентті бэкап үшін не міндетті?",
-                options: ["Желі қызметін қайта қосу", "Уақытша директорияны тазалау", "Транзакция күйінің snapshot (checkpoint)", "Антивирус орнату", "Жүйе уақытын ауыстыру"],
-                correct: 2
-            },
-            {
-                q: "RAID-ті жалғыз қорғау тәсілі ретінде қолдану қаупі?",
-                options: ["RAID логикалық бұзылудан немесе өшіруден қорғамайды", "Жылдамдығы төмен", "Көлемі үлкен", "BIOS-қа тәуелді", "Интернет қажет етеді"],
-                correct: 0
-            },
-            {
-                q: "Толық көшіруден snapshot-тың айырмашылығы?",
-                options: ["Snapshot белгілі бір сәттегі блок күйін бекітеді", "Толық бэкап LVM қажет етеді", "Snapshot тек жаңа деректерді сақтайды", "Snapshot әрқашан тез қалпына келеді", "Snapshot тек жүйе өшірулі болғанда жасалады"],
-                correct: 0
-            },
-            {
-                q: "Дифференциалды көшіру қайсысына қатысты сақталады?",
-                options: ["Соңғы толық бэкапқа", "Соңғы snapshot-қа", "Алдыңғы инкременттік бэкапқа", "Соңғы транзакцияға", "Тізбектің алғашқы бэкапына"],
-                correct: 0
-            },
-            {
-                q: "Инкременттік тізбектің кемшілігі?",
-                options: ["Үлкен деректерге жарамайды", "RAID қолданады", "Көлемі үлкен", "Тізбек ұзын болса қалпына келтіру қиын", "Негізгі серверді сөндіру қажет"],
-                correct: 3
-            },
-            {
-                q: "Деректер қатты фрагменттелгенде қай қалпына келтіру жылдам?",
-                options: ["Incremental chain", "Differential restore", "Copy rollback", "Full restore", "Parallel merge әдісі"],
-                correct: 3
-            },
-            {
-                q: "СУБД-дағы “consistent backup” деген не?",
-                options: ["RAID-1 қолданылған", "Бэкап тек түнде жасалады", "Деректер шифрмен қорғалған", "Транзакция күйі сақталған, жартылай көшіру жоқ", "Деректер бір файлда сақталған"],
-                correct: 3
-            },
-            {
-                q: "БД инфрақұрылымы контекстіндегі “business continuity” деген не?",
-                options: ["Апат жағдайында да критикалық сервистердің тоқтамай жұмыс істеуі", "Көп серверлердің болуы", "БД схемасын өзгерту мүмкіндігі", "Бэкаптарды бұлтта сақтау", "Интерфейсті жиі жаңарту"],
-                correct: 0
-            }
+        correct: 3,
+      },
+      {
+        q: "position: absolute ерекшелігі:",
+        options: [
+          "Элемент құжаттың қалыпты ағымында қалып, өз орнын өзгертпейді",
+          "Элемент тек body ішінде ғана орналасып, басқа контейнерлерге тәуелді емес",
+          "Элемент ең жақын позицияланған ата-ана элементіне қатысты орналасады",
+          "Элемент тек flex контейнер ішінде ғана дұрыс жұмыс істейтін қасиет",
+          "Элементтің орнын өзгерту мүмкін болмай, тұрақты күйде қалады",
         ],
-
-        // --- 8-ші Нұсқа ---
-        "variant8": [
-             {
-                q: "RPO нені анықтайды?",
-                options: ["Деректерді қайтару үшін максималды уақыт", "Жұмыс істемеу ұзақтығы", "Сақтау құны", "Логтар көлемі", "Тәуліктегі максималды көшірме саны"],
-                correct: 0
-            },
-            {
-                q: "RTO нені анықтайды?",
-                options: ["Қалпына келтірудің ең ұзақ рұқсат етілген уақыты", "Көшірме саны", "Деректердің өсу жылдамдығы", "Метадеректер көлемі", "Бағдарламаны жаңарту жиілігі"],
-                correct: 0
-            },
-            {
-                q: "Жергілікті деректерді қорғауға мысал?",
-                options: ["Google Drive", "Желі ішіндегі NAS", "Dropbox", "Amazon S3", "SSH-туннель"],
-                correct: 1
-            },
-            {
-                q: "Бұлттық сақтау артықшылығы?",
-                options: ["Геотаралу және істен шығуға төзімділік", "Минималды көлем", "Қолжеткізу уақыты төмен", "Интернетке тәуелсіздік", "ОЖ-ны бұлтта тікелей іске қосу мүмкіндігі"],
-                correct: 0
-            },
-            {
-                q: "Гибрид бэкап стратегиясы дегеніміз не?",
-                options: ["Тек инкременттік көшірмелер", "Тек RAID көшірмелері", "Тек логтарды архивтеу", "Жергілікті + бұлттық көшірмелер", "Тек 'ыстық' көшірмелерді қолдану"],
-                correct: 3
-            },
-            {
-                q: "Бұлттық бэкап артықшылығы ЕМЕС?",
-                options: ["Масштабталуы", "Автоматтандыру", "Қолжетімділік", "Жергілікті қалпына келтіру жылдамдығы төмен", "Желі картасыз жұмыс істеу мүмкіндігі"],
-                correct: 3
-            },
-            {
-                q: "Linux-та бэкаптар CLI арқылы неге жиі жасалады?",
-                options: ["CLI автоматтандыру және сценарий жазуға мүмкіндік береді", "Linux GUI қолдамайды", "CLI root талап етпейді", "CLI әрқашан жылдам", "CLI мәліметтерді автоматты түрде шифрлайды"],
-                correct: 0
-            },
-            {
-                q: "Бэкап алдында нені тексеру қажет?",
-                options: ["DNS қолжетімділігі", "CPU температурасы", "Видео драйвер нұсқасы", "Деректер мен транзакциялар журналының сәйкестігі", "Салқындатқыш айналу жылдамдығы"],
-                correct: 3
-            },
-            {
-                q: "Көпшілік ОЖ-да кездесетін негізгі резервтеу механизмі?",
-                options: ["Файлдарды басқа тасымалдаушыға көшіру", "Температура мониторингі", "Лог жүргізу", "Қуатты өшіру", "Әр бэкаптан бұрын жүйені қайта қосу"],
-                correct: 0
-            },
-            {
-                q: "Бэкап аяқталғаннан кейін не міндетті?",
-                options: ["Бақылау сомасын немесе тұтастығын тексеру", "ОЖ қайта жүктеу", "Кэшті өшіру", "Себетті тазалау", "Драйвер жаңарту"],
-                correct: 0
-            },
-            {
-                q: "Бэкап сапасының негізгі параметрі:",
-                options: ["ОЖ нұсқасы", "Деректердің тұтастығы және оқылымдылығы", "Архив форматы", "Көлемі", "Файлдық жүйе түрі"],
-                correct: 1
-            },
-            {
-                q: "Ұзақ мерзімді сақтауға арналған сервис:",
-                options: ["Discord CDN", "Steam Cloud", "Google Cloud Storage Nearline", "Жергілікті WebDAV", "WhatsApp Backup"],
-                correct: 2
-            },
-            {
-                q: "cron не үшін жауап береді?",
-                options: ["Автоматты тапсырмаларды жоспарлау", "Firewall баптау", "Жүктемені бақылау", "Ядро логтарын жинау", "Реестр файлдарын басқару"],
-                correct: 0
-            },
-            {
-                q: "Windows Task Scheduler не үшін қолданылады?",
-                options: ["Реестрмен жұмыс", "Драйверлерді басқару", "Тапсырмаларды автоматтандыру, оның ішінде бэкап", "BIOS баптау", "Windows локализациясын өзгерту"],
-                correct: 2
-            },
-            {
-                q: "Резервтеу регламентіне не кіруі керек?",
-                options: ["Интерфейс түс схемасы", "Сервер бөлмесінің температурасы", "Қалпына келтіру қадамдары және көшірмелерді сақтау тәртібі", "Қызметкерлердің ПО тізімі", "ПК MAC-адрес кестесі"],
-                correct: 2
-            },
-            {
-                q: "“Backup repository” дегеніміз:",
-                options: ["Логтар қалтасы", "Кэш қалтасы", "LVM томы", "Бэкап тізбектері және метадеректері сақталатын хранилище", "1GB бос орны бар кез келген папка"],
-                correct: 3
-            },
-            {
-                q: "Толық бэкаптың кемшілігі:",
-                options: ["Көп уақыт пен көлем талап етеді", "Сенімділігі төмен", "Автоматтандыру жоқ", "Шифрлауды қолдамайды", "RAID контроллері қажет"],
-                correct: 0
-            },
-            {
-                q: "Инкременттік әдістің артықшылығы:",
-                options: ["Көшірме жасау уақыты аз", "Қалпына келтіру ең жақсы", "Файл саны аз", "Толық бэкапты қажет етпейді", "Тек бұлтта жұмыс істейді"],
-                correct: 0
-            },
-            {
-                q: "Дифференциалды көшірменің артықшылығы:",
-                options: ["Инкременттікке қарағанда жылдам қалпына келеді", "Файлдары ең кішкентай", "Жоспарлағышты қажет етпейді", "CPU аз пайдаланады", "RAID міндетті"],
-                correct: 0
-            },
-            {
-                q: "Дифференциалды әдіс қашан тиімді?",
-                options: ["Қалпына келтіру жылдамдығы маңызды болғанда", "RAID жоқ кезде", "Дерек аз болғанда", "Жүйе SSD-де болғанда", "Тек виртуалды машиналарда"],
-                correct: 0
-            },
-            {
-                q: "DR-жоспар нені қамтиды?",
-                options: ["Ойындар тізімі", "Түс схемасы", "Апат кезіндегі әрекеттер және жауапты тұлғалар", "Чат тарихы", "Сервер температурасы"],
-                correct: 2
-            },
-            {
-                q: "DR-жоспарға НЕ кірмейді?",
-                options: ["Қалпына келтіру процесі", "Қызметкерлердің демалыс кестесі", "RPO / RTO", "Жауапты тұлғалардың байланыстары", "Интерфейс тақырыптары"],
-                correct: 1
-            },
-            {
-                q: "Деректер жоғалу қаупін не төмендетеді?",
-                options: ["Тұтастықты және бэкаптарды тұрақты тексеру", "Серверді қайта жүктеу", "Кэшті тазалау", "Бағдарлама жою", "Күн сайын диск дефрагментациясы"],
-                correct: 0
-            },
-            {
-                q: "Физикалық қауіп:",
-                options: ["Қатынас құқық қатесі", "Жабдықтың жанып немесе қызып кетуі", "SQL-сұрау қатесі", "Құпиясөз өзгерту", "Жаңа драйвер орнату"],
-                correct: 1
-            },
-            {
-                q: "Бос орынның жетіспеуі неге қауіпті?",
-                options: ["Инкремент тізбегін үзіп, консистентсіздікке әкелуі мүмкін", "FPS төмендетеді", "Қол жеткізу құқықтарын өзгертеді", "Желіні баяулатады", "Барлық cron-тапсырмаларын тоқтатады"],
-                correct: 0
-            },
-            {
-                q: "Алдымен қандай деректер көшіріледі?",
-                options: ["Уақытша файлдар", "Браузер кэші", "Маңызды жүйелік және жұмыс деректері", "Медиафайлдар", "Видеокарта драйверлері"],
-                correct: 2
-            },
-            {
-                q: "Автоматтандырылған бэкапта не маңызды?",
-                options: ["Драйверлерді жою", "Шрифт ауыстыру", "Орындалу логтарын тұрақты тексеру", "Журналдауды сөндіру", "Әр бэкап алдында серверді өшіру"],
-                correct: 2
-            },
-            {
-                q: "Неге көшірмелерді әртүрлі геолокацияда сақтау керек?",
-                options: ["Жүктеуді жеделдету үшін", "RAM үнемдеу үшін", "Latency азайту үшін", "Аймақтық апаттардан қорғау үшін", "Ескі көшірмелерді автоматты жою үшін"],
-                correct: 3
-            },
-            {
-                q: "3-2-1 қағидасы нені білдіреді?",
-                options: ["3 HDD, 2 SSD, 1 VLAN", "3 бұлт, 2 VLAN, 1 firewall", "3 көшірме, 2 тасымалдаушы, 1 сыртқы сақталым", "3 сервер, 2 VPN, 1 switch", "3 апта, 2 бэкап, 1 ZIP-файл"],
-                correct: 2
-            },
-            {
-                q: "Жергілікті сақтаудың артықшылығы:",
-                options: ["Желіге тәуелсіз және қол жеткізу жылдам", "Тегін қызмет", "Шексіз кеңістік", "Өрттен қорғалған", "Мониторинг қажет емес"],
-                correct: 0
-            },
-            {
-                q: "Бэкаптың жарамсыз болуына не себеп болуы мүмкін?",
-                options: ["Мониторды өшіру", "Серверді қайта қосу", "Көшірмелеуді дұрыс аяқтамау немесе блоктардың бұзылуы", "Интерфейс тақырыбын өзгерту", "Экран жарығын азайту"],
-                correct: 2
-            },
-            {
-                q: "Нені жүйелі түрде тестілеу керек?",
-                options: ["GPU өнімділігі", "Деректерді қалпына келтіру процедуралары", "Downloads папкасы", "Түс схемасы", "Процессор жүктемесі"],
-                correct: 1
-            },
-            {
-                q: "Бэкаптарды шифрлау не қамтамасыз етеді?",
-                options: ["Тасымалдаушы жоғалғанда деректерді қорғау", "Көлемін азайту", "Қалпына келтіруді жеделдету", "Көшірме санын азайту", "Бүлінген секторларды қалпына келтіру"],
-                correct: 0
-            },
-            {
-                q: "Бұлтта сақтаудың минусы:",
-                options: ["Автоматтандыру", "Репликация", "Интернет арнасына тәуелділік", "Масштабталу", "VPN қолдану талабы"],
-                correct: 2
-            },
-            {
-                q: "Бэкап жасалмаса не істеу керек?",
-                options: ["Логтарды, құқықтарды және конфигурацияны тексеру", "Тақырып ауыстыру", "Браузерді қайта қосу", "Елемеу", "Бір апта күтіп қайта көру"],
-                correct: 0
-            },
-            {
-                q: "Резервтеу әдісін таңдағанда не ескеру керек?",
-                options: ["SLA, деректер көлемі, қалпына келтіру жылдамдығы", "Музыкалық талғам", "ПК корпусының түсі", "GPU қуаты", "Монитор рұқсаты"],
-                correct: 0
-            },
-            {
-                q: "Автоматты көшірудің артықшылығы:",
-                options: ["Адам қатесін азайтады", "Үнемі бақылауды талап етеді", "Сенімділікті төмендетеді", "Желіні баяулатады", "Міндетті түрде бөлек сервер қажет"],
-                correct: 0
-            },
-            {
-                q: "Қалпына келтіру тестінің сәттілігі неден анықталады?",
-                options: ["Қалпына келген деректердің дұрыс жұмыс істеуі", "Жүйе өшірілді", "Файл өлшемі өзгерді", "Ескі көшірмелер өшірілді", "Қалпына келтіру уақыты артты"],
-                correct: 0
-            },
-            {
-                q: "Бэкапты сақтау бойынша жақсы тәжірибе:",
-                options: ["Жұмыс үстелі", "Себет", "Бөлек алаңда немесе қашықтағы хранилище", "Бір диск", "Жүйелік диск ішіндегі кез келген папка"],
-                correct: 2
-            },
-            {
-                q: "Көшіру регламентін құжаттау не үшін қажет?",
-                options: ["Орын толтыру үшін", "Кез келген қызметкер қалпына келтіруді дұрыс орындауы үшін", "Интерфейсті өзгерту үшін", "Есептер толтыру үшін", "Архив көлемін үлкейту үшін"],
-                correct: 1
-            }
+        correct: 2,
+      },
+      {
+        q: "Grid layout артықшылығы:",
+        options: [
+          "Тек бір бағытта орналасатын элементтермен жұмыс істеуге мүмкіндік береді",
+          "Тек inline элементтер үшін арналған арнайы орналасу жүйесі болып табылады",
+          "Екі өлшемді орналасуды басқаруға мүмкіндік беретін қуатты құрал болып табылады",
+          "Міндетті түрде JavaScript қолдануды талап ететін күрделі жүйе",
+          "Тек мобильді құрылғыларға арналған орналасу тәсілі болып есептеледі",
         ],
-
-        // --- 9-шы Нұсқа ---
-        "variant9": [
-             {
-                q: "Резервтік көшірудің басты мақсаты қандай?",
-                options: ["Өнімділікті арттыру", "Желіге түсетін жүктемені азайту", "Ақаудан кейін деректерді қалпына келтіру мүмкіндігі", "Транзакцияларды жылдамдату", "Логтар санын қысқарту"],
-                correct: 2
-            },
-            {
-                q: "Қай бэкап түрі жүйенің жағдайын нақты бір күнге дейін қалпына келтіруге мүмкіндік береді?",
-                options: ["Ағындық бэкап", "Болжамды бэкап", "Лог архиві", "Мезетке дейін қалпына келтіру (point-in-time)", "Уақытша снапшот"],
-                correct: 3
-            },
-            {
-                q: "Жалғыз ғана резервтік көшірмені сақтаудың кемшілігі?",
-                options: ["Қол жеткізу жылдамдығының артуы", "RTO-ны күрделендіру", "Тасымалдаушы бүлінсе, деректерді жоғалту қаупі", "Артық архивтеу", "Метадеректер көлемін азайту"],
-                correct: 2
-            },
-            {
-                q: "Резервтік көшірмелерді не үшін шифрлайды?",
-                options: ["Оқуды жеделдету үшін", "RPO-ны төмендету үшін", "Бэкап көлемін азайту үшін", "Тасымалдаушы компрометацияланған жағдайда деректерді қорғау үшін", "Қалпына келтіруді тездету үшін"],
-                correct: 3
-            },
-            {
-                q: "Offsite-сақтауды ұйымдастыру үшін не қажет?",
-                options: ["RAID-контроллер", "Сыртқы алаңға немесе бұлтқа қолжетімділік", "Ауаның төмен температурасы", "ОЖ-ны қайта орнату", "Энергия үнемдеу режимі"],
-                correct: 1
-            },
-            {
-                q: "Лентаға (ленточные носители) көшірудің артықшылығы қандай?",
-                options: ["Кездейсоқ қолжетімділік жылдам", "Лезде репликация", "Ұзақ мерзімде сақтау құны төмен", "ОЖ-ны іске қосу мүмкіндігі", "Каталогтауды қажет етпейді"],
-                correct: 2
-            },
-            {
-                q: "Қалпына келтіруді тестілеудің негізгі міндеті…",
-                options: ["ОЖ нұсқасын тексеру", "Жабдық температурасын тексеру", "Бэкаптың шынымен қалпына келтіруге жарамды екенін растау", "Дискілік I/O-ны оңтайландыру", "Желі жүктемесін бақылау"],
-                correct: 2
-            },
-            {
-                q: "\"Continuous backup\" механизмі не істейді?",
-                options: ["Көшірмелерді тек түнде жасайды", "Деректерді әр 24 сағат сайын сақтайды", "Өзгерістерді дерлік нақты уақытқа жақын режімде жазады", "Ескі бэкаптарды автоматты түрде өшіреді", "Серверді сөндіруді талап етеді"],
-                correct: 2
-            },
-            {
-                q: "Георепликацияның артықшылығы?",
-                options: ["Индексті жеделдету", "Диск кэшін «прозрачное» ету", "Толық бір алаң істен шыққанда да жұмысқа қабілеттілік", "Логтар санын азайту", "BIOS жүктелуін жеделдету"],
-                correct: 2
-            },
-            {
-                q: "Авария кезінде RTO-ны азайтуға не көмектеседі?",
-                options: ["Алдын ала дайындалған резервтік инфрақұрылымның болуы", "Бэкап файлдарының өлшемін үлкейту", "Серверді күн сайын қайта қосу", "ЖЖҚ (ОЗУ) көлемінің минималды болуы", "Журналдауды өшіру"],
-                correct: 0
-            },
-            {
-                q: "\"Бұзылу сәтіне дейін\" қалпына келтіру үшін не қажет?",
-                options: ["Толық бэкап", "BIOS-қа қолжетімділік", "Транзакциялық логтар жиыны", "Әкімші құпиясөзін ауыстыру", "Процессор кэшін тазарту"],
-                correct: 2
-            },
-            {
-                q: "\"Offsite backup\" нені сипаттайды?",
-                options: ["Сол дискінің өзінде сақталады", "Негізгі алаңнан тыс жерде сақталады", "RAM ішінде сақталады", "Әр тәулікте өшіріледі", "Браузер кэшінде сақталады"],
-                correct: 1
-            },
-            {
-                q: "Backup rotation не істейді?",
-                options: ["Қол жеткізу жылдамдығын арттырады", "Деректерді әртүрлі секторларға ауыстырады", "Ескі көшірмелерді автоматты түрде өшіреді немесе ауыстырады", "Лог архивтеуді сөндіреді", "Жүйені қайта жүктейді"],
-                correct: 2
-            },
-            {
-                q: "Қай фактор сәтті қалпына келтіру ықтималдығын азайтады?",
-                options: ["Жүйелі тексерістер", "Көшірмелерді offsite сақтау", "Қалпына келтіру тесттерінің болмауы", "Инкременттік тізбектердің болуы", "Жоғары қолжетімді хранилищелерді пайдалану"],
-                correct: 2
-            },
-            {
-                q: "DR-тестілеудің мақсаты қандай?",
-                options: ["Желі өткізу қабілетін өлшеу", "Видеодрайвер жұмысына тексеріс", "Команданың және қалпына келтіру процедураларының дайын екенін тексеру", "Лог көлемін арттыру", "Сервер температурасын оңтайландыру"],
-                correct: 2
-            },
-            {
-                q: "Неліктен деректерді қорғаудың бірнеше деңгейі болуы маңызды?",
-                options: ["GPU-ды жеделдету үшін", "DNS жүктемесін азайту үшін", "Түрлі типтегі ақаулардан қорғау үшін", "RPO қолданбау үшін", "Логтауды оңтайландыру үшін"],
-                correct: 2
-            },
-            {
-                q: "Тым ұзын инкременттік тізбектің минусы?",
-                options: ["Бейне сапасының төмендеуі", "Қалпына келтірудің күрделенуі", "Оқу жылдамдығын арттыру", "RAID қажеттілігі", "Жеделдетілген индексация"],
-                correct: 1
-            },
-            {
-                q: "\"Cold backup\" нені сипаттайды?",
-                options: ["Жүйе толығымен тоқтатылған кезде орындалады", "Тек белсенді жүйеде орындалады", "Әр 10 секунд сайын іске қосылады", "Сақтауға орын талап етпейді", "Деректерге қолжетімсіз күйде жұмыс істейді"],
-                correct: 0
-            },
-            {
-                q: "Неліктен бэкаптарды түпнұсқа деректерден бөлек сақтау маңызды?",
-                options: ["Диск көлемін арттыру үшін", "RTO-ны азайту үшін", "Негізгі жүйе бүлінгенде деректер жоғалуын болдырмау үшін", "Желілік адаптерді жеделдету үшін", "CPU жүктемесін азайту үшін"],
-                correct: 2
-            },
-            {
-                q: "Көшірмелерді әртүрлі тасымалдаушыларда сақтау не береді?",
-                options: ["Графиканы жақсарту", "SQL оңтайландыру", "Түрлі ақауларға қосымша төзімділік", "ОЖ жүктелу уақытын азайту", "Логтар санын азайту"],
-                correct: 2
-            },
-            {
-                q: "Ransomware-дан қорғануға не көмектеседі?",
-                options: ["Жиі қайта жүктеу", "Жазудан қорғалған бэкаптар (immutable backup)", "Свопинг жиілігін арттыру", "Видеокартаны ауыстыру", "Ескі ОЖ қолдану"],
-                correct: 1
-            },
-            {
-                q: "Қалпына келтіру процесінің түсініктілігін не арттырады?",
-                options: ["Пернетақта жарығы", "Дисктерді қатаң форматтау", "Қалпына келтіру қадамдарының егжей-тегжейлі құжаттамасы", "Жабдықтың қызып кетуі", "Монитордың жоғары жиілігі"],
-                correct: 2
-            },
-            {
-                q: "Неліктен бэкаптарды тексерілген форматта сақтау маңызды?",
-                options: ["Оларды сыртқы ПО арқылы ашу үшін", "GPU өнімділігін арттыру үшін", "Қалпына келтірудің үйлесімділігін кепілдеу үшін", "ПК қосылу уақытын азайту үшін", "Қызу болдырмау үшін"],
-                correct: 2
-            },
-            {
-                q: "Бэкап сапасын не нашарлатады?",
-                options: ["Бақылау сомаларын дұрыс тексеру", "Тек бір көшірменің болуы", "Бірнеше буын (поколение) сақталуы", "Суық орында сақтау", "Түрлі тасымалдаушыларды пайдалану"],
-                correct: 1
-            },
-            {
-                q: "\"Incremental forever\" деген не?",
-                options: ["Әрдайым тек толық бэкап жасау әдісі", "Бір рет толық бэкап жасап, ары қарай тек инкременттер жасау әдісі", "RAID негізіндегі әдіс", "Логсыз қалпына келтіру әдісі", "Лентада сақтау әдісі"],
-                correct: 1
-            },
-            {
-                q: "Резервтеу жүйелерінде дедупликация не үшін қажет?",
-                options: ["Желі байланысын жеделдету", "Қайта қалпына келтіру уақытын азайту", "Қайталанатын блоктарды алып тастау арқылы көлемді қысқарту", "Процессор жиілігін арттыру", "Деректерді GPU жадында сақтау"],
-                correct: 2
-            },
-            {
-                q: "Адамның қателесу ықтималдығын не азайтады?",
-                options: ["Автоматтандырудың толық болмауы", "Автоматтандырылған көшіру процестерінің болуы", "Тек GUI пайдалану", "Конфигурацияны қолмен өңдеу", "Регламенттің болмауы"],
-                correct: 1
-            },
-            {
-                q: "Бэкаптарда \"staging area\" не үшін қолданылады?",
-                options: ["Деректерді негізгі хранилищеге жібермес бұрын уақытша сақтау үшін", "Логтарды тазарту үшін", "Видеокартаны тестілеу үшін", "Ескі снапшоттарды жою үшін", "BIOS жаңарту үшін"],
-                correct: 0
-            },
-            {
-                q: "Бэкап сапасын бақылауға не көмектеседі?",
-                options: ["Қалпына келтіру тесттерін жүйелі өткізу", "Барлық көшірмелерді жою", "Тек инкременттерді сақтау", "Терминал тақырыбын ауыстыру", "Метадеректерді жою"],
-                correct: 0
-            },
-            {
-                q: "Неліктен бірнеше буын (поколение) бэкаптарды сақтау маңызды?",
-                options: ["ОП жүктемесін азайту үшін", "Алдыңғы, ертеректегі күйлерге қайту мүмкіндігі үшін", "RAID жылдамдату үшін", "Архив өлшемін азайту үшін", "Тест уақыты аз болу үшін"],
-                correct: 1
-            },
-            {
-                q: "Деректерді қалпына келтіру мүмкін еместігіне не әкелуі мүмкін?",
-                options: ["Бірнеше көшірменің болуы", "Бэкап метадеректерінің бүлінуі", "Сенімді тасымалдаушы қолдану", "Қалпына келтіру тесттері", "Тексерілген сақтау схемаларын пайдалану"],
-                correct: 1
-            },
-            {
-                q: "\"Retention policy\" деген не?",
-                options: ["Ақаулы құрылғылар тізімі", "Ескі бэкаптарды сақтау және жою саясаты", "Барлық пайдаланушылар сипаттамасы", "Жүйе драйверлері тізімі", "Файлдарды сұрыптау алгоритмі"],
-                correct: 1
-            },
-            {
-                q: "Үлкен деректерді қалпына келтіру жылдамдығын не арттырады?",
-                options: ["Баяу тасымалдаушыларды пайдалану", "Көпдеңгейлі сақтау (tiered storage)", "Тесттердің болмауы", "Көшірмелер санын азайту", "Серверді тоқтату"],
-                correct: 1
-            },
-            {
-                q: "Бэкаптарды жоғалту қаупін не азайтады?",
-                options: ["Көшірмелерді операциялар жүріп жатқан сол серверде сақтау", "Барлық функцияға бір диск қолдану", "Репликация және offsite-сақтау", "Снапшоттарды жою", "RAM-да ғана сақтау"],
-                correct: 2
-            },
-            {
-                q: "Жұмыс жүйесіне әсерді азайтатын тәсіл қайсы?",
-                options: ["Жұмыс уақытында толық бэкап жасау", "Файлдық жүйе снапшоттарын қолдану", "Қолмен көшіру арқылы резервтеу", "Барлық қосымшаларды паузаға қою", "Қуатты ажырату"],
-                correct: 1
-            },
-            {
-                q: "Объектілік (object) сақтаудың артықшылығы қандай?",
-                options: ["Өнімділігі төмен", "Масштабталуы шектеулі", "Өте үлкен көлемдегі деректерді жоғары сенімділікпен сақтау мүмкіндігі", "RAID-ке тәуелді", "Міндетті түрде жергілікті сервер қажет"],
-                correct: 2
-            },
-            {
-                q: "Қалпына келтіру кезіндегі қате қаупін не азайтады?",
-                options: ["Нақты, түсінікті құжаттаманың болуы", "Жүйе интерфейсін өзгерту", "Кездейсоқ командаларды қолдану", "Тесттер санын қысқарту", "Нұсқаулықтың мүлдем болмауы"],
-                correct: 0
-            },
-            {
-                q: "Резервтік көшірменің бүлінуіне не әкелуі мүмкін?",
-                options: ["Хранилищенің дұрыс жұмысы", "Файлдық жүйе қателері", "Бұлтта бэкап жасау", "CRC тексеру", "Бірнеше көшірме қолдану"],
-                correct: 1
-            },
-            {
-                q: "Бэкап локациясын таңдағанда нені ескеру маңызды?",
-                options: ["Жергілікті ылғалдылық пен температура", "Алаңның қолжетімділігі және істен шығуға төзімділігі", "Сервер корпусының түсі", "USB-порттар саны", "RGB-жарықтың болуы"],
-                correct: 1
-            },
-            {
-                q: "Минималды RPO-ға не көмектеседі?",
-                options: ["Айына бір рет толық бэкап", "Репликация немесе логтарды жиі көшіру", "Журналдарды сақтауды өшіру", "Жергілікті папкада сақтау", "RAID-0 қолдану"],
-                correct: 1
-            }
-        ]
-    },
-
-    // ==============================================
-    // 🐍 ПРЕДМЕТ: PYTHON (Русский язык - 9 Вариантов)
-    // ==============================================
-    "python_ru": {
-        
-        // --- 1-й Вариант ---
-        "variant1": [
-            // --- 1-й Вариант (Python + SQL + PyQt5) [ПОЛНЫЙ] ---
-            {
-                q: "Как называется программа, выполняющая код Python построчно?",
-                options: ["Компилятор", "Интерпретатор", "Ассемблер", "Препроцессор", "Диспетчер"],
-                correct: 1
-            },
-            {
-                q: "Какой оператор используется для ветвления?",
-                options: ["for", "break", "if", "switch", "return"],
-                correct: 2
-            },
-            {
-                q: "Какой тип данных является неизменяемым?",
-                options: ["list", "dict", "set", "tuple", "bytearray"],
-                correct: 3
-            },
-            {
-                q: "Какой символ обозначает комментарий в Python?",
-                options: ["//", "/**/", "<!--", "#", "%"],
-                correct: 3
-            },
-            {
-                q: "Какой оператор сравнения означает «равно»?",
-                options: ["=", "==", "===", "eq", ":="],
-                correct: 1
-            },
-            {
-                q: "Как получить длину строки?",
-                options: ["size()", "count()", "length()", "len()", "strlen()"],
-                correct: 3
-            },
-            {
-                q: "Как называется блок, который выполняется, если условие ложное?",
-                options: ["if", "if not", "else", "return", "break"],
-                correct: 2
-            },
-            {
-                q: "Какой тип данных подходит для хранения уникальных значений?",
-                options: ["list", "dict", "set", "tuple", "string"],
-                correct: 2
-            },
-            {
-                q: "Какой из операторов является логическим?",
-                options: ["+", "and", "*", "/", "%"],
-                correct: 1
-            },
-            {
-                q: "Какой метод используется для разбиения строки?",
-                options: ["cut()", "divide()", "split()", "break()", "open()"],
-                correct: 2
-            },
-            {
-                q: "Какой синтаксис у lambda-функции?",
-                options: ["lambda: x → y", "lambda x: выражение", "lambda(x){ }", "func lambda(x)", "lambda->x"],
-                correct: 1
-            },
-            {
-                q: "Что делает функция map()?",
-                options: ["Фильтрует значения", "Применяет функцию к каждому элементу", "Объединяет строки", "Возвращает случайное число", "Сортирует список"],
-                correct: 1
-            },
-            {
-                q: "Как импортировать модуль random?",
-                options: ["include random", "using random", "import random", "attach random", "new random"],
-                correct: 2
-            },
-            {
-                q: "Как открыть файл для чтения?",
-                options: ["open(\"f.txt\", \"w\")", "open(\"f.txt\", \"r\")", "open(\"f.txt\", \"rw\")", "open(\"f.txt\", \"x\")", "open_read(\"f.txt\")"],
-                correct: 1
-            },
-            {
-                q: "Что делает метод read()?",
-                options: ["Записывает текст", "Закрывает файл", "Считывает текст", "Удаляет файл", "Конвертирует строку"],
-                correct: 2
-            },
-            {
-                q: "Как объявить класс?",
-                options: ["new class Example:", "class Example:", "class(Example);", "Example class:", "create class Example"],
-                correct: 1
-            },
-            {
-                q: "Какой метод вызывается при создании объекта?",
-                options: ["start", "create", "init", "make", "class"],
-                correct: 2
-            },
-            {
-                q: "Какой формат имеет JSON-файл?",
-                options: ["Список строк", "Двоичный код", "Текст в формате ключ–значение", "Табличные данные", "Только числа"],
-                correct: 2
-            },
-            {
-                q: "Что делает функция filter()?",
-                options: ["Умножает списки", "Применяет функцию и выбирает элементы по условию", "Удаляет пробелы", "Объединяет строки", "Создает словарь"],
-                correct: 1
-            },
-            {
-                q: "Какой модуль работает с датой?",
-                options: ["random", "math", "datetime", "string", "datework"],
-                correct: 2
-            },
-            {
-                q: "Какая команда создаёт базу в PostgreSQL?",
-                options: ["NEW DATABASE name;", "CREATE DB name;", "CREATE DATABASE name;", "MAKE DATABASE name;", "DB CREATE name;"],
-                correct: 2
-            },
-            {
-                q: "Как выполнить SQL-запрос в Python?",
-                options: ["db.run()", "cursor.execute()", "sql.run()", "execute.sql()", "database.exec()"],
-                correct: 1
-            },
-            {
-                q: "Какой тип ошибки возникает при делении на ноль?",
-                options: ["TypeError", "ZeroDivisionError", "NameError", "ValueError", "StopError"],
-                correct: 1
-            },
-            {
-                q: "Как открыть SQLite-базу?",
-                options: ["sqlite.load()", "sqlite.connect()", "sql.open()", "base.open()", "postgres.connect()"],
-                correct: 1
-            },
-            {
-                q: "Какая конструкция обрабатывает исключения?",
-                options: ["try–except", "check–catch", "error–fix", "protect–handle", "validate–except"],
-                correct: 0
-            },
-            {
-                q: "Как выглядит комментарий SQL?",
-                options: ["#", "//", "--", "!!", "%%"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор выбирает данные?",
-                options: ["TAKE", "SELECT", "GET", "CHOOSE", "FETCH"],
-                correct: 1
-            },
-            {
-                q: "Какое расширение имеет SQLite-файл?",
-                options: [".db", ".sql", ".base", ".sq", ".sqlite3"],
-                correct: 4
-            },
-            {
-                q: "Как создать таблицу SQL?",
-                options: ["NEW TABLE", "CREATE TABLE", "MAKE TABLE", "TABLE CREATE", "ADD TABLE"],
-                correct: 1
-            },
-            {
-                q: "Как выполнить commit?",
-                options: ["connect.commit()", "save.commit()", "commit.db()", "db.save()", "sql.end()"],
-                correct: 0
-            },
-            {
-                q: "Какой модуль содержит PyQt5?",
-                options: ["pywindow", "QtPy", "PyQt5", "gui5", "pyui"],
-                correct: 2
-            },
-            {
-                q: "Как создать приложение PyQt?",
-                options: ["app = QtApp()", "app = QApplication([])", "app = NewApp()", "app = WindowApp()", "app = CreateApp()"],
-                correct: 1
-            },
-            {
-                q: "Какой элемент создаёт кнопку?",
-                options: ["QPushButton", "QButton", "QtButton", "PushBtn", "NewButton"],
-                correct: 0
-            },
-            {
-                q: "Какой файл создаёт Qt Designer?",
-                options: [".design", ".form", ".ui", ".qt", ".window"],
-                correct: 2
-            },
-            {
-                q: "Как загрузить .ui файл?",
-                options: ["load_ui()", "uic.loadUi()", "import.ui()", "designer.load()", "ui.open()"],
-                correct: 1
-            },
-            {
-                q: "Какая функция запускает цикл приложения?",
-                options: ["app.run()", "app.start()", "app.exec()", "app.go()", "app.launch()"],
-                correct: 2
-            },
-            {
-                q: "Что такое сигнал в PyQt5?",
-                options: ["Функция интерфейса", "Команда запуска", "Событие, которое генерирует элемент", "Метод обновления", "Тип данных"],
-                correct: 2
-            },
-            {
-                q: "Что такое слот?",
-                options: ["Событие", "Обработчик сигнала", "Встроенная переменная", "Компонент окна", "Стиль интерфейса"],
-                correct: 1
-            },
-            {
-                q: "Как подключить сигнал к слоту?",
-                options: ["signal → slot", "connect(signal, slot)", "signal.connect(slot)", "slot.connect(signal)", "bind(signal, slot)"],
-                correct: 2
-            },
-            {
-                q: "Как создать простое окно?",
-                options: ["Window()", "QWindow()", "QWidget()", "RootWindow()", "BaseWindow()"],
-                correct: 2
-            }
-
+        correct: 2,
+      },
+      {
+        q: "z-index неге әсер етеді:",
+        options: [
+          "Элементтің түсін өзгертіп, визуалды стильге ғана әсер ететін қасиет",
+          "Элементтің өлшемін өзгертіп, енін және биіктігін басқаруға мүмкіндік береді",
+          "Қаріптің түрін өзгертіп, мәтіннің көрінісін басқаруға арналған қасиет",
+          "Элементтердің қабаттасу ретін анықтап, қайсысы үстінде екенін белгілейді",
+          "Анимацияларды қосып, қозғалыс эффектілерін басқаруға арналған құрал",
         ],
-
-        // --- 2-й Вариант ---
-        "variant2": [
-            {
-                q: "Как называется набор правил, определяющих структуру программы?",
-                options: ["Логика", "Синтаксис", "Семантика", "Параметры", "Функционал"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных используется для хранения текста?",
-                options: ["int", "float", "str", "list", "tuple"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор проверяет неравенство?",
-                options: ["=", "==", "!=", ":=", "><"],
-                correct: 2
-            },
-            {
-                q: "Какой логический оператор означает «или»?",
-                options: ["and", "or", "not", "xor", "nor"],
-                correct: 1
-            },
-            {
-                q: "Что делает оператор in?",
-                options: ["Проверяет длину", "Проверяет наличие элемента", "Перезапускает цикл", "Умножает значения", "Объявляет переменную"],
-                correct: 1
-            },
-            {
-                q: "Какой метод строки удаляет пробелы по краям?",
-                options: ["trim()", "clear()", "strip()", "remove()", "space()"],
-                correct: 2
-            },
-            {
-                q: "Какой тип данных хранит пары ключ–значение?",
-                options: ["list", "dict", "tuple", "set", "string"],
-                correct: 1
-            },
-            {
-                q: "Какой цикл выполняется, пока условие истинно?",
-                options: ["for", "repeat", "while", "loop", "until"],
-                correct: 2
-            },
-            {
-                q: "Какое ключевое слово завершает цикл досрочно?",
-                options: ["stop", "quit", "break", "exit", "leave"],
-                correct: 2
-            },
-            {
-                q: "Какой метод списка добавляет элемент в конец?",
-                options: ["append()", "add()", "insert()", "push()", "extend()"],
-                correct: 0
-            },
-            {
-                q: "Как создать лямбда-функцию, удваивающую число?",
-                options: ["lambda x: x+x", "lambda(x, x2)", "lambda x => x+2", "lambda: 2x", "lambda(x) x*2"],
-                correct: 0
-            },
-            {
-                q: "Что делает функция reduce()?",
-                options: ["Умножает строки", "Последовательно сводит элементы к одному значению", "Сортирует элементы", "Удаляет элементы", "Проверяет тип данных"],
-                correct: 1
-            },
-            {
-                q: "Как импортировать только sqrt из math?",
-                options: ["import math.sqrt", "import sqrt", "from math get sqrt", "from math import sqrt", "include math.sqrt"],
-                correct: 3
-            },
-            {
-                q: "Как открыть файл для дозаписи?",
-                options: ["open(\"f.txt\", \"a\")", "open(\"f.txt\", \"d\")", "open(\"f.txt\", \"x\")", "open(\"f.txt\", \"r+\")", "open(\"f.txt\", \"!\")"],
-                correct: 0
-            },
-            {
-                q: "Какой метод файла закрывает файл?",
-                options: ["stop()", "shutdown()", "done()", "close()", "exit()"],
-                correct: 3
-            },
-            {
-                q: "Как объявить класс Person?",
-                options: ["def Person:", "make class Person:", "class Person:", "Person class():", "new Person:"],
-                correct: 2
-            },
-            {
-                q: "Как обратиться к атрибуту объекта?",
-                options: ["obj:atr", "obj(atr)", "obj->atr", "obj.atr", "atr.obj"],
-                correct: 3
-            },
-            {
-                q: "Какое расширение имеет JSON файл?",
-                options: [".dat", ".txt", ".conf", ".json", ".jfile"],
-                correct: 3
-            },
-            {
-                q: "Какая функция сериализует данные в JSON?",
-                options: ["json.write()", "json.serialize()", "json.dumps()", "json.data()", "json.pack()"],
-                correct: 2
-            },
-            {
-                q: "Как загрузить JSON из файла?",
-                options: ["json.load()", "json.open()", "json.make()", "json.readjson()", "json.parsefile()"],
-                correct: 0
-            },
-            {
-                q: "Какая команда выбирает всё из таблицы SQL?",
-                options: ["TAKE * FROM", "GET * FROM", "SELECT * FROM", "FETCH * FROM", "READ * FROM"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор SQL удаляет строку?",
-                options: ["CUT", "DROP", "REMOVE", "DELETE", "ERASE"],
-                correct: 3
-            },
-            {
-                q: "Какой тип ошибки возникает при обращении к несуществующей переменной?",
-                options: ["NameError", "TypeError", "ValueError", "IndexError", "ZeroDivisionError"],
-                correct: 0
-            },
-            {
-                q: "Как выполнить запрос INSERT?",
-                options: ["cursor.add()", "cursor.send()", "cursor.execute()", "cursor.write()", "cursor.sql()"],
-                correct: 2
-            },
-            {
-                q: "Как получить все строки результата запроса?",
-                options: ["fetchall()", "getall()", "readall()", "take()", "list()"],
-                correct: 0
-            },
-            {
-                q: "Какой тип данных хранит булево значение в SQLite?",
-                options: ["BOOLEAN", "BOOL", "LOGIC", "LOG", "INTEGER"],
-                correct: 4
-            },
-            {
-                q: "Как называется поле с уникальными значениями?",
-                options: ["UNIQUE", "IDENTITY", "Special", "PK", "Number"],
-                correct: 0
-            },
-            {
-                q: "Какой оператор выбирает только уникальные значения?",
-                options: ["ONLY", "DISTINCT", "UNIQUE", "DIFFERENT", "CLEAR"],
-                correct: 1
-            },
-            {
-                q: "Какой инструмент создаёт графические интерфейсы в PyQt5?",
-                options: ["QtAssembler", "UI Maker", "Qt Designer", "PyWindow", "Interface Lab"],
-                correct: 2
-            },
-            {
-                q: "К какому классу относится главное окно?",
-                options: ["QWidget", "QMainWindow", "WindowRoot", "QApplication", "RootFrame"],
-                correct: 1
-            },
-            {
-                q: "Какая функция создаёт кнопку?",
-                options: ["Button()", "MakeButton()", "QPushButton()", "NewButton()", "QButton()"],
-                correct: 2
-            },
-            {
-                q: "Что делает метод show()?",
-                options: ["Закрывает окно", "Удаляет окно", "Показывает окно", "Обновляет интерфейс", "Создаёт окно"],
-                correct: 2
-            },
-            {
-                q: "Как загрузить интерфейс из .ui файла?",
-                options: ["load.ui()", "uic.importUi()", "uic.loadUi()", "app.loadUi()", "QtLoader.ui()"],
-                correct: 2
-            },
-            {
-                q: "Как подключить событие кнопки к функции?",
-                options: ["button.whenClick(func)", "button.do(func)", "button.connect(func)", "button.clicked.connect(func)", "button.push(func)"],
-                correct: 3
-            },
-            {
-                q: "Что такое QApplication?",
-                options: ["Модуль сигналов", "Главное окно программы", "Обработчик стилей", "Основной объект приложения", "Панель элементов"],
-                correct: 3
-            },
-            {
-                q: "Какое событие генерируется при нажатии кнопки?",
-                options: ["pressed", "clicked", "run", "invoke", "do"],
-                correct: 1
-            },
-            {
-                q: "Что такое слот в PyQt5?",
-                options: ["Тип данных", "Метод, обрабатывающий сигнал", "Окно", "Кнопка", "Интерфейс"],
-                correct: 1
-            },
-            {
-                q: "Как создать простой виджет?",
-                options: ["Widget()", "NewWidget()", "QWidget()", "pyWidget()", "QtWidget()"],
-                correct: 2
-            },
-            {
-                q: "Как завершить приложение?",
-                options: ["exit.app()", "app.finish()", "close.app()", "app.quit()", "quit.window()"],
-                correct: 3
-            },
-            {
-                q: "Какой метод обновляет интерфейс?",
-                options: ["update()", "refresh()", "reload()", "recreate()", "reset()"],
-                correct: 0
-            }
+        correct: 3,
+      },
+      {
+        q: "Semantic HTML артықшылығы:",
+        options: [
+          "Код көлемін ұлғайтып, жазуды күрделендіретін тәсіл болып табылады",
+          "Веб-сайттың жүктелу жылдамдығын төмендететін фактор болып есептеледі",
+          "SEO мен accessibility көрсеткіштерін жақсартып, құрылымды айқындайды",
+          "CSS қолдануды қажетсіз етіп, стильдерді жоюға мүмкіндік береді",
+          "JavaScript қолдануды толықтай алып тастайтын әдіс болып табылады",
         ],
-
-        // --- 3-й Вариант ---
-        "variant3": [
-            {
-                q: "Как называется значение, передаваемое функции?",
-                options: ["объект", "параметр", "ключ", "ссылка", "оператор"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных хранит дробные числа?",
-                options: ["int", "float", "str", "bool", "list"],
-                correct: 1
-            },
-            {
-                q: "Какой оператор означает «больше или равно»?",
-                options: [">>", ">>=", ">=", "=>", "!>="],
-                correct: 2
-            },
-            {
-                q: "Какой логический оператор меняет значение на противоположное?",
-                options: ["not", "or", "and", "xor", "nor"],
-                correct: 0
-            },
-            {
-                q: "Какой метод строки переводит текст в верхний регистр?",
-                options: ["big()", "upper()", "uppercase()", "top()", "cap()"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных подходит для хранения упорядоченной изменяемой коллекции?",
-                options: ["tuple", "list", "set", "dict", "range"],
-                correct: 1
-            },
-            {
-                q: "Какой оператор используется для повторения блока фиксированное количество раз?",
-                options: ["repeat", "until", "loop", "for", "do"],
-                correct: 3
-            },
-            {
-                q: "Какой оператор прерывает выполнение итерации и переходит к следующей?",
-                options: ["break", "stop", "skip", "continue", "exit"],
-                correct: 3
-            },
-            {
-                q: "Какой метод списка удаляет элемент по значению?",
-                options: ["remove()", "delete()", "erase()", "pop()", "drop()"],
-                correct: 0
-            },
-            {
-                q: "Какой метод кортежа существует?",
-                options: ["append()", "add()", "insert()", "count()", "remove()"],
-                correct: 3
-            },
-            {
-                q: "Что делает функция map()?",
-                options: ["Превращает список в строку", "Применяет функцию к каждому элементу", "Сортирует данные", "Объединяет списки", "Удаляет элементы по условию"],
-                correct: 1
-            },
-            {
-                q: "Какой синтаксис корректен для lambda?",
-                options: ["lambda x => x3", "lambda(x){x3}", "lambda x: x3", "lambda: x3", "lambda->x*3"],
-                correct: 2
-            },
-            {
-                q: "Как импортировать модуль datetime целиком?",
-                options: ["using datetime", "include datetime", "import datetime", "take datetime", "load datetime"],
-                correct: 2
-            },
-            {
-                q: "Как открыть файл только для записи?",
-                options: ["open(\"file.txt\", \"r\")", "open(\"file.txt\", \"w\")", "open(\"file.txt\", \"rw\")", "open(\"file.txt\", \"c\")", "open(\"file.txt\", \"d\")"],
-                correct: 1
-            },
-            {
-                q: "Какой метод считывает одну строку файла?",
-                options: ["read()", "readline()", "readrow()", "readstr()", "read1()"],
-                correct: 1
-            },
-            {
-                q: "Как называется функция, вызываемая при создании объекта?",
-                options: ["class", "new", "make", "init", "start"],
-                correct: 3
-            },
-            {
-                q: "Какой метод возвращает список атрибутов объекта?",
-                options: ["vars()", "info()", "about()", "attrs()", "describe()"],
-                correct: 0
-            },
-            {
-                q: "Какой формат данных поддерживает pickle?",
-                options: ["Только строки", "Только словари", "Двоичный формат", "Только числа", "Только списки"],
-                correct: 2
-            },
-            {
-                q: "Какой модуль используется для сериализации в binary?",
-                options: ["json", "pickle", "struct", "bin", "serial"],
-                correct: 1
-            },
-            {
-                q: "Какое расширение чаще всего у SQLite базы?",
-                options: [".txt", ".data", ".sql", ".db", ".lite"],
-                correct: 3
-            },
-            {
-                q: "Какая команда создаёт таблицу SQL?",
-                options: ["MAKE TABLE", "CREATE TABLE", "NEW TABLE", "TABLE ADD", "TABLE CREATE"],
-                correct: 1
-            },
-            {
-                q: "Как выбрать одну запись по условию?",
-                options: ["SELECT ONE", "SELECT ROW WHERE", "SELECT * WHERE", "SELECT FROM WHERE", "SELECT WHERE ROW"],
-                correct: 2
-            },
-            {
-                q: "Что делает SQL оператор ORDER BY?",
-                options: ["Фильтрует строки", "Сортирует строки", "Объединяет строки", "Удаляет строки", "Добавляет строки"],
-                correct: 1
-            },
-            {
-                q: "Какой оператор объединяет таблицы?",
-                options: ["ADD", "JOIN", "LINK", "MERGE", "FUSE"],
-                correct: 1
-            },
-            {
-                q: "Как выполнить SQL команду в Python?",
-                options: ["sql.run()", "db.send()", "cursor.execute()", "execute.command()", "run.sql()"],
-                correct: 2
-            },
-            {
-                q: "Что делает fetchone()?",
-                options: ["Получает все строки", "Получает одну строку", "Удаляет строку", "Обновляет строку", "Перезаписывает строку"],
-                correct: 1
-            },
-            {
-                q: "Как подключить PostgreSQL в Python?",
-                options: ["sqlite3.connect()", "psycopg2.connect()", "sqldb.connect()", "postgres.open()", "pgsql.start()"],
-                correct: 1
-            },
-            {
-                q: "Как завершить транзакцию?",
-                options: ["cursor.stop()", "db.end()", "connection.commit()", "write.commit()", "db.complete()"],
-                correct: 2
-            },
-            {
-                q: "Какой модуль отвечает за интерфейсы в PyQt5?",
-                options: ["PyInterface", "PyWindow", "PyQt5.QtWidgets", "QtMaker", "QtUI"],
-                correct: 2
-            },
-            {
-                q: "Как создать виджет?",
-                options: ["QWidget()", "Window()", "Root()", "Widget()", "QtWidget()"],
-                correct: 0
-            },
-            {
-                q: "Как называется основной цикл приложения?",
-                options: ["window.loop()", "run.app()", "app.exec()", "exec.window()", "loop.start()"],
-                correct: 2
-            },
-            {
-                q: "Как добавить текст на кнопку?",
-                options: ["button.setText()", "button.writeText()", "button.textAdd()", "button.label()", "button.input()"],
-                correct: 0
-            },
-            {
-                q: "Какой файл создаёт Qt Designer?",
-                options: [".qtd", ".qt", ".ui", ".design", ".form"],
-                correct: 2
-            },
-            {
-                q: "Как подключить сигнал нажатия?",
-                options: ["button.click(func)", "button.pressed(func)", "button.whenClick(func)", "button.clicked.connect(func)", "button.action(func)"],
-                correct: 3
-            },
-            {
-                q: "Какой класс является родительским для всех элементов?",
-                options: ["QFrame", "QWidget", "QElement", "QBase", "WindowCore"],
-                correct: 1
-            },
-            {
-                q: "Что такое сигнал?",
-                options: ["Метод обработки", "Событие интерфейса", "Интерфейс", "Стиль окна", "Тип данных"],
-                correct: 1
-            },
-            {
-                q: "Что такое слот?",
-                options: ["Обработчик события", "Окно", "Изображение", "Текстовый объект", "Атрибут"],
-                correct: 0
-            },
-            {
-                q: "Как задать размер окна?",
-                options: ["setDimensions()", "setSize()", "setGeometry()", "size()", "resizeWindow()"],
-                correct: 2
-            },
-            {
-                q: "Как завершить приложение из PyQt5?",
-                options: ["exit()", "stop()", "app.quit()", "quit.app()", "break()"],
-                correct: 2
-            },
-            {
-                q: "Как обновить виджет?",
-                options: ["refresh()", "update()", "recreate()", "redraw()", "reload()"],
-                correct: 1
-            }
-
+        correct: 2,
+      },
+      {
+        q: "rem және em айырмашылығы:",
+        options: [
+          "Екеуі де бірдей өлшем бірлігі болып, еш айырмашылығы жоқ",
+          "rem ата-ана элементке тәуелді, ал em тәуелсіз жұмыс істейді",
+          "em root элементке тәуелді, ал rem ата-анаға байланысты өзгереді",
+          "rem root элементке тәуелді, ал em ата-ана элементке тәуелді болады",
+          "Қазіргі кезде тек px өлшем бірлігі ғана қолданылатын негізгі стандарт",
         ],
-
-        // --- 4-й Вариант ---
-        "variant4": [
-            {
-                q: "Как называется ошибка, возникающая при попытке использовать переменную до её объявления?",
-                options: ["TypeError", "NameError", "IndexError", "ValueError", "SyntaxError"],
-                correct: 1
-            },
-            {
-                q: "Что делает оператор not in?",
-                options: ["Проверяет тип значения", "Проверяет отсутствие элемента", "Присваивает значение", "Перезапускает цикл", "Делает отрицание числа"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных представляет неизменяемую коллекцию ключ–значение?",
-                options: ["list", "tuple", "dict", "frozendict", "staticmap"],
-                correct: 3
-            },
-            {
-                q: "Какой метод строки удаляет все вхождения подстроки?",
-                options: ["remove()", "strip()", "replace()", "clear()", "delete()"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор выполняет логическое исключающее «или» (XOR)?",
-                options: ["^^", "xor", "^", "<>", "!=="],
-                correct: 2
-            },
-            {
-                q: "Что возвращает функция type()?",
-                options: ["Длину объекта", "Формат объекта", "Тип объекта", "Адрес объекта", "Значение объекта"],
-                correct: 2
-            },
-            {
-                q: "Какой метод списка возвращает индекс элемента?",
-                options: ["index()", "find()", "search()", "detect()", "locate()"],
-                correct: 0
-            },
-            {
-                q: "Какой метод множества добавляет элемент?",
-                options: ["append()", "add()", "push()", "insert()", "extend()"],
-                correct: 1
-            },
-            {
-                q: "Как называется блок, где условия проверяются последовательно после if?",
-                options: ["else if", "elif", "elseif", "nextif", "alt"],
-                correct: 1
-            },
-            {
-                q: "Какой метод строки проверяет, состоит ли она только из цифр?",
-                options: ["isnum()", "isdigit()", "numeric()", "isnumber()", "checkdigit()"],
-                correct: 1
-            },
-            {
-                q: "Как создать lambda функцию, возвращающую квадрат числа?",
-                options: ["lambda x => x^2", "lambda(x): x**2", "lambda x: x*x", "lam(x){x²}", "lambda: xx"],
-                correct: 2
-            },
-            {
-                q: "Какой модуль отвечает за работу со случайными значениями?",
-                options: ["random", "rand", "rng", "chance", "generate"],
-                correct: 0
-            },
-            {
-                q: "Какой синтаксис правильный?",
-                options: ["import math as m", "import as math m", "math import as m", "using math → m", "from math alias m"],
-                correct: 0
-            },
-            {
-                q: "Каким методом читают весь JSON из строки?",
-                options: ["json.decode()", "json.read()", "json.loads()", "json.open()", "json.try()"],
-                correct: 2
-            },
-            {
-                q: "Как записать объект Python в JSON-файл?",
-                options: ["json.store()", "json.write()", "json.dump()", "json.push()", "json.save()"],
-                correct: 2
-            },
-            {
-                q: "Какой формат имеет pickle-файл?",
-                options: ["Текстовый", "Двоичный", "JSON", "XML", "Табличный"],
-                correct: 1
-            },
-            {
-                q: "Какой модуль используется для работы с CSV?",
-                options: ["csv", "table", "comma", "filecsv", "textcsv"],
-                correct: 0
-            },
-            {
-                q: "Какое расширение чаще всего у PostgreSQL дампа?",
-                options: [".psql", ".pg", ".dump", ".sql", ".pgdata"],
-                correct: 3
-            },
-            {
-                q: "Как выбрать ограниченное количество строк?",
-                options: ["SELECT FIRST n", "SELECT n ROWS", "SELECT * LIMIT n", "SELECT LIMIT n", "TAKE n"],
-                correct: 2
-            },
-            {
-                q: "Что делает команда UPDATE?",
-                options: ["Удаляет данные", "Обновляет данные", "Создаёт таблицу", "Переименовывает таблицу", "Добавляет столбец"],
-                correct: 1
-            },
-            {
-                q: "Как удалить таблицу целиком?",
-                options: ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "ERASE TABLE", "KILL TABLE"],
-                correct: 1
-            },
-            {
-                q: "Какая функция генерирует случайное число от 0 до 1?",
-                options: ["random.one()", "random.rand()", "random.random()", "random.float()", "random.value()"],
-                correct: 2
-            },
-            {
-                q: "Что делает оператор LIKE?",
-                options: ["Сравнивает числа", "Ищет по шаблону", "Удаляет строки", "Присваивает значение", "Создаёт таблицу"],
-                correct: 1
-            },
-            {
-                q: "Как получить названия столбцов из результата cursor?",
-                options: ["cursor.columns", "cursor.keys()", "cursor.fields()", "cursor.meta()", "cursor.colnames()"],
-                correct: 1
-            },
-            {
-                q: "Что означает * в SELECT * FROM table?",
-                options: ["Выбрать только строки", "Выбрать только столбцы", "Выбрать всё", "Выбрать первые 5 строк", "Выбрать уникальные строки"],
-                correct: 2
-            },
-            {
-                q: "Какой модуль отвечает за окно приложения PyQt5?",
-                options: ["PyQt5.Core", "PyQt5.UI", "PyQt5.QtWidgets", "PyQt5.Design", "PyQt5.App"],
-                correct: 2
-            },
-            {
-                q: "Как создать экземпляр QMainWindow?",
-                options: ["win = QMainWindow()", "win = Window()", "win = MainWindow()", "win = QtMain()", "win = WindowMain()"],
-                correct: 0
-            },
-            {
-                q: "Как задать заголовок окна?",
-                options: ["window.header(\"title\")", "window.rename(\"title\")", "window.caption(\"title\")", "window.setWindowTitle(\"title\")", "window.title(\"title\")"],
-                correct: 3
-            },
-            {
-                q: "Как добавить кнопку в окно?",
-                options: ["window.add(button)", "button.attach(window)", "button.to(window)", "button.moveTo(window)", "window.push(button)"],
-                correct: 0
-            },
-            {
-                q: "Как задать положение кнопки?",
-                options: ["button.locate(x, y)", "button.setPosition(x, y)", "button.move(x, y)", "button.go(x, y)", "button.setXY()"],
-                correct: 2
-            },
-            {
-                q: "Какой метод используется для отображения окна?",
-                options: ["draw()", "show()", "display()", "open()", "window()"],
-                correct: 1
-            },
-            {
-                q: "Что такое сигналы и слоты?",
-                options: ["Механизм взаимодействия элементов интерфейса", "Файловая структура", "Протоколы обмена данными", "Типы переменных", "Модули импортирования"],
-                correct: 0
-            },
-            {
-                q: "Как создать горизонтальный layout?",
-                options: ["QHBoxLayout()", "QHorizontal()", "LayoutH()", "HorizontalLayout()", "HLayout()"],
-                correct: 0
-            },
-            {
-                q: "Как добавить виджет в layout?",
-                options: ["layout.insert(widget)", "layout.put(widget)", "layout.addWidget(widget)", "layout.widgetAdd(widget)", "layout.append(widget)"],
-                correct: 2
-            },
-            {
-                q: "Как подключить сигнал нажатия кнопки?",
-                options: ["button.press(func)", "button.whenClick(func)", "button.clicked.connect(func)", "button.doClick(func)", "button.call(func)"],
-                correct: 2
-            },
-            {
-                q: "Что выполняет resize() в PyQt5?",
-                options: ["Делает кнопку активной", "Масштабирует виджет", "Меняет цвет", "Удаляет виджет", "Обновляет текст"],
-                correct: 1
-            },
-            {
-                q: "Как получить текст из поля ввода QLineEdit?",
-                options: ["field.text()", "field.get()", "field.read()", "field.value()", "field.input()"],
-                correct: 0
-            },
-            {
-                q: "Как очистить текстовое поле?",
-                options: ["field.clr()", "field.clear()", "field.empty()", "field.delete()", "field.clean()"],
-                correct: 1
-            },
-            {
-                q: "Как завершить приложение?",
-                options: ["app.stop()", "exit.window()", "app.quit()", "quit()", "end.app()"],
-                correct: 2
-            },
-            {
-                q: "Что делает метод repaint()?",
-                options: ["Полностью перерисовывает элемент", "Закрывает окно", "Удаляет элемент", "Создаёт новый layout", "Меняет тип виджета"],
-                correct: 0
-            }
-
+        correct: 3,
+      },
+      {
+        q: "overflow: hidden әсері:",
+        options: [
+          "Контент өлшемін үлкейтіп, элементтің көлемін автоматты түрде арттырады",
+          "Қосымша скролл жолағын қосып, артық контентті көрсетуге мүмкіндік береді",
+          "Контейнерден асып кеткен контент бөлігін жасырып, көрінбеуін қамтамасыз етеді",
+          "Контентті басқа орынға көшіру арқылы жаңа орналасу тәртібін қалыптастырады",
+          "Элементтің түсін өзгертіп, визуалды ерекшеліктерін жаңартады",
         ],
+        correct: 2,
+      },
+      {
+        q: "display: flex әдепкі бағыты:",
+        options: [
+          "Барлық элементтерді бағана түрінде орналастыратын column бағыты болып табылады",
+          "Элементтерді кері бағытта орналастыратын reverse режимі қолданылады",
+          "Grid жүйесіне ұқсас екі өлшемді орналасуды қамтамасыз ететін режим",
+          "Элементтерді толық жасырып, экранда көрсетпейтін арнайы қасиет",
+          "Элементтерді қатар бойынша орналастыратын row бағыты әдепкі болып табылады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "<aside> тегі:",
+        options: [
+          "Веб-беттің негізгі мазмұнын қамтитын басты контейнер ретінде қолданылады",
+          "JavaScript кодтарын орындауға арналған арнайы тег болып табылады",
+          "Қосымша ақпаратты немесе sidebar бөлігін көрсету үшін қолданылады",
+          "CSS стильдерді сақтау және басқару үшін арналған контейнер",
+          "Формаларды құру және пайдаланушы деректерін енгізу үшін қолданылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "CSS inheritance дегеніміз:",
+        options: [
+          "Стильдердің толық жойылып, элементтерге әсер етпеуі жағдайын білдіреді",
+          "Стильдердің бір элементтен екіншісіне толық көшірілу процесі болып табылады",
+          "JavaScript кодтарының автоматты түрде орындалуын сипаттайтын ұғым",
+          "Ата-анадан бала элементтерге кейбір стильдердің берілуін білдіреді",
+          "HTML құрылымының автоматты түрде жаңартылуын қамтамасыз етеді",
+        ],
+        correct: 3,
+      },
+      {
+        q: "max-width не үшін:",
+        options: [
+          "Элементтің минималды енін анықтап, ең кіші өлшемін шектеу үшін қолданылады",
+          "Элементтің биіктігін өзгертіп, вертикалды өлшемін басқаруға арналған қасиет",
+          "Элементтің максималды енін шектеп, оның кеңеюін бақылауға мүмкіндік береді",
+          "Элементтің түсін өзгертіп, визуалды стильдерін басқаруға арналған құрал",
+          "Анимацияларды қосып, қозғалыс эффектілерін орнату үшін пайдаланылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Mobile-first тәсілі:",
+        options: [
+          "Алдымен desktop нұсқасын жасап, кейін mobile нұсқасына бейімдеу әдісі",
+          "CSS қолданбай, тек HTML арқылы дизайн жасауға негізделген тәсіл",
+          "Алдымен mobile дизайн жасап, кейін үлкен экрандарға бейімдеу тәсілі",
+          "JavaScript арқылы ғана жүзеге асырылатын күрделі әдіс болып табылады",
+          "Grid жүйесін қолданбауға негізделген арнайы дизайн тәсілі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "<figure> және <figcaption>:",
+        options: [
+          "JavaScript кодтарын жазу және орындау үшін қолданылатын элементтер",
+          "CSS стильдерді сақтау және басқару үшін арналған контейнерлер",
+          "Сурет пен оның сипаттамасын біріктіріп көрсету үшін қолданылады",
+          "Формаларды құру және пайдаланушы деректерін енгізу үшін арналған",
+          "Навигациялық сілтемелерді ұйымдастыру үшін қолданылатын құрылым",
+        ],
+        correct: 2,
+      },
+      {
+        q: "position: fixed:",
+        options: [
+          "Элемент скролл кезінде бірге қозғалып, орнын өзгертіп отырады",
+          "Элемент экранға бекітіліп, скролл кезінде орнында қалады",
+          "Элемент тек flex контейнер ішінде ғана дұрыс жұмыс істейді",
+          "Элемент тек grid жүйесінде ғана қолданылатын қасиет болып табылады",
+          "Элемент толық жойылып, құжаттан алынып тасталад",
+        ],
+        correct: 1,
+      },
+      {
+        q: "CSS reset не үшін:",
+        options: [
+          "JavaScript файлдарын қосу және орындау үшін қолданылатын әдіс",
+          "HTML құрылымын толық өзгертіп, жаңа элементтер қосу үшін қажет",
+          "Браузердің әдепкі стильдерін жойып, біркелкілік орнату үшін қолданылады",
+          "Файл көлемін азайтып, кодты қысу үшін қолданылатын тәсіл",
+          "SEO көрсеткіштерін жақсарту үшін ғана пайдаланылатын құрал",
+        ],
+        correct: 2,
+      },
+      {
+        q: "<footer>:",
+        options: [
+          "Веб-беттің негізгі мазмұнын қамтитын басты бөлім ретінде қолданылады",
+          "Навигациялық сілтемелерді көрсетуге арналған негізгі контейнер",
+          "Беттің төменгі ақпараттық бөлігін көрсету үшін қолданылатын элемент",
+          "JavaScript кодтарын орындауға арналған арнайы тег болып табылады",
+          "CSS стильдерді басқаруға арналған негізгі контейнер",
+        ],
+        correct: 2,
+      },
+      {
+        q: "vh өлшем бірлігі:",
+        options: [
+          "Пиксель өлшеміне толық тең келетін стандартты өлшем бірлігі болып табылады",
+          "em өлшем бірлігіне толық сәйкес келетін салыстырмалы өлшем",
+          "rem өлшем бірлігімен бірдей жұмыс істейтін жүйе болып табылады",
+          "Экран биіктігінің пайызымен есептелетін салыстырмалы өлшем бірлігі",
+          "Контент ұзындығына тәуелді өзгеретін арнайы өлшем жүйесі",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Responsive дизайнда breakpoint дегеніміз:",
+        options: [
+          "JavaScript функциясы ретінде жұмыс істейтін арнайы әдіс болып табылады",
+          "CSS кодындағы қателерді анықтайтын арнайы белгі ретінде қолданылады",
+          "HTML тегінің бір түрі ретінде құрылымды өзгерту үшін пайдаланылады",
+          "Экран өлшеміне байланысты стиль өзгеретін нақты нүктені білдіреді",
+          "Файл өлшемін анықтайтын техникалық көрсеткіш болып табылады",
+        ],
+        correct: 3,
+      },
+      {
+        q: "flex-wrap: wrap қасиетінің қызметі:",
+        options: [
+          "Элементтерді толық жойып, контейнерден алып тастау үшін қолданылады",
+          "Барлық элементтерді бір қатарда ұстап, қатардан шығармауға арналған",
+          "Элементтердің түсін өзгертіп, визуалды стильді басқаруға мүмкіндік береді",
+          "Элементтерді келесі қатарға өткізіп, оралуына мүмкіндік береді",
+          "Элементтердің биіктігін өзгертіп, вертикалды орналасуын реттейді",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Navigation bar үшін ең дұрыс HTML құрылымы:",
+        options: [
+          "<div><p>link</p></div> құрылымы қарапайым мәтіндік сілтемелер үшін қолданылады",
+          "<span><a></a></span> құрылымы тек inline элементтермен жұмыс істеуге арналған",
+          "<section><img></section> құрылымы тек графикалық элементтерді көрсетуге арналған",
+          "<header><div></div></header> құрылымы жалпы контейнер ретінде ғана қолданылады",
+          "<nav><ul><li><a></a></li></ul></nav>құрылымы навигация үшін ең дұрыс тәсіл",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Hamburger menu көбінесе қай кезде қолданылады:",
+        options: [
+          "Үлкен экранды desktop құрылғыларда толық мәзір көрсету үшін қолданылады",
+          "Тек сервер жағында жұмыс істейтін интерфейс элементі болып табылады",
+          "Басып шығару кезінде мәзірді көрсету үшін арнайы қолданылады",
+          "Кішкентай экрандарда мәзірді ықшам көрсету үшін қолданылады",
+          "CSS қолданылмаған жағдайда ғана пайдаланылатын элемент",
+        ],
+        correct: 3,
+      },
+      {
+        q: "min-width қолдану мақсаты:",
+        options: [
+          "Элементтің максималды енін шектеу үшін қолданылатын қасиет болып табылады",
+          "Элементтің биіктігін басқару және өзгерту үшін қолданылады",
+          "Элементтің түсін өзгертіп, визуалды стильді реттеуге арналған құрал",
+          "Элементтің ең кіші енін анықтап, оның кішіреюін шектейді",
+          "Анимацияларды қосып, қозғалыс эффектілерін басқаруға мүмкіндік береді",
+        ],
+        correct: 3,
+      },
+      {
+        q: "grid-template-columns: repeat(3, 1fr) не білдіреді:",
+        options: [
+          "Әрқайсысы 3 пиксель болатын бірнеше баған құруды білдіреді",
+          "Тек бір бағаннан тұратын қарапайым grid құрылымын анықтайды",
+          "Үш тең үлесті бағаннан тұратын тор құрылымын анықтайды",
+          "Үш қатардан тұратын layout құруға арналған параметр болып табылады",
+          "Барлық бағандарды автоматты түрде жоятын арнайы команда",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Sticky navigation ерекшелігі:",
+        options: [
+          "absolute сияқты жұмыс істеп, нақты орынға бекітілмейтін қасиет",
+          "Скролл кезінде толық жоғалып, экранда көрінбей қалады",
+          "fixed сияқты толық бекітіліп, әрқашан бір орында тұрады",
+          "Белгілі бір нүктеге жеткенде бекітіліп, әрі қарай қозғалмайды",
+          "Қазіргі браузерлерде мүлде қолданылмайтын ескі әдіс",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Mobile-first media query қалай жазылады:",
+        options: [
+          "max-width арқылы бастап, кіші экрандарға бейімдеу тәсілі қолданылады",
+          "JavaScript арқылы ғана басқарылатын күрделі механизм болып табылады",
+          "CSS қолданбай, тек HTML арқылы жүзеге асырылатын әдіс",
+          "min-width арқылы бастап, үлкен экрандарға бейімдеу тәсілі қолданылады",
+          "Тек inline стильдер арқылы ғана жазылатын арнайы әдіс",
+        ],
+        correct: 3,
+      },
+      {
+        q: "overflow-x: auto не істейді:",
+        options: [
+          "Контентті толық жасырып, ешқандай бөлігін көрсетпейтін қасиет",
+          "Элементтің биіктігін өзгертіп, вертикалды өлшемін басқаруға мүмкіндік береді",
+          "Скроллды толық өшіріп, контенттің қозғалуын тоқтатады",
+          "Қажет болған жағдайда горизонталды скролл қосуға мүмкіндік береді",
+          "Элементтің түсін өзгертіп, визуалды стильді басқаруға арналған құрал",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Адаптивті навигацияның негізгі мақсаты:",
+        options: [
+          "Код көлемін азайтып, файл өлшемін кішірейту үшін ғана қолданылады",
+          "JavaScript кодтарын толық алып тастауға арналған тәсіл болып табылады",
+          "Тек SEO көрсеткіштерін жақсарту үшін қолданылатын әдіс",
+          "Тек дизайнды әдемі ету үшін қолданылатын визуалды тәсіл",
+          "Әртүрлі құрылғыларға ыңғайлы навигацияны қамтамасыз ету болып табылады",
+        ],
+        correct: 4,
+      },
+    ],
+    variant2: [
+      {
+        q: "JavaScript-та айнымалыны дұрыс жариялау тәсілі қайсы?",
+        options: [
+          "let x = 10;",
+          "variable x = 10;",
+          "define x = 10;",
+          "int x := 10;",
+          "var: x = 10;",
+        ],
+        correct: 0,
+      },
+      {
+        q: 'JavaScript-та "string" типіне қайсы жатады?',
+        options: ["true", '"Hello World"', "null", "undefined", "12345"],
+        correct: 1,
+      },
+      {
+        q: "typeof null нәтижесі қандай болады?",
+        options: ["object", "null", "string", "boolean", "undefined"],
+        correct: 0,
+      },
+      {
+        q: "Қай оператор теңдік пен типті қатар тексереді?",
+        options: ["=", "==", "===", "!=", "<>"],
+        correct: 2,
+      },
+      {
+        q: "JavaScript-та false мәніне жататын қайсы?",
+        options: ['"0"', "[]", "{}", "0", '"false"'],
+        correct: 3,
+      },
+      {
+        q: "let пен var айырмашылығы неде?",
+        options: [
+          "let блоктық аймаққа тәуелді",
+          "var тек функцияда жұмыс істейді",
+          "var тек блокта жұмыс істейді",
+          "let тек global",
+          "let const-пен ғана",
+        ],
+        correct: 0,
+      },
+      {
+        q: "JavaScript-та массив қалай жарияланады?",
+        options: [
+          "array = {}",
+          "arr = <>",
+          "let arr = []",
+          "list = ()",
+          "array = set()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "undefined қай кезде пайда болады?",
+        options: [
+          "Айнымалы string болса",
+          "Айнымалы мән берілмесе",
+          "Айнымалы null болса",
+          "Айнымалы boolean болса",
+          "Айнымалы сан болса",
+        ],
+        correct: 1,
+      },
+      {
+        q: "NaN деген не?",
+        options: [
+          "Not a Name",
+          "Not a Number",
+          "Negative and Null",
+          "Null and Number",
+          "New assigned Number",
+        ],
+        correct: 1,
+      },
+      {
+        q: "const айнымалысына қатысты дұрыс тұжырым:",
+        options: [
+          "Қайта өзгертуге болады",
+          "Автоматты number болады",
+          "Қайта жарияланады",
+          "Тек функция ішінде",
+          "Мәні өзгертілмейді",
+        ],
+        correct: 4,
+      },
+      {
+        q: "JavaScript-та шартты оператор қайсы?",
+        options: ["if", "loop", "repeat", "while", "switcher"],
+        correct: 0,
+      },
+      {
+        q: "if шартында орындалмайтын блок:",
+        options: ["else", "if", "else if", "condition", "else if else"],
+        correct: 0,
+      },
+      {
+        q: "while циклы қашан тоқтайды?",
+        options: [
+          "Айнымалы жойылғанда",
+          "Шарт false болғанда",
+          "Код аяқталғанда",
+          "Массив бітсе",
+          "Функция шақырылса",
+        ],
+        correct: 1,
+      },
+      {
+        q: "for циклының дұрыс синтаксисі:",
+        options: [
+          "for(i<10;i++)",
+          "for(let i=0; i<10; i++)",
+          "loop(i=0;i<10;i++)",
+          "for i=0 to 10",
+          "for(i=0;i<10)",
+        ],
+        correct: 1,
+      },
+      {
+        q: "break операторы не істейді?",
+        options: [
+          "Кодты жалғастырады",
+          "Циклды бастайды",
+          "Айнымалы жояды",
+          "Циклды тоқтатады",
+          "Функция шақырады",
+        ],
+        correct: 3,
+      },
+      {
+        q: "continue операторы:",
+        options: [
+          "Циклды аяқтайды",
+          "Келесі итерацияға өтеді",
+          "Айнымалыны өшіреді",
+          "Кодты тоқтатады",
+          "Функцияны жабады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "switch ішіндегі default:",
+        options: [
+          "Айнымалы жариялау",
+          "Функция жазу",
+          "Ешбір case сәйкес келмесе орындалады",
+          "Массив құру",
+          "Цикл құру",
+        ],
+        correct: 2,
+      },
+      {
+        q: "do...while ерекшелігі:",
+        options: [
+          "Ешқашан орындалмайды",
+          "Бір рет міндетті орындалады",
+          "Тек массивке",
+          "Шарт алдын тексеріледі",
+          "Бірнеше шарт",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Функцияны анықтау:",
+        options: [
+          "define myFunc()",
+          "function myFunc()",
+          "method myFunc()",
+          "func myFunc()",
+          "function:myFunc()",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Arrow function:",
+        options: [
+          "() => {}",
+          "func => ()",
+          "function => ()",
+          "-> ()",
+          "=> function()",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Функцияны шақыру:",
+        options: [
+          "test:function()",
+          "call test",
+          "test()",
+          "function test",
+          "test = function",
+        ],
+        correct: 2,
+      },
+      {
+        q: "return операторы:",
+        options: [
+          "Код қайталайды",
+          "Функция жалғасады",
+          "Мән қайтарады",
+          "Айнымалы жояды",
+          "Цикл бастайды",
+        ],
+        correct: 2,
+      },
+      {
+        q: "addEventListener:",
+        options: [
+          "HTML құру",
+          "CSS өзгерту",
+          "Оқиға өңдеу",
+          "Айнымалы жариялау",
+          "Файл оқу",
+        ],
+        correct: 2,
+      },
+      {
+        q: "click оқиғасы:",
+        options: [
+          "Перне басқанда",
+          "Скролл кезінде",
+          "Тінтуір қозғалғанда",
+          "Элементке басқанда",
+          "Бет жүктелгенде",
+        ],
+        correct: 3,
+      },
+      {
+        q: "DOM деген не?",
+        options: [
+          "Data Object Model",
+          "Document Object Model",
+          "Dynamic Object Method",
+          "Data Oriented Map",
+          "Document Oriented Module",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Объект ішіндегі қасиетке қалай қол жеткізуге болады?",
+        options: [
+          "obj->prop",
+          "obj.prop",
+          "obj::prop",
+          "obj:prop",
+          "obj[prop()]",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Объект қасиетін динамикалық түрде алу қайсы?",
+        options: [
+          "obj.prop",
+          'obj["prop"]',
+          "obj:prop",
+          "obj->prop",
+          "obj::prop",
+        ],
+        correct: 1,
+      },
+      {
+        q: "JSON форматы қандай құрылымға негізделген?",
+        options: [
+          "HTML синтаксисі",
+          "CSS ережелері",
+          "key-value жұптары",
+          "бинарлық құрылым",
+          "функциялар жиынтығы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "JSON.parse() әдісі не істейді?",
+        options: [
+          "Объектті string-ке айналдырады",
+          "Айнымалыны жояды",
+          "HTML код құрады",
+          "JSON мәтінді объектке айналдырады",
+          "CSS стиль қосады",
+        ],
+        correct: 3,
+      },
+      {
+        q: "JSON.stringify() қандай қызмет атқарады?",
+        options: [
+          "JSON-ды массивке айналдырады",
+          "Функцияға айналдырады",
+          "Объектті JSON форматтағы string-ке айналдырады",
+          "DOM элемент жасайды",
+          "Санға түрлендіреді",
+        ],
+        correct: 2,
+      },
+      {
+        q: "form элементінде submit оқиғасы қашан орындалады?",
+        options: [
+          "Скролл кезінде",
+          "Перне басылғанда",
+          "Бет жабылғанда",
+          "Курсор қозғалғанда",
+          "Форма жіберілгенде",
+        ],
+        correct: 4,
+      },
+      {
+        q: "preventDefault() не үшін қолданылады?",
+        options: [
+          "HTML құрылымды өзгерту",
+          "CSS жою",
+          "Айнымалыны сақтау",
+          "Әдепкі әрекетті тоқтату",
+          "API шақыру",
+        ],
+        correct: 3,
+      },
+      {
+        q: "event.target қандай мән қайтарады?",
+        options: [
+          "Барлық элементтер",
+          "DOM ағашы",
+          "Оқиға болған нақты элемент",
+          "CSS стиль",
+          "Функция",
+        ],
+        correct: 2,
+      },
+      {
+        q: "classList.add() әдісі не істейді?",
+        options: [
+          "Класс жояды",
+          "DOM элемент жояды",
+          "Айнымалы қосады",
+          "Функция шақырады",
+          "Класс қосады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "classList.remove() әдісі не істейді?",
+        options: [
+          "Элементті жояды",
+          "CSS құрады",
+          "HTML өзгертеді",
+          "Атрибут қосады",
+          "Классты өшіреді",
+        ],
+        correct: 4,
+      },
+      {
+        q: "JavaScript-та объект қалай анықталады?",
+        options: [
+          "let obj = []",
+          "let obj = ()",
+          "let obj = <>",
+          "let obj = newArray()",
+          "let obj = {}",
+        ],
+        correct: 4,
+      },
+      {
+        q: "DOM элементін алу әдісі қайсы?",
+        options: [
+          "findElement()",
+          "getNode()",
+          "select()",
+          "query()",
+          "getElementById()",
+        ],
+        correct: 4,
+      },
+      {
+        q: "querySelector не істейді?",
+        options: [
+          "Тек id таңдайды",
+          "Тек class таңдайды",
+          "Тек тег таңдайды",
+          "Барлық элементтерді қайтарады",
+          "CSS селектор арқылы элемент табады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "innerHTML не үшін қолданылады?",
+        options: [
+          "CSS өзгерту",
+          "Айнымалы сақтау",
+          "Файл оқу",
+          "Серверге сұраныс",
+          "HTML мазмұнын өзгерту",
+        ],
+        correct: 4,
+      },
+      {
+        q: "value қасиеті қай элементке тән?",
+        options: ["div", "span", "body", "script", "input"],
+        correct: 4,
+      },
+    ],
+    variant3: [
+      {
+        q: "innerText пен innerHTML арасындағы негізгі айырмашылықты дұрыс сипаттайтын жауапты таңдаңыз:",
+        options: [
+          "innerText қасиеті CSS стильдерін басқаруға арналған және HTML құрылымына қатысы жоқ",
+          "innerHTML қасиеті элементтің ішіндегі HTML кодты толық оқып, оны өзгертуге мүмкіндік береді",
+          "innerText пен innerHTML екеуі де бірдей жұмыс істейді және айырмашылығы жоқ",
+          "innerHTML тек қарапайым мәтінді ғана өңдейді және HTML тегтерді елемейді",
+          "innerText HTML құрылымын толық өңдеп, тегтерді интерпретациялайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "setAttribute әдісінің негізгі мақсатын анықтаңыз:",
+        options: [
+          "HTML элементіне жаңа атрибут қосу немесе бар атрибуттың мәнін өзгерту үшін қолданылады",
+          "CSS стильдерді динамикалық түрде өзгерту үшін арнайы функция ретінде пайдаланылады",
+          "JavaScript айнымалыларын сақтау үшін арналған механизм болып табылады",
+          "DOM құрылымындағы элементтерді толық жою үшін қолданылады",
+          "Жаңа функцияларды анықтап, оларды орында үшін қолданылады",
+        ],
+        correct: 0,
+      },
+      {
+        q: "getAttribute әдісі қандай нәтиже қайтарады:",
+        options: [
+          "Толық DOM объектісін қайтарады және элементтің барлық қасиеттерін қамтиды",
+          "Көрсетілген атрибуттың мәнін жол (string) түрінде қайтарады",
+          "CSS стильдердің ағымдағы мәндерін қайтарады",
+          "JavaScript функциясын қайтарады",
+          "Бірнеше мәндерден тұратын массив қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "createElement() әдісінің қызметін анықтаңыз:",
+        options: [
+          "JavaScript ішінде жаңа айнымалы жариялау үшін қолданылады",
+          "HTML құжатынан элементтерді толық жою үшін пайдаланылады",
+          "DOM ішінде жаңа HTML элементін динамикалық түрде құруға мүмкіндік береді",
+          "CSS файлдарын автоматты түрде генерациялайды",
+          "Сыртқы API-ларға сұраныс жіберу үшін қолданылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "appendChild() әдісінің негізгі қызметі қандай:",
+        options: [
+          "Элементтің стилін өзгертіп, оған жаңа CSS қасиеттерін қосады",
+          "Таңдалған элементтің соңына жаңа DOM элементін қосады",
+          "Айнымалыларды біріктіріп, жаңа мән қалыптастырады",
+          "Белгілі бір функцияны шақырып, оны орындауға мүмкіндік береді",
+          "Элементті толық жойып, оның орнын босатады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "removeChild() әдісі не істейді:",
+        options: [
+          "Элементтің CSS қасиеттерін өзгертіп, оның көрінісін жаңартады",
+          "Көрсетілген элементтің ішінен белгілі бір баласын жояды",
+          "Айнымалыларды жою үшін арнайы қолданылады",
+          "HTML құрылымын автоматты түрде қайта құрады",
+          "Элементке жаңа класс қосады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Form валидациясының негізгі мақсаты қандай:",
+        options: [
+          "HTML кодтың көлемін азайтып, оны ықшамдау үшін қолданылады",
+          "Қолданушы енгізген деректердің дұрыстығын тексеру үшін пайдаланылады",
+          "CSS стильдерін автоматты түрде жақсарту үшін қажет",
+          "API арқылы сервермен байланыс орнату үшін қолданылады",
+          "Файлдарды серверге сақтау процесін басқару үшін керек",
+        ],
+        correct: 1,
+      },
+      {
+        q: "required атрибутының қызметін анықтаңыз:",
+        options: [
+          "Айнымалыларды автоматты түрде анықтайтын механизм ретінде жұмыс істейді",
+          "Форманың белгілі бір өрісін міндетті түрде толтыруды талап етеді",
+          "CSS стильдерді элементке қосу үшін пайдаланылады",
+          "DOM құрылымын динамикалық түрде өзгертуге мүмкіндік береді",
+          "API шақыру процесін бастау үшін қажет",
+        ],
+        correct: 1,
+      },
+      {
+        q: "pattern атрибутының негізгі қызметі қандай:",
+        options: [
+          "HTML тегтердің құрылымын анықтайды",
+          "Қолданушы енгізген мәнді регулярлы өрнек арқылы тексереді",
+          "CSS стильдерді басқару үшін қолданылады",
+          "JavaScript функцияларын анықтау үшін пайдаланылады",
+          "API әдістерін шақыруға арналған",
+        ],
+        correct: 1,
+      },
+      {
+        q: 'input type="email" қандай тексеру жүргізеді:',
+        options: [
+          "Сандық мәндердің дұрыстығын тексереді",
+          "Email форматына сәйкес келетінін тексереді",
+          "URL адресінің дұрыстығын тексереді",
+          "JSON құрылымын тексереді",
+          "CSS стильдердің дұрыстығын тексереді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "JavaScript-та оқиға тіркеудің дұрыс әдісін таңдаңыз:",
+        options: [
+          "addClick() әдісі оқиғаларды басқарудың негізгі тәсілі болып табылады",
+          "listen() функциясы браузердегі барлық оқиғаларды автоматты түрде бақылайды",
+          "addEventListener() әдісі элементке нақты оқиғаны тіркеуге мүмкіндік береді",
+          "onClick() тек CSS стильдерін өзгерту үшін қолданылады",
+          "clickEvent() барлық оқиғаларды бір уақытта өңдейді",
+        ],
+        correct: 2,
+      },
+      {
+        q: "onchange оқиғасы қашан іске асады:",
+        options: [
+          "Қолданушы пернені басқан сәтте бірден іске қосылады",
+          "Элементтің мәні өзгеріп, фокусты жоғалтқан кезде орындалады",
+          "Бет толық жүктелген кезде автоматты түрде орындалады",
+          "Скролл кезінде үздіксіз шақырылады",
+          "Курсор қозғалған сайын іске қосылады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "keydown оқиғасының сипаттамасын анықтаңыз:",
+        options: [
+          "Мышка батырмасы басылған кезде ғана жұмыс істейді",
+          "Перне басылған сәтте бірден іске қосылады",
+          "Скролл кезінде ғана орындалады",
+          "CSS өзгерген кезде автоматты түрде шақырылады",
+          "Тек форма жіберілген кезде ғана жұмыс істейді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "localStorage қандай мақсатта қолданылады:",
+        options: [
+          "HTML құрылымды толық өзгерту үшін пайдаланылады",
+          "Браузер ішінде деректерді ұзақ уақыт сақтауға мүмкіндік береді",
+          "CSS стильдерді сақтау үшін ғана қолданылады",
+          "API сұраныстарын орында үшін қажет",
+          "DOM элементтерін құру үшін пайдаланылады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "localStorage.setItem() әдісінің қызметі қандай:",
+        options: [
+          "DOM құрылымды жаңадан құрады",
+          "CSS қасиеттерді орнатады",
+          "Кілт-мән (key-value) форматында деректерді сақтайды",
+          "API сұранысын орындайды",
+          "Бұрынғы деректерді толық жояды",
+        ],
+        correct: 2,
+      },
+      {
+        q: "localStorage.getItem() не қайтарады:",
+        options: [
+          "HTML кодтың толық көшірмесін қайтарады",
+          "Бұрын сақталған мәнді жол (string) түрінде қайтарады",
+          "CSS мәндерін қайтарады",
+          "DOM объектіні қайтарады",
+          "Функцияны қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "localStorage.clear() әдісінің қызметі қандай:",
+        options: [
+          "Бір ғана элементті жояды",
+          "Браузердегі барлық сақталған деректерді өшіреді",
+          "CSS стильдерді өзгертеді",
+          "DOM құрылымды қайта құрады",
+          "API қосады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "null мен undefined айырмашылығын дұрыс сипаттаңыз:",
+        options: [
+          "undefined — бұл мән берілмеген айнымалы, ал null — әдейі бос мән ретінде беріледі",
+          "Екеуі толықтай бірдей және еш айырмашылығы жоқ",
+          "Екеуі де тек string типіне жатады",
+          "Екеуі де тек number типіне жатады",
+          "undefined әрқашан объект болып саналады",
+        ],
+        correct: 0,
+      },
+      {
+        q: "typeof NaN нәтижесі қандай болады:",
+        options: [
+          "NaN типі ретінде қайтарылады",
+          "number типі ретінде анықталады",
+          "string типіне жатады",
+          "object ретінде анықталады",
+          "undefined қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: 'parseInt("10px") нәтижесі қандай болады:',
+        options: [
+          '"10px" жол күйінде қалады',
+          "0 мәнін қайтарады",
+          "Бастапқы санды бөліп алып, 10 мәнін қайтарады",
+          "NaN қайтарады",
+          "undefined қайтарады",
+        ],
+        correct: 2,
+      },
+      {
+        q: 'parseFloat("10.5px") нәтижесі:',
+        options: [
+          "0 қайтарады",
+          "NaN қайтарады",
+          "Ондық санды бөліп алып, 10.5 мәнін қайтарады",
+          '"10.5" жолын қайтарады',
+          "undefined қайтарады",
+        ],
+        correct: 2,
+      },
+      {
+        q: 'isNaN("abc") нәтижесі қандай:',
+        options: [
+          "false қайтарады",
+          "Мән сан емес болғандықтан true қайтарады",
+          '"NaN" жолын қайтарады',
+          "undefined қайтарады",
+          "0 қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Number("123") нәтижесі қандай болады:',
+        options: [
+          '"123" жолы күйінде қалады',
+          "123 санына түрленеді",
+          "NaN қайтарады",
+          "undefined қайтарады",
+          "boolean типіне айналады",
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Boolean("") нәтижесі қандай болады:',
+        options: [
+          '"false" жолын қайтарады',
+          "Бос жол болғандықтан false қайтарады",
+          "true қайтарады",
+          "null қайтарады",
+          "undefined қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Boolean("text") нәтижесі қандай болады:',
+        options: [
+          "null қайтарады",
+          "Мән бар болғандықтан true қайтарады",
+          "false қайтарады",
+          "0 қайтарады",
+          "undefined қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қайсысы цикл емес екенін анықтаңыз:",
+        options: [
+          "while — шарт орындалғанша қайталанатын цикл",
+          "if — шарт тексеретін, бірақ қайталанбайтын оператор",
+          "for — белгілі бір диапазонда қайталанатын цикл",
+          "do...while — кемінде бір рет орындалатын цикл",
+          "forEach — массив элементтері бойынша жүретін әдіс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "forEach әдісі қайда қолданылады:",
+        options: [
+          "HTML құрылымында",
+          "Массив элементтерін бір-бірлеп өңдеу үшін",
+          "CSS стильдерді басқару үшін",
+          "API сұраныстарында",
+          "Объект құрылымында",
+        ],
+        correct: 1,
+      },
+      {
+        q: "map() әдісі қандай нәтиже қайтарады:",
+        options: [
+          "undefined қайтарады",
+          "Жаңа массив құрып қайтарады",
+          "object қайтарады",
+          "null қайтарады",
+          "boolean қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "filter() әдісінің қызметі қандай:",
+        options: [
+          "Бір ғана мән қайтарады",
+          "Шартқа сәйкес келетін элементтерден жаңа массив құрады",
+          "CSS қасиеттерді орнатады",
+          "HTML элементтерді жояды",
+          "Объект құрады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "reduce() әдісі не істейді:",
+        options: [
+          "CSS қасиеттерді қосады",
+          "Массив элементтерін бір нәтижеге жинақтайды",
+          "DOM элементтерін құрады",
+          "HTML құрылымды өзгертеді",
+          "Функцияларды жояды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "setTimeout әдісінің қызметі қандай:",
+        options: [
+          "API шақырады",
+          "Белгілі бір уақыттан кейін кодты бір рет орындайды",
+          "Цикл жасайды",
+          "CSS өзгертеді",
+          "Айнымалы жояды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "setInterval әдісі не істейді:",
+        options: [
+          "Бір рет орындалады",
+          "Белгілі интервал сайын кодты қайталап орындайды",
+          "Функцияны жояды",
+          "DOM құрады",
+          "Айнымалы өзгертеді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "clearInterval әдісі қандай қызмет атқарады:",
+        options: [
+          "DOM құрады",
+          "Бұрын орнатылған интервалды тоқтатады",
+          "CSS жояды",
+          "API қосады",
+          "Айнымалы сақтайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "document.readyState нені көрсетеді:",
+        options: [
+          "JS қатесін көрсетеді",
+          "Құжаттың жүктелу күйін көрсетеді",
+          "CSS күйін көрсетеді",
+          "HTML кодты көрсетеді",
+          "API жауапты көрсетеді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "window.onload оқиғасы қашан іске асады:",
+        options: [
+          "JavaScript басталған кезде",
+          "Барлық ресурстар толық жүктелгеннен кейін",
+          "CSS жүктелгенде",
+          "API шақырылғанда",
+          "DOM өзгергенде",
+        ],
+        correct: 1,
+      },
+      {
+        q: "document.querySelectorAll не қайтарады:",
+        options: [
+          "string қайтарады",
+          "NodeList типіндегі элементтер коллекциясын қайтарады",
+          "object қайтарады",
+          "Бір ғана элемент қайтарады",
+          "undefined қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "NodeList пен Array арасындағы айырмашылықты анықтаңыз:",
+        options: [
+          "NodeList толыққанды массив емес және кейбір массив әдістерін қолдамайды",
+          "Екеуі толықтай бірдей",
+          "Array тек DOM үшін қолданылады",
+          "NodeList тек объект",
+          "NodeList тек функция",
+        ],
+        correct: 0,
+      },
+      {
+        q: "event bubbling деген не:",
+        options: [
+          "Оқиға толық жойылады",
+          "Оқиға ең ішкі элементтен бастап жоғары ата-аналық элементтерге таралады",
+          "CSS өзгереді",
+          "Функция тоқтайды",
+          "DOM өшеді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "stopPropagation() әдісінің қызметі қандай:",
+        options: [
+          "HTML өзгертеді",
+          "Оқиғаның жоғары элементтерге таралуын тоқтатады",
+          "CSS жояды",
+          "API тоқтатады",
+          "Айнымалы жояды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "event.preventDefault() қай жағдайда қолданылады:",
+        options: [
+          "DOM құрғанда",
+          "Элементтің әдепкі әрекетін (мысалы, форма жіберу) болдырмау үшін",
+          "CSS қосқанда",
+          "Айнымалы анықтағанда",
+          "API шақырғанда",
+        ],
+        correct: 1,
+      },
+    ],
+    variant4: [
+      {
+        q: "closest() әдісінің негізгі қызметін дұрыс сипаттайтын нұсқаны таңдаңыз:",
+        options: [
+          "Берілген селекторға сәйкес келетін ең жақын ата-ана элементті анықтайды",
+          "Құжаттағы барлық элементтерді толық жинақтап қайтарады",
+          "CSS стильдерді автоматты түрде орнатуға мүмкіндік береді",
+          "DOM құрылымындағы элементтерді толық жою үшін қолданылады",
+          "Барлық ішкі элементтерді бір уақытта табуға мүмкіндік береді",
+        ],
+        correct: 0,
+      },
+      {
+        q: "matches() әдісінің қызметін анықтаңыз:",
+        options: [
+          "HTML кодтың дұрыс жазылуын тексеру үшін қолданылады",
+          "Элементтің белгілі бір селекторға сәйкес келетінін анықтайды",
+          "API жауаптардың құрылымын тексеру үшін пайдаланылады",
+          "Айнымалылардың мәндерін салыстыру үшін қолданылады",
+          "CSS стильдердің дұрыстығын тексеруге арналған әдіс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "dataset қасиетінің негізгі мақсатын таңдаңыз:",
+        options: [
+          "DOM құрылымды толық өзгерту үшін қолданылатын арнайы құрал",
+          "API байланыс орнатуға арналған қосымша мүмкіндік",
+          "HTML элементтерді жоюға арналған арнайы механизм",
+          "CSS стильдерді сақтау және басқару үшін пайдаланылады",
+          "data атрибуттарындағы мәндерді оқу және өзгертуге мүмкіндік береді",
+        ],
+        correct: 4,
+      },
+      {
+        q: 'data-id="5" атрибутын дұрыс оқу тәсілі қандай:',
+        options: [
+          "element.id қасиеті арқылы тікелей алуға болады",
+          "element.getId() әдісі арқылы оқуға болады",
+          "element.attr арқылы мәнді алуға мүмкіндік береді",
+          "element.dataset.id арқылы мәнге қол жеткізіледі",
+          "element.data арқылы барлық деректерді алуға болады",
+        ],
+        correct: 3,
+      },
+      {
+        q: 'input.value мен getAttribute("value") айырмашылығы:',
+        options: [
+          "Екеуі де толық бірдей жұмыс істейді және айырмашылығы жоқ",
+          "getAttribute тек сандық мәндерді ғана қайтарады",
+          "value тек стильдермен байланысты қасиет болып табылады",
+          "getAttribute тек DOM құрылымына қатысты мән береді",
+          "value ағымдағы мәнді, ал getAttribute бастапқы мәнді қайтарады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "form.reset() әдісінің қызметі қандай:",
+        options: [
+          "Форманы бастапқы күйіне қайтаратын стандартты әдіс",
+          "CSS стильдерді толық жоюға арналған құрал",
+          "DOM құрылымды қайтадан құру үшін қолданылады",
+          "Айнымалыларды өшіру үшін пайдаланылады",
+          "API сұраныстарын жіберу үшін арналған әдіс",
+        ],
+        correct: 0,
+      },
+      {
+        q: "submit батырмасын басқанда не орындалады:",
+        options: [
+          "CSS стильдер автоматты түрде өзгереді",
+          "DOM элементтері толығымен жойылады",
+          "Формадағы деректер серверге жіберіледі",
+          "JavaScript орындалуы толық тоқтайды",
+          "Айнымалылардың барлық мәндері өшіріледі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "HTML form action атрибутының қызметі қандай:",
+        options: [
+          "CSS стильдерді қосу үшін қолданылады",
+          "Форма жіберілетін сервер бағытын анықтайды",
+          "JavaScript код жазу үшін пайдаланылады",
+          "DOM құрылымды өзгертуге мүмкіндік береді",
+          "API қызметін өшіру үшін қолданылады",
+        ],
+        correct: 1,
+      },
+      {
+        q: 'method="POST" нені білдіреді:',
+        options: [
+          "Деректер URL арқылы жіберіледі",
+          "GET әдісімен бірдей жұмыс істейді",
+          "CSS әдісі ретінде қолданылады",
+          "DOM әдісі ретінде пайдаланылады",
+          "Деректер body бөлігінде жіберіледі",
+        ],
+        correct: 4,
+      },
+      {
+        q: 'method="GET" әдісінің ерекшелігі қандай:',
+        options: [
+          "Деректер URL параметрлері арқылы беріледі",
+          "Body арқылы мәліметтерді жібереді",
+          "JSON форматпен ғана жұмыс істейді",
+          "CSS арқылы ақпарат жібереді",
+          "API қызметін өшіруге арналған",
+        ],
+        correct: 0,
+      },
+      {
+        q: "async кілт сөзінің қызметін анықтаңыз:",
+        options: [
+          "Асинхронды функция жасауға мүмкіндік беретін арнайы кілт сөз",
+          "CSS қасиеттерді автоматты түрде қосу үшін қолданылады",
+          "DOM элементтерді толық жою үшін пайдаланылады",
+          "HTML құрылымды өзгертуге арналған құрал болып табылады",
+          "Айнымалыларды анықтау үшін қолданылатын әдіс",
+        ],
+        correct: 0,
+      },
+      {
+        q: "await қай жағдайда қолданылады:",
+        options: [
+          "DOM құрылымымен жұмыс істеу кезінде қолданылады",
+          "HTML кодтың ішінде пайдаланылатын арнайы құрал",
+          "async функцияның ішінде асинхронды нәтижені күту үшін қолданылады",
+          "API-дан тыс кез келген жерде еркін қолданылады",
+          "CSS ішінде стильдерді басқару үшін пайдаланылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Promise ұғымын дұрыс сипаттаңыз:",
+        options: [
+          "Айнымалының арнайы типі ретінде анықталады",
+          "DOM элемент ретінде қолданылатын құрылым",
+          "HTML тег ретінде қолданылатын элемент",
+          "Асинхронды операция нәтижесін білдіретін объект",
+          "CSS әдісі ретінде пайдаланылатын мүмкіндік",
+        ],
+        correct: 3,
+      },
+      {
+        q: "then() әдісінің қызметі қандай:",
+        options: [
+          "Promise орындалғаннан кейін нәтижені өңдеу үшін қолданылады",
+          "CSS қасиеттерді орнату үшін пайдаланылады",
+          "DOM құрылымды құру үшін қолданылады",
+          "Айнымалыларды жою үшін арналған әдіс",
+          "Қате шығару үшін қолданылатын құрал",
+        ],
+        correct: 0,
+      },
+      {
+        q: "catch() әдісі не үшін қажет:",
+        options: [
+          "CSS стильдерді жою үшін қолданылады",
+          "Асинхронды операция кезінде пайда болған қателерді өңдейді",
+          "DOM элементтерді құру үшін пайдаланылады",
+          "Айнымалыларды сақтау үшін арналған",
+          "HTML құрылымды өзгертуге мүмкіндік береді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "fetch() функциясының негізгі қызметі қандай:",
+        options: [
+          "HTML құрылымды автоматты түрде құруға мүмкіндік береді",
+          "DOM элементтерді жою үшін қолданылады",
+          "Серверге HTTP сұраныс жіберу үшін пайдаланылады",
+          "Айнымалыларды анықтауға арналған құрал",
+          "CSS файлдарды жүктеу үшін қолданылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "response.json() не қайтарады:",
+        options: [
+          "Жол түріндегі мәліметті қайтарады",
+          "Сандық мәнді қайтарады",
+          "Логикалық мән қайтарады",
+          "JSON деректерін JavaScript объектке айналдырады",
+          "Белгісіз мәнді қайтарады",
+        ],
+        correct: 3,
+      },
+      {
+        q: "arrow function ішінде this қалай жұмыс істейді:",
+        options: [
+          "Әрқашан window объектіне тең болады",
+          "null мәнін қайтарады",
+          "undefined мәнін қайтарады",
+          "Сыртқы контексттегі this мәнін қолданады",
+          "Өзінің жеке контекстін қалыптастырады",
+        ],
+        correct: 3,
+      },
+      {
+        q: "this keyword нені білдіреді:",
+        options: [
+          "Айнымалы мәнді білдіреді",
+          "CSS қасиетті білдіреді",
+          "Ағымдағы объектіні көрсетеді",
+          "HTML кодты білдіреді",
+          "API жауапты білдіреді",
+        ],
+        correct: 2,
+      },
+      {
+        q: "bind() әдісінің қызметі қандай:",
+        options: [
+          "DOM элементтерді жою үшін қолданылады",
+          "Функциядағы this мәнін нақты объектіге бекітеді",
+          "CSS стильдерді қосу үшін пайдаланылады",
+          "HTML құрылымды құру үшін қолданылады",
+          "Айнымалыларды өшіру үшін арналған",
+        ],
+        correct: 1,
+      },
+      {
+        q: "call() әдісінің негізгі қызметін анықтаңыз:",
+        options: [
+          "CSS қасиеттерді орнатуға мүмкіндік береді",
+          "DOM элементтерді жою үшін қолданылады",
+          "HTML құрылымды өзгерту үшін пайдаланылады",
+          "Айнымалыларды сақтау үшін арналған",
+          "Функцияны белгілі бір контексте бірден шақырады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "apply() әдісінің ерекшелігі қандай:",
+        options: [
+          "CSS стильдерді өзгерту үшін қолданылады",
+          "DOM элементтерді құру үшін пайдаланылады",
+          "HTML кодты жою үшін қолданылады",
+          "Айнымалыларды өзгертуге мүмкіндік береді",
+          "Функция аргументтерін массив ретінде қабылдайды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "spread оператор (...) қандай мақсатта қолданылады:",
+        options: [
+          "CSS қасиеттерді қосу үшін пайдаланылады",
+          "HTML құрылымды құру үшін қолданылады",
+          "DOM элементтерді жою үшін арналған",
+          "API сұраныстарын орындауға мүмкіндік береді",
+          "Массив немесе объект элементтерін жеке-жеке таратады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "rest оператор (...) не үшін қолданылады:",
+        options: [
+          "CSS стильдерді жою үшін пайдаланылады",
+          "HTML кодты өзгерту үшін қолданылады",
+          "DOM элементтерді құру үшін арналған",
+          "API қызметін өшіру үшін қолданылады",
+          "Қалған аргументтерді бір массивке жинақтайды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "destructuring ұғымы нені білдіреді:",
+        options: [
+          "CSS әдіс ретінде қолданылады",
+          "HTML тег ретінде пайдаланылады",
+          "DOM элементтерді жою процесі",
+          "Айнымалыларды өшіру процесі",
+          "Объект немесе массивтен мәндерді бөліп алу тәсілі",
+        ],
+        correct: 4,
+      },
+      {
+        q: "let {a} = obj операциясының нәтижесі қандай:",
+        options: [
+          "obj объектісі толық жойылады",
+          "CSS стиль орнатылады",
+          "DOM элемент құрылады",
+          "HTML құрылым өзгереді",
+          "obj объектісінен a қасиетінің мәні алынады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "template string қалай жазылады:",
+        options: [
+          "Қос тырнақша арқылы жазылады",
+          "Бір тырнақша арқылы жазылады",
+          "HTML тег ішінде жазылады",
+          "Жақша ішінде жазылады",
+          "Кері тырнақша арқылы жазылады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "localStorage мен sessionStorage айырмашылығы қандай:",
+        options: [
+          "Екеуі толық бірдей болып табылады",
+          "sessionStorage мәңгі сақталады",
+          "localStorage уақытша ғана сақталады",
+          "Екеуі бір уақытта жойылады",
+          "sessionStorage тек бір сессия ішінде сақталады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "JSON форматында не болмайды:",
+        options: [
+          "string типі қолданылады",
+          "number типі қолданылады",
+          "object типі қолданылады",
+          "array типі қолданылады",
+          "function типі қолданылмайды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "DOMContentLoaded оқиғасы қашан іске асады:",
+        options: [
+          "Барлық ресурстар толық жүктелген кезде",
+          "CSS толық жүктелген кезде",
+          "API жауап келген кезде",
+          "JavaScript тоқтаған кезде",
+          "HTML толық жүктеліп, DOM дайын болған кезде",
+        ],
+        correct: 4,
+      },
+      {
+        q: "defer атрибутының қызметі қандай:",
+        options: [
+          "CSS стильдерді жояды",
+          "HTML құрылымды өзгертеді",
+          "DOM элементтерді жояды",
+          "API қызметін тоқтатады",
+          "JavaScript кодын HTML жүктелгеннен кейін орындайды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "async атрибутының ерекшелігі қандай:",
+        options: [
+          "CSS қасиеттерді өзгертеді",
+          "HTML құрылымды жояды",
+          "DOM элементтерді құрады",
+          "API қызметін өшіреді",
+          "JavaScript файл тәуелсіз жүктеліп, дайын болғанда орындалады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "event delegation деген не:",
+        options: [
+          "CSS әдіс ретінде қолданылады",
+          "HTML тег ретінде пайдаланылады",
+          "DOM элементтерді жою процесі",
+          "API шақыру әдісі",
+          "Оқиғаны ата-ана элементке тіркеп, оны ішкі элементтерге қолдану тәсілі",
+        ],
+        correct: 4,
+      },
+      {
+        q: "includes() әдісі не тексереді:",
+        options: [
+          "CSS қасиеттерді тексереді",
+          "HTML құрылымды тексереді",
+          "DOM элементтерді тексереді",
+          "API жауапты тексереді",
+          "Массивте немесе жолда элементтің бар-жоғын анықтайды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "startsWith() әдісінің қызметі қандай:",
+        options: [
+          "CSS стильдерді қосады",
+          "DOM элементтерді жояды",
+          "HTML құрылымды өзгертеді",
+          "API шақырады",
+          "Жолдың белгілі бір мәннен басталатынын тексереді",
+        ],
+        correct: 4,
+      },
+      {
+        q: "endsWith() әдісі не тексереді:",
+        options: [
+          "CSS қасиеттерді тексереді",
+          "HTML құрылымды тексереді",
+          "DOM элементтерді тексереді",
+          "API жауапты тексереді",
+          "Жолдың белгілі бір мәнмен аяқталатынын анықтайды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "trim() әдісі не істейді:",
+        options: [
+          "CSS стильдерді жояды",
+          "DOM элементтерді құрады",
+          "HTML құрылымды өзгертеді",
+          "API шақырады",
+          "Жолдағы бос орындарды өшіреді",
+        ],
+        correct: 4,
+      },
+      {
+        q: "split() әдісінің қызметі қандай:",
+        options: [
+          "CSS қасиеттерді бөледі",
+          "DOM элементтерді жояды",
+          "HTML құрылымды құрады",
+          "API шақырады",
+          "Жолды массивке бөледі",
+        ],
+        correct: 4,
+      },
+      {
+        q: "join() әдісі не істейді:",
+        options: [
+          "CSS стильдерді қосады",
+          "DOM элементтерді құрады",
+          "HTML құрылымды жояды",
+          "API шақырады",
+          "Массив элементтерін біріктіреді",
+        ],
+        correct: 4,
+      },
+      {
+        q: "JavaScript-тің негізгі рөлі қандай:",
+        options: [
+          "Дизайн жасау үшін қолданылады",
+          "HTML құрылымды жазу үшін пайдаланылады",
+          "Серверді орнату үшін қажет",
+          "CSS файлдарды құру үшін қолданылады",
+          "Әрекеттерге жауап беретін интерактивтілік қосады",
+        ],
+        correct: 4,
+      },
+    ],
+    variant5: [
+      {
+        q: "HTML құжатының семантикалық құрылымын дұрыс сипаттайтын нұсқа:",
+        options: [
+          "<div> барлық контентті орналастыруға арналған әмбебап контейнер",
+          "<span> құжаттың негізгі құрылымын анықтайды",
+          "<section> тек стиль беру үшін қолданылады",
+          "<header>, <main>, <footer> мазмұнды логикалық бөледі",
+          "<b> негізгі құрылымдық элемент",
+        ],
+        correct: 3,
+      },
+      {
+        q: "closest() әдісі не істейді?",
+        options: [
+          "Барлық элементтерді қайтарады",
+          "Ең жақын ата-ананы табады",
+          "CSS стильді өзгертеді",
+          "DOM-ды жояды",
+          "Балаларды таңдайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "matches() әдісі не тексереді?",
+        options: [
+          "HTML құрылымды",
+          "Айнымалы мәнін",
+          "API жауапты",
+          "Селекторға сәйкестігін",
+          "CSS қасиеттерін",
+        ],
+        correct: 3,
+      },
+      {
+        q: "dataset не үшін қолданылады?",
+        options: [
+          "CSS сақтау",
+          "HTML жою",
+          "Custom data сақтау",
+          "API шақыру",
+          "DOM өзгерту",
+        ],
+        correct: 2,
+      },
+      {
+        q: "React-та компонент қайта рендер қашан болады?",
+        options: [
+          "DOM өзгергенде ғана",
+          "CSS өзгергенде",
+          "State немесе props өзгергенде",
+          "useEffect шақырылғанда",
+          "Әрқашан автоматты",
+        ],
+        correct: 2,
+      },
+      {
+        q: "useEffect ішінде dependency array бос болса не болады?",
+        options: [
+          "Әр render сайын орындалады",
+          "Тек бір рет орындалады",
+          "Props өзгергенде",
+          "State өзгергенде",
+          "Ешқашан орындалмайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "React-та key prop дұрыс қолданылмаса не болады?",
+        options: [
+          "CSS бұзылады",
+          "API тоқтайды",
+          "DOM diffing қате болады",
+          "State жойылады",
+          "Компонент жүктелмейді",
+        ],
+        correct: 2,
+      },
+      {
+        q: "useState асинхронды ма?",
+        options: [
+          "Толық синхронды",
+          "Тек серверде",
+          "Асинхронды түрде жаңарады",
+          "Тек useEffect ішінде",
+          "DOM-ға байланысты",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Props immutable деген не?",
+        options: [
+          "Props өзгермейді",
+          "Props серверде ғана өзгереді",
+          "Props useEffect ішінде өзгереді",
+          "Props өзгертуге болады",
+          "Props JSON форматта",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Virtual DOM артықшылығы:",
+        options: [
+          "CSS жылдамдығы",
+          "HTML генерация",
+          "Рендерді оптимизациялау",
+          "API жылдамдығы",
+          "JSON өңдеу",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Node.js-та event loop не үшін керек?",
+        options: [
+          "HTML құру",
+          "CSS өңдеу",
+          "Асинхронды операцияларды басқару",
+          "DOM өзгерту",
+          "API сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Callback hell деген не?",
+        options: [
+          "CSS қатесі",
+          "HTML қатесі",
+          "Көп деңгейлі callback",
+          "API қатесі",
+          "DOM қатесі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Promise chaining деген не?",
+        options: [
+          "Promise жою",
+          "then() тізбектеу",
+          "Promise сақтау",
+          "Promise тоқтату",
+          "Promise жүктеу",
+        ],
+        correct: 1,
+      },
+      {
+        q: "async/await қай кезде тиімді?",
+        options: [
+          "CSS жазғанда",
+          "HTML жасағанда",
+          "Асинхронды кодты түсінікті ету",
+          "DOM өзгерткенде",
+          "JSON өңдегенде",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Express-та middleware реті:",
+        options: [
+          "Кездейсоқ",
+          "CSS арқылы",
+          "Жазылу ретімен",
+          "JSON арқылы",
+          "API арқылы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "JWT мақсаты:",
+        options: [
+          "CSS сақтау",
+          "HTML қорғау",
+          "Аутентификация",
+          "DOM қорғау",
+          "API жою",
+        ],
+        correct: 2,
+      },
+      {
+        q: "SQL Injection алдын алу:",
+        options: [
+          "CSS фильтр",
+          "Prepared statements",
+          "HTML escape",
+          "JSON parse",
+          "DOM sanitize",
+        ],
+        correct: 1,
+      },
+      {
+        q: "XSS қорғаныс:",
+        options: ["CSS", "HTML", "Input sanitization", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "CORS қатесі қашан болады?",
+        options: [
+          "CSS қате",
+          "HTML қате",
+          "Басқа домен сұранысы шектелсе",
+          "API жоқ",
+          "JSON қате",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Controlled vs uncontrolled айырмашылығы:",
+        options: ["CSS", "HTML", "State арқылы басқару", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "MongoDB _id қызметі:",
+        options: ["CSS", "HTML", "Бірегей идентификатор", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "REST stateless деген не?",
+        options: [
+          "CSS жоқ",
+          "HTML жоқ",
+          "Сервер күй сақтамайды",
+          "API жоқ",
+          "DOM жоқ",
+        ],
+        correct: 2,
+      },
+      {
+        q: "HTTP 500 қатесі:",
+        options: [
+          "Клиент қатесі",
+          "Redirect",
+          "Сервер қатесі",
+          "Қосылу жоқ",
+          "JSON қатесі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Git rebase vs merge:",
+        options: ["CSS", "HTML", "Тарихты өзгерту vs біріктіру", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "Lifting state up:",
+        options: ["CSS", "HTML", "State-ты жоғары шығару", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "useMemo мақсаты:",
+        options: [
+          "CSS сақтау",
+          "HTML сақтау",
+          "Есептеуді кэштеу",
+          "API сақтау",
+          "DOM сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "useCallback не істейді?",
+        options: ["CSS", "HTML", "Функцияны кэштеу", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "Throttling vs Debouncing:",
+        options: ["CSS", "HTML", "Шақыру жиілігін басқару", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "bcrypt salt мақсаты:",
+        options: ["CSS", "HTML", "Хэш қауіпсіздігін арттыру", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "HTTPS неге қауіпсіз?",
+        options: ["CSS", "HTML", "Шифрлау қолданады", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "React Fragment:",
+        options: ["CSS", "HTML", "Қосымша DOM элементсіз орау", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "Lazy loading:",
+        options: ["CSS", "HTML", "Өнімділікті арттыру", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "CDN артықшылығы:",
+        options: ["CSS", "HTML", "Контентті жылдам жеткізу", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "Rate limiting:",
+        options: ["CSS", "HTML", "Сұранысты шектеу", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "React-та state неге өзгертілмейді тікелей?",
+        options: [
+          "CSS әсер етеді",
+          "HTML бұзылады",
+          "React өзгерісті байқамайды",
+          "API тоқтайды",
+          "DOM жойылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "setState неге бірден жаңармайды?",
+        options: [
+          "CSS кешігеді",
+          "HTML жаңармайды",
+          "Batching қолданылады",
+          "API кешігеді",
+          "DOM жойылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "React reconciliation:",
+        options: [
+          "CSS салыстыру",
+          "HTML жою",
+          "Virtual DOM салыстыру",
+          "API шақыру",
+          "JSON өңдеу",
+        ],
+        correct: 2,
+      },
+      {
+        q: "useEffect cleanup:",
+        options: [
+          "CSS өзгергенде",
+          "HTML жүктелгенде",
+          "API шақырғанда",
+          "Unmount немесе өзгеріс кезінде",
+          "Әр render сайын",
+        ],
+        correct: 3,
+      },
+      {
+        q: "StrictMode:",
+        options: [
+          "CSS тексеру",
+          "HTML тексеру",
+          "Қателерді анықтау",
+          "API қорғау",
+          "DOM жою",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Node.js non-blocking I/O:",
+        options: ["CSS", "HTML", "Негізгі ағынды бөгемейді", "API", "DOM"],
+        correct: 2,
+      },
+    ],
+    variant6: [
+      {
+        q: "HTML5-те <article> тегі не үшін қолданылады?",
+        options: [
+          "Стиль беру үшін",
+          "Бөлек тәуелсіз контент үшін",
+          "Скрипт жазу үшін",
+          "Сурет көрсету үшін",
+          "Форма жасау үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "<aside> тегі қандай мақсатта қолданылады?",
+        options: [
+          "Негізгі контент",
+          "Навигация",
+          "Қосымша ақпарат",
+          "Скрипт",
+          "CSS",
+        ],
+        correct: 2,
+      },
+      {
+        q: "CSS-те display: flex не үшін керек?",
+        options: [
+          "Мәтін бояу",
+          "Контейнерді жасыру",
+          "Икемді орналасу жасау",
+          "Анимация",
+          "Шрифт өзгерту",
+        ],
+        correct: 2,
+      },
+      {
+        q: "position: absolute қалай жұмыс істейді?",
+        options: [
+          "Құжат ағынымен",
+          "Экран бойынша",
+          "Ең жақын positioned ата-анаға қатысты",
+          "Тек body-ға қатысты",
+          "Тек fixed сияқты",
+        ],
+        correct: 2,
+      },
+      {
+        q: "JavaScript-та typeof null мәні қандай?",
+        options: ["null", "undefined", "object", "number", "string"],
+        correct: 2,
+      },
+      {
+        q: "=== операторы не істейді?",
+        options: [
+          "Тек мән салыстырады",
+          "Тек тип",
+          "Тип пен мән",
+          "Қосу",
+          "Азайту",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Array.map() не істейді?",
+        options: [
+          "Фильтрлейді",
+          "Өзгертеді",
+          "Жаңа массив қайтарады",
+          "Өшіреді",
+          "Қосады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Array.filter() не істейді?",
+        options: [
+          "Барлығын қайтарады",
+          "Шартқа сай элементтерді қайтарады",
+          "Бір ғана элемент",
+          "Жаңа объект",
+          "Жояды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Promise resolve болғанда не болады?",
+        options: [
+          "catch шақырылады",
+          "then шақырылады",
+          "finally ғана",
+          "reject",
+          "тоқтайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "async функция әрқашан не қайтарады?",
+        options: ["string", "number", "Promise", "object", "array"],
+        correct: 2,
+      },
+      {
+        q: "DOM деген не?",
+        options: ["CSS", "HTML", "Құжат құрылымының моделі", "API", "JSON"],
+        correct: 2,
+      },
+      {
+        q: "addEventListener не үшін керек?",
+        options: [
+          "CSS өзгерту",
+          "Оқиға тыңдау",
+          "HTML жазу",
+          "API шақыру",
+          "DOM жою",
+        ],
+        correct: 1,
+      },
+      {
+        q: "localStorage не істейді?",
+        options: [
+          "Уақытша сақтау",
+          "Серверде сақтау",
+          "Браузерде тұрақты сақтау",
+          "API сақтау",
+          "DOM сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "sessionStorage айырмашылығы:",
+        options: [
+          "Мәңгі сақталады",
+          "Тек сессия кезінде",
+          "Серверде",
+          "API",
+          "DOM",
+        ],
+        correct: 1,
+      },
+      {
+        q: "fetch() не үшін қолданылады?",
+        options: ["CSS", "HTML", "HTTP сұраныс", "DOM", "JSON ғана"],
+        correct: 2,
+      },
+      {
+        q: "JSON.parse() не істейді?",
+        options: [
+          "Объект → string",
+          "String → объект",
+          "Array → string",
+          "HTML",
+          "CSS",
+        ],
+        correct: 1,
+      },
+      {
+        q: "JSON.stringify() не істейді?",
+        options: [
+          "String → объект",
+          "Object → string",
+          "Array → number",
+          "HTML",
+          "CSS",
+        ],
+        correct: 1,
+      },
+      {
+        q: "forEach не қайтарады?",
+        options: ["Жаңа массив", "undefined", "object", "number", "string"],
+        correct: 1,
+      },
+      {
+        q: "setTimeout не істейді?",
+        options: [
+          "Бірден орындайды",
+          "Кешіктіріп орындайды",
+          "Қайталайды",
+          "Жояды",
+          "Тоқтатады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "setInterval не істейді?",
+        options: ["Бір рет", "Қайталанып орындалады", "Жояды", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "CSS specificity деген не?",
+        options: ["Жылдамдық", "Басымдық", "Түс", "Анимация", "Шрифт"],
+        correct: 1,
+      },
+      {
+        q: "z-index не істейді?",
+        options: [
+          "Түсті өзгертеді",
+          "Қабаттарды басқарады",
+          "Өлшем",
+          "Шрифт",
+          "Анимация",
+        ],
+        correct: 1,
+      },
+      {
+        q: "media query не үшін?",
+        options: ["API", "Адаптив дизайн", "HTML", "DOM", "JSON"],
+        correct: 1,
+      },
+      {
+        q: "overflow: hidden не істейді?",
+        options: [
+          "Көрсетеді",
+          "Жасырады",
+          "Айналдырады",
+          "Үлкейтеді",
+          "Қысқартады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Git commit не істейді?",
+        options: ["Жояды", "Өзгерісті сақтайды", "Қосады", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "Git push не істейді?",
+        options: ["Локал сақтау", "Репозиторийге жүктеу", "Жою", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "Git pull не істейді?",
+        options: ["Жою", "Өзгерісті алу", "Қосу", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "Branch не үшін керек?",
+        options: ["CSS", "HTML", "Параллель даму", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "Merge конфликт қашан болады?",
+        options: ["CSS", "HTML", "Бір файлды өзгерткенде", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "Debugging деген не?",
+        options: ["Код жазу", "Қате табу", "API", "DOM", "CSS"],
+        correct: 1,
+      },
+      {
+        q: "Console.log не үшін?",
+        options: ["CSS", "HTML", "Лог шығару", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "try...catch не үшін?",
+        options: ["CSS", "HTML", "Қателерді ұстау", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "NaN деген не?",
+        options: ["Number", "Қате сан мәні", "String", "Object", "Array"],
+        correct: 1,
+      },
+      {
+        q: "isNaN не тексереді?",
+        options: ["String", "Number", "Сан емес мән", "Object", "Array"],
+        correct: 2,
+      },
+      {
+        q: "parseInt не істейді?",
+        options: [
+          "String → integer",
+          "Integer → string",
+          "Array → number",
+          "HTML",
+          "CSS",
+        ],
+        correct: 0,
+      },
+      {
+        q: "parseFloat не істейді?",
+        options: ["String → float", "Float → string", "Array", "HTML", "CSS"],
+        correct: 0,
+      },
+      {
+        q: "Boolean() не істейді?",
+        options: [
+          "Number",
+          "Boolean түріне ауыстырады",
+          "String",
+          "Array",
+          "Object",
+        ],
+        correct: 1,
+      },
+      {
+        q: "null мен undefined айырмашылығы:",
+        options: [
+          "Бірдей",
+          "null — әдейі бос, undefined — анықталмаған",
+          "Тек number",
+          "API",
+          "DOM",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Arrow function ерекшелігі:",
+        options: ["this жоқ", "this лексикалық", "DOM", "API", "CSS"],
+        correct: 1,
+      },
+      {
+        q: "Template literal не үшін?",
+        options: ["CSS", "HTML", "Айнымалыларды оңай қосу", "API", "DOM"],
+        correct: 2,
+      },
+    ],
+    variant7: [
+      {
+        q: "HTML-де <nav> тегі не үшін қолданылады?",
+        options: [
+          "Сурет көрсету",
+          "Навигациялық сілтемелер үшін",
+          "Скрипт жазу",
+          "CSS қосу",
+          "Форма жасау",
+        ],
+        correct: 1,
+      },
+      {
+        q: "<figure> тегі қандай мақсатта қолданылады?",
+        options: [
+          "Тек мәтін",
+          "Формалар",
+          "Медиа контент пен сипаттама",
+          "Скрипт",
+          "CSS",
+        ],
+        correct: 2,
+      },
+      {
+        q: "CSS-те display: grid не үшін қажет?",
+        options: [
+          "Түсті өзгерту",
+          "Анимация",
+          "Торлы layout жасау",
+          "Шрифт өзгерту",
+          "Жасыру",
+        ],
+        correct: 2,
+      },
+      {
+        q: "position: fixed қалай жұмыс істейді?",
+        options: [
+          "Ата-анаға қатысты",
+          "Құжат ағынымен",
+          "Экранға бекітіледі",
+          "Тек body ішінде",
+          "Absolute сияқты",
+        ],
+        correct: 2,
+      },
+      {
+        q: "JavaScript-та NaN === NaN нәтижесі қандай?",
+        options: ["true", "false", "undefined", "null", "error"],
+        correct: 1,
+      },
+      {
+        q: "== мен === айырмашылығы неде?",
+        options: [
+          "Екеуі бірдей",
+          "=== тек мән",
+          "== тек тип",
+          "=== тип пен мән",
+          "== қатені тексереді",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Array.reduce() не істейді?",
+        options: [
+          "Массивті жояды",
+          "Бір мәнге жинақтайды",
+          "Көшіреді",
+          "Сұрыптайды",
+          "Фильтрлейді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Array.find() не қайтарады?",
+        options: [
+          "Барлық элемент",
+          "Жаңа массив",
+          "Бірінші сәйкес элемент",
+          "undefined әрқашан",
+          "Объект",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Promise reject болғанда не болады?",
+        options: [
+          "then шақырылады",
+          "catch шақырылады",
+          "finally ғана",
+          "resolve",
+          "тоқтайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "finally блогы қашан орындалады?",
+        options: ["Тек resolve", "Тек reject", "Әрқашан", "Кейде", "Ешқашан"],
+        correct: 2,
+      },
+      {
+        q: "DOM tree деген не?",
+        options: ["CSS", "JSON", "HTML құрылымының ағашы", "API", "Script"],
+        correct: 2,
+      },
+      {
+        q: "removeEventListener не істейді?",
+        options: [
+          "Оқиға қосады",
+          "Оқиға жояды",
+          "CSS өзгертеді",
+          "HTML жазады",
+          "API шақырады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Cookies не үшін қолданылады?",
+        options: [
+          "CSS сақтау",
+          "Сервермен дерек алмасу",
+          "HTML",
+          "DOM",
+          "API жою",
+        ],
+        correct: 1,
+      },
+      {
+        q: "session cookie ерекшелігі:",
+        options: [
+          "Мәңгі",
+          "Сессия аяқталғанда жойылады",
+          "Серверде ғана",
+          "JSON",
+          "DOM",
+        ],
+        correct: 1,
+      },
+      {
+        q: "axios не үшін қолданылады?",
+        options: ["CSS", "HTML", "HTTP сұраныс", "DOM", "JSON ғана"],
+        correct: 2,
+      },
+      {
+        q: "HTTP GET әдісі не істейді?",
+        options: [
+          "Дерек жояды",
+          "Дерек алады",
+          "Дерек жаңартады",
+          "Дерек қосады",
+          "Қауіпсіздік",
+        ],
+        correct: 1,
+      },
+      {
+        q: "HTTP POST не істейді?",
+        options: ["Оқу", "Жою", "Жаңа дерек қосу", "Көшіру", "Қарау"],
+        correct: 2,
+      },
+      {
+        q: "for...of не үшін қолданылады?",
+        options: ["Объект", "Массив/итерация", "DOM", "API", "CSS"],
+        correct: 1,
+      },
+      {
+        q: "clearTimeout не істейді?",
+        options: [
+          "Қайталайды",
+          "Таймерді тоқтатады",
+          "Орындайды",
+          "Қосады",
+          "Жояды бәрін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "clearInterval не істейді?",
+        options: [
+          "Бір рет",
+          "Интервалды тоқтатады",
+          "Қайталайды",
+          "API",
+          "DOM",
+        ],
+        correct: 1,
+      },
+      {
+        q: "CSS margin не үшін?",
+        options: [
+          "Ішкі бос орын",
+          "Сыртқы бос орын",
+          "Түс",
+          "Шрифт",
+          "Анимация",
+        ],
+        correct: 1,
+      },
+      {
+        q: "CSS padding не үшін?",
+        options: ["Сыртқы бос орын", "Ішкі бос орын", "Қабат", "Түс", "Өлшем"],
+        correct: 1,
+      },
+      {
+        q: "Responsive design деген не?",
+        options: ["CSS", "HTML", "Әртүрлі экранға бейімделу", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "overflow: scroll не істейді?",
+        options: [
+          "Жасырады",
+          "Скролл қосады",
+          "Үлкейтеді",
+          "Қысқартады",
+          "Жояды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Git clone не істейді?",
+        options: ["Жояды", "Көшірме жасайды", "Қосады", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "Git status не көрсетеді?",
+        options: ["Тарих", "Өзгерістер күйі", "Жою", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "Git log не істейді?",
+        options: ["Жою", "Тарихты көрсету", "Қосу", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "Branch checkout не істейді?",
+        options: ["Жояды", "Басқа branch-қа өтеді", "Қосады", "API", "DOM"],
+        correct: 1,
+      },
+      {
+        q: "Conflict шешу қалай болады?",
+        options: ["CSS", "HTML", "Қолмен түзету", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "Testing деген не?",
+        options: ["Код жазу", "Қателерді тексеру", "API", "DOM", "CSS"],
+        correct: 1,
+      },
+      {
+        q: "Console.error не үшін?",
+        options: ["CSS", "HTML", "Қате лог", "API", "DOM"],
+        correct: 2,
+      },
+      {
+        q: "try блогы не істейді?",
+        options: [
+          "Қате ұстайды",
+          "Кодты тексереді",
+          "Код орындау",
+          "API",
+          "DOM",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Infinity деген не?",
+        options: ["Сан", "Шексіз мән", "String", "Object", "Array"],
+        correct: 1,
+      },
+      {
+        q: "Number() не істейді?",
+        options: ["String", "Санға айналдырады", "Boolean", "Object", "Array"],
+        correct: 1,
+      },
+      {
+        q: "toString() не істейді?",
+        options: ["Сан", "String-ке айналдырады", "Array", "HTML", "CSS"],
+        correct: 1,
+      },
+      {
+        q: "Math.random() не береді?",
+        options: ["Integer", "Кездейсоқ сан", "String", "Object", "Array"],
+        correct: 1,
+      },
+      {
+        q: "Boolean false болатын мән:",
+        options: ['"0"', "1", "0", '"true"', "{}"],
+        correct: 2,
+      },
+      {
+        q: "undefined қашан пайда болады?",
+        options: [
+          "Айнымалы мәні жоқ",
+          "Null болса",
+          "0 болса",
+          "String",
+          "Array",
+        ],
+        correct: 0,
+      },
+      {
+        q: "function declaration ерекшелігі:",
+        options: ["Hoisting жоқ", "Hoisting бар", "DOM", "API", "CSS"],
+        correct: 1,
+      },
+      {
+        q: "Spread operator (...) не істейді?",
+        options: ["CSS", "HTML", "Массив/объект кеңейту", "API", "DOM"],
+        correct: 2,
+      },
+    ],
+    variant8: [
+      {
+        q: "CI/CD үдерісіндегі Continuous Integration ұғымы нені білдіреді?",
+        options: [
+          "Код өзгерістерін жүйелі біріктіру және автоматты тексеру",
+          "Сервер қызметін уақытша тоқтатып қайта іске қосу",
+          "Интерфейс бөлігін толықтай қайта жобалау үдерісі",
+          "Деректер базасын қолмен жаңарту және сақтау",
+          "Жүйелік файлдарды өшіру және қайта орнату",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Incremental backup қандай мағына береді?",
+        options: [
+          "Барлық деректерді толықтай қайта көшіру әрекеті",
+          "Тек жүйелік файлдардың көшірмесін сақтау тәсілі",
+          "Соңғы өзгерістерді ғана кезең-кезеңімен көшіру",
+          "Қолмен таңдалған файлдарды жеке сақтау әдісі",
+          "Архивсіз файлдарды жай ғана көшіру процесі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Full backup дегеніміз не?",
+        options: [
+          "Деректердің тек бір бөлігін ғана көшіру",
+          "Тек мәліметтер қорын бөлек сақтау әрекеті",
+          "Барлық ақпараттың толық көшірмесін жасау",
+          "Бағдарламалық кодтарды ғана сақтау әдісі",
+          "API конфигурацияларын ғана резервтеу тәсілі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Disaster Recovery ұғымы нені сипаттайды?",
+        options: [
+          "Бағдарламалық кодтарды жаңарту үдерісі",
+          "Пайдаланушы интерфейсін қайта құру тәсілі",
+          "Апаттан кейін жүйені қалпына келтіру стратегиясы",
+          "API өнімділігін тексеру және талдау әдісі",
+          "Артық деректерді жүйеден толық жою процесі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Deployment кезінде rollback не үшін қажет?",
+        options: [
+          "Кодтың ескі бөліктерін толықтай жою үшін",
+          "Сервер жұмысын уақытша тоқтатып тексеру үшін",
+          "Қате болған жағдайда алдыңғы нұсқаға қайтару үшін",
+          "API құрылымын өзгертіп қайта жазу мақсатында",
+          "Интерфейсті визуалды жақсарту әрекеттері үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Blue-Green deployment қандай тәсіл?",
+        options: [
+          "Дизайн жүйесін жаңартуға арналған әдіс",
+          "API құрылымын қайта ұйымдастыру тәсілі",
+          "Екі орта арқылы қауіпсіз жаңарту механизмі",
+          "Код жазу стилін өзгертуге арналған ереже",
+          "Деректерді сақтау форматын ауыстыру жолы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Canary deployment қандай ерекшелікке ие?",
+        options: [
+          "Барлық қолданушыларға бірден жаңарту енгізу",
+          "API қызметін толық тоқтатып қайта іске қосу",
+          "Жаңартуды аз пайдаланушыдан бастап тексеру",
+          "Кодтың орындалуын толықтай тоқтату тәсілі",
+          "Серверді өшіріп қайта қосу механизмі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Monitoring жүйесінің басты мақсаты қандай?",
+        options: [
+          "Бағдарламалық кодтарды автоматты түрде жазу",
+          "Интерфейс элементтерін динамикалық өзгерту",
+          "Жүйе күйін бақылап, ақауларды анықтау",
+          "API қызметтерін жою және қайта орнату",
+          "Деректерді ұзақ мерзімге сақтау әрекеті",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Log файлдары қандай мақсатта қолданылады?",
+        options: [
+          "Код жазу процесін жылдамдату үшін",
+          "Интерфейс құруда визуалды элемент ретінде",
+          "Қателер мен әрекеттер тарихын тіркеу үшін",
+          "API қызметтерін автоматты түрде құру үшін",
+          "Серверді өшіру және қайта қосу үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Docker қандай мақсатта пайдаланылады?",
+        options: [
+          "Дизайн жүйесін құру және өңдеу үшін",
+          "API тестілеу құралдарын іске қосу үшін",
+          "Қосымшаларды контейнерлеу және оқшаулау",
+          "Кодты қысқарту және оңтайландыру үшін",
+          "Файлдарды толықтай жою әрекеттері үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Kubernetes қандай міндет атқарады?",
+        options: [
+          "Бағдарламалық кодты автоматты жазу",
+          "Интерфейс элементтерін өңдеу",
+          "Контейнерлерді басқару және масштабтау",
+          "API қызметтерін жою",
+          "Деректерді архивтеу",
+        ],
+        correct: 2,
+      },
+      {
+        q: "SLA ұғымы нені білдіреді?",
+        options: [
+          "Код форматын анықтайтын стандарт",
+          "API құрылымының бір түрі",
+          "Қызмет көрсету деңгейі туралы келісім",
+          "Интерфейс элементтерінің жиынтығы",
+          "Сервер атауының форматы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Uptime дегеніміз не?",
+        options: [
+          "Кодтың жалпы ұзындығы",
+          "API өнімділік көрсеткіші",
+          "Жүйенің үздіксіз жұмыс уақыты",
+          "Деректер көлемінің өлшемі",
+          "Интерфейс сапасының деңгейі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Smoke testing қандай тексеру түрі?",
+        options: [
+          "Барлық функцияларды толық тексеру",
+          "Интерфейсті визуалды тексеру",
+          "Негізгі функциялардың жылдам тексерісі",
+          "API қызметтерін толық тексеру",
+          "Сервердің аппараттық тесті",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Sanity testing қашан қолданылады?",
+        options: [
+          "Жүйені толық тексеру кезінде",
+          "Код жазу барысында",
+          "Өзгерістерден кейін қысқа тексеру үшін",
+          "API құрылымын жасау кезінде",
+          "Дизайнды өзгерту кезінде",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Black-box testing нені білдіреді?",
+        options: [
+          "Код құрылымын толық талдау",
+          "Сервер жұмысын тексеру",
+          "Ішкі логиканы білмей тестілеу",
+          "API қызметтерін жою",
+          "Интерфейс құру әдісі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "White-box testing ерекшелігі қандай?",
+        options: [
+          "Интерфейсті тексеру әдісі",
+          "API жауаптарын тексеру",
+          "Ішкі код құрылымын біле отырып тестілеу",
+          "Серверді уақытша тоқтату",
+          "Деректерді сақтау тәсілі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Exploratory testing қалай жүргізіледі?",
+        options: [
+          "Қатаң жоспар бойынша",
+          "Код жазу арқылы",
+          "Еркін зерттеу және тәжірибе арқылы",
+          "API автоматты тексеру арқылы",
+          "Интерфейс құру кезінде",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Test case дегеніміз не?",
+        options: [
+          "Кодтың бір бөлігі",
+          "API құрылым элементі",
+          "Тестілеу сценарийі",
+          "Сервер параметрі",
+          "Файл форматы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Test suite ұғымы нені білдіреді?",
+        options: [
+          "Бір ғана тест",
+          "API қызметі",
+          "Тесттердің толық жиынтығы",
+          "Интерфейс компоненті",
+          "Код блогы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Bug tracking жүйесі не үшін қажет?",
+        options: [
+          "Код жазу процесін жүргізу үшін",
+          "Интерфейс жобалау үшін",
+          "Қателерді тіркеу және бақылау",
+          "API қызметтерін жою",
+          "Деректерді сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Jira қандай құралға жатады?",
+        options: [
+          "Бағдарламалау ортасы",
+          "Сервер түрі",
+          "Қателерді басқару және жобаларды ұйымдастыру жүйесі",
+          "API құралы",
+          "Framework түрі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Version control жүйесіне қайсы жатады?",
+        options: ["Docker", "Kubernetes", "Git", "Jenkins", "Postman"],
+        correct: 2,
+      },
+      {
+        q: "Git commit қандай әрекетті білдіреді?",
+        options: [
+          "Кодты толық жою",
+          "API жасау",
+          "Өзгерістерді сақтау",
+          "Серверді тоқтату",
+          "Интерфейсті өзгерту",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Git merge не үшін қолданылады?",
+        options: [
+          "Кодты жою үшін",
+          "API тестілеу үшін",
+          "Әртүрлі тармақтарды біріктіру",
+          "Серверді қосу үшін",
+          "Деректерді сақтау үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Branch ұғымы нені білдіреді?",
+        options: [
+          "Код қатесі",
+          "API әдісі",
+          "Кодтың жеке тармағы немесе нұсқасы",
+          "Интерфейс элементі",
+          "Сервер түрі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Pull request қандай мақсатта қолданылады?",
+        options: [
+          "Кодты жою үшін",
+          "API шақыру үшін",
+          "Өзгерістерді біріктіруді сұрау",
+          "Серверді өшіру",
+          "Деректер сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Merge conflict қашан пайда болады?",
+        options: [
+          "Код жоқ болғанда",
+          "API істемегенде",
+          "Бір файлда қарама-қайшы өзгерістер болғанда",
+          "Интерфейс өзгергенде",
+          "Сервер қосылғанда",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Staging environment дегеніміз не?",
+        options: [
+          "Нақты жұмыс ортасы",
+          "Дамыту ортасы",
+          "Production-ға ұқсас тест ортасы",
+          "API сервер",
+          "Интерфейс режимі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Production environment дегеніміз не?",
+        options: [
+          "Тест жүргізу ортасы",
+          "API дамыту ортасы",
+          "Нақты қолданушылар пайдаланатын орта",
+          "Интерфейс режимі",
+          "Код сақтау орны",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Hotfix ұғымы нені білдіреді?",
+        options: [
+          "Жоспарланған жаңарту",
+          "API өзгерісі",
+          "Жедел қате түзету",
+          "Интерфейс жаңарту",
+          "Сервер орнату",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Load balancer не үшін қолданылады?",
+        options: [
+          "Код жазу үшін",
+          "Интерфейс жасау үшін",
+          "Трафикті бірнеше серверге бөлу",
+          "API жою үшін",
+          "Деректер сақтау үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Reverse proxy дегеніміз не?",
+        options: [
+          "Клиент бағдарламасы",
+          "API түрі",
+          "Сұраныстарды серверге бағыттайтын аралық жүйе",
+          "Интерфейс элементі",
+          "Код құрылымы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "SSL сертификаты қандай мақсатта қолданылады?",
+        options: [
+          "Код жазу үшін",
+          "API құру үшін",
+          "Қауіпсіз байланыс орнату үшін",
+          "Интерфей жасау үшін",
+          "Серверді тоқтату үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "HTTPS нені білдіреді?",
+        options: [
+          "Қарапайым HTTP",
+          "API форматы",
+          "Қауіпсіз HTTP протоколы",
+          "Интерфейс режимі",
+          "Код құрылымы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Retention policy нені анықтайды?",
+        options: [
+          "Код жазу уақытын",
+          "API жұмыс уақытын",
+          "Резервтік көшірмелердің сақтау мерзімін",
+          "Сервер өнімділігін",
+          "Интерфейс түрін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Snapshot backup ерекшелігі қандай?",
+        options: [
+          "Толық көшірме жасамайды",
+          "Тек API сақтайды",
+          "Белгілі бір уақыттағы күйді сақтайды",
+          "Кодты өзгертеді",
+          "Файлдарды жояды",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Failover механизмі не үшін қажет?",
+        options: [
+          "Код жазу үшін",
+          "Интерфейс өзгерту үшін",
+          "Негізгі жүйе істен шыққанда резервке ауысу",
+          "API тестілеу үшін",
+          "Деректерді жою үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "High availability нені қамтамасыз етеді?",
+        options: [
+          "Код сапасын",
+          "Интерфейс дизайнын",
+          "Жүйенің үздіксіз жұмысын",
+          "API жылдамдығын",
+          "Файл өлшемін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Horizontal scaling дегеніміз не?",
+        options: [
+          "Бір сервер қуатын арттыру",
+          "Кодты өзгерту",
+          "Қосымша серверлер қосу арқылы кеңейту",
+          "API жою",
+          "Интерфейс өзгерту",
+        ],
+        correct: 2,
+      },
+    ],
+    variant9: [
+      {
+        q: "CI процесінің негізгі мақсаты қандай?",
+        options: [
+          "Интерфейс құру",
+          "Код өзгерістерін біріктіру және тексеру",
+          "Деректерді жою",
+          "Серверді тоқтату",
+          "API жазу",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Continuous Delivery нені білдіреді?",
+        options: [
+          "Кодты қолмен тексеру",
+          "Жүйені толық тоқтату",
+          "Кодты дайын күйде автоматты жеткізу",
+          "Интерфейсті жаңарту",
+          "Деректерді көшіру",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Backup не үшін қажет?",
+        options: [
+          "Код жазу үшін",
+          "Интерфейс жасау үшін",
+          "Деректерді қорғау және қалпына келтіру үшін",
+          "API құру үшін",
+          "Серверді өшіру үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Differential backup қалай жұмыс істейді?",
+        options: [
+          "Барлық деректерді көшіреді",
+          "Тек соңғы толық backup-тан кейінгі өзгерістерді сақтайды",
+          "Тек кодты сақтайды",
+          "API ғана көшіреді",
+          "Файлдарды жояды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Deployment дегеніміз не?",
+        options: [
+          "Код жазу процесі",
+          "Жүйені тестілеу",
+          "Қосымшаны серверге орналастыру",
+          "Интерфейс құру",
+          "Деректерді жою",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Rollback қай кезде қолданылады?",
+        options: [
+          "Жүйе дұрыс жұмыс істегенде",
+          "Интерфейс өзгергенде",
+          "Қате шыққанда алдыңғы нұсқаға оралу үшін",
+          "API жазғанда",
+          "Кодты жойғанда",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Canary release не үшін тиімді?",
+        options: [
+          "Барлығына бірден жаңарту",
+          "Жаңартуды біртіндеп тексеру",
+          "Серверді тоқтату",
+          "Кодты жою",
+          "Интерфейс өзгерту",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Monitoring жүйесі не істейді?",
+        options: [
+          "Код жазады",
+          "UI құрады",
+          "Жүйе жұмысын бақылап отырады",
+          "API өшіреді",
+          "Файл сақтайды",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Logging қандай процесс?",
+        options: [
+          "Код компиляциясы",
+          "Интерфейс салу",
+          "Жүйе әрекеттерін жазу",
+          "API құру",
+          "Серверді өшіру",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Containerization дегеніміз не?",
+        options: [
+          "Кодты қысқарту",
+          "Қосымшаны контейнерде іске қосу",
+          "Интерфейс құру",
+          "API жою",
+          "Деректерді жою",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Kubernetes негізгі қызметі қандай?",
+        options: [
+          "Код жазу",
+          "Контейнерлерді басқару",
+          "UI жасау",
+          "API жою",
+          "Деректер сақтау",
+        ],
+        correct: 1,
+      },
+      {
+        q: "SLA нені сипаттайды?",
+        options: [
+          "Код құрылымы",
+          "API түрі",
+          "Қызмет көрсету деңгейі келісімі",
+          "UI элемент",
+          "Сервер түрі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Uptime көрсеткіші нені білдіреді?",
+        options: [
+          "Код көлемі",
+          "API саны",
+          "Жүйенің жұмыс уақыты",
+          "Интерфейс сапасы",
+          "Файл өлшемі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Smoke test қандай тексеру?",
+        options: [
+          "Толық тексеру",
+          "Негізгі функцияларды жылдам тексеру",
+          "UI тест",
+          "API тест",
+          "Сервер тест",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Sanity test қашан орындалады?",
+        options: [
+          "Толық тексеруде",
+          "Код жазғанда",
+          "Өзгерістерден кейін",
+          "API жасағанда",
+          "UI өзгерткенде",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Black-box testing ерекшелігі?",
+        options: [
+          "Кодты білу",
+          "Ішкі құрылымды тексеру",
+          "Ішкі логиканы білмей тексеру",
+          "API жазу",
+          "UI жасау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "White-box testing дегеніміз не?",
+        options: [
+          "UI тест",
+          "API тест",
+          "Код құрылымын біле отырып тексеру",
+          "Сервер тоқтату",
+          "Деректер сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Exploratory testing қалай өтеді?",
+        options: [
+          "Жоспар бойынша",
+          "Автоматты түрде",
+          "Еркін зерттеу арқылы",
+          "API тексеру",
+          "UI өзгерту",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Test case деген не?",
+        options: ["Код", "API", "Тест сценарийі", "Сервер", "Файл"],
+        correct: 2,
+      },
+      {
+        q: "Test suite деген не?",
+        options: ["Бір тест", "API", "Тесттер жиынтығы", "UI", "Код"],
+        correct: 2,
+      },
+      {
+        q: "Bug tracking не үшін керек?",
+        options: [
+          "Код жазу",
+          "UI жасау",
+          "Қателерді бақылау",
+          "API жою",
+          "Деректер сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Jira қандай құрал?",
+        options: [
+          "IDE",
+          "Сервер",
+          "Project management жүйесі",
+          "API",
+          "Framework",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Version control мысалы қайсы?",
+        options: ["Docker", "Jenkins", "Git", "Postman", "Kubernetes"],
+        correct: 2,
+      },
+      {
+        q: "Commit не білдіреді?",
+        options: [
+          "Код жою",
+          "API жасау",
+          "Өзгерісті сақтау",
+          "Сервер тоқтату",
+          "UI өзгерту",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Merge не үшін керек?",
+        options: [
+          "Код жою",
+          "API тест",
+          "Тармақтарды біріктіру",
+          "Сервер қосу",
+          "Деректер сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Branch дегеніміз не?",
+        options: ["Қате", "API", "Кодтың бөлек нұсқасы", "UI", "Сервер"],
+        correct: 2,
+      },
+      {
+        q: "Pull request мақсаты?",
+        options: [
+          "Код жою",
+          "API шақыру",
+          "Өзгерісті біріктіруді сұрау",
+          "Сервер өшіру",
+          "Деректер сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Merge conflict қай кезде болады?",
+        options: [
+          "Код жоқ",
+          "API істемейді",
+          "Бір файлда қарама-қайшылық болса",
+          "UI өзгерсе",
+          "Сервер қосылса",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Staging environment деген не?",
+        options: ["Production", "Dev", "Тест ортасы", "API", "UI"],
+        correct: 2,
+      },
+      {
+        q: "Production environment деген не?",
+        options: [
+          "Тест орта",
+          "API орта",
+          "Нақты қолдану ортасы",
+          "UI режим",
+          "Код база",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Hotfix деген не?",
+        options: [
+          "Жоспарлы update",
+          "API өзгеріс",
+          "Жедел түзету",
+          "UI жаңарту",
+          "Сервер орнату",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Load balancer қызметі?",
+        options: [
+          "Код жазу",
+          "UI жасау",
+          "Трафик бөлу",
+          "API жою",
+          "Деректер сақтау",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Reverse proxy не істейді?",
+        options: ["Клиент", "API", "Сұранысты бағыттайды", "UI", "Код"],
+        correct: 2,
+      },
+      {
+        q: "SSL не үшін керек?",
+        options: [
+          "Код жазу",
+          "API жасау",
+          "Қауіпсіздік",
+          "UI жасау",
+          "Сервер тоқтату",
+        ],
+        correct: 2,
+      },
+      {
+        q: "HTTPS нені білдіреді?",
+        options: ["HTTP", "API", "Қауіпсіз протокол", "UI", "Код"],
+        correct: 2,
+      },
+      {
+        q: "Retention policy не анықтайды?",
+        options: ["Код уақыты", "API", "Сақтау мерзімі", "Сервер", "UI"],
+        correct: 2,
+      },
+      {
+        q: "Snapshot backup деген не?",
+        options: [
+          "Толық backup емес",
+          "API сақтау",
+          "Белгілі уақыт күйі",
+          "Код өзгерту",
+          "Файл жою",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Failover не үшін керек?",
+        options: [
+          "Код жазу",
+          "UI өзгерту",
+          "Резервке ауысу",
+          "API тест",
+          "Деректер жою",
+        ],
+        correct: 2,
+      },
+      {
+        q: "High availability не береді?",
+        options: [
+          "Код сапасы",
+          "UI дизайн",
+          "Үздіксіз жұмыс",
+          "API жылдамдық",
+          "Файл өлшемі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Vertical scaling деген не?",
+        options: [
+          "Сервер санын арттыру",
+          "API өзгерту",
+          "Бір сервер қуатын арттыру",
+          "Код жою",
+          "UI өзгерту",
+        ],
+        correct: 2,
+      },
+    ],
+  },
+  java: {
+    variant1: [
+      {
+        q: "JVM дегеніміз не?",
+        options: [
+          "Java үшін мәтіндік редактор",
+          "Java кодын компиляциялайтын құрал",
+          "Байт-кодты орындайтын Java виртуалды машинасы",
+          "Нұсқаларды басқару жүйесі",
+          "Жобаларды құрастыру құралы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Scanner класының қай әдісі жолды толық оқиды?",
+        options: [
+          "readLine()",
+          "nextLine()",
+          "getString()",
+          "readString()",
+          "getLine()",
+        ],
+        correct: 1,
+      },
+      {
+        q: "true немесе false мәнін қай деректер түрі сақтайды?",
+        options: ["int", "bit", "boolean", "flag", "bool"],
+        correct: 2,
+      },
+      {
+        q: "Java тілінде автоматты тип түрлендіру (widening) деген не?",
+        options: [
+          "Деректерді жоғалту қаупімен үлкен типті кіші типке түрлендіру",
+          "Кішітиптіүлкентипкедеректер жоғалтпай автоматты түрде түрлендіру",
+          "Жолды (String) сандық типке түрлендіру",
+          "Бағдарламада жаңа пайдаланушы типін құру",
+          "char символын String жол типіне түрлендіру",
+        ],
+        correct: 1,
+      },
+      {
+        q: "5 != 5 өрнегінің мәні неге тең?",
+        options: ["true", "false", "1", "-1", "null"],
+        correct: 1,
+      },
+      {
+        q: "Java тілінде if операторының синтаксисі қандай?",
+        options: [
+          "if x > 0 { }",
+          "if (x > 0) { }",
+          "if x > 0 then { }",
+          "if [x > 0] { }",
+          "if: x > 0 { }",
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Нәтиже қандай болады: int x = 10; String s = (x > 5) ? "big" : "small";?',
+        options: ["null", "small", "big", "true", "10"],
+        correct: 2,
+      },
+      {
+        q: "Цикл ішіндегі continue операторы не істейді?",
+        options: [
+          "Циклді басынан қайта бастайды",
+          "Бағдарламаны толық аяқтайды",
+          "Ағымдағы итерацияның қалған бөлігін өткізіп, келесісіне өтеді",
+          "Басқа сыртқы циклге басқаруды береді",
+          "Циклдің орындалуын толық тоқтатып, одан шығады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "х айнымалысымен қандай өзгерді: int x = 10; while (x > 0) { x -= 3; }?",
+        options: ["x = 1", "x = 3", "x = -2", "x = 10", "x = 0"],
+        correct: 2,
+      },
+      {
+        q: "for циклінде i мәні 2-ге артуы үшін қадамды қалай өзгерту керек?",
+        options: ["i * 2", "i++2", "i = i + 1 * 1", "i += 2", "step 2"],
+        correct: 3,
+      },
+      {
+        q: "Math класының қай әдісі санның модулін (абсолют мәнін) қайтарады?",
+        options: [
+          "Math.mod()",
+          "Math.absolute()",
+          "Math.abs()",
+          "Math.value()",
+          "Math.positive()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "0-ден 9-ға дейінгі кездейсоқ бүтін санды қалай алуға болады?",
+        options: [
+          "Math.random(10)",
+          "Math.random() * 10",
+          "(int) Math.random() % 10",
+          "(int)(Math.random() * 10)",
+          "Math.nextInt(10)",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Массив шегінен тыс элементке қол жеткізуге тырысқанда не болады?",
+        options: [
+          "null қайтарылады",
+          "0 қайтарылады",
+          "ArrayIndexOutOfBoundsException қателігі пайда болады",
+          "Бағдарлама қатесіз аяқталады",
+          "Соңғы элемент қайтарылады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Массив құрылғаннан кейін оның өлшемін өзгертуге бола ма?",
+        options: [
+          "Иә, arr.resize() арқылы",
+          "Жоқ, массивтің өлшемі құрылғаннан кейін өзгермейді",
+          "Иә, Arrays.resize() арқылы",
+          "Иә, масссивке жай ғана элемент қосу арқылы arr[n] = x жүзеге асады",
+          "Иә, Java 11-де бұл мүмкін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Екі өлшемді жиымды толық аралап шығу үшін неше ішкі цикл қажет?",
+        options: ["1", "2", "3", "Жиымның өлшеміне байланысты", "4"],
+        correct: 1,
+      },
+      {
+        q: "Java тілінде s жолының ұзындығын қалай алуға болады?",
+        options: [
+          "s.size()",
+          "s.length()",
+          "len(s)",
+          "s.count()",
+          "String.length(s)",
+        ],
+        correct: 1,
+      },
+      {
+        q: '"Hello" және " World" жолдарын қалай біріктіруге болады?',
+        options: [
+          '"Hello".add(" World")',
+          '"Hello" + " World" немесе "Hello".concat(" World")',
+          'String.join("Hello", " World")',
+          '"Hello".append(" World")',
+          'merge("Hello", " World")',
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қай класс Set интерфейсін ретін сақтамай жүзеге асырады?",
+        options: [
+          "TreeSet",
+          "LinkedHashSet",
+          "HashSet",
+          "SortedSet",
+          "ArrayList",
+        ],
+        correct: 2,
+      },
+      {
+        q: "List пен Set үшін ортақ ата-аналық интерфейс қайсы?",
+        options: ["Array", "Map", "Collection", "Iterable", "Comparable"],
+        correct: 2,
+      },
+      {
+        q: 'DateTimeFormatter шаблонындағы "MM" нені білдіреді?',
+        options: [
+          "Жыл",
+          "Минут",
+          "Ай (екі таңбамен)",
+          "Миллисекунд",
+          "Дүйсенбі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Әдіс ішінде жарияланған айнымалының көріну аймағы қандай?",
+        options: [
+          "Бүкіл бағдарламада",
+          "Туынды кластарда",
+          "Тек осы әдіс ішінде",
+          "Бүкіл класста",
+          "Бүкіл пакетте",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Егер int типін қайтаратын әдісте return операторы болмаса не болады?",
+        options: [
+          "null мәні қайтарылады",
+          "Компиляция қатесі туындайды",
+          "0 мәні қайтарылады",
+          "Бағдарлама апатты түрде тоқтайды",
+          "-1 мәні қайтарылады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Класты жариялау қай кілттік сөзден басталады?",
+        options: ["type", "define", "struct", "class", "object"],
+        correct: 3,
+      },
+      {
+        q: "Егер класта бірде-бір конструктор анықталмаса не болады?",
+        options: [
+          "Бұл кластан объект жасауға болмайды",
+          "Класс өрістерін инициализациялау мүмкін болмайды",
+          "Java автоматты түрде параметрсіз конструкторды (default constructor) қосады",
+          "Объект жасау кезінде компиляция қатесі туындайды",
+          "Класс автоматты түрде абстрактілі болып саналады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Конструктордың қайтару типі (return type) болуы мүмкін бе?",
+        options: [
+          "Иә, void",
+          "Иә, класс типі",
+          "Жоқ, конструкторларда қайтару типі болмайды",
+          "Иә, кез келген қарапайым (примитивті) тип",
+          "Иә, бірақ тек int",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Модификаторлардың ең шектеулі түрінен ең ашық түріне қарай реті қандай?",
+        options: [
+          "public → protected → private → default",
+          "private → default → protected → public",
+          "protected → private → public → default",
+          "default → private → public → protected",
+          "public → private → default → protected",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да бір кластың неше ата-аналық класы болуы мүмкін?",
+        options: [
+          "Шектеусіз",
+          "Екеу",
+          "Тек біреу",
+          "Үшеу",
+          "Java нұсқасына байланысты",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да қайта жүктеу (overloading) мен қайта анықтаудың (overriding) негізгі айырмашылығы неде?",
+        options: [
+          "Бұл әдістердің мінез-құлқын ешқандай айырмашылықсыз өзгерту үшін қолданылатын бірдей механизмдер",
+          "Қайта анықтау тек статикалық әдістер үшін, ал қайта жүктеу тек статикалық емес әдістер үшін қолданылады",
+          "Қайта жүктеу тек конструкторларға, ал қайта анықтау тек интерфейс әдістеріне қолданылады",
+          "Қайта жүктеу — бір класта атаулары бірдей, бірақ параметрлері әртүрлі әдістерді жасау; қайта анықтау — туынды класта әдістің орындалу әрекетін өзгерту",
+          "Қайта жүктеу тек интерфейстер ішінде мүмкін және кәдімгі кластарда қолданылмайды",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Абстрактілі класты жариялау үшін қай кілттік сөз қолданылады?",
+        options: ["abstract", "virtual", "interface", "base", "prototype"],
+        correct: 0,
+      },
+      {
+        q: "Java тіліндегі интерфейс деген не?",
+        options: [
+          "Бұл тек private әдістері бар және мұрагерлікті қолдамайтын қарапайым класс",
+          "Бұл класс жүзеге асыруы тиіс әдістер жиынын сипаттайтын контракт",
+          "Бұл бір типті объектілерді сұрыпталған түрде сақтайтын арнайы коллекция",
+          "Бұл тұрақты мәндерді сипаттайтын enum кеңейтімі",
+          "Бұл тек статикалық әдістері бар және басқа кластар жүзеге асыра алмайтын класс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да интерфейстер не үшін қолданылады?",
+        options: [
+          "Тек константаларды сақтау үшін",
+          "Тек тест жазу үшін",
+          "Бағдарламаны жылдамдату үшін",
+          "Абстракт класты толық ауыстыру үшін",
+          "Әрекеттер жиынтығы контрактын анықтау және полиморфизм үшін",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Әдістің ерекше жағдай тудыруы мүмкін екенін қалай жариялауға болады?",
+        options: [
+          "catch IOException",
+          "exception IOException",
+          "throws IOException (әдіс сигнатурасында)",
+          "throw IOException",
+          "try IOException",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да equals() әдісі не үшін қайта анықталады (overriding)?",
+        options: [
+          "JVM жұмысын өзгерту және жадты оңтайландыру арқылы бағдарламаның жылдамдығын арттыру үшін",
+          "Текмассивтермен және қарапайым типтермен дұрыс жұмыс істеуді қамтамасыз ету үшін",
+          "println() шақырылған кезде объектіні автоматты түрде консольге шығару үшін",
+          "Объектілерді жадтағы сілтемелері бойынша емес, мазмұны (өрістері) бойынша салыстыру үшін",
+          "Қосымша әдістерді қолданбай объектінің терең көшірмесін (deep copy) жасау үшін",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Map-тан кілт бойынша мәнді қалай алуға болады?",
+        options: [
+          "map.value(key)",
+          "map[key]",
+          "map.find(key)",
+          "map.fetch(key)",
+          "map.get(key)",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Java-дағы LinkedHashMap дегеніміз не?",
+        options: [
+          "Әрбір элемент қосқан сайын кілттерді алфавит ретімен автоматты түрде сұрыптайтын деректер құрылымы",
+          "Элементтердің қосылу ретін (order of insertion) сақтайтын Map іске асырылуы",
+          "Көпағындыортадасинхронизациясыз қолданылатын HashMap-тің ағынға қауіпсіз (thread-safe) нұсқасы",
+          "Кілт-мән жұптарын индекстер бойынша сақтайтын массивтің арнайы түрі",
+          "Текжолдық (String) кілттермен жұмыс істей алатын және басқа типтерді қолдамайтын Map түрі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Коллекциядан Iterator-ды қалай алуға болады?",
+        options: [
+          "collection.getIterator()",
+          "collection.iterator()",
+          "new Iterator(collection)",
+          "Iterator.of(collection)",
+          "collection.iter()",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Мәтіндік файлдарды жол бойынша оқу үшін қай класс қолданылады?",
+        options: [
+          "FileReader",
+          "Scanner",
+          "BufferedReader",
+          "FileInputStream",
+          "TextReader",
+        ],
+        correct: 2,
+      },
+      {
+        q: "enum-ды switch ішінде қолдануға бола ма?",
+        options: [
+          "Жоқ, switch қолдамайды",
+          "Иә, enum switch ішінде қолданылады",
+          "Тек Java 11+",
+          "Тек if-else арқылы",
+          "Тександық enum",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Логтау деңгейлері қандай (төменнен жоғары қарай)?",
+        options: [
+          "INFO, ERROR, DEBUG, WARN",
+          "LOG, PRINT, WARN, ERROR",
+          "TRACE, DEBUG, INFO, WARN, ERROR, FATAL",
+          "LOW, MED, HIGH, CRITICAL",
+          "DEBUG, INFO, ERROR",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Кіріс деректерін тексеруді (валидация) қай кезеңде орындаған дұрыс?",
+        options: [
+          "Мүмкіндігінше ерте — пайдаланушыдан немесе сыртқы жүйеден деректерді алған бойда",
+          "Еңсоңында, нәтижені сақтау алдында",
+          "Бағдарламада барлық деректер өңделіп болғаннан кейін ғана",
+          "Тектесттіксценарийлерде ғана",
+          "Ерекше жағдайларды өңдеу кезінде finally блогында",
+        ],
+        correct: 0,
+      },
+    ],
 
-        // --- 5-й Вариант ---
-        "variant5": [
-            {
-                q: "Как называется последовательность инструкций для решения задачи?",
-                options: ["Модель", "Алгоритм", "Структура", "Функция", "Программа"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных хранит только два значения: истина/ложь?",
-                options: ["int", "float", "bool", "binary", "flag"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор означает «меньше или равно»?",
-                options: ["<<", "<=", "=<", "!<", "≤"],
-                correct: 1
-            },
-            {
-                q: "Какой метод строки делает первую букву заглавной?",
-                options: ["big()", "upper1()", "capitalize()", "head()", "cap()"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор объединяет строки?",
-                options: ["&", "+", "*", "&&", "join"],
-                correct: 1
-            },
-            {
-                q: "Какой метод списка вставляет элемент по индексу?",
-                options: ["add()", "set()", "insert()", "push()", "merge()"],
-                correct: 2
-            },
-            {
-                q: "Как называется цикл, который выполняет блок хотя бы один раз?",
-                options: ["while", "for", "do-while", "repeat-until", "until-for"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор используется для получения остатка от деления?",
-                options: ["//", "%", "mod", "div", "#"],
-                correct: 1
-            },
-            {
-                q: "Какой метод множества удаляет элемент, не вызывая ошибку?",
-                options: ["remove()", "pop()", "clear()", "discard()", "erase()"],
-                correct: 3
-            },
-            {
-                q: "Какой метод строки ищет подстроку и возвращает индекс?",
-                options: ["locate()", "find()", "detect()", "look()", "check()"],
-                correct: 1
-            },
-            {
-                q: "Как объявить лямбда-функцию без параметров?",
-                options: ["lambda(): 5", "lambda 5", "lambda → 5", "lambda: → 5", "lambda(None)"],
-                correct: 3
-            },
-            {
-                q: "Какой модуль предоставляет функции для математики?",
-                options: ["mathtools", "numbers", "math", "calc", "numeric"],
-                correct: 2
-            },
-            {
-                q: "Как импортировать несколько функций из модуля?",
-                options: ["import a,b from module", "from module import a, b", "import (a,b) module", "using module(a,b)", "from module take a b"],
-                correct: 1
-            },
-            {
-                q: "Как открыть файл в двоичном режиме?",
-                options: ["open(\"f\", \"db\")", "open(\"f\", \"b\")", "open(\"f\", \"rb\")", "open(\"f\", \"binary\")", "open(\"f\", \"bin\")"],
-                correct: 2
-            },
-            {
-                q: "Какой метод возвращает список строк файла?",
-                options: ["rows()", "lines()", "readlines()", "list()", "readrow()"],
-                correct: 2
-            },
-            {
-                q: "Какой метод вызывается перед init при создании объекта?",
-                options: ["start", "new", "prepare", "alloc", "class"],
-                correct: 1
-            },
-            {
-                q: "Как получить список методов объекта?",
-                options: ["listmethods()", "dir()", "get()", "funcs()", "about()"],
-                correct: 1
-            },
-            {
-                q: "Какое расширение чаще всего у JSON Lines файла?",
-                options: [".jlines", ".jsonl", ".lines", ".jdata", ".jtxt"],
-                correct: 1
-            },
-            {
-                q: "Как сериализовать Python-объект в pickle?",
-                options: ["pickle.store()", "pickle.dump()", "pickle.save()", "pickle.write()", "pickle.export()"],
-                correct: 1
-            },
-            {
-                q: "Как загрузить данные из CSV?",
-                options: ["csv.read()", "csv.load()", "csv.reader()", "csv.parse()", "csv.open()"],
-                correct: 2
-            },
-            {
-                q: "Как выбрать только определённые столбцы?",
-                options: ["SELECT ONLY col1, col2", "SELECT col1 col2", "SELECT (col1, col2)", "SELECT col1, col2", "TAKE col1 col2"],
-                correct: 3
-            },
-            {
-                q: "Какой SQL-оператор объединяет строки из таблицы по условию?",
-                options: ["MERGE", "JOIN", "GROUP", "LINK", "CONNECT"],
-                correct: 1
-            },
-            {
-                q: "Какая команда удаляет таблицу, если она существует?",
-                options: ["DROP TABLE IF FOUND", "DROP TABLE IF EXIST", "DELETE TABLE IF EXISTS", "DROP TABLE IF EXISTS", "REMOVE TABLE IF EXISTS"],
-                correct: 3
-            },
-            {
-                q: "Как выбрать строки, значение в которых НЕ попадает в диапазон?",
-                options: ["NOT BETWEEN", "OUT RANGE", "NOT RANGE", "NOT IN RANGE", "OUTSIDE"],
-                correct: 0
-            },
-            {
-                q: "Какая команда изменяет структуру таблицы?",
-                options: ["CHANGE TABLE", "MODIFY TABLE", "ALTER TABLE", "UPDATE STRUCT", "RESHAPE TABLE"],
-                correct: 2
-            },
-            {
-                q: "Какая библиотека подключается для PostgreSQL в Python?",
-                options: ["sqlite3", "postgres", "psql", "psycopg2", "libpg"],
-                correct: 3
-            },
-            {
-                q: "Как создать вертикальный layout?",
-                options: ["VBox()", "QVLayout()", "LayoutV()", "QVBoxLayout()", "VLayout()"],
-                correct: 3
-            },
-            {
-                q: "Как добавить виджет в окно без layout?",
-                options: ["window.attach(widget)", "window.insert(widget)", "widget.setParent(window)", "window.addWidget(widget)", "window.include(widget)"],
-                correct: 2
-            },
-            {
-                q: "Как создать метку текста?",
-                options: ["TextLabel()", "QLabel()", "QText()", "Label()", "QtLabel()"],
-                correct: 1
-            },
-            {
-                q: "Как изменить размер шрифта?",
-                options: ["font.resize()", "font.setPixelSize()", "font.textSize()", "font.updateSize()", "font.change()"],
-                correct: 1
-            },
-            {
-                q: "Как изменить цвет текста QLabel?",
-                options: ["label.setColor()", "label.setTextColor()", "label.setStyleSheet()", "label.color()", "label.setStyle()"],
-                correct: 2
-            },
-            {
-                q: "Какое событие возникает при изменении текста в QLineEdit?",
-                options: ["textChanged", "textInput", "onType", "write", "inputChanged"],
-                correct: 0
-            },
-            {
-                q: "Какой метод удаляет виджет?",
-                options: ["delete()", "remove()", "destroy()", "close()", "deleteLater()"],
-                correct: 4
-            },
-            {
-                q: "Как получить размеры окна?",
-                options: ["window.size()", "window.getSize()", "window.dimensions()", "window.measure()", "window.scale()"],
-                correct: 0
-            },
-            {
-                q: "Как установить фиксированный размер окна?",
-                options: ["window.setFixedSize()", "window.sizeFix()", "window.lockSize()", "window.freezeSize()", "window.setLimit()"],
-                correct: 0
-            },
-            {
-                q: "Что делает метод raise_()?",
-                options: ["Делает окно полупрозрачным", "Перемещает окно выше других", "Перемещает окно вниз", "Разворачивает окно", "Перезагружает интерфейс"],
-                correct: 1
-            },
-            {
-                q: "Как получить координаты курсора?",
-                options: ["getCursor()", "QCursor.pos()", "Cursor.get()", "mouse.pos()", "cursor.coord()"],
-                correct: 1
-            },
-            {
-                q: "Как установить иконку окна?",
-                options: ["window.setIcon()", "window.icon()", "window.setWindowIcon()", "window.loadIcon()", "window.applyIcon()"],
-                correct: 2
-            },
-            {
-                q: "Как завершить приложение?",
-                options: ["quit.window()", "stop()", "app.quit()", "app.close()", "end()"],
-                correct: 2
-            },
-            {
-                q: "Что делает метод repaint()?",
-                options: ["Обновляет только текст", "Выполняет полную перерисовку", "Перезагружает приложение", "Обновляет базу данных", "Меняет тип виджета"],
-                correct: 1
-            }
+    variant2: [
+      {
+        q: "Қай файл Java-ның компиляцияланған байт-кодын қамтиды?",
+        options: [".java", ".class", ".jar", ".exe", ".bin"],
+        correct: 1,
+      },
+      {
+        q: "Java қай салаларда қолданылады?",
+        options: [
+          "Теквеб-сайттар мен серверлік қосымшаларды жасау үшін, басқа даму бағыттарын қолданбай",
+          "Тек Android үшін мобильді қосымшалар әзірлеу үшін",
+          "Веб, мобильді және корпоративтік әзірлеуде, Big Data және ендірілген жүйелерде",
+          "Текжүйелікбағдарламалау және аппараттық қамтамасыз етумен тікелей жұмыс істеу үшін",
+          "Текшағынскрипттер мен қарапайым автоматтандыру тапсырмаларын жазу үшін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да константаны қалай жариялайды?",
+        options: [
+          "const int X = 5;",
+          "readonly int X = 5;",
+          "static int X = 5;",
+          "fixed int X = 5;",
+          "final int X = 5;",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Класс өрістеріндегі boolean типті айнымалының әдепкі мәні қандай?",
+        options: ["true", "0", "null", "false", "undefined"],
+        correct: 3,
+      },
+      {
+        q: "++ операторы не істейді?",
+        options: [
+          "Мәнді екі еселейді",
+          "Мәнді 1-ге арттырады",
+          "Мәнді 1-ге кемітеді",
+          "Екісандықосады",
+          "Дәрежеге шығарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "if-else құрылымындағы else блогы не істейді?",
+        options: [
+          "Шартты қайта тексереді",
+          "if блогын өткізіп жібереді",
+          "Екінші шартты тексереді",
+          "Бағдарламаны аяқтайды",
+          "if шарты жалған болғанда орындалады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Егер if блогында бір ғана жол болса, фигуралық жақшаларды қолдану міндетті ме?",
+        options: [
+          "Иә, әрқашан міндетті",
+          "Жоқ, бір ғана оператор үшін жақшалар міндетті емес",
+          "Тек else үшін",
+          "Текішкі шарттар үшін",
+          "Java нұсқасына байланысты",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Егер while шарты әрқашан true болып, break болмаса не болады?",
+        options: [
+          "Бағдарлама қате арқылы аяқталады",
+          "Java автоматты түрде циклді тоқтатады",
+          "Циклдәл 10 реторындалады",
+          "Шексіз цикл пайда болады",
+          "Компилятор мұндай кодты жинақтамайды",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Белгі (label) арқылы ішкі циклден шығу үшін қай оператор қолданылады?",
+        options: [
+          "return",
+          "exit",
+          "break label",
+          "stop label",
+          "continue outer",
+        ],
+        correct: 2,
+      },
+      {
+        q: "for (;; ) циклінде шарт бос болса не болады?",
+        options: [
+          "Компиляция қатесі пайда болады",
+          "Шексіз цикл орындалады",
+          "Цикл орындалмайды",
+          "Цикл бір рет орындалады",
+          "Java циклді 100 рет орындайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Math.sqrt(16) не қайтарады?",
+        options: ["4", "2.0", "8.0", "256.0", "4.0"],
+        correct: 4,
+      },
+      {
+        q: "Math.min(5, 3) не қайтарады?",
+        options: ["3", "5", "8", "2", "15"],
+        correct: 0,
+      },
+      {
+        q: "Массивті нақты мәндермен қалай инициализациялауға болады?",
+        options: [
+          "int[] arr = {new 1, 2, 3};",
+          "int[] arr = {1, 2, 3};",
+          "int[] arr = new int[]{1; 2; 3};",
+          "int[] arr = [1, 2, 3];",
+          "int arr[] = new {1, 2, 3};",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Өлшемі 3 болатын бос String массивін қалай жариялайды?",
+        options: [
+          "String array = new String(3);",
+          "String array[] = String[3];",
+          "String[] array = new String{3};",
+          "String[3] array = new String[];",
+          "String[] array = new String[3];",
+        ],
+        correct: 4,
+      },
+      {
+        q: "int[][] arr екі өлшемді жиымының барлық элементтерінің қосындысын қалай есептеуге болады?",
+        options: [
+          "sum = arr.sum();",
+          "for (int[] row : arr) for (int x : row) sum += x;",
+          "sum = Arrays.sum(arr);",
+          "sum = arr.total();",
+          "sum = Math.sum(arr);",
+        ],
+        correct: 1,
+      },
+      {
+        q: "s жолынан i индексі бойынша символды қалай алуға болады?",
+        options: [
+          "s[i]",
+          "s.get(i)",
+          "s.getChar(i)",
+          "s.charAt[i]",
+          "s.charAt(i)",
+        ],
+        correct: 4,
+      },
+      {
+        q: "String құрылғаннан кейін оны өзгертуге бола ма (immutable)?",
+        options: [
+          "Иә, setChar() арқылы",
+          "Жоқ, String өзгермейді (immutable)",
+          "Иә, индекс арқылы",
+          "Иә, әдістер арқылы",
+          "Иә, тек Java 11+",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Коллекцияның өлшемін қалай алуға болады?",
+        options: [
+          "collection.length",
+          "collection.length()",
+          "collection.size()",
+          "collection.count()",
+          "collection.total()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "ArrayList элементтерін for-each арқылы қалай өтуге болады?",
+        options: [
+          "for (i = 0; i < list.size(); i++)",
+          "for (String element : list)",
+          "foreach element in list",
+          "list.forEach(element)",
+          "while (list.hasNext())",
+        ],
+        correct: 1,
+      },
+      {
+        q: "LocalDate date объектісінен жылды қалай алуға болады?",
+        options: [
+          "date.getYear()",
+          "date.year",
+          "date.year()",
+          "LocalDate.getYear(date)",
+          "date.YEAR",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Кластың greet() әдісін қалай дұрыс шақыруға болады?",
+        options: [
+          "call greet();",
+          "invoke greet();",
+          "method greet();",
+          "execute greet();",
+          "greet();",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Java-да класс дегеніміз не?",
+        options: [
+          "Бағдарламада белгілі бір әрекетті орындайтын жеке функция",
+          "Объектілердің қасиеттері мен әрекетін сипаттайтын, оларды жасауға арналған шаблон (үлгі)",
+          "Сандар мен таңбаларды сақтауға арналған қарапайым (примитивті) деректер типі",
+          "Деректерді сақтамайтын, тек әдістерден тұратын жиынтық",
+          "Бір мәнді сақтайтын арнайы айнымалы",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Статикалық өріс (static field) дегеніміз не?",
+        options: [
+          "Өзгертуге болмайтын өріс",
+          "Кластың барлық объектілері үшін ортақ өріс",
+          "Бекітілген типі бар өріс",
+          "Тек оқуға арналған өріс",
+          "Тек туынды кластардан қолжетімді өріс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Әдіске қатысты қолданылған static кілттік сөзі не істейді?",
+        options: [
+          "Әдісті өзгермейтін етеді және оның өзгертілуіне тыйым салады",
+          "Әдіс класқа тиесілі болады және объект жасамай-ақ шақырылады",
+          "Әдісті тек бір пакет ішінде ғана қолжетімді етеді",
+          "Бағдарлама іске қосылғанда әдіс автоматты түрде орындалады",
+          "Әдісті мұрагерлікке алуға және қайта анықтауға (override) тыйым салады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Конструкторларды қайта жүктеу (overloading) дегеніміз не?",
+        options: [
+          "Ата-аналық кластың конструкторын оның әрекетін өзгерту мүмкіндігінсіз туынды класқа мұрагерлікке алу",
+          "Бір класта параметрлер жиынтығы мен инициализациялау логикасы әртүрлі бірнеше конструкторды анықтау",
+          "Қайта анықтау (overriding) механизмі арқылы туынды кластағы бар конструкторды өзгерту немесе кеңейту",
+          "Объектінің данасын (экземплярын) жасамай-ақ, кластың конструкторын статикалық әдістен шақыру",
+          "Класс атауын көрсетпей-ақ, конструкторды автоматты түрде қолданатын анонимді класс құру",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Жоғарғы деңгейдегі класс (top-level class) private модификаторына ие бола ала ма?",
+        options: [
+          "Иә, бұл көптеген Java жобаларында стандартты тәжірибе болып табылады",
+          "Жоқ, жоғарғы деңгейдегі кластар тек public немесе package-private (модификаторсыз) бола алады",
+          "Иә, Java 11 және одан жоғары нұсқаларынан бастап бұл мүмкіндік қолдау табады",
+          "Жоғарғы деңгейде тек абстрактілі кластар ғана private бола алады",
+          "Шектеусіз тек іштей салынған (inner) кластар ғана private модификаторын қолдана алады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Туынды класс ата-аналық кластан нені мұрагерлікке алады?",
+        options: [
+          "Тек ата-аналық кластың public әдістерін",
+          "Мұрагерлік шеңберінде қолжетімді барлық public және protected статикалық емес өрістері мен әдістерін",
+          "Ата-аналық кластың конструкторларын ешқандай шектеусіз толық көлемде",
+          "Кластың барлық өрістері мен әдістерін, соның ішінде ата-аналық кластың private элементтерін де",
+          "Әдістерді немесе мінез-құлық логикасын бермей, тек класс өрістерін ғана",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-дағы динамикалық диспетчеризация (dynamic dispatch) дегеніміз не?",
+        options: [
+          "Айнымалының типі тек компиляция кезінде анықталатын және орындалу кезінде өзгермейтін процесс",
+          "Параметрлер санына қарай әдіс таңдалатын әдістерді қайта жүктеудің бір түрі",
+          "Полиморфизмнің қатысуынсыз ата-аналық кластағы әдісті super түйінді сөзі арқылы шақыру тәсілі",
+          "Әдісті нақты платформаға оңтайландырып, JVM байт-кодына компиляциялау процесі",
+          "Шақырылатын әдісті таңдау бағдарламаның орындалу кезінде объектінің нақты типіне негізделіп жүзеге асырылатын механизм",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Java-дағы абстрактілі әдіс дегеніміз не?",
+        options: [
+          "Параметрлер қабылдамайтын және әрқашан void қайтаратын әдіс",
+          "Іске асырылуы (денесі) жоқ, тек сигнатурасы арқылы жарияланған әдіс",
+          "Міндетті түрде static болуы және класс арқылы шақырылуы тиіс әдіс",
+          "Мұрагерлерден жасыру үшін private модификаторымен жарияланған әдіс",
+          "Бағдарлама логикасына қарамастан әрқашан null мәнін қайтаратын әдіс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Интерфейсті жариялау үшін қандай кілт сөз қолданылады?",
+        options: ["abstract", "class", "interface", "contract", "protocol"],
+        correct: 2,
+      },
+      {
+        q: "Java-дағы ерекше жағдай (exception) дегеніміз не?",
+        options: [
+          "Қателерді сақтау үшін қолданылатын кәдімгі айнымалы",
+          "Бағдарламаның қалыпты орындалу барысын (әрекетін) бұзатын оқиға",
+          "Әрқашан қате қайтаратын әдістің арнайы түрі",
+          "Циклді тоқтатуға арналған Java операторы",
+          "Кластарды жариялау үшін қолданылатын түйінді сөз",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қалай өзіңнің ерекше жағдайыңды (exception) жасауға болады?",
+        options: [
+          "Exception немесе RuntimeException кластарын кеңейтетін класс жасау арқылы",
+          "Exception интерфейсін іске асыру (implement) арқылы",
+          "Класты @Exception аннотациясымен жариялау арқылы",
+          "exception түйінді сөзін қолдану арқылы",
+          "Кезкелгенкласқа throws() әдісін қосу арқылы",
+        ],
+        correct: 0,
+      },
+      {
+        q: "equals() әдісімен бірге келісім (contract) бойынша қай әдісті override жасау керек?",
+        options: [
+          "toString()",
+          "clone()",
+          "compareTo()",
+          "hashCode()",
+          "finalize()",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Егер кілт табылмаса, map.get(key) нені қайтарады?",
+        options: ["Қатені (Exception)", "null", "0", "Босжолды", "-1"],
+        correct: 1,
+      },
+      {
+        q: "Java-дағы параметірленген типтер (Generics) дегеніміз не?",
+        options: [
+          "Математикалық операцияларды жылдамдату үшін қолданылатын арнайы кірістірілген сандық типтер",
+          "Бағдарламадағы барлық басқа типтерді автоматты түрде алмастыратын әмбебап деректер типі",
+          "Типтердің қауіпсіздігін (type safety) қамтамасыз ету үшін кластар мен әдістерді типтермен параметрлеу механиз",
+          "Кластар мен интерфейстерді пайдалануды толық алмастыратын мұрагерлікке балама тәсіл",
+          "Java-да бекітілген өлшемдегі массивтерді жасау және басқару тәсілі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Iterator-дың қай әдісі келесі элементтің бар-жоғын тексереді?",
+        options: ["hasElement()", "isNext()", "next()", "peek()", "hasNext()"],
+        correct: 4,
+      },
+      {
+        q: "Мәтіндік файлға жазу үшін қай класс қолданылады?",
+        options: [
+          "FileOutput",
+          "BufferedWriter немесе PrintWriter",
+          "Тек FileWriter",
+          "TextWriter",
+          "OutputStreamWriter",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-дағы enum қандай мүмкіндіктерге ие?",
+        options: [
+          "Өрістер, конструкторлар және әдістері болуы мүмкін",
+          "Текжол мәндерін сақтайды",
+          "Басқа кластарды мұрагерлік алады",
+          "Орындау кезінде типін өзгерте алады",
+          "Теклогикасыз константалар тізімі",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Қай логтау деңгейі әзірлеушінің жөндеу ақпараты үшін қолданылады?",
+        options: ["INFO", "DEBUG", "WARN", "ERROR", "TRACE"],
+        correct: 1,
+      },
+      {
+        q: "Жолдың (String) null емес және бос емес екенін қалай тексеруге болады?",
+        options: [
+          'str == ""',
+          "str.notEmpty()",
+          "str.length > 0",
+          "!str.equals(null)",
+          "str != null && !str.isEmpty()",
+        ],
+        correct: 4,
+      },
+    ],
+    variant3: [
+      {
+        q: "Командалық жол арқылы Java бағдарламасын компиляциялау үшін қандай команда қолданылады?",
+        options: ["java", "javac", "run", "execute", "compile"],
+        correct: 1,
+      },
+      {
+        q: "IDE дегеніміз не?",
+        options: [
+          "Бағдарламалау тілі",
+          "Интеграцияланған әзірлеу ортасы",
+          "Java компиляторы",
+          "Java-дағы деректер типі",
+          "Нұсқаларды басқару жүйесі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қай деректер түрі 8 байт орын алады және үлкен бүтін сандарды сақтайды?",
+        options: ["int", "short", "long", "bigint", "integer"],
+        correct: 2,
+      },
+      {
+        q: "Java тілінде айқын тип түрлендіру (casting) деген не?",
+        options: [
+          "Программисттің қатысуынсыз кіші типті үлкен типке автоматты түрде түрлендіру",
+          "(тип) операторы арқылы бір типті екінші типке айқын түрде түрлендіру",
+          "Бағдарлама жадында жаңа объект құру",
+          "Бір айнымалының мәнін басқа айнымалыға көшіру",
+          "Бағдарлама кодында өзгермейтін константа жариялау",
+        ],
+        correct: 1,
+      },
+      {
+        q: "int x = 5; x += 3; орындалғаннан кейін x неге тең?",
+        options: ["5", "3", "8", "15", "2"],
+        correct: 2,
+      },
+      {
+        q: "Ішкі (кіріктірілген) шарт қалай жазылады?",
+        options: [
+          "if(a) and if(b)",
+          "if(a) { if(b) { } }",
+          "if(a && b) тек осылай",
+          "nested if(a, b)",
+          "if(a) else if(b) тек",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java тіліндегі else if нені білдіреді?",
+        options: [
+          "Ішкі else",
+          "else-тен кейін қосымша шартты тексеру",
+          "switch-тің міндетті бөлігі",
+          "Арнайы цикл түрі",
+          "default-тың баламасы",
+        ],
+        correct: 1,
+      },
+      {
+        q: "do-while циклі қалай дұрыс жазылады?",
+        options: [
+          "do while (x < 10) { }",
+          "do { } while (x < 10);",
+          "while { } do (x < 10);",
+          "repeat { } until (x < 10);",
+          "loop { } while (x < 10);",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қай жағдайда do-while циклі while цикліне қарағанда тиімдірек?",
+        options: [
+          "Шартәрқашанақиқатболғанда",
+          "Циклденесікем дегенде бір рет орындалуы керек болғанда",
+          "Итерациялардың нақты саны белгілі болғанда",
+          "Шексіз цикл қажет болғанда",
+          "Шарткүрделіболғанда",
+        ],
+        correct: 1,
+      },
+      {
+        q: "for (int i = 10; i > 0; i -= 3) цикл аяқталғаннан кейін i неге тең?",
+        options: ["0", "1", "-2", "3", "10"],
+        correct: 2,
+      },
+      {
+        q: "Math класының қай әдісі екі санның үлкенін қайтарады?",
+        options: [
+          "Math.biggest()",
+          "Math.max()",
+          "Math.greater()",
+          "Math.top()",
+          "Math.large()",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Math.E қандай тұрақтыны қамтиды?",
+        options: [
+          "π тұрақтысы",
+          "sqrt(2) тұрақтысы",
+          "Натурал логарифмнің негізі e ≈ 2.718...",
+          "Эйлер–Маскерони тұрақтысы",
+          "int типінің максималды мәні",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Ұзындығы n болатын массивтің соңғы элементінің индексі қандай?",
+        options: ["n", "n + 1", "n - 1", "n / 2", "0"],
+        correct: 2,
+      },
+      {
+        q: "Нәтиежесінде не шығады: int[] a = {5, 10, 15}; System.out.println(a[1]);?",
+        options: ["5", "15", "10", "0", "1"],
+        correct: 2,
+      },
+      {
+        q: "Квадрат матрицаның негізгі диагоналі дегеніміз не?",
+        options: [
+          "Жол индексі баған индексіне тең элементтер (arr[i][i])",
+          "Бірінші жол",
+          "Соңғы баған",
+          "Жұп индексті элементтер",
+          "Орталық жол",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Қай әдіс екі жолды мазмұны бойынша салыстырады?",
+        options: [
+          "s.compare()",
+          "==",
+          "s.equals()",
+          "s.compareTo()",
+          "s.same()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "s.toLowerCase() не қайтарады?",
+        options: [
+          "Үлкен әріптермен жол",
+          "Кішіәріптерге айналған жол",
+          "Әріпсіз жол",
+          "Бірінші символ кіші болады",
+          "Кішіәріптерсаны",
+        ],
+        correct: 1,
+      },
+      {
+        q: "List-тен элементті индекс бойынша қалай өшіруге болады?",
+        options: [
+          "list.delete(0)",
+          "list.remove(0)",
+          "list.erase(0)",
+          "list.clear(0)",
+          "list.pop(0)",
+        ],
+        correct: 1,
+      },
+      {
+        q: "ArrayList-тің массивтен артықшылығы неде?",
+        options: [
+          "Әрқашан жылдамырақ",
+          "Өлшемі автоматты өзгереді",
+          "Типкөрсетілмейді",
+          "Әртүрлі тип сақтайды",
+          "Әрқашан аз жады алады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Екі датаны қалай салыстыруға болады (қайсысы ертерек)?",
+        options: [
+          "date1.isBefore(date2)",
+          "date1 < date2",
+          "date1.isAfter(date2)",
+          "date1.before(date2)",
+          "LocalDate.compare(date1, date2)",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Рекурсия дегеніміз не?",
+        options: [
+          "Әдістің басқа кластан шақырылуы",
+          "Әдісті қайта жүктеу",
+          "Бірнеше қайтарылатын мәні бар әдіс",
+          "Әдістің өзін-өзі шақыруы",
+          "Әдісті мұрагерлікке алу",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Java-да объект дегеніміз не?",
+        options: [
+          "Кластарды жасауға және олардың құрылымы мен мінез-құлқын анықтауға арналған шаблон",
+          "Деректерге белгілі бір операция жасайтын класс әдісі",
+          "new операторы арқылы жадыда жасалған және объектінің күйін сақтайтын кластың данасы (экземпляры)",
+          "Экземплярға немесе класқа тиесілі айнымалы болып табылатын класс өрісі",
+          "Ақпараттың әртүрлі санаттарының мәндерін сақтау үшін қолданылатын деректер типі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да this кілттік сөзі нені білдіреді?",
+        options: [
+          "Ағымдағы объект мұрагерлікке алған ата-аналық класқа сілтеме",
+          "Бағдарлама жадындағы келесі объектіге нұсқағыш",
+          "Объект жасамай-ақ кластың статикалық әдісіне сілтеме жасау",
+          "Кластар арасындағы мұрагерлікті жариялауға арналған түйінді сөз",
+          "Код орындалып жатқан ағымдағы объектіге сілтеме",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Статикалық әдістің ішінде this кілттік сөзін қолдануға бола ма?",
+        options: [
+          "Иә, this сөзін кластың кез келген әдісінде қолдануға болады",
+          "Тек класс конструкторларының ішінде ғана",
+          "Жоқ, өйткені статикалық әдіс нақты бір объектіге тиесілі емес",
+          "Тек объектінің приватты өрістеріне жүгінген кезде ғана",
+          "Иә, Java 11-ден бастап бұған рұқсат берілген",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Конструктордың қай жолында super() шақырылымы тұруы керек?",
+        options: [
+          "Конструктордың кез келген жерінде",
+          "Міндетті түрде конструктордың бірінші жолында",
+          "Конструктордың ең соңғы жолында",
+          "Өрістерді инициализациялағаннан кейін",
+          "Тек ата-аналық класс абстрактілі (abstract) болса ғана",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Кластың ішкі деректеріне қолжетімділікті шектеу принципі қалай аталады?",
+        options: [
+          "Полиморфизм",
+          "Мұрагерлік",
+          "Инкапсуляция",
+          "Абстракция",
+          "Агрегация",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Туынды класта super.method() шақырылғанда не болады?",
+        options: [
+          "Бөлек күйі бар ата-аналық кластың жаңа данасы (экземпляры) жасалады",
+          "Ата-аналық кластың көрсетілген атауы мен сигнатурасы бар әдісі шақырылады",
+          "Орындалу аяқталғаннан кейін ата-аналық кластың әдісі туынды кластан өшіріледі",
+          "Полиморфизмді ескермей, әдістің тек статикалық нұсқасы орындалады",
+          "super түйінді сөзін қолданған кезде компиляция қатесі туындайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Кодта не орындалады: Animal a = new Dog(); a.speak(); (мұнда speak() әдісі Dog класында қайта анықталған)?",
+        options: [
+          "Animal.speak() әдісі шақырылады",
+          "Полиморфизмнің арқасында Dog.speak() әдісі шақырылады",
+          "Компиляция қатесі туындайды",
+          "Орындалу қатесі (runtime error) туындайды",
+          "Object класының әдісі шақырылады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Абстрактілі кластың туынды класы не істеуге міндетті?",
+        options: [
+          "Ештеңе істеу талап етілмейді, бәрін сол күйінде қалдыруға болады",
+          "Барлық абстрактілі әдістерді іске асыруы немесе өзі де абстрактілі класс болуы керек",
+          "Әрбір әдіс үшін міндетті түрде жаңа өрістер жариялауы қажет",
+          "Туынды кластың әрбір әдісінде super() шақыруы керек",
+          "Туынды кластың барлық әдістерін static қылуы керек",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Интерфейсті жүзеге асыру үшін қандай кілттік сөз қолданылады?",
+        options: ["extends", "implements", "uses", "with", "inherits"],
+        correct: 1,
+      },
+      {
+        q: "Ерекше жағдайларды өңдеу үшін қай конструкция қолданылады?",
+        options: [
+          "if-else",
+          "try-catch",
+          "switch-case",
+          "while-break",
+          "for-continue",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Шақырулар стегі (stack trace) дегеніміз не?",
+        options: [
+          "Бағдарлама орындалу кезінде жүктелген барлық кластардың толық тізімі",
+          "Ерекше жағдай туындаған кездегі әдістердің шақырылу реттілігі туралы ақпарат",
+          "Java-да анықталған барлық мүмкін ерекше жағдайлардың тізімі",
+          "Бағдарламаның барлық айнымалыларын сақтауға арналған деректер құрылымы",
+          "Кластардың JVM виртуалды машинасына жүктелу тәртібі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "hashCode() деген не?",
+        options: [
+          "Әршақырғанда кездейсоқ сан",
+          "Хэш-құрылымдарда қолданылатын объектінің бүтін хэш-коды",
+          "Қайталанбайтын бірегей идентификатор",
+          "Әрөзгерісте ауысатын нұсқа нөмірі",
+          "Жадыдағы нақты адрес",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қай класс Map интерфейсін іске асырады (implement) және элементтердің реттілігіне кепілдік бермейді?",
+        options: [
+          "TreeMap",
+          "LinkedHashMap",
+          "HashMap",
+          "SortedMap",
+          "ArrayMap",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Жолдардың жалпылама тізімін қалай жариялауға болады?",
+        options: [
+          "List list = new ArrayList(String);",
+          "ArrayList list = List.of();",
+          "List list = new ArrayList(String);",
+          "List list = new ArrayList<>();",
+          "List list = new ArrayList();",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Коллекцияны аралап шығу кезінде элементті қалай қауіпсіз өшіруге болады?",
+        options: [
+          "collection.remove() әдісін қолдану",
+          "Итерация кезінде iterator.remove() әдісін қолдану",
+          "Коллекцияның көшірмесін жасап, содан өшіру",
+          "for-each циклі мен remove әдісін бірге қолдану",
+          "Java-да бұл мүмкін емес",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да java.nio пакеті не үшін қолданылады?",
+        options: [
+          "Қазіргі заманғы енгізу-шығару (I/O) және файлдар мен буферлермен жұмыс істеу үшін",
+          "Бағдарламадағы қателер мен ерекше жағдайларды өңдеу үшін",
+          "Қолданбалардың пайдаланушы интерфейсін жасау үшін",
+          "Ағындарды (threads) басқару үшін",
+          "Текжелілікқосылымдармен жұмыс істеу үшін",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Модульдік (unit) тестілеу деген не?",
+        options: [
+          "Бүкіл бағдарламаны толық тестілеу",
+          "Жеке әдістерді немесе кластарды бөлек тестілеу",
+          "Пайдаланушы интерфейсін тестілеу",
+          "Жүктемелік тестілеу",
+          "Желілік қосылымдарды тестілеу",
+        ],
+        correct: 1,
+      },
+      {
+        q: "JUnit-та assertNull(object) деген не?",
+        options: [
+          "Объектті жояды",
+          "Объект null емес  екенін тексереді",
+          "null объект жасайды",
+          "Объект null екенін тексереді",
+          "NullPointerException тастайды",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Код рефакторингі (refactoring) дегеніміз не?",
+        options: [
+          "Логиканы өзгерте отырып, бағдарламаны басынан бастап толық қайта жазу",
+          "Бағдарламаның әрекетін (жұмысын) өзгертпей, оның ішкі құрылымын жақсарту",
+          "Текбағдарламаның орындалу жылдамдығын оңтайландыру",
+          "Қолданыстағы кодқа жаңа функционал қосу",
+          "Автоматты тесттердің көмегімен бағдарламаны тексеру",
+        ],
+        correct: 1,
+      },
+    ],
+    variant4: [
+      {
+        q: "Компиляцияланған Java-бағдарламасын іске қосу үшін қандай команда қолданылады?",
+        options: ["java", "javac", "jrun", "start", "execute"],
+        correct: 0,
+      },
+      {
+        q: "Java бастапқы файлының кеңейтімі қандай?",
+        options: [".java", ".class", ".jv", ".src", ".code"],
+        correct: 0,
+      },
+      {
+        q: "Мәні 10-ға тең int типті айнымалыны қалай дұрыс жариялайды?",
+        options: [
+          "int = 10;",
+          "int x = 10;",
+          "integer x = 10;",
+          "x int = 10;",
+          "var int x = 10;",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қай оператор қалдықпен бөлуді орындайды?",
+        options: ["/", "//", "%", "mod", "div"],
+        correct: 2,
+      },
+      {
+        q: "true && false өрнегінің нәтижесі қандай?",
+        options: ["true", "false", "1", "0", "null"],
+        correct: 1,
+      },
+      {
+        q: "Java-да бірнеше нұсқаның ішінен таңдау үшін қай оператор қолданылады?",
+        options: ["select", "choose", "switch", "case", "when"],
+        correct: 2,
+      },
+      {
+        q: "switch операторындағы case өңдеуді қандай кілт сөз аяқтайды?",
+        options: ["stop", "end", "break", "exit", "return"],
+        correct: 2,
+      },
+      {
+        q: "Цикл денесі неше рет орындалады: int x = 5; while (x > 10) { x++; }?",
+        options: ["1", "5", "0", "10", "Шексіз"],
+        correct: 2,
+      },
+      {
+        q: "Java-да for циклінің дұрыс синтаксисі қандай?",
+        options: [
+          "for (x < 10) { }",
+          "for (int i = 0; i < 10; i++) { }",
+          "for int i = 0; i < 10; i++ { }",
+          "for (i in 0..10) { }",
+          "for i = 0 to 10 { }",
+        ],
+        correct: 1,
+      },
+      {
+        q: "for циклінің инициализациясында бірнеше айнымалы жариялауға бола ма?",
+        options: [
+          "Жоқ, тек бір айнымалы ғана",
+          "Иә, мысалы: for (int i = 0, j = 10; i < j; i++, j--)",
+          "Тек массивтер үшін",
+          "Бір типтегі айнымалыларды жариялауға болмайды",
+          "Тек Java 11+ нұсқасында",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Math.pow(2, 10) не қайтарады?",
+        options: ["20", "12", "1024.0", "2.0", "512.0"],
+        correct: 2,
+      },
+      {
+        q: "Math.abs(-7) не қайтарады?",
+        options: ["-7", "0", "7", "49", "-1"],
+        correct: 2,
+      },
+      {
+        q: "Егер int[] массиві инициализацияланбаса, әдепкі (default) мән ретінде не сақтайды?",
+        options: ["null", "1", "-1", "0", "Кездейсоқ мәндер"],
+        correct: 3,
+      },
+      {
+        q: "Java тілінде 3×4 өлшемді екіөлшемді массив қалай жарияланады?",
+        options: [
+          "int[3,4] arr;",
+          "int arr[3][4];",
+          "int[][] arr = new int[3][4];",
+          "int[3][4] arr = new int;",
+          "int[][] arr = new int{3, 4};",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Жолдарының ұзындығы әртүрлі екіөлшемді массивті (jagged) қалай жасауға болады?",
+        options: [
+          "int[][] a = new int[3, 2, 4];",
+          "int[][] a = new int[3][]; a[0] = new int[2]; a[1] = new int[4]; a[2] = new int[3];",
+          "int[][] a = new int[3][];",
+          "Java-да бұл мүмкін емес",
+          "int[][] a = {new int[2], new int[4]};",
+        ],
+        correct: 1,
+      },
+      {
+        q: "s.toUpperCase() не қайтарады?",
+        options: [
+          "Кішіәріптерге айналған жол",
+          "Жолдың ұзындығы",
+          "Үлкен әріптерге айналған жол",
+          "Бірінші символды үлкейтеді",
+          "Босорынсызжол",
+        ],
+        correct: 2,
+      },
+      {
+        q: 's жолы "Hello"-дан басталатынын қалай тексереміз?',
+        options: [
+          's.startsWith("Hello")',
+          's.beginsWith("Hello")',
+          's.starts("Hello")',
+          's.firstChar("Hello")',
+          's.indexOf("Hello") == 0',
+        ],
+        correct: 0,
+      },
+      {
+        q: "Коллекцияда элемент бар-жоғын қалай тексеруге болады?",
+        options: [
+          "collection.has(element)",
+          "collection.find(element)",
+          "collection.includes(element)",
+          "collection.contains(element)",
+          "collection.exists(element)",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Қазіргі Java-да дата мен уақыт үшін қай класс қолданылады?",
+        options: ["Date", "Calendar", "LocalDate", "TimeStamp", "DateTime"],
+        correct: 2,
+      },
+      {
+        q: "LocalDate.of(2024, 1, 15) не істейді?",
+        options: [
+          "Ағымдағы датаны қайтарады",
+          "2024 жылғы 15 қаңтар датасын жасайды",
+          "15 күн қосады",
+          "Аптаның 15-күні",
+          "Жүйеуақытынөзгертеді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да объектілер әдістерге қалай беріледі?",
+        options: [
+          "ref кілттік сөзін қолдану арқылы",
+          "Java-да бұл мүмкін емес",
+          "* нұсқағышын (pointer) қолдану арқылы",
+          "pointer кілттік сөзін қолдану арқылы",
+          "Java-да объектілерге сілтемелер мән бойынша (by value) беріледі",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Dog класының объектісін қалай жасауға болады?",
+        options: [
+          "create Dog d = new Dog;",
+          "Dog d;",
+          "Dog d = new Dog();",
+          "new Dog d;",
+          "Dog d = Dog.create();",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Конструкторда мән беру кезінде this не үшін қолданылады?",
+        options: [
+          "Ата-аналық кластың конструкторын ағымдағы конструктордан тікелей шақыру үшін",
+          "Осы кластың басқа объектісінің өрістеріне қол жеткізу үшін",
+          "Конструктор ішінде жаңа объект жасау үшін",
+          "Объектісіз кластың статикалық әдісін шақыру үшін",
+          "Атауы бірдей класс өрісі мен параметрді ажырату үшін",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Конструктор дегеніміз не?",
+        options: [
+          "Объект жасалған кезде шақырылатын әдіс",
+          "Кластың статикалық әдісі",
+          "Объектіні өшіруге арналған әдіс",
+          "Қайтару типі void болатын әдіс",
+          "Мұрагерлікке алынған әдіс",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Конструкторда объект өрістерін қалай инициализациялауға болады?",
+        options: [
+          "Конструктор ішінен міндетті түрде сеттерлерді (setters) шақыру арқылы",
+          "Өрістерді final ретінде жариялау арқылы",
+          "Статикалық инициализаторды қолдану арқылы",
+          "Өрістерге мәндерді тікелей меншіктеу арқылы: this.field = value;",
+          "Бұл тек конструктордан тыс жерде жасалады",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Туынды класс ата-аналық кластың private өрісіне тікелей жүгіне ала ма?",
+        options: [
+          "Иә, ата-аналық кластың өрісіне тікелей жүгіну арқылы",
+          "Иә, ата-аналық объектіге жүгінген кезде super түйінді сөзі арқылы",
+          "Жоқ, қол жеткізу тек ата-аналық кластың public немесе protected әдістері арқылы мүмкін болады",
+          "Иә, егер туынды класс пен ата-аналық класс бір пакетте болса",
+          "Иә, туынды кластың ішінде this түйінді сөзі арқылы",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-дағы барлық кластар үшін негізгі (түпкі) класс қайсысы?",
+        options: ["Base", "Root", "Object", "Class", "Main"],
+        correct: 2,
+      },
+      {
+        q: "Java-да статикалық әдісті қайта анықтауға (override) бола ма?",
+        options: [
+          "Иә, статикалық әдісті @Override аннотациясын қолданып, ешқандай шектеусіз қайта анықтауға болады",
+          "Иә, бірақ тек туынды класс пен ата-аналық класс бір пакетте болған жағдайда ғана",
+          "Жоқ, статикалық әдістер қайта анықталмайды — олар жасырылады (method hiding)",
+          "Иә, бірақ тек статикалық әдістің public модификаторы болса ғана",
+          "Иә, Java 11 нұсқасынан бастап статикалық әдістерді толыққанды қайта анықтауға рұқсат берілген",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Абстрактілі класта абстрактілі емес (кәдімгі) әдістер болуы мүмкін бе?",
+        options: [
+          "Жоқ, абстрактілі кластағы барлық әдістер abstract болуға міндетті",
+          "Иә, онда abstract әдістер де, кәдімгі әдістер де болуы мүмкін",
+          "Теккластаөрістермен күй (state) болмаған жағдайда ғана",
+          "Текобъектданасынсыз жұмыс істейтін статикалық әдістер ғана",
+          "Басқа әдістерсіз тек конструкторлар ғана",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Класс бірнеше интерфейсті жүзеге асыра ала ма?",
+        options: [
+          "Жоқ, тек біреуін",
+          "Иә, үтір арқылы: class A implements B, C",
+          "Тек Java 11+",
+          "Тек бір пакетте болса",
+          "Тек екі интерфейс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "finally блогы не істейді?",
+        options: [
+          "Тек ерекше жағдай туындағанда ғана орындалады",
+          "Тек бағдарлама қалыпты аяқталғанда ғана орындалады",
+          "Әрқашан орындалады — ерекше жағдай болса да, болмаса да",
+          "Ерекше жағдайды келесі деңгейге лақтырады",
+          "Бағдарламаның жұмысын біржола тоқтатады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Бір catch блогында бірнеше ерекше жағдай түрін өңдеуге бола ма?",
+        options: [
+          "Жоқ, Java-да бір catch блогына тек бір ғана ерекше жағдай түрі рұқсат етілген",
+          'Иә, типтерді біріктіру үшін "|" операторын қолдануға болады, мысалы: catch (IOException | SQLException e)',
+          "Иә, бірақ тек Java 11 және одан жоғары нұсқаларында ғана",
+          "Иә, бірақ тек барлық ерекше жағдайлар бір базалық кластан таралған болса ғана",
+          "Жоқ, әрбір ерекше жағдай түрі үшін міндетті түрде бөлек catch блогын жазу керек",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Егер a.equals(b) = true болса, не орындалуы керек?",
+        options: [
+          "a == b true болуы керек",
+          "a.hashCode() == b.hashCode()",
+          "a.toString() тең болуы керек",
+          "Екеуі де null",
+          "Ештеңе",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Қай класс Map интерфейсін іске асырады және кілттерді сұрыпталған ретпен сақтайды?",
+        options: [
+          "HashMap",
+          "LinkedHashMap",
+          "TreeMap",
+          "SortedHashMap",
+          "OrderedMap",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Жалпылама класты жариялаудағы белгісі нені білдіреді?",
+        options: [
+          "Бұл класты қолданудың барлық жағдайында тек жолдарды (String) білдіретін бекітілген деректер типі",
+          "Бұл тип параметрі, ол класс объектісін жасалған кезде нақты типпен алмастырылады",
+          "Бұл тек сандармен жұмыс істеуге арналған Java-ның арнайы кірістірілген типі",
+          "Бұл мәтіндік ақпаратты сақтау үшін қолданылатын Text сөзінің қысқартылған нұсқасы",
+          "Бұл барлық мәндерді автоматты түрде базалық класқа келтіретін Object класына сілтеме",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Егер коллекция итерация кезінде өзгерсе, for-each қандай ерекше жағдай береді?",
+        options: [
+          "ArrayIndexOutOfBoundsException",
+          "ConcurrentModificationException",
+          "IllegalStateException",
+          "IteratorException",
+          "ModificationException",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Файл үшін Path объектісін қалай жасауға болады?",
+        options: [
+          'new Path("file.txt")',
+          'Paths.get("file.txt")',
+          'Path.of("file.txt") немесе Paths.get("file.txt")',
+          'File.path("file.txt")',
+          'new File("file.txt").toPath()',
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да JUnit не үшін қолданылады?",
+        options: [
+          "Java кодын компиляциялау үшін",
+          "Модульдік тесттерді жазу және іске қосу үшін",
+          "Жобаның тәуелділіктерін басқару үшін",
+          "Пайдаланушы интерфейсін жасау үшін",
+          "Серверге автоматты орналастыру үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "JUnit-та әр тесттің алдында әдісті қай аннотация орындайды?",
+        options: ["@Before", "@Init", "@BeforeEach", "@Setup", "@PreTest"],
+        correct: 2,
+      },
+      {
+        q: "Циклдегі break операторы не істейді?",
+        options: [
+          "Бір итерацияны өткізіп жібереді",
+          "Циклдің орындалуын толық тоқтатады",
+          "Цикл есептегішін (counter) арттырады",
+          "Циклді қайтадан іске қосады",
+          "Жаңа цикл жасайды",
+        ],
+        correct: 1,
+      },
+    ],
+    variant5: [
+      {
+        q: "JDK құрамына не кіреді?",
+        options: [
+          "Тек Java бағдарламаларын іске қосуға арналған JVM",
+          "Тек кодты жинақтауға арналған javac компиляторы",
+          "JVM, javac компиляторы және әзірлеу құралдары",
+          "Тек код жазуға арналған қарапайым мәтіндік редактор",
+          "Тек Java стандартты сынып кітапханалары",
+        ],
+        correct: 2,
+      },
+      {
+        q: "System.out.println() операторы не істейді?",
+        options: [
+          "Пернетақтадан мәліметтерді оқиды",
+          "Мәліметтерді консольге шығарып, жаңа жолға өтеді.",
+          "Бағдарламаны компиляциялайды",
+          "Диалогтық терезені ашады",
+          "Мәліметтерді файлға жазады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "final-айнымалысының мәнін өзгертуге тырысқанда не болады?",
+        options: [
+          "Мән қатесіз өзгереді",
+          "Бағдарлама ескерту шығарады",
+          "Компиляция қатесі туындайды",
+          "Бағдарлама ерекше жағдаймен аяқталады",
+          "Айнымалы null болады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java тілінде бүтін сандармен бөлгенде 10 / 3 өрнегінің нәтижесі қандай?",
+        options: ["3.33", "4", "3", "3.0", "0"],
+        correct: 2,
+      },
+      {
+        q: "Қай оператор мәннің кіші немесе тең екенін тексереді?",
+        options: [">=", "<", "<=", "=<", "!>"],
+        correct: 2,
+      },
+      {
+        q: "Егер switch операторындағы case ішінде break болмаса не болады?",
+        options: [
+          "Бағдарлама аяқталады",
+          "Case еленбейді",
+          "Компилятор қате береді",
+          "default блогы орындалады",
+          "Келесі case-ке өтіп, орындау жалғасады (fall-through)",
+        ],
+        correct: 4,
+      },
+      {
+        q: 'Не шығады: if (false) System.out.println("A"); else System.out.println("B");?',
+        options: ["A", "AB", "B", "null", "Ештеңе"],
+        correct: 2,
+      },
+      {
+        q: "Бағдарлама не шығарады: int i = 0; do { i++; } while (i < 0); System.out.println(i);?",
+        options: ["1", "0", "-1", "Ештеңе", "Шексіз цикл"],
+        correct: 0,
+      },
+      {
+        q: "for циклінің қай бөлігі басталар алдында БІР рет қана орындалады?",
+        options: ["Инициализация", "Дене", "Қадам", "Шарт", "Барлық бөлімдері"],
+        correct: 0,
+      },
+      {
+        q: "Циклдің итерация нөмірін бақылап отыратын айнымалы қалай аталады?",
+        options: [
+          "Санағыш (counter)",
+          "index",
+          "flag",
+          "pointer",
+          "accumulator",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Math класының қай әдісі санды ең жақын бүтін санға дейін дөңгелектейді?",
+        options: [
+          "Math.truncate()",
+          "Math.fix()",
+          "Math.round()",
+          "Math.ceil()",
+          "Math.floor()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java тілінде санның натурал логарифмін қалай есептеуге болады?",
+        options: [
+          "Math.ln(x)",
+          "Math.log(x)",
+          "Math.log10(x)",
+          "Math.natural(x)",
+          "Math.ln10(x)",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Массивтің барлық элементтерін өту үшін қай цикл ең ыңғайлы?",
+        options: [
+          "while",
+          "do-while",
+          "for немесе for-each",
+          "switch",
+          "Тек for",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Екі өлшемді жиымның екінші жолындағы және үшінші бағанындағы элементке қалай қол жеткізуге болады?",
+        options: [
+          "arr[3][2]",
+          "arr[1][2]",
+          "arr[2][3]",
+          "arr[2][1]",
+          "arr[3][1]",
+        ],
+        correct: 1,
+      },
+      {
+        q: "int[][] arr = new int[2][3] инициализациясында arr[0][0] неге тең?",
+        options: ["1", "0", "null", "-1", "Қате"],
+        correct: 1,
+      },
+      {
+        q: "s.trim() әдісі не істейді?",
+        options: [
+          "Жолдағы барлық бос орындарды жояды",
+          "Жолдың басы мен соңындағы бос орындарды жояды",
+          "Жолды қысқартады",
+          "Жолды бөледі",
+          "Жолды кіші әріпке айналдырады",
+        ],
+        correct: 1,
+      },
+      {
+        q: 's жолында барлық "a"-ны "b"-ға қалай ауыстыруға болады?',
+        options: [
+          's.change("a", "b")',
+          's.set("a", "b")',
+          's.replace("a", "b")',
+          's.swap("a", "b")',
+          'String.replace(s, "a", "b")',
+        ],
+        correct: 2,
+      },
+      {
+        q: "HashSet-ке қайталанатын элемент қосылса не болады?",
+        options: [
+          "Қате шығады",
+          "Екі рет қосылады",
+          "Элемент қосылмайды, өлшем өзгермейді",
+          "Ескі элемент ауысады",
+          "HashSet List-ке айналады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java тілінде ағымдағы күнді қалай алуға болады?",
+        options: [
+          "new Date()",
+          "System.getDate()",
+          "Date.today()",
+          "Calendar.getDate()",
+          "LocalDate.now()",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Java-дағы әдіс (метод) дегеніміз не?",
+        options: [
+          "Әртүрлі ақпарат санаттарының мәндерін сақтау және ұсыну үшін қолданылатын деректер типі",
+          "Белгілі бір тапсырманы орындайтын және кластың мінез-құлқын анықтайтын кодтың атаулы блогы",
+          "Объектінің немесе кластың күйін сақтауға арналған арнайы айнымалы",
+          "Құрылымдар мен конструкцияларды жариялау үшін қолданылатын Java тілінің түйінді сөзі",
+          "JVM деңгейінде бағдарламаның орындалу қателерін өңдеу үшін қолданылатын ерекше жағдай (exception) типі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "add(3, 5) шақырылғанда int add(int a, int b) { return a + b; } әдісі не қайтарады?",
+        options: ['"35"', "8", "5", "3", "0"],
+        correct: 1,
+      },
+      {
+        q: "Инкапсуляция дегеніміз не?",
+        options: [
+          "Біртапсырманы шешу үшін өзара байланысты бірнеше кластарды құру",
+          "Біркластыңбірнешеданасын (экземплярын) жасау",
+          "Ата-аналық кластан қасиеттер мен әдістерді мұрагерлікке алу",
+          "Деректер мен әдістерді бір класта біріктіру және оларға қолжетімділікті шектеу",
+          "Бағдарламаның бірнеше орындалу ағындарын бір уақытта іске қосу",
+        ],
+        correct: 3,
+      },
+      {
+        q: "this кілттік сөзі басқа конструкторды шақыру үшін қолданылғанда не болады?",
+        options: [
+          "Ағымдағы кластың басқа конструкторы шақырылады",
+          "Жаңаобъектжасалады",
+          "Ата-аналық кластың әдісі шақырылады",
+          "Объект көшіріледі",
+          "main әдісі шақырылады",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Конструктордың қарапайым әдістен айырмашылығы неде?",
+        options: [
+          "Конструктор кластың статикалық (static) әдісі ретінде жариялануы мүмкін болады",
+          "Конструктордың атауы класс атауымен бірдей болады және оның қайтару типі болмайды",
+          "Конструктор тек оның атауы арқылы қолмен шақырылады",
+          "Конструктор мүлдем параметр қабылдай алмайды",
+          "Конструктор бағдарламаның жұмысы аяқталғанда орындалады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "private қолжетімділік модификаторы не істейді?",
+        options: [
+          "Барлық кластардан қол жеткізуге рұқсат береді",
+          "Қолжетімділікті тек ағымдағы класс шегінде шектейді",
+          "Туынды кластардан (подкласстардан) қол жеткізуге рұқсат береді",
+          "Пакет шегінде қол жеткізуге рұқсат береді",
+          "Мұрагерлікке тыйым салады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Аксессор-әдіс (accessor method) дегеніміз не?",
+        options: [
+          "Жалпы есептеулерді орындау үшін қолданылатын кластың статикалық әдісі",
+          "Объектілерді жасау кезінде инициализациялауға арналған класс конструкторы",
+          "Объектінің private өрістеріне бақыланатын қолжетімділікті қамтамасыз ететін әдіс (геттерлер мен сеттерлер)",
+          "Іске асырылуы (реализациясы) жоқ және қайта анықтауды талап ететін абстрактілі әдіс",
+          "Туынды кластарда қайта анықтауға тыйым салатын final модификаторы бар әдіс",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Мұрагерліктегі IS-A қатынасы нені білдіреді?",
+        options: [
+          "Кластың ішінде басқа класс бар екенін",
+          "Екі кластың объектілері тең екенін",
+          "Кластың интерфейсті іске асыратынын",
+          "Туынды кластың суперкластың бір түрі екенін",
+          "Кластардың бір пакетте орналасқанын",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Java-да статикалық әдісті қайта анықтауға (override) бола ма?",
+        options: [
+          "Иә, статикалық әдісті @Override аннотациясын қолданып, ешқандай шектеусіз қайта анықтауға болады",
+          "Жоқ, статикалық әдістер қайта анықталмайды — олар жасырылады (method hiding)",
+          "Иә, бірақ тек туынды класс пен ата-аналық класс бір пакетте болған жағдайда ғана",
+          "Иә, бірақ тек статикалық әдістің public модификаторы болса ғана",
+          "Иә, Java 11 нұсқасынан бастап статикалық әдістерді толыққанды қайта анықтауға рұқсат берілген",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да абстракт кластан объект жасауға бола ма?",
+        options: [
+          "Иә, абстракт класты еш шектеусіз new операторы арқылы тікелей инстанциялауға болады",
+          "Иә, Java 11 нұсқасынан бастап абстракт кластарды қарапайым кластар сияқты жасауға болады",
+          "Иә, бірақ тек рефлексия және арнайы JVM құралдары арқылы",
+          "Иә, егер абстракт класта барлық әдістер жүзеге асырылған болса және абстракт әдістер болмаса",
+          "Жоқ, абстракт класты тікелей инстанциялауға болмайды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Интерфейс әдістерінің әдепкі қолжетімділік модификаторы қандай?",
+        options: [
+          "private",
+          "abstract",
+          "public",
+          "package-private",
+          "protected",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Ерекше жағдайды қолмен туындату үшін қай кілттік сөз қолданылады?",
+        options: ["catch", "except", "throw", "raise", "error"],
+        correct: 2,
+      },
+      {
+        q: "null-сілтеменің әдісіне жүгінген кезде қандай ерекше жағдай туындайды?",
+        options: [
+          "NullPointerException",
+          "NullReferenceException",
+          "ArithmeticException",
+          "IllegalStateException",
+          "ClassCastException",
+        ],
+        correct: 0,
+      },
+      {
+        q: "name және age өрістері бар Person класы үшін toString() қалай дұрыс override жасалады?",
+        options: [
+          "return name;",
+          'return "Person{name=\'" + name + "\', age=" + age + "}";',
+          "return this;",
+          "return Person.class;",
+          "return hashCode() + name;",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Map ішінде белгілі бір кілттің бар-жоғын қалай тексеруге болады?",
+        options: [
+          "map.containsKey(key)",
+          "map.has(key)",
+          "map.exists(key",
+          "map.find(key) != null",
+          "map.includes(key)",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Generics-тің Object класын қолданумен салыстырғандағы негізгі артықшылығы неде?",
+        options: [
+          "Generics JVM жұмысын өзгерту арқылы бағдарламаның орындалуын автоматты түрде жылдамдатады",
+          "Generics типтерді компиляция кезеңінде тексеруді қамтамасыз етеді және типтерді айқын түрлендіру қажеттілігін азайтады",
+          "Generics heap-та объектілердің жасалуын толық тоқтатып, жадты тұтынуды айтарлықтай азайтады",
+          "Generics wrapper-кластарды қолданбай-ақ қарапайым типтерді тікелей сақтауға мүмкіндік береді",
+          "Generics әзірлеушінің қатысуынсыз кез келген үйлесімсіз деректер типтерін автоматты түрде түрлендіреді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да Optional класы не үшін қолданылады?",
+        options: [
+          "Болмауы мүмкін (null) мәнді қауіпсіз қамту (wrapping) үшін",
+          "null мәндерді сақтау үшін",
+          "Жаңаколлекция түрін жасау үшін",
+          "if-else-тің орнына",
+          "try-catch орнына",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Files.readAllLines(path) не істейді?",
+        options: [
+          "Файлдың бірінші жолын оқиды",
+          "Жаңафайл жасайды",
+          "Жолдар санын есептейді",
+          "Файлды байттар ретінде оқиды",
+          "Файлдың барлық жолдарын List түрінде оқиды",
+        ],
+        correct: 4,
+      },
+      {
+        q: "JUnit 5-те әдісті тест ретінде белгілеу үшін қай аннотация қолданылады?",
+        options: [
+          "@TestAfter",
+          "@Test (org.junit.jupiter.api.Test пакетінен)",
+          "@UnitTest",
+          "@RunTest",
+          "@TestMethod",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Тесттік қамту (code coverage) деген не?",
+        options: [
+          "Жобадағы тесттер саны",
+          "Тесттердің сапасы",
+          "Тесттер орындалғанда іске қосылатын кодтың пайызы",
+          "Тесттердің орындалу уақыты",
+          "Табылған қателер саны",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да коллекция дегеніміз не?",
+        options: [
+          "Деректерді дискіде сақтауға арналған файл",
+          "Массивтерді автоматты түрде сұрыптау әдісі",
+          "Сандар мен жолдарға арналған қарапайым деректер типі",
+          "Орындалу ағындарымен жұмыс істеудің арнайы механизмі",
+          "Элементтер тобын сақтауға және басқаруға арналған объект",
+        ],
+        correct: 4,
+      },
+    ],
+    variant6: [
+      {
+        q: "Java бағдарламасының бастау нүктесінде қандай кілт сөз міндетті түрде болады?",
+        options: ["start", "begin", "main", "run", "init"],
+        correct: 2,
+      },
+      {
+        q: "Java байт-код файлы қалай аталады?",
+        options: [
+          "Program.java",
+          "Program.class",
+          "Program.jar",
+          "Program.bin",
+          "Program.exe",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java тілінде қай деректер типі примитивті ЕМЕС?",
+        options: ["int", "double", "String", "boolean", "char"],
+        correct: 2,
+      },
+      {
+        q: "Логикалық ЖӘНЕ (AND) үшін қай оператор қолданылады?",
+        options: ["&", "|", "&&", "AND", "and"],
+        correct: 2,
+      },
+      {
+        q: "7 % 2 неге тең?",
+        options: ["3", "1", "3.5", "0", "2"],
+        correct: 1,
+      },
+      {
+        q: "switch операторындағы default блогы не істейді?",
+        options: [
+          "Әдепкі мәнді орнатады",
+          "Ешбір case сәйкес келмесе орындалады",
+          "Бағдарламаны аяқтайды",
+          "Барлық case-терді өткізіп жібереді",
+          "switch үшін міндетті элемент болып табылады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "else if тізбегінде шарттар қандай ретпен тексеріледі?",
+        options: [
+          "Жоғарыдан төмен, бірінші ақиқат шарт орындалады",
+          "Төменнен жоғары",
+          "Барлық шарттар бір уақытта тексеріледі",
+          "Кездейсоқ ретпен",
+          "Текбіріншіжәне соңғы",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Нәтиже қандай болады: for (int i = 0; i < 5; i++) { if (i == 3) break; System.out.print(i); }?",
+        options: ["01234", "0123", "012", "01235", "12345"],
+        correct: 2,
+      },
+      {
+        q: "for (int i = 0; i < 5; i++) { } циклінің денесі неше рет орындалады?",
+        options: ["4", "5", "6", "0", "Шексіз"],
+        correct: 1,
+      },
+      {
+        q: 'Нәтиежесінде не шығады: for (int i = 5; i >= 1; i--) System.out.print(i + " ");?',
+        options: [
+          "1 2 3 4 5",
+          "5 4 3 2 1",
+          "5 4 3 2 1 0",
+          "1 2 3 4 5 6",
+          "Ештеңе",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Math.floor(3.9) не қайтарады?",
+        options: ["4.0", "3.0", "3.9", "4", "3"],
+        correct: 1,
+      },
+      {
+        q: "Math.pow(3, 0) не қайтарады?",
+        options: ["3.0", "0.0", "1.0", "0", "Қате"],
+        correct: 2,
+      },
+      {
+        q: "arr1 массивін arr2-ге қалай көшіруге болады?",
+        options: [
+          "arr2 = Arrays.copyOf(arr1, arr1.length);",
+          "arr2 = arr1;",
+          "arr2.copy(arr1);",
+          "copy(arr1, arr2);",
+          "System.copy(arr1, arr2);",
+        ],
+        correct: 0,
+      },
+      {
+        q: "arr екі өлшемді жиымының жолдар санын қалай білуге болады?",
+        options: [
+          "arr.rows",
+          "arr[0].length",
+          "arr.length",
+          "arr.size()",
+          "arr.rows()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Матрицаны қалай транспонирлеуге болады (жолдар мен бағандарды ауыстыру)?",
+        options: [
+          "Arrays.transpose(arr) әдісін қолдану",
+          "Жаңа массив құрып: result[j][i] = arr[i][j]",
+          "arr.transpose() әдісін шақыру",
+          "Matrix.flip(arr) қолдану",
+          "Arrays.swap(arr) қолдану",
+        ],
+        correct: 1,
+      },
+      {
+        q: 's жолында "abc" ішкіжолы бар екенін қалай тексеруге болады?',
+        options: [
+          's.has("abc")',
+          's.includes("abc")',
+          's.find("abc")',
+          's.contains("abc")',
+          'String.contains(s, "abc")',
+        ],
+        correct: 3,
+      },
+      {
+        q: '"hello".equals("Hello") нәтижесі қандай?',
+        options: ["true", "false", "1", "-1", "null"],
+        correct: 1,
+      },
+      {
+        q: "ArrayList-ті қалай импорттаймыз?",
+        options: [
+          "import java.collections.ArrayList;",
+          "import ArrayList;",
+          "import java.list.ArrayList;",
+          "import java.array.ArrayList;",
+          "import java.util.ArrayList;",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Күн мен уақытты бірге қалай алуға болады?",
+        options: [
+          "LocalDate.now()",
+          "new Time()",
+          "DateTime.now()",
+          "LocalDateTime.now()",
+          "TimeDate.current()",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Бүтін санды қайтаратын әдісті қалай жариялауға болады?",
+        options: [
+          "void myMethod() { return 5; }",
+          "myMethod() int { return 5; }",
+          "method int myMethod() { }",
+          "return int myMethod() { }",
+          "int myMethod() { return 5; }",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Қай модификатор әдісті класс объектісін жасамай-ақ шақыруға мүмкіндік береді?",
+        options: ["public", "void", "static", "final", "abstract"],
+        correct: 2,
+      },
+      {
+        q: "Класс өрісі (field) дегеніміз не?",
+        options: [
+          "Класқа тиесілі және оның мінез-құлқын жүзеге асыратын әдіс",
+          "Объектінің күйін сипаттайтын класс деңгейіндегі айнымалы",
+          "Класс данасын жасайтын конструктор",
+          "Әдістің қайтаратын мән түрі",
+          "Негізгі кластың ішіндегі іштей салынған класс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Геттер (getter) дегеніміз не?",
+        options: [
+          "Өрісті өшіруге арналған әдіс",
+          "private өрістің мәнін алуға арналған әдіс",
+          "Объект жасауға арналған әдіс",
+          "Класс конструкторы",
+          "Өрістің мәнін өзгертуге арналған әдіс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Әдепкі конструктор (default constructor) дегеніміз не?",
+        options: [
+          "Кемдегендебір параметрі болуы тиіс конструктор",
+          "Басқа конструкторлар болмаған жағдайда компилятор автоматты түрде жасайтын параметрсіз конструктор",
+          "Текклассмұрагерлікке алынғанда ғана шақырылатын конструктор",
+          "Барлық параметрлері final ретінде жарияланған конструктор",
+          "Әрқашан private қолжетімділік модификаторы болатын конструктор",
+        ],
+        correct: 1,
+      },
+      {
+        q: "public қолжетімділік модификаторы не істейді?",
+        options: [
+          "Бағдарламаның кез келген жерінен қол жеткізуге рұқсат береді",
+          "Текпакетішіндеғана қол жеткізуге рұқсат береді",
+          "Текклассішіндеғана қол жеткізуге рұқсат береді",
+          "Тектуындыкластарда ғана қол жеткізуге рұқсат береді",
+          "Қайта анықтауға (override) тыйым салады",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Java-да класты мұрагерлікке алу үшін қай кілттік сөз қолданылады?",
+        options: ["inherits", "implements", "extends", "uses", "from"],
+        correct: 2,
+      },
+      {
+        q: "Java-дағы көпдеңгейлі мұрагерлік (multilevel inheritance) дегеніміз не?",
+        options: [
+          "Бір кластың бір уақытта бірнеше түрлі кластан шектеусіз мұрагерлік алу мүмкіндігі",
+          "Бұл A → B → C түріндегі мұрагерлік тізбегі, мұнда В класы А-дан, ал С класы В-дан мұрагерлік алады",
+          "Кластың бір уақытта бірнеше интерфейсті іске асыру механизмі",
+          "Тек ата-аналық кластың статикалық әдістері мен өрістерін мұрагерлікке алу",
+          "Тек әртүрлі пакеттерде орналасқан кластар арасында жұмыс істейтін мұрагерлік",
+        ],
+        correct: 1,
+      },
+      {
+        q: "final модификаторы бар әдісті қайта анықтауға бола ма?",
+        options: [
+          "Иә, @Override арқылы",
+          "Иә, тек тікелей туынды класта ғана",
+          "Жоқ, final қайта анықтауға тыйым салады",
+          "Иә, бірақ тек бір пакеттің ішінде ғана",
+          "Тек private әдістер үшін ғана",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java тіліндегі абстракт класс пен интерфейстің негізгі айырмашылығы неде?",
+        options: [
+          "Екеуінің арасында еш айырмашылық жоқ, олар толықтай өзара алмастырылады",
+          "Абстракт класс өрістер мен конструкторларға ие бола алады, ал интерфейс негізінен әркетті анықтайтын шартты сипаттайды",
+          "Интерфейсті класс ішінде жүзеге асыруға болмайды, оны тек қарапайым класс сияқты мұралау керек",
+          "Абстракт класс мұрагерлікті қолдамайды және тек жеке тип ретінде қолданылады",
+          "Интерфейс JVM ерекшеліктеріне байланысты әрқашан абстракт класстан жылдамырақ жұмыс істейді",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Интерфейстегі default-әдіс (Java 8+) деген не?",
+        options: [
+          "Бұл іске асырылмаған әдіс, оны барлық кластар міндетті түрде жүзеге асыруы керек",
+          "Бұл тек JUnit тестілеуге арналған арнайы әдіс",
+          "Бұл интерфейстің статикалық әдісі, оны тек интерфейс арқылы шақырады және қайта анықтауға болмайды",
+          "Бұл компилятор автоматты түрде жасайтын абстракт әдіс",
+          "Бұл әдепкі жүзеге асырылуы бар әдіс, оны сол күйінде қолдануға немесе қайта анықтауға болады",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Java-дағы тексерілетін (checked) ерекше жағдайлар дегеніміз не?",
+        options: [
+          "Кодта өңдеу мүмкін емес және бағдарламаның міндетті түрде тоқтауына әкелетін ерекше жағдайлар",
+          "Тек жылжымалы нүктелі сандармен арифметикалық амалдар кезінде туындайтын ерекше жағдайлар",
+          "Компилятор өңдеуді немесе әдіс сигнатурасында throws арқылы жариялауды талап ететін ерекше жағдайлар",
+          "Тек кластардың статикалық әдістерінде ғана туындауы мүмкін ерекше жағдайлар",
+          "Бағдарлама логикасына қатысы жоқ, Java виртуалды машинасының (JVM) қателері",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да try-with-resources конструкциясы не үшін қолданылады?",
+        options: [
+          "Әртүрлі ерекше жағдайларды өңдеу үшін бірнеше кірістірілген try блоктарын жасау үшін",
+          "Барлық ерекше жағдайларды өңдеусіз тікелей JVM-ге қайта бағыттау үшін",
+          "Бағдарламада туындайтын барлық ерекше жағдайларды толық жою (басып тастау) үшін",
+          "try блогы аяқталғаннан кейін AutoCloseable интерфейсін іске асыратын ресурстарды автоматты түрде жабу үшін",
+          "Бағдарламаның орындалуы кезінде ресурстар пулын жасау және басқару үшін",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Java-да instanceof операторы не үшін қолданылады?",
+        options: [
+          "Жаңа объект жасау үшін",
+          "Объектінің белгілі бір класс немесе интерфейс данасы екенін тексеру үшін",
+          "Объектілерді салыстыру үшін",
+          "Объект классын алу үшін",
+          "Типті автоматты түрлендіру үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Map ішінен барлық кілттерді қалай алуға болады?",
+        options: [
+          "map.keys()",
+          "map.allKeys()",
+          "map.getKeys()",
+          "map.keySet()",
+          "map.listKeys()",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Generics-тегі типтердің өшірілуі (type erasure) дегеніміз не?",
+        options: [
+          "Бұлжобаныңбастапқы кодынан дженериктерге қатысты барлық кластар мен интерфейстерді автоматты түрде жою процесі",
+          "Бұлтип параметрлері туралы ақпарат компиляция кезеңінде жойылып, raw-типтермен алмастырылатын механизм",
+          "Бұлбағдарламаның орындалуы кезінде жалпылама типтерді тікелей бекітілген өлшемдегі массивтерге түрлендіру",
+          "Бұлдженериктерде үйлесімсіз типтерді қолданғанда туындайтын компиляция қатесі",
+          "Бұлкомпилятордың қатысуынсыз барлық типтерді Object-ке автоматты түрде келтіру процесі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Бос емес Optional қалай жасалады?",
+        options: [
+          'Optional.empty("value")',
+          'Optional.create("value")',
+          'new Optional("value")',
+          'Optional.of("value")',
+          'Optional.wrap("value")',
+        ],
+        correct: 3,
+      },
+      {
+        q: "Файлдармен жұмыс істегенде қандай ерекше жағдай (exception) пайда болады?",
+        options: [
+          "FileException",
+          "IOException",
+          "FileNotFoundException бөлек",
+          "StreamException",
+          "PathException",
+        ],
+        correct: 1,
+      },
+      {
+        q: "assertEquals(expected, actual) әдісі не істейді?",
+        options: [
+          "Екіобъектбір екенін тексереді",
+          "Ерекше жағдай тастайды",
+          "Айнымалыға мән береді",
+          "Күтілетін мән нақты мәнге тең екенін тексереді",
+          "Жолдарды салыстырады",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Қай логтау деңгейі критикалық қателер үшін қолданылады?",
+        options: ["WARN", "DEBUG", "ERROR", "INFO", "TRACE"],
+        correct: 2,
+      },
+      {
+        q: "ОБП-ның қай принципі объект ішіндегі деректерді жасыруға жауап береді?",
+        options: [
+          "Бірнеше класты бір модульге біріктіру",
+          "Объектнің ішкі күйін жасыру және оған әдістер арқылы қол жеткізу",
+          "Біркластыңқасиеттерін екінші класс арқылы мұрагерлікке алу",
+          "Бағдарламаны тәуелсіз пакеттерге бөлу",
+          "Орындалу кезінде нысандарды автоматты түрде жасау",
+        ],
+        correct: 1,
+      },
+    ],
+    variant7: [
+      {
+        q: "Java тілінде main әдісін қалай дұрыс жариялау керек?",
+        options: [
+          "public void main(String args)",
+          "public static void main(String[] args)",
+          "static main(String[] args)",
+          "void main()",
+          "public main(String[] args)",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да бүтін сандарды қай деректер түрі сақтайды?",
+        options: ["double", "float", "int", "char", "boolean"],
+        correct: 2,
+      },
+      {
+        q: "Java тілінде byte типі неше байт алады?",
+        options: ["1", "2", "4", "8", "16"],
+        correct: 0,
+      },
+      {
+        q: "Логикалық НЕМЕСЕ (OR) үшін қай оператор қолданылады?",
+        options: ["|", "OR", "||", "or", "^"],
+        correct: 2,
+      },
+      {
+        q: "!true || false өрнегі не қайтарады?",
+        options: ["true", "false", "null", "1", "0"],
+        correct: 1,
+      },
+      {
+        q: "int x = 0; if (5 > 3) x = 1; else x = 2; кейін x неге тең?",
+        options: ["0", "1", "2", "3", "5"],
+        correct: 1,
+      },
+      {
+        q: "Қай цикл әр итерация алдында шартты тексереді?",
+        options: ["do-while", "while", "for", "foreach", "loop"],
+        correct: 1,
+      },
+      {
+        q: "Нәтиже қандай болады: for (int i = 0; i < 5; i++) { if (i == 2) continue; System.out.print(i); }?",
+        options: ["01234", "0134", "012", "1234", "0234"],
+        correct: 1,
+      },
+      {
+        q: "Java-да кеңейтілген for (for-each) не істейді?",
+        options: [
+          "Циклді берілген сан рет қайталайды",
+          "Жиымның (массив) немесе коллекцияның барлық элементтерін аралап (жүріп) шығады",
+          "Циклді кері ретпен орындайды",
+          "Жұпэлементтерді өткізіп жібереді",
+          "Жаңажиым жасайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "1-ден 100-ге дейінгі сандардың қосындысын for циклі арқылы қалай есептеуге болады?",
+        options: [
+          "for (i = 1; i <= 100; i++) sum = i;",
+          "for (int i = 1; i <= 100; i++) sum += i;",
+          "for (i = 0; i < 100; i++) sum += i;",
+          "for (i = 1; i < 100; i++) sum += i;",
+          "for (int i = 100; i > 0; i++) sum += i;",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Math.ceil(3.1) не қайтарады?",
+        options: ["4.0", "3.0", "3.1", "3", "4"],
+        correct: 0,
+      },
+      {
+        q: "Java тілінде бүтін сандар массивін қалай жариялауға болады?",
+        options: [
+          "int array(5);",
+          "int[] array = new int[5];",
+          "array int[5];",
+          "int array = new[5];",
+          "int[] array(5);",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java тілінде массивті қай әдіс сұрыптайды?",
+        options: [
+          "arr.sort()",
+          "Arrays.sort(arr)",
+          "Sort.array(arr)",
+          "arr.order()",
+          "Arrays.order(arr)",
+        ],
+        correct: 1,
+      },
+      {
+        q: "arr екі өлшемді жиымының i-ші жолындағы бағандар санын қалай алуға болады?",
+        options: [
+          "arr.length",
+          "arr.cols",
+          "arr[i].length",
+          "arr[0].size()",
+          "arr.columns()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Нәтежесінде не шығады: int[][] a = {{1,2},{3,4}}; System.out.println(a[1][0]);?",
+        options: ["1", "2", "3", "4", "0"],
+        correct: 2,
+      },
+      {
+        q: 's.indexOf("abc") не қайтарады?',
+        options: [
+          "true немесе false",
+          "Бірінші индексін немесе -1",
+          "Ішкіжолды қайтарады",
+          "Санын қайтарады",
+          "Соңғы индексін қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java тілінде List интерфейсін қай класс жүзеге асырады?",
+        options: [
+          "Тек LinkedList",
+          "ArrayList",
+          "HashSet",
+          "TreeMap",
+          "HashMap",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Коллекцияны қалай толық өшіруге болады?",
+        options: [
+          "collection.empty()",
+          "collection.delete()",
+          "collection.clear()",
+          "collection.removeAll()",
+          "collection.reset()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "LocalDate үшін аптаның күнін қай әдіс қайтарады?",
+        options: [
+          "getDay()",
+          "dayOfWeek()",
+          "getDayOfWeek()",
+          "getWeekDay()",
+          "weekDay()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Әдістерді қайта жүктеу (overloading) дегеніміз не?",
+        options: [
+          "Оныңіске асырылуы мен мінез-құлқына ешқандай өзгеріс енгізбестен ата-аналық класс әдісін мұрагерлікке алу",
+          "Біркластаатауыбірдей, бірақ параметрлері мен сигнатуралары әртүрлі бірнеше әдісті жасау",
+          "Бағдарламаның бастапқы кодын қайта компиляцияламай, компиляцияланған әдісті байт-код деңгейінде өзгерту",
+          "Туынды класта ата-аналық кластың әдісін оның орындалу логикасы мен мінез-құлқын өзгерте отырып ауыстыру",
+          "Басқа кластағы әдісті ағымдағы класта алдын ала жарияламай немесе импорттамай қолдану",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Әдістен мәнді қайтару үшін қай кілттік сөз қолданылады?",
+        options: ["give", "send", "return", "output", "result"],
+        correct: 2,
+      },
+      {
+        q: "dog объектісінің name өрісіне қалай жүгінуге болады?",
+        options: [
+          "dog::name",
+          "dog->name",
+          "dog.name",
+          "dog[name]",
+          "Dog.name",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Сеттер (setter) дегеніміз не?",
+        options: [
+          "Өрісті оқуға арналған әдіс",
+          "private өрістің мәнін орнатуға немесе өзгертуге арналған әдіс",
+          "Java программалау тілінде қолданылатын параметрлері бар конструктор",
+          "Кластың статикалық әдісі",
+          "toString әдісі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Егер параметрлері бар конструкторды анықтап, ал параметрсіз конструкторды анықтамаса не болады?",
+        options: [
+          "Java әдепкі конструкторды бәрібір қосады",
+          "Әрқашан компиляция қатесі туындайды",
+          "Класс абстрактілі болып қалады",
+          "Аргументтерді бермей объект жасау мүмкін болмайды",
+          "Параметрлері бар конструктор ескерілмейді",
+        ],
+        correct: 3,
+      },
+      {
+        q: "protected модификаторы не істейді?",
+        options: [
+          "Мұрагерлікке тыйым салады",
+          "Тек класс ішінде ғана қол жеткізуге рұқсат береді",
+          "Пакет ішінде және туынды кластарда қол жеткізуге рұқсат береді",
+          "Тек статикалық әдістерден қол жеткізуге рұқсат береді",
+          "private модификаторына ұқсас",
+        ],
+        correct: 2,
+      },
+      {
+        q: "ОБП-да мұрагерлік (inheritance) дегеніміз не?",
+        options: [
+          "Кластың көшірмесін жасау",
+          "Ата-аналық кластың қасиеттері мен әдістерін пайдалану",
+          "Интерфейсті іске асыру",
+          "Статикалық әдістерді жасау",
+          "Объект типін өзгерту",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-дағы полиморфизм дегеніміз не?",
+        options: [
+          "Бір кластың өріс мәндері әртүрлі көптеген даналарын (экземплярларын) жасау процесі",
+          "Бір класта бір уақытта бірнеше кластан шектеусіз мұрагерлік алу мүмкіндігі",
+          "Әртүрлі класс объектілерінің біртұтас интерфейс немесе ортақ тип арқылы өңделу қабілеті",
+          "Шақыру нұсқаларын көбейту үшін бір кластың ішінде әдістерді қайта жүктеу механизмі",
+          "Бағдарламадағы әрбір класс үшін автоматты түрде интерфейстер жасау процесі",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Туынды класта әдісті қайта анықтаудың (overriding) ережелері қандай?",
+        options: [
+          "Параметрлердің типін өзгертуге болады",
+          "Қайтару типін кез келген басқа типке өзгертуге болады",
+          "Атауы мен параметрлері сәйкес келуі керек, қолжетімділік деңгейі тарылмауы тиіс",
+          "Әдіс міндетті түрде статикалық болуы керек",
+          "Конструктор әрқашан қайта анықталады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Абстракт класта конструктор бола ма?",
+        options: [
+          "Жоқ, абстракт класс конструкторларға ие бола алмайды, себебі ол тікелей жасалмайды",
+          "Иә, абстракт кластың конструкторы туынды класс объектісі жасалған кезде super() арқылы шақырылады",
+          "Иә, бірақ тек егер класта абстракт әдістер болмаса және ол толық жүзеге асырылған болса",
+          "Иә, бірақ тек private конструктор болуы мүмкін және ол тек сол класс ішінде қолжетімді",
+          "Жоқ, конструкторлар тек қарапайым (абстракт емес) кластарда ғана болады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Интерфейстерде өрістер бола ала ма?",
+        options: [
+          "Жоқ, ешқашан",
+          "Тек private өрістер",
+          "Иә, кез келген өрістер",
+          "Иә, бірақ тек public static final (константалар)",
+          "Тек static өрістер",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Java-дағы тексерілмейтін (unchecked) ерекше жағдайлар дегеніміз не?",
+        options: [
+          "Тіпті try-catch қолданса да, бағдарламада өңдеу мүмкін емес ерекше жағдайлар",
+          "Компилятор нақты өңдеуді немесе жариялауды талап етпейтін RuntimeException ішкі кластары",
+          "Тек Java виртуалды машинасының ішінде туындайтын және бағдарлама кодына қатысы жоқ қателер",
+          "Тек көп ағынды ортада жұмыс істегенде ғана туындауы мүмкін ерекше жағдайлар",
+          "Тек интерфейстерде қолданылатын және кластарда қолдау таппайтын арнайы ерекше жағдайлар",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Object класының қай әдісі объектінің жолдық көрінісін (текст түріндегі сипаттамасын) қайтарады?",
+        options: [
+          "getString()",
+          "describe()",
+          "print()",
+          "toString()",
+          "format()",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Объектінің toString() әдісі қашан автоматты түрде шақырылады?",
+        options: [
+          "Текәзірлеуші кодында toString() әдісін айқын шақырған кезде ғана",
+          "Тек IDE-де жөндеу (debug) режимінде айнымалыларды қараған кезде ғана",
+          "Объектіні жолмен (string) біріктіргенде немесе объектіні println() әдісіне берген кезде",
+          "Бағдарламаның орындалу кезінде класты талдау үшін рефлексия механизмі арқылы",
+          "Текегер әдіс класта @Override аннотациясымен белгіленсе ғана",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Map ішінен барлық мәндерді қалай алуға болады?",
+        options: [
+          "map.values",
+          "map.values()",
+          "map.getValues()",
+          "map.allValues()",
+          "map.valueSet()",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java Generics-те wildcard (?) не үшін қолданылады?",
+        options: [
+          "Бұлбарлықколлекцияларда String типін алмастыратын бекітілген тип",
+          "Бұлжалпылама кодтың икемділігін арттыру үшін қолданылатын белгісіз тип",
+          "Бұлтек null мәндерін сақтауға арналған арнайы тип",
+          "Бұлтек қарапайым (примитивті) деректер типтерін қолдануға рұқсат беретін белгі",
+          "Бұл Object класының толық синонимі және оны барлық жағдайда толық алмастырады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Бос Optional қалай жасалады?",
+        options: [
+          "Optional.of(null)",
+          "new Optional()",
+          "Optional.empty()",
+          "Optional.none()",
+          "Optional.null()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-да enum не үшін қолданылады?",
+        options: [
+          "Динамикалық тізімдерді сақтау үшін",
+          "Атаулары бар тұрақты мәндердің бекітілген жиынын анықтау үшін",
+          "Жаңаколлекция түрлерін жасау үшін",
+          "Барлық кластарды ауыстыру үшін",
+          "Тександықтиптермен жұмыс істеу үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "assertTrue(condition) әдісі не істейді?",
+        options: [
+          "Хабарлама шығарады",
+          "Шарттың ақиқат екенін тексереді; егер false болса, тест сәтсіз болады",
+          "true мәнін орнатады",
+          "Әрқашан true қайтарады",
+          "Тесті аяқтайды",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Тестілеудегі mock-объект дегеніміз не?",
+        options: [
+          "Тесттерде тікелей қолданылатын қолданбаның нақты объектісі",
+          'Нақты объектінің әрекетін имитациялайтын "жалған" объект',
+          "Логикасы жоқ, тек тесттік әдістерден тұратын класс",
+          "Тесттердің іске қосылуын басқаратын конфигурациялық файл",
+          "Тесттік ортаны баптауға арналған арнайы аннотация",
+        ],
+        correct: 1,
+      },
+      {
+        q: "try-catch блогы не үшін қолданылады?",
+        options: [
+          "Қателерді автоматты түрде түзету үшін",
+          "Ерекше жағдайларды ұстап, бағдарламаның тоқтап қалуын болдырмау үшін",
+          "Бағдарламаны жылдамдату үшін",
+          "Жаңа ағындар жасау үшін",
+          "Барлық қателерді жою үшін",
+        ],
+        correct: 1,
+      },
+    ],
 
+    variant8: [
+      {
+        q: "Java тілінде Scanner класы не үшін қолданылады?",
+        options: [
+          "Консольдан немесе басқа көздерден мәліметтерді оқу үшін",
+          "Мәліметтерді экранға шығару үшін",
+          "Файлдарды вирустарға тексеру үшін",
+          "Бағдарламаларды компиляциялау үшін",
+          "Графикамен жұмыс істеу үшін",
         ],
-
-        // --- 6-й Вариант ---
-        "variant6": [
-            {
-                q: "Какой элемент языка определяет правила написания программ?",
-                options: ["Алгоритм", "Синтаксис", "Типизация", "Семантика", "Интерпретация"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных хранит набор символов?",
-                options: ["char", "int", "str", "list", "byte"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор означает строгое больше?",
-                options: ["=>", ">>", ">", ">=", "<>"],
-                correct: 2
-            },
-            {
-                q: "Какой метод строки переводит текст в нижний регистр?",
-                options: ["low()", "small()", "down()", "lower()", "tiny()"],
-                correct: 3
-            },
-            {
-                q: "Какой метод списка удаляет элемент по индексу?",
-                options: ["remove()", "erase()", "delete()", "pop()", "drop()"],
-                correct: 3
-            },
-            {
-                q: "Какой оператор повторяет строку n раз?",
-                options: ["+", "*", "repeat", "**", "//"],
-                correct: 1
-            },
-            {
-                q: "Какому типу данных соответствует упорядоченная неизменяемая коллекция?",
-                options: ["list", "tuple", "set", "dict", "array"],
-                correct: 1
-            },
-            {
-                q: "Каким оператором проверяют принадлежность?",
-                options: ["have", "include", "contains", "in", "exist"],
-                correct: 3
-            },
-            {
-                q: "Какой цикл используется с диапазоном значений?",
-                options: ["repeat", "for", "iterate", "while", "until"],
-                correct: 1
-            },
-            {
-                q: "Какой метод множества удаляет все элементы?",
-                options: ["drop()", "popAll()", "clear()", "reset()", "purge()"],
-                correct: 2
-            },
-            {
-                q: "Какую задачу решает lambda-функция?",
-                options: ["Создание именованных функций", "Объявление глобальных переменных", "Создание коротких анонимных функций", "Создание классов", "Создание модулей"],
-                correct: 2
-            },
-            {
-                q: "Какой модуль работает с датой и временем?",
-                options: ["timecalc", "datetime", "timer", "clock", "dtime"],
-                correct: 1
-            },
-            {
-                q: "Как импортировать модуль с alias?",
-                options: ["import math -> m", "from math alias m", "import math as m", "math import m", "math->m"],
-                correct: 2
-            },
-            {
-                q: "Какой режим открытия файла позволяет и читать, и писать?",
-                options: ["\"rw\"", "\"cr\"", "\"r+\"", "\"w?\"", "\"edit\""],
-                correct: 2
-            },
-            {
-                q: "Какой метод файла перемещает указатель?",
-                options: ["move()", "set()", "seek()", "goto()", "pointer()"],
-                correct: 2
-            },
-            {
-                q: "Какой метод возвращает словарь атрибутов объекта?",
-                options: ["attrs()", "getinfo()", "properties()", "dict", "vars()"],
-                correct: 3
-            },
-            {
-                q: "Что делает метод json.dumps()?",
-                options: ["Читает JSON из файла", "Преобразует объект в JSON-строку", "Конвертирует файл в словарь", "Создаёт JSON-файл", "Объединяет JSON-объекты"],
-                correct: 1
-            },
-            {
-                q: "Какой модуль работает с двоичными файлами pickle?",
-                options: ["json", "struct", "binary", "pickle", "serialize"],
-                correct: 3
-            },
-            {
-                q: "Как открыть CSV-файл для чтения?",
-                options: ["csv.open()", "open(file)", "open(file, \"csv\")", "open(file, \"r\")", "open(file, \"c\")"],
-                correct: 3
-            },
-            {
-                q: "Что делает оператор GROUP BY?",
-                options: ["Соединяет таблицы", "Группирует строки по признаку", "Удаляет строки", "Сортирует строки", "Добавляет столбцы"],
-                correct: 1
-            },
-            {
-                q: "Какая команда возвращает количество строк таблицы?",
-                options: ["COUNT()", "SUM()", "SIZE()", "AMOUNT()", "LEN(*)"],
-                correct: 0
-            },
-            {
-                q: "Как выбрать только уникальные строки?",
-                options: ["UNIQUE *", "DISTINCT *", "FILTER UNIQUE", "SINGLE ROWS", "NEW LINES"],
-                correct: 1
-            },
-            {
-                q: "Какой оператор выбирает только строки, удовлетворяющие условию?",
-                options: ["PICK", "WHERE", "MATCH", "FILTER", "TAKE"],
-                correct: 1
-            },
-            {
-                q: "Какой SQL оператор выполняет сортировку по убыванию?",
-                options: ["SORT DESC", "ORDER BY ↓", "ORDER BY DESC", "DESCENDING BY", "SORT DOWN"],
-                correct: 2
-            },
-            {
-                q: "Какой тип базы является встроенной в файл?",
-                options: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Oracle"],
-                correct: 3
-            },
-            {
-                q: "Какая библиотека нужна для PostgreSQL?",
-                options: ["pgpython", "psycopg2", "sqlpg", "postsql", "postpy"],
-                correct: 1
-            },
-            {
-                q: "Как создать окно PyQt5?",
-                options: ["Window()", "QWidget()", "QAppWindow()", "Main()", "UIWidget()"],
-                correct: 1
-            },
-            {
-                q: "Как добавить элемент в QVBoxLayout?",
-                options: ["layout.insert(widget)", "layout.push(widget)", "layout.addWidget(widget)", "layout.put(widget)", "layout.widgetAdd(widget)"],
-                correct: 2
-            },
-            {
-                q: "Как задать координаты виджета?",
-                options: ["widget.coords(x,y)", "widget.move(x,y)", "widget.setXY(x,y)", "widget.locate(x,y)", "widget.place(x,y)"],
-                correct: 1
-            },
-            {
-                q: "Как создать кнопку?",
-                options: ["Button()", "QBtn()", "QPushButton()", "MakeButton()", "QtButton()"],
-                correct: 2
-            },
-            {
-                q: "Как получить текст с QLabel?",
-                options: ["label.read()", "label.text()", "label.get()", "label.value()", "label.print()"],
-                correct: 1
-            },
-            {
-                q: "Как изменить текст QLabel?",
-                options: ["setText()", "changeText()", "updateText()", "renameText()", "writeText()"],
-                correct: 0
-            },
-            {
-                q: "Что делает метод hide()?",
-                options: ["Удаляет виджет", "Прячет виджет", "Выделяет виджет", "Блокирует виджет", "Перемещает виджет"],
-                correct: 1
-            },
-            {
-                q: "Как установить иконку кнопки?",
-                options: ["button.icon()", "button.setIcon()", "button.setButtonIcon()", "button.applyIcon()", "button.useIcon()"],
-                correct: 1
-            },
-            {
-                q: "Какой объект отвечает за главный цикл?",
-                options: ["QLoop", "QApplication", "QMainWindow", "QThread", "QCycle"],
-                correct: 1
-            },
-            {
-                q: "Какой метод перерисовывает интерфейс?",
-                options: ["reload()", "redraw()", "repaint()", "updateUi()", "reset()"],
-                correct: 2
-            },
-            {
-                q: "Как подключить событие двойного клика?",
-                options: ["widget.doubleClick.connect()", "widget.dblclicked.connect()", "widget.doubleClicked.connect()", "widget.mouseDoubleClickEvent", "widget.onDoubleClick()"],
-                correct: 3
-            },
-            {
-                q: "Какой метод возвращает положение окна?",
-                options: ["window.getPos()", "window.position()", "window.pos()", "window.coords()", "window.points()"],
-                correct: 2
-            },
-            {
-                q: "Как удалить layout?",
-                options: ["layout.delete()", "delete layout", "layout.destroy()", "layout.deleteLater()", "layout.remove()"],
-                correct: 3
-            },
-            {
-                q: "Как завершить работу приложения?",
-                options: ["exit()", "app.quit()", "window.closeApp()", "shutdown()", "stop()"],
-                correct: 1
-            }
-
+        correct: 0,
+      },
+      {
+        q: "Қос дәлдікті жылжымалы нүктелі сандарды қай деректер түрі сақтайды?",
+        options: ["float", "double", "int", "long", "decimal"],
+        correct: 1,
+      },
+      {
+        q: "Мәні 3.14-ке тең, float типті айнымалыны қалай жариялайды?",
+        options: [
+          "float x = 3.14;",
+          "float x = 3.14f;",
+          "float x = 3.14d;",
+          "float x = (float)3;",
+          'float x = "3.14";',
         ],
-
-        // --- 7-й Вариант ---
-        "variant7": [
-            {
-                q: "Как называется минимальная единица информации в программе?",
-                options: ["символ", "оператор", "выражение", "модуль", "токен"],
-                correct: 4
-            },
-            {
-                q: "Какой тип данных предназначен для хранения целых чисел?",
-                options: ["float", "str", "int", "num", "digit"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор означает строгую проверку равенства?",
-                options: ["=", ":=", "==", "eq", "==="],
-                correct: 2
-            },
-            {
-                q: "Какой метод строки удаляет только правые пробелы?",
-                options: ["rtrim()", "strip()", "right()", "rstrip()", "cutright()"],
-                correct: 3
-            },
-            {
-                q: "Какой метод списка сортирует элементы на месте?",
-                options: ["sort()", "order()", "sorted()", "arrange()", "organize()"],
-                correct: 0
-            },
-            {
-                q: "Какой оператор выполняет целочисленное деление?",
-                options: ["/", "div", "//", "%", "///"],
-                correct: 2
-            },
-            {
-                q: "Какой тип данных хранит уникальные элементы без порядка?",
-                options: ["dict", "list", "tuple", "set", "unique"],
-                correct: 3
-            },
-            {
-                q: "Какой оператор проверяет отрицание условия?",
-                options: ["minus", "no", "!", "not", "invert"],
-                correct: 3
-            },
-            {
-                q: "Какой цикл выполняется бесконечно, пока не встретит break?",
-                options: ["repeat", "loop", "for", "while", "until"],
-                correct: 3
-            },
-            {
-                q: "Какой метод списка удаляет последний элемент?",
-                options: ["remove()", "cut()", "pop()", "drop()", "erase()"],
-                correct: 2
-            },
-            {
-                q: "Какое выражение создаёт lambda с двумя параметрами?",
-                options: ["lambda(x,y){ }", "lambda x,y → x+y", "lambda x,y: x+y", "lambda(x+y)", "lambda: x,y"],
-                correct: 2
-            },
-            {
-                q: "Какой модуль работает с системным временем?",
-                options: ["clock", "datetime", "timer", "time", "sysclock"],
-                correct: 3
-            },
-            {
-                q: "Как импортировать все функции модуля?",
-                options: ["import * from module", "from module import *", "module import all", "include module.all", "take module.*"],
-                correct: 1
-            },
-            {
-                q: "Каким режимом открытия создаётся новый файл?",
-                options: ["\"r\"", "\"x\"", "\"w\"", "\"rw\"", "\"rw+\""],
-                correct: 2
-            },
-            {
-                q: "Какая функция считывает весь файл разом?",
-                options: ["readall()", "file.readall()", "read()", "getline()", "readfile()"],
-                correct: 2
-            },
-            {
-                q: "Какой метод объекта вызывается при удалении объекта?",
-                options: ["delete", "free", "destroy", "del", "gc"],
-                correct: 3
-            },
-            {
-                q: "Что делает json.load()?",
-                options: ["Записывает JSON", "Читает JSON из файла", "Преобразует строку в JSON", "Сериализует объект", "Очищает JSON"],
-                correct: 1
-            },
-            {
-                q: "Что возвращает pickle.load()?",
-                options: ["JSON-объект", "текстовую строку", "сериализованный Python-объект", "словарь только", "список только"],
-                correct: 2
-            },
-            {
-                q: "Как преобразовать объект Python в CSV-строку?",
-                options: ["csv.convert()", "csv.dumps()", "csv.write()", "csv.export()", "вручную через join"],
-                correct: 4
-            },
-            {
-                q: "Как выбрать данные, удовлетворяющие нескольким условиям?",
-                options: ["WHERE A OR B", "WHERE A AND B", "WHERE MATCH A B", "FILTER A+B", "FILTER ALL A B"],
-                correct: 1
-            },
-            {
-                q: "Как вычислить сумму столбца?",
-                options: ["SUM(column)", "COUNT(column)", "TOTAL(column)", "PLUS(column)", "ADD(column)"],
-                correct: 0
-            },
-            {
-                q: "Как выбрать строки, значение которых попадает в диапазон?",
-                options: ["INSIDE", "BETWEEN", "RANGE", "LIMIT", "BOUND"],
-                correct: 1
-            },
-            {
-                q: "Что делает оператор HAVING?",
-                options: ["Фильтрует группы", "Удаляет группы", "Создаёт таблицу", "Добавляет столбцы", "Сортирует строки"],
-                correct: 0
-            },
-            {
-                q: "Какая команда удаляет строки по условию?",
-                options: ["REMOVE FROM", "DELETE WHERE", "DELETE FROM table WHERE …", "CUT FROM table", "DROP WHERE"],
-                correct: 2
-            },
-            {
-                q: "Как выполнить параметризированный SQL-запрос?",
-                options: ["cursor.execute(query, params)", "cursor.run(query, params)", "cursor.sql(query, params)", "execute(query%params)", "send(query,params)"],
-                correct: 0
-            },
-            {
-                q: "Как подключиться к SQLite?",
-                options: ["sqlite.connect()", "sql.connect()", "sqlite3.connect()", "pydb.connect()", "sqllite.connect()"],
-                correct: 2
-            },
-            {
-                q: "Как создать главное окно в PyQt5?",
-                options: ["BaseWindow()", "QWindow()", "QMainWindow()", "QWidget()", "UIMain()"],
-                correct: 2
-            },
-            {
-                q: "Как создать горизонтальный контейнер?",
-                options: ["QHorizontal()", "QHBoxLayout()", "HorizontalBox()", "LayoutH()", "BoxH()"],
-                correct: 1
-            },
-            {
-                q: "Как привязать действие к кнопке?",
-                options: ["button.action = func", "button.call(func)", "button.clicked.connect(func)", "button.press(func)", "button.do(func)"],
-                correct: 2
-            },
-            {
-                q: "Как задать шрифт виджета?",
-                options: ["setFont()", "widget.font()", "font.set()", "widget.setTextFont()", "style.setFont()"],
-                correct: 0
-            },
-            {
-                q: "Как получить ширину окна?",
-                options: ["window.width()", "window.getWidth()", "window.xsize()", "window.x()", "window.size()[0]"],
-                correct: 0
-            },
-            {
-                q: "Как задать минимальный размер окна?",
-                options: ["window.minSize()", "window.setMinSize()", "window.setMinimumSize()", "window.limitSize()", "window.setSmallestSize()"],
-                correct: 2
-            },
-            {
-                q: "Какое событие вызывается при движении мыши?",
-                options: ["mouseMove", "onMouse", "mouseMoved", "mouseMoveEvent", "moveMouseEvent"],
-                correct: 3
-            },
-            {
-                q: "Как очистить layout?",
-                options: ["layout.clear()", "layout.removeAll()", "layout.delete()", "layout.takeAt() в цикле", "layout.flush()"],
-                correct: 3
-            },
-            {
-                q: "Как остановить таймер?",
-                options: ["timer.stop()", "timer.pause()", "timer.end()", "timer.quit()", "timer.kill()"],
-                correct: 0
-            },
-            {
-                q: "Как изменить цвет фона виджета?",
-                options: ["widget.color()", "widget.setBackground()", "widget.setStyleSheet()", "widget.styleColor()", "widget.bg()"],
-                correct: 2
-            },
-            {
-                q: "Как вывести сообщение в консоль?",
-                options: ["echo()", "console.write()", "print()", "output()", "sysout()"],
-                correct: 2
-            },
-            {
-                q: "Как получить текст поля QComboBox?",
-                options: ["combo.value()", "combo.item()", "combo.currentText()", "combo.get()", "combo.read()"],
-                correct: 2
-            },
-            {
-                q: "Как перенести окно в центр экрана?",
-                options: ["window.center()", "window.moveCenter()", "window.move() с вычислением центра", "app.center(window)", "ui.center()"],
-                correct: 2
-            },
-            {
-                q: "Как перезагрузить интерфейс?",
-                options: ["reload()", "refreshUi()", "update()", "recreate()", "restartUi()"],
-                correct: 2
-            }
-
+        correct: 1,
+      },
+      {
+        q: "Логикалық терістеу (NOT) үшін қай оператор қолданылады?",
+        options: ["!", "~", "NOT", "-", "!="],
+        correct: 0,
+      },
+      {
+        q: "2 * 3 + 4 / 2 өрнегі неге тең?",
+        options: ["5", "7", "8", "10", "4"],
+        correct: 2,
+      },
+      {
+        q: "Java тілінде switch операторы төмендегі типтердің қайсысымен жұмыс істей алмайды?",
+        options: ["int", "String", "char", "double", "byte"],
+        correct: 3,
+      },
+      {
+        q: "Қай цикл кем дегенде бір рет міндетті түрде орындалады?",
+        options: ["while", "do-while", "for", "foreach", "repeat"],
+        correct: 1,
+      },
+      {
+        q: "Шарты денесі орындалғаннан кейін тексерілетін цикл қалай аталады?",
+        options: [
+          "Алдын ала шартты цикл",
+          "Ішкіцикл",
+          "Санау циклі",
+          "Шексіз цикл",
+          "Соңғы шартты цикл",
         ],
-
-        // --- 8-й Вариант ---
-        "variant8": [
-            {
-                q: "Как называется набор правил, определяющий допустимые формы записи программы?",
-                options: ["Логика", "Синтаксис", "Схема", "Алгоритм", "Структура"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных хранит значение True/False?",
-                options: ["bit", "boolean", "bool", "flag", "logic"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор используется для сравнения «строго меньше»?",
-                options: ["<=", "<", "<<", "<==", "≺"],
-                correct: 1
-            },
-            {
-                q: "Какой метод возвращает количество вхождений подстроки в строке?",
-                options: ["count()", "num()", "occurrences()", "findall()", "total()"],
-                correct: 0
-            },
-            {
-                q: "Какой метод списка разворачивает элементы в обратном порядке?",
-                options: ["reverse()", "flip()", "invert()", "swap()", "roll()"],
-                correct: 0
-            },
-            {
-                q: "Какой оператор выполняет возведение в степень?",
-                options: ["^", "pow", "exp", "**", "^^"],
-                correct: 3
-            },
-            {
-                q: "Какой тип данных хранит пары вида ключ–значение?",
-                options: ["set", "map", "dict", "pair", "tuple"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор используется для отрицания логического выражения?",
-                options: ["!=", "not", "!", "inverse", "anti"],
-                correct: 1
-            },
-            {
-                q: "Какой цикл выполняется пока условие истинно?",
-                options: ["loop", "for", "repeat", "while", "do"],
-                correct: 3
-            },
-            {
-                q: "Какой метод списка добавляет несколько элементов сразу?",
-                options: ["addall()", "pushall()", "extend()", "merge()", "appendall()"],
-                correct: 2
-            },
-            {
-                q: "Что делает lambda функция?",
-                options: ["Создаёт большие модули", "Создаёт анонимные мини-функции", "Создаёт базы данных", "Создаёт файлы", "Создаёт внешние процессы"],
-                correct: 1
-            },
-            {
-                q: "Какой модуль позволяет работать с математическими константами?",
-                options: ["matplotlib", "random", "math", "algebra", "numbers"],
-                correct: 2
-            },
-            {
-                q: "Как импортировать модуль math частично?",
-                options: ["import math(parts)", "take math.partial", "from math import sin", "math import sin", "load math.sin"],
-                correct: 2
-            },
-            {
-                q: "Каким параметром открыть файл, чтобы добавлять данные в конец?",
-                options: ["\"c\"", "\"a\"", "\"t\"", "\"e\"", "\"add\""],
-                correct: 1
-            },
-            {
-                q: "Какой метод файла проверяет, достигнут ли конец файла?",
-                options: ["file.end()", "eof()", "file.eof()", "atEnd()", "read.end()"],
-                correct: 2
-            },
-            {
-                q: "Как получить имя класса объекта?",
-                options: ["type(obj).title", "obj.class.name", "class(obj).name", "typename(obj)", "obj.name"],
-                correct: 1
-            },
-            {
-                q: "Что делает json.loads()?",
-                options: ["Загружает JSON-файл", "Преобразует JSON-строку в объект", "Создаёт JSON-файл", "Удаляет JSON", "Сохраняет JSON"],
-                correct: 1
-            },
-            {
-                q: "Что делает pickle.dumps()?",
-                options: ["Преобразует объект в бинарную строку", "Загружает объект из файла", "Удаляет бинарный файл", "Создаёт текстовый формат", "Выводит объект"],
-                correct: 0
-            },
-            {
-                q: "Как получить writer для CSV?",
-                options: ["csv.getwriter()", "csv.openwriter()", "csv.writer()", "csv.writerline()", "csv.out()"],
-                correct: 2
-            },
-            {
-                q: "Как выбрать строки, где значение НЕ равно заданному?",
-                options: ["WHERE !=", "WHERE NOT ==", "WHERE NOT VALUE", "WHERE NOTEQ", "WHERE NO MATCH"],
-                correct: 0
-            },
-            {
-                q: "Какая команда группирует строки?",
-                options: ["GROUP BY", "SORT BY", "ORDER BY", "MERGE BY", "FILTER BY"],
-                correct: 0
-            },
-            {
-                q: "Как получить максимальное значение столбца?",
-                options: ["PEAK()", "HIGH()", "MAX()", "TOP()", "MOST()"],
-                correct: 2
-            },
-            {
-                q: "Что делает INNER JOIN?",
-                options: ["Удаляет строки", "Показывает только совпадающие строки", "Показывает все строки", "Создаёт таблицу", "Разделяет таблицы"],
-                correct: 1
-            },
-            {
-                q: "Как выбрать только первые N строк?",
-                options: ["FIRST N", "ROWS(N)", "LIMIT N", "CUT N", "SELECT N"],
-                correct: 2
-            },
-            {
-                q: "Что делает оператор IN?",
-                options: ["Сравнивает строки", "Проверяет попадание в список", "Удаляет строки", "Обновляет строки", "Добавляет строки"],
-                correct: 1
-            },
-            {
-                q: "Как подключить PostgreSQL?",
-                options: ["Postgre.connect()", "DB.connect()", "psycopg2.connect()", "pgsql.open()", "post.connect()"],
-                correct: 2
-            },
-            {
-                q: "Как создать виджет-кнопку?",
-                options: ["QButton", "MakeButton()", "QPushButton()", "Qt.Btn()", "NewButton()"],
-                correct: 2
-            },
-            {
-                q: "Как разместить элементы вертикально?",
-                options: ["QVBoxLayout()", "QVertical()", "VerticalLayout()", "LayoutV()", "BoxV()"],
-                correct: 0
-            },
-            {
-                q: "Как изменить размер кнопки?",
-                options: ["button.size()", "button.setSize()", "button.resize()", "button.changeSize()", "button.setDims()"],
-                correct: 2
-            },
-            {
-                q: "Как получить текстовый ввод от пользователя?",
-                options: ["QUserInput()", "QLineEdit()", "QTextForm()", "QInput()", "QFormEdit()"],
-                correct: 1
-            },
-            {
-                q: "Как скрыть окно?",
-                options: ["hideWindow()", "window.hide()", "window.invisible()", "conceal()", "window.remove()"],
-                correct: 1
-            },
-            {
-                q: "Как задать цвет текста в QLabel?",
-                options: ["label.setTextColor()", "label.color()", "label.setStyleSheet()", "label.setFontColor()", "label.paintColor()"],
-                correct: 2
-            },
-            {
-                q: "Какой метод перерисовывает виджет?",
-                options: ["reprint()", "repaint()", "redraw()", "drawagain()", "reset()"],
-                correct: 1
-            },
-            {
-                q: "Как получить текущие координаты окна?",
-                options: ["window.getPosition()", "window.coords()", "window.position()", "window.pos()", "window.loc()"],
-                correct: 3
-            },
-            {
-                q: "Как задать стиль кнопки?",
-                options: ["button.setButtonStyle()", "button.style()", "button.setStyleSheet()", "button.setCSS()", "button.css()"],
-                correct: 2
-            },
-            {
-                q: "Как реализовать двойной клик в PyQt5?",
-                options: ["mouseDoubleClickEvent", "doubleClickAction()", "mouseClickDbl()", "eventDouble()", "double()"],
-                correct: 0
-            },
-            {
-                q: "Как получить текущий индекс QComboBox?",
-                options: ["combo.getIndex()", "combo.index()", "combo.currentIndex()", "combo.row()", "combo.get()"],
-                correct: 2
-            },
-            {
-                q: "Как удалить виджет?",
-                options: ["widget.remove()", "widget.deleteLater()", "widget.destroy()", "widget.clean()", "widget.kill()"],
-                correct: 2
-            },
-            {
-                q: "Как задать иконку окна?",
-                options: ["window.icon()", "window.loadIcon()", "window.setWindowIcon()", "window.useIcon()", "window.addIcon()"],
-                correct: 2
-            },
-            {
-                q: "Как завершить программу?",
-                options: ["finish()", "complete()", "app.quit()", "end()", "exit.window()"],
-                correct: 2
-            }
-
+        correct: 4,
+      },
+      {
+        q: "int[] arr массиві үшін for-each қалай дұрыс жазылады?",
+        options: [
+          "for (arr : int x) { }",
+          "for (int x : arr) { }",
+          "foreach (int x in arr) { }",
+          "for each x in arr { }",
+          "for (x of arr) { }",
         ],
-
-        // --- 9-й Вариант ---
-        "variant9": [
-            {
-                q: "Как называется набор инструкций, объединённых в логический блок?",
-                options: ["Модуль", "Оператор", "Функция", "Блок", "Объект"],
-                correct: 2
-            },
-            {
-                q: "К какому типу относится значение 3.14?",
-                options: ["int", "str", "float", "bool", "number"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор означает «строго не равно»?",
-                options: ["~=", "===", "!", "!=", "not="],
-                correct: 3
-            },
-            {
-                q: "Какой метод строки проверяет, состоит ли она из букв?",
-                options: ["onlyletters()", "isalpha()", "letters()", "alpha()", "islet()"],
-                correct: 1
-            },
-            {
-                q: "Какой метод списка удаляет элемент по индексу и возвращает его?",
-                options: ["delete()", "remove()", "pop()", "cut()", "take()"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор используется для конкатенации списка самим собой?",
-                options: ["**", "++", "+", "merge", "join"],
-                correct: 2
-            },
-            {
-                q: "Какой тип данных является неизменяемым?",
-                options: ["list", "dict", "tuple", "set", "array"],
-                correct: 2
-            },
-            {
-                q: "Какой оператор означает проверку принадлежности?",
-                options: ["check", "have", "contain", "include", "in"],
-                correct: 4
-            },
-            {
-                q: "Какой цикл завершится, если условие изначально ложное?",
-                options: ["for", "while", "until", "repeat", "loop"],
-                correct: 0
-            },
-            {
-                q: "Какой метод списка ищет значение и возвращает индекс?",
-                options: ["check()", "find()", "index()", "locate()", "scan()"],
-                correct: 2
-            },
-            {
-                q: "Что делает функция lambda x: x-1?",
-                options: ["Увеличивает x на 1", "Умножает x на 1", "Вычитает 1 из x", "Делит x", "Возводит x в степень"],
-                correct: 2
-            },
-            {
-                q: "Какой модуль работает с паузами и задержками?",
-                options: ["datetime", "wait", "sleep", "time", "timer"],
-                correct: 3
-            },
-            {
-                q: "Каким оператором импортируется весь модуль?",
-                options: ["get module", "from module import all", "import module", "include module", "take module"],
-                correct: 2
-            },
-            {
-                q: "Каким режимом открыть файл только для чтения в бинарном виде?",
-                options: ["\"rb\"", "\"br\"", "\"r@b\"", "\"b\"", "\"r-b\""],
-                correct: 0
-            },
-            {
-                q: "Как прочитать одну строку файла?",
-                options: ["read()", "read1()", "readline()", "getline()", "row()"],
-                correct: 2
-            },
-            {
-                q: "Какой метод объекта вызывается при представлении его в виде строки?",
-                options: ["str", "show", "print", "view", "info"],
-                correct: 0
-            },
-            {
-                q: "Как преобразовать Python-словарь в JSON-файл?",
-                options: ["json.write()", "json.export()", "json.dump()", "json.save()", "json.push()"],
-                correct: 2
-            },
-            {
-                q: "Что делает pickle.load()?",
-                options: ["Загружает бинарный объект из файла", "Создаёт бинарный файл", "Преобразует JSON в Python", "Очищает файл", "Сериализует объект"],
-                correct: 0
-            },
-            {
-                q: "Как создать объект writer для CSV?",
-                options: ["csv.writer()", "csv.write()", "csv.writeline()", "csv.makewriter()", "csv.format()"],
-                correct: 0
-            },
-            {
-                q: "Как выбрать строки с условиями И и ИЛИ?",
-                options: ["WHERE A AND B OR C", "FILTER A OR B AND C", "MATCH A AND B OR C", "SELECT CONDITION A B C", "ONLY WHERE A B C"],
-                correct: 0
-            },
-            {
-                q: "Какая функция вычисляет среднее значение?",
-                options: ["MID()", "AVERAGE()", "AVG()", "MEAN()", "BAL()"],
-                correct: 2
-            },
-            {
-                q: "Как выбрать строки, где значение начинается с буквы A?",
-                options: ["WHERE name = \"A*\"", "WHERE name START \"A\"", "WHERE name LIKE \"A%\"", "WHERE name MATCH \"A\"", "WHERE name BEGIN \"A\""],
-                correct: 2
-            },
-            {
-                q: "Что делает FULL JOIN?",
-                options: ["Объединяет только совпадающие строки", "Возвращает только уникальные строки", "Объединяет ВСЕ строки обеих таблиц", "Возвращает только отсутствующие строки", "Создаёт таблицу"],
-                correct: 2
-            },
-            {
-                q: "Как выбрать строки, где значение NULL?",
-                options: ["WHERE x = NULL", "WHERE x IS NULL", "WHERE x == NULL", "WHERE x EQUAL NULL", "WHERE NULL TRUE"],
-                correct: 1
-            },
-            {
-                q: "Что делает оператор LIMIT?",
-                options: ["Устанавливает формат столбца", "Ограничивает количество строк", "Удаляет строку", "Создаёт таблицу", "Добавляет столбцы"],
-                correct: 1
-            },
-            {
-                q: "Как подключиться к PostgreSQL в Python?",
-                options: ["import post", "import psql", "psycopg2.connect()", "sqlpg.connect()", "pg.connect()"],
-                correct: 2
-            },
-            {
-                q: "Как создать простой виджет?",
-                options: ["Widget()", "PyWidget()", "QForm()", "QWidget()", "QtWidget()"],
-                correct: 3
-            },
-            {
-                q: "Как создать сеточный layout?",
-                options: ["QGridLayout()", "QMatrix()", "QLayoutGrid()", "LayoutGrid()", "QGrid()"],
-                correct: 0
-            },
-            {
-                q: "Как установить позицию кнопки на форме?",
-                options: ["button.loc()", "button.pos(x,y)", "button.move(x,y)", "button.translate(x,y)", "button.shift(x,y)"],
-                correct: 2
-            },
-            {
-                q: "Как передать окно в полноэкранный режим?",
-                options: ["window.expand()", "window.full()", "window.showFullScreen()", "window.screen()", "window.max()"],
-                correct: 2
-            },
-            {
-                q: "Как задать шрифт окна?",
-                options: ["window.setFont()", "window.font()", "window.fontSize()", "window.editFont()", "window.setFontStyle()"],
-                correct: 0
-            },
-            {
-                q: "Как изменить текст кнопки?",
-                options: ["button.rename()", "button.setLabel()", "button.changeText()", "button.setText()", "button.text()"],
-                correct: 3
-            },
-            {
-                q: "Как получить выбранный элемент QComboBox?",
-                options: ["combo.read()", "combo.selected()", "combo.get()", "combo.currentText()", "combo.value()"],
-                correct: 3
-            },
-            {
-                q: "Как скрыть виджет?",
-                options: ["hide()", "widget.hide()", "remove()", "widget.off()", "delete()"],
-                correct: 1
-            },
-            {
-                q: "Как обновить интерфейс принудительно?",
-                options: ["redraw()", "repaint()", "reprint()", "restyle()", "rebuild()"],
-                correct: 1
-            },
-            {
-                q: "Какой метод перемещает окно?",
-                options: ["window.setXY()", "move()", "window.position()", "window.go()", "window.translate()"],
-                correct: 1
-            },
-            {
-                q: "Как установить заголовок окна?",
-                options: ["window.name()", "window.setWindowTitle()", "window.setLabel()", "window.caption()", "window.rename()"],
-                correct: 1
-            },
-            {
-                q: "Как создать диалоговое окно сообщения?",
-                options: ["QMessage()", "QMsgBox()", "QMessageBox()", "QBoxMessage()", "DialogMessage()"],
-                correct: 2
-            },
-            {
-                q: "Как удалить layout корректно?",
-                options: ["layout.kill()", "layout.drop()", "layout.deleteLater()", "layout.remove()", "layout.end()"],
-                correct: 2
-            },
-            {
-                q: "Как завершить приложение PyQt5?",
-                options: ["shutdown()", "quit()", "app.quit()", "end()", "window.end()"],
-                correct: 2
-            }
-
-        ]
-    },
-
-    // ==============================================
-    // 🗄️ ПРЕДМЕТ: DATABASE (Русский язык - 9 Вариантов)
-    // ==============================================
-    "db_ru": {
-        "variant1": [
-            {
-                q: "Как лучше всего описать базу данных?",
-                options: ["Набор несвязанных файлов на диске", "Организованная структура данных, доступная по определённым правилам", "Программа для редактирования текстов", "Система для передачи данных по сети", "Набор случайных таблиц без управления"],
-                correct: 1
-            },
-            {
-                q: "Какое основное назначение базы данных?",
-                options: ["Хранение и управление структурированными данными", "Печать документов", "Архивирование изображений без структуры", "Выполнение только математических вычислений", "Ускорение работы операционной системы"],
-                correct: 0
-            },
-            {
-                q: "Что такое таблица в базе данных?",
-                options: ["Отдельный файл операционной системы", "Электронная схема связей данных", "Только список столбцов без данных", "Только список строк без структуры", "Структура, состоящая из строк и столбцов, где хранятся данные"],
-                correct: 4
-            },
-            {
-                q: "Как называется строка в таблице базы данных?",
-                options: ["Поле", "Индекс", "Запись", "Ключ", "Секция"],
-                correct: 2
-            },
-            {
-                q: "Как называется столбец в таблице базы данных?",
-                options: ["Поле", "Индекс", "Запись", "Связь", "Атрибут связи"],
-                correct: 0
-            },
-            {
-                q: "Какое из перечисленных является типом базы данных?",
-                options: ["Табличная и листовая", "Реляционная и документная", "Отчётная и графическая", "Сеточная и файловая только", "Плоская и структурная"],
-                correct: 1
-            },
-            {
-                q: "Что характеризует реляционную базу данных?",
-                options: ["Хранение данных только в виде графиков", "Отсутствие связей между данными", "Хранение только бинарных файлов", "Хранение данных в виде таблиц с отношениями между ними", "Хранение данных только в одном файле"],
-                correct: 3
-            },
-            {
-                q: "Что относится к основным понятиям базы данных?",
-                options: ["Папка, окно, принтер", "Тема, шрифт, стиль", "Таблица, запись, поле", "Блокнот, файл, корзина", "Лист, окно, ячейка"],
-                correct: 2
-            },
-            {
-                q: "Какое утверждение о СУБД верно?",
-                options: ["Это только устройство для ввода данных", "Это средство для хранения изображений", "Это вид файла с расширением .db", "Это только язык программирования", "Это программа для управления базами данных"],
-                correct: 4
-            },
-            {
-                q: "Какую роль выполняет СУБД?",
-                options: ["Только рисует диаграммы", "Обеспечивает создание, хранение и обработку данных в базе", "Только выводит отчёты на печать", "Только создаёт резервные копии", "Только управляет пользователями"],
-                correct: 1
-            },
-            {
-                q: "Что такое SQL?",
-                options: ["Операционная система", "Язык структурированных запросов к реляционным БД", "Графический редактор", "Язык разметки веб-страниц", "Программа для создания таблиц"],
-                correct: 1
-            },
-            {
-                q: "Какой тип баз данных типично используют SQL?",
-                options: ["Реляционные", "Файловые", "Документные", "Графовые", "Нейронные"],
-                correct: 0
-            },
-            {
-                q: "Что верно о NoSQL базах данных?",
-                options: ["Они используют только таблицы", "Они работают только офлайн", "Это устаревшая версия SQL", "Они не подходят для больших данных", "Это семейство нереляционных систем для гибкой работы с данными"],
-                correct: 4
-            },
-            {
-                q: "В чём ключевое отличие SQL и NoSQL?",
-                options: ["SQL работает без сети, NoSQL только в сети", "SQL хранит только числа, NoSQL только строки", "SQL — строгие таблицы и схемы, NoSQL — гибкие модели данных", "Отличий нет", "SQL не поддерживает операции обновления"],
-                correct: 2
-            },
-            {
-                q: "Что описывает структура базы данных?",
-                options: ["Только число пользователей", "Размер оперативной памяти", "Формат печати отчётов", "Набор таблиц, их поля и связи между ними", "Права доступа всех пользователей"],
-                correct: 3
-            },
-            {
-                q: "Какая команда создаёт новую базу данных?",
-                options: ["NEW DATABASE", "MAKE DATABASE", "CREATE DATABASE", "ADD DATABASE", "BUILD DATABASE"],
-                correct: 2
-            },
-            {
-                q: "Какая команда создаёт новую таблицу?",
-                options: ["CREATE TABLE", "NEW TABLE", "INSERT TABLE", "BUILD TABLE", "MAKE TABLE"],
-                correct: 0
-            },
-            {
-                q: "Что задаётся при создании таблицы?",
-                options: ["Только режим доступа", "Название таблицы, имена полей и типы данных", "Только имена пользователей", "Только индексы", "Только связи"],
-                correct: 1
-            },
-            {
-                q: "Что лучше всего описывает структуру базы данных?",
-                options: ["Случайный набор таблиц", "Логически организованный набор связанных таблиц", "Только одна таблица", "Набор несвязанных файлов", "Набор папок с документами"],
-                correct: 1
-            },
-            {
-                q: "Для чего указывать тип данных поля?",
-                options: ["Чтобы изменить интерфейс", "Чтобы запретить сортировку", "Чтобы ускорить печать", "Чтобы ограничить число пользователей", "Чтобы определить допустимые значения и операции"],
-                correct: 4
-            },
-            {
-                q: "Что делает INSERT?",
-                options: ["Создаёт таблицу", "Добавляет новые строки", "Удаляет таблицу", "Изменяет столбцы", "Сортирует данные"],
-                correct: 1
-            },
-            {
-                q: "Что выполняет команда UPDATE?",
-                options: ["Выборку данных", "Удаление таблицы", "Обновление существующих записей", "Создание индекса", "Очистку БД"],
-                correct: 2
-            },
-            {
-                q: "Для чего используется DELETE?",
-                options: ["Удаление БД", "Удаление индексов", "Удаление столбцов", "Удаление выбранных строк", "Удаление схемы БД"],
-                correct: 3
-            },
-            {
-                q: "Что делает SELECT?",
-                options: ["Создаёт БД", "Выполняет выборку данных", "Удаляет данные", "Изменяет структуру", "Архивирует таблицу"],
-                correct: 1
-            },
-            {
-                q: "Какой оператор фильтрует строки?",
-                options: ["WHERE", "ORDER BY", "GROUP BY", "LIMIT", "FILTER"],
-                correct: 0
-            },
-            {
-                q: "Какой оператор задаёт сортировку?",
-                options: ["SELECT", "ORDER BY", "FILTER BY", "GROUP BY", "SET ORDER"],
-                correct: 1
-            },
-            {
-                q: "Для чего используют ORDER BY?",
-                options: ["Выбор таблицы", "Удаление строк", "Сортировка строк", "Объединение таблиц", "Создание индекса"],
-                correct: 2
-            },
-            {
-                q: "Ограничение количества строк делается через:",
-                options: ["LIMIT", "STOP", "END", "CUT", "SHORT"],
-                correct: 0
-            },
-            {
-                q: "Что означает SELECT * FROM table?",
-                options: ["Выбор одной строки", "Выбор всех БД", "Удаление таблицы", "Создание таблицы", "Выбор всех столбцов из таблицы"],
-                correct: 4
-            },
-            {
-                q: "Что верно о WHERE?",
-                options: ["Задает структуру", "Отбирает строки по условию", "Применяется только для чисел", "Только для строк", "Только для первичных ключей"],
-                correct: 1
-            },
-            {
-                q: "Что такое объект в проектировании БД?",
-                options: ["Физический сервер", "Индекс", "Пользователь", "Сущность предметной области", "Запрос"],
-                correct: 3
-            },
-            {
-                q: "Что такое атрибут?",
-                options: ["Связь", "Свойство сущности", "Имя базы", "Набор пользователей", "Имя индекса"],
-                correct: 1
-            },
-            {
-                q: "Что такое связь (relationship)?",
-                options: ["Любой столбец", "Отношение между сущностями", "Имя поля", "Признак сортировки", "Роль пользователя"],
-                correct: 1
-            },
-            {
-                q: "Что называется кардинальностью связи?",
-                options: ["Тип отношения между сущностями по количеству экземпляров", "Сколько строк в таблице", "Максимум столбцов", "Максимум пользователей", "Максимум индексов"],
-                correct: 0
-            },
-            {
-                q: "Пример связи «один ко многим»:",
-                options: ["Один студент — много групп", "Один вуз — один студент", "Один студент — один документ", "Много студентов — много вузов", "Одна группа — много студентов"],
-                correct: 4
-            },
-            {
-                q: "ER-диаграмма описывает:",
-                options: ["Настройки сервера", "Только права пользователей", "Объекты, атрибуты и связи", "Только индексы", "Цвет интерфейса"],
-                correct: 2
-            },
-            {
-                q: "Сущности и атрибуты определяют на этапе:",
-                options: ["Физической печати", "Логического проектирования", "Резервного копирования", "Установки СУБД", "Настройки сети"],
-                correct: 1
-            },
-            {
-                q: "Цель логического проектирования:",
-                options: ["Модель данных в виде таблиц и связей", "Формат резервных копий", "Установка ОС", "Настройка портов", "Выбор шрифта интерфейса"],
-                correct: 0
-            },
-            {
-                q: "Для чего нужна нормализация?",
-                options: ["Ускорения печати", "Удаления таблиц", "Увеличения количества индексов", "Шифрования данных", "Уменьшения избыточности и аномалий"],
-                correct: 4
-            },
-            {
-                q: "Что верно о реляционной модели?",
-                options: ["Данные — графики", "Данные хранятся только в одной таблице", "Связи только через файлы", "Таблицы не могут быть связаны", "Данные — таблицы с отношениями"],
-                correct: 4
-            },
+        correct: 1,
+      },
+      {
+        q: "for циклі while циклінен немен ерекшеленеді?",
+        options: [
+          "for while-ға қарағанда жылдамырақ",
+          "for тек массивтермен ғана қолданылады",
+          "while-да шарт болмайды",
+          "for инициализацияны, шартты және қадамды бір жолда біріктіреді",
+          "while циклін break арқылы тоқтатуға болмайды",
         ],
-        "variant2": [
-            {
-                q: "Что такое первичный ключ?",
-                options: ["Любой столбец", "Уникальный идентификатор записи", "Пароль", "Имя БД", "Имя пользователя"],
-                correct: 1
-            },
-            {
-                q: "Главное свойство первичного ключа:",
-                options: ["Значения могут повторяться", "Только текст", "Все значения NULL", "Уникальность и NOT NULL", "Только числа"],
-                correct: 3
-            },
-            {
-                q: "Что такое внешний ключ?",
-                options: ["Поле без связей", "Поле, ссылающееся на PK другой таблицы", "Имя БД", "Имя пользователя", "Поле для сортировки"],
-                correct: 1
-            },
-            {
-                q: "Для чего используют внешний ключ?",
-                options: ["Печать отчётов", "Сортировка", "Ссылочная целостность", "Шифрование", "Удаление индексов"],
-                correct: 2
-            },
-            {
-                q: "Что такое индекс?",
-                options: ["Отчёт сервера", "Имя пользователя", "Структура для ускорения поиска", "Архив", "Папка в БД"],
-                correct: 2
-            },
-            {
-                q: "Как индекс влияет на производительность?",
-                options: ["Всегда замедляет чтение", "Ускоряет поиск, замедляет запись", "Не влияет", "Ускоряет вставку", "Ускоряет удаление"],
-                correct: 1
-            },
-            {
-                q: "Как задаётся первичный ключ?",
-                options: ["PRIMARY KEY", "MAIN KEY", "CREATE INDEX", "CREATE PK", "ROOT KEY"],
-                correct: 0
-            },
-            {
-                q: "Как задаётся внешний ключ?",
-                options: ["FOREIGN KEY ... REFERENCES ...", "ONLY KEY", "MAIN FOREIGN", "PRIMARY FOREIGN", "OUTER KEY"],
-                correct: 0
-            },
-            {
-                q: "Что обеспечивает ссылочная целостность?",
-                options: ["Удаление любых данных", "Согласованность связанных таблиц", "Быстрое копирование", "Сортировку", "Разделение по пользователям"],
-                correct: 1
-            },
-            {
-                q: "Что верно об индексе?",
-                options: ["Всегда создаётся автоматически", "Создается только на PK", "Это имя таблицы", "Запрещает поиск", "Может быть создан на одном или нескольких столбцах"],
-                correct: 4
-            },
-            {
-                q: "Назначение SELECT:",
-                options: ["Выборка данных", "Создание таблицы", "Удаление таблицы", "Создание индекса", "Сброс значений"],
-                correct: 0
-            },
-            {
-                q: "WHERE в практике нужен для:",
-                options: ["Описания структуры", "Фильтрации строк", "Создания БД", "Удаления индексов", "Генерации отчёта"],
-                correct: 1
-            },
-            {
-                q: "Оператор сортировки:",
-                options: ["SORT", "ORDER BY", "GROUP", "FILTER", "SORT BY"],
-                correct: 1
-            },
-            {
-                q: "Как указать сортировку по убыванию?",
-                options: ["ORDER BY field UP", "ORDER BY field DESC", "ORDER BY field MINUS", "ORDER BY field DOWN", "ORDER BY field NEG"],
-                correct: 1
-            },
-            {
-                q: "Что делает INSERT?",
-                options: ["Удаляет строку", "Создаёт пользователя", "Меняет структуру", "Создаёт базу", "Добавляет запись"],
-                correct: 4
-            },
-            {
-                q: "UPDATE используется для:",
-                options: ["Сортировки", "Добавления индекса", "Создания таблиц", "Удаления базы", "Изменения значений"],
-                correct: 4
-            },
-            {
-                q: "Что делает DELETE?",
-                options: ["Удаляет выбранные строки", "Удаляет столбцы", "Удаляет всю базу", "Меняет тип данных", "Сбрасывает ключи"],
-                correct: 0
-            },
-            {
-                q: "Что верно о реляционной модели?",
-                options: ["Нет ключей", "Таблицы связаны ключами", "Все данные в одной строке", "Связи только в текстовом описании", "Таблицы несвязанные"],
-                correct: 1
-            },
-            {
-                q: "Что значит “комплексные запросы”?",
-                options: ["Одна таблица", "Несколько операторов и таблиц вместе", "Запросы без условий", "Только DELETE", "Только UPDATE"],
-                correct: 1
-            },
-            {
-                q: "Что чаще входит в комплексные запросы?",
-                options: ["PRINT, EXIT", "SELECT, WHERE, JOIN, ORDER BY", "CREATE, DROP", "BACKUP, RESTORE", "IMPORT, EXPORT"],
-                correct: 1
-            },
-            {
-                q: "Назначение ER-диаграмм:",
-                options: ["Для декора", "Создание отчётов", "Заменяют физическую модель", "Настройка сервера", "Визуальное отражение структуры БД"],
-                correct: 4
-            },
-            {
-                q: "Результат качественного логического проектирования:",
-                options: ["Несвязанные таблицы", "Нормализованные таблицы и корректные связи", "Список пользователей", "Набор отчётов", "Только индексы"],
-                correct: 1
-            },
-            {
-                q: "Что верно о типах данных?",
-                options: ["Неверный тип вызывает ошибки", "Можно не указывать", "Не влияет на производительность", "Нужен только для ключей", "Используется только в SQL"],
-                correct: 0
-            },
-            {
-                q: "CREATE TABLE делает:",
-                options: ["Создает таблицу с полями и атрибутами", "Удаляет таблицу", "Обновляет строки", "Сортирует строки", "Создаёт отчёт"],
-                correct: 0
-            },
-            {
-                q: "Как указать PK?",
-                options: ["column MAIN KEY", "column PRIMARY KEY", "column ONLY KEY", "column UNIQUE ONLY", "column FIRST KEY"],
-                correct: 1
-            },
-            {
-                q: "Как указать внешний ключ?",
-                options: ["FOREIGN KEY (field) REFERENCES table(field)", "OUT KEY", "EXTERNAL KEY", "LINK KEY", "CHILD KEY"],
-                correct: 0
-            },
-            {
-                q: "Что дают индексы между таблицами?",
-                options: ["Уменьшают доступность", "Ускоряют поиск и соединения", "Запрещают обновление", "Отключают связи", "Изменяют типы данных"],
-                correct: 1
-            },
-            {
-                q: "Зачем понимать структуру БД?",
-                options: ["Чтобы считать записи", "Чтобы упростить бэкап", "Чтобы отключить проверки", "Чтобы грамотно спроектировать связи", "Чтобы добавить индексы"],
-                correct: 3
-            },
-            {
-                q: "Роль СУБД:",
-                options: ["Только хранит файлы", "Управляет данными, доступом и целостностью", "Только печатает отчёты", "Не влияет на безопасность", "Только создаёт таблицы"],
-                correct: 1
-            },
-            {
-                q: "Зачем студенту понимать «таблица-запись-поле»?",
-                options: ["Чтобы использовать нестандартные обозначения", "Чтобы уменьшить размер БД", "Чтобы заменить документацию", "Чтобы ускорить сеть", "Чтобы правильно моделировать структуру данных"],
-                correct: 4
-            },
-            {
-                q: "Что такое схема базы данных?",
-                options: ["Описание интерфейса пользователя", "Физическая раскладка таблиц в памяти", "Структурное описание таблиц, полей и связей", "Список всех SQL-запросов", "Графическое изображение пользовательского окна"],
-                correct: 2
-            },
-            {
-                q: "Что такое уникальный индекс?",
-                options: ["Индекс, запрещающий обновления", "Индекс, который может содержать повторяющиеся значения", "Индекс, обеспечивающий уникальность значений в столбце", "Индекс, создаваемый только для внешних ключей", "Индекс, ускоряющий только сортировку"],
-                correct: 2
-            },
-            {
-                q: "Какой тип ключа обеспечивает уникальность каждой строки?",
-                options: ["Secondary key", "Foreign key", "Composite index", "Primary key", "Logical key"],
-                correct: 3
-            },
-            {
-                q: "Для чего нужен FOREIGN KEY?",
-                options: ["Для обеспечения ссылочной целостности между таблицами", "Для ускорения сортировки", "Для хранения временных данных", "Для автоматического создания отчётов", "Для удаления дубликатов"],
-                correct: 0
-            },
-            {
-                q: "Какой тип данных подходит для хранения дат?",
-                options: ["VARCHAR", "BOOLEAN", "DATE", "CHAR", "TIMEONLY"],
-                correct: 2
-            },
-            {
-                q: "Что делает оператор LIMIT в SQL?",
-                options: ["Ограничивает размер таблицы", "Удаляет ограниченное количество строк", "Ограничивает количество столбцов", "Ограничивает доступ пользователей", "Ограничивает количество возвращаемых строк"],
-                correct: 4
-            },
-            {
-                q: "Что означает кардинальность связи «1 ко многим»?",
-                options: ["Одна таблица содержит только одну запись", "Каждая запись связана только с одной записью", "Таблицы не имеют связей", "Одна запись таблицы связана с несколькими записями другой таблицы", "Записи связаны циклически"],
-                correct: 3
-            },
-            {
-                q: "Что делает SQL ORDER BY?",
-                options: ["Группирует данные", "Сортирует данные", "Удаляет данные", "Создаёт внешние ключи", "Проверяет типы данных"],
-                correct: 1
-            },
-            {
-                q: "Какой тип данных обычно используется для хранения текстовых значений?",
-                options: ["INT", "CHAR/VARCHAR", "FLOAT", "BOOLEAN", "BLOB"],
-                correct: 1
-            },
-            {
-                q: "Что из перечисленного относится к NoSQL БД?",
-                options: ["MySQL", "PostgreSQL", "MongoDB", "Oracle", "MariaDB"],
-                correct: 2
-            },
+        correct: 3,
+      },
+      {
+        q: "Math класының қай тұрақтысы π санын қамтиды?",
+        options: [
+          "Math.PI_VALUE",
+          "Math.pi",
+          "Math.PI",
+          "Math.CONST_PI",
+          "Pi.value",
         ],
-        "variant3": [
-            {
-                q: "Какой SQL-оператор используется для добавления строки в таблицу?",
-                options: ["PUSH", "INSERT INTO", "ADD ROW", "WRITE", "ROW CREATE"],
-                correct: 1
-            },
-            {
-                q: "Что такое ER-диаграмма?",
-                options: ["Диаграмма распределения нагрузки сервера", "График использования памяти", "Модель объектов, атрибутов и связей между ними", "Чертёж структуры приложения", "План транзакций БД"],
-                correct: 2
-            },
-            {
-                q: "Какой элемент ER-диаграммы обозначает объект?",
-                options: ["Эллипс", "Ромб", "Треугольник", "Прямоугольник", "Линия связи"],
-                correct: 3
-            },
-            {
-                q: "Какой оператор используется для удаления записи из таблицы?",
-                options: ["REMOVE", "DROP", "ERASE", "DELETE", "CLEAR"],
-                correct: 3
-            },
-            {
-                q: "Что делает SQL оператор DROP TABLE?",
-                options: ["Удаляет все строки, но оставляет таблицу", "Удаляет только индексы", "Полностью удаляет таблицу из базы данных", "Очищает таблицу, оставляя структуру", "Удаляет только связи"],
-                correct: 2
-            },
-            {
-                q: "Что такое индекс в БД?",
-                options: ["Структура для ускорения поиска данных", "Способ хранения резервных копий", "Графическое представление таблицы", "Система контроля доступа", "Таблица ошибок"],
-                correct: 0
-            },
-            {
-                q: "Что означает термин «атрибут» в ER-диаграмме?",
-                options: ["Вид связи между таблицами", "Свойство объекта", "Уникальный ключ", "Первичная запись", "Ограничение на тип данных"],
-                correct: 1
-            },
-            {
-                q: "Что такое DML-команды?",
-                options: ["Команды для создания структуры БД", "Команды для управления пользователями", "Команды для работы с данными (INSERT, UPDATE, DELETE)", "Команды для настройки сервера", "Команды для создания резервных копий"],
-                correct: 2
-            },
-            {
-                q: "Что означает SQL DISTINCT?",
-                options: ["Сортировка данных", "Фильтрация по условию", "Изменение структуры таблицы", "Объединение таблиц", "Выбор только уникальных значений"],
-                correct: 4
-            },
-            {
-                q: "Что такое нормализация базы данных?",
-                options: ["Объединение таблиц для ускорения работы", "Создание дополнительных индексов", "Процесс устранения избыточности данных", "Добавление новых типов данных", "Перенос БД на другой сервер"],
-                correct: 2
-            },
-            {
-                q: "Что делает агрегатная функция?",
-                options: ["Изменяет таблицу", "Выполняет вычисления над набором строк", "Создаёт индекс", "Удаляет строки", "Преобразует текст в JSON"],
-                correct: 1
-            },
-            {
-                q: "Какая функция вычисляет сумму значений?",
-                options: ["AVG", "COUNT", "SUM", "MIN", "TOTAL"],
-                correct: 2
-            },
-            {
-                q: "Какая функция возвращает максимальное и минимальное значение?",
-                options: ["MIN, MAX", "MAX, SUM", "МИНИМУМ,МАКСИМУМ", "AVG, SUM", "HIGH, LOW"],
-                correct: 0
-            },
-            {
-                q: "Какая функция считает количество строк?",
-                options: ["COUNT", "SUM", "MIN", "AVG", "NUMBER"],
-                correct: 0
-            },
-            {
-                q: "Какой оператор используется для группировки строк?",
-                options: ["ORDER BY", "GROUP BY", "LIMIT", "WHERE", "GROUPING"],
-                correct: 1
-            },
-            {
-                q: "Для фильтрации групп используется:",
-                options: ["WHERE", "HAVING", "ORDER BY", "LIMIT", "FILTER GROUP"],
-                correct: 1
-            },
-            {
-                q: "Что произойдёт, если в SELECT есть столбец, не входящий в GROUP BY и не агрегатный?",
-                options: ["SQL сам сгруппирует", "Пропустит", "Значение станет NULL", "Ошибка", "Автоматически станет агрегатом"],
-                correct: 3
-            },
-            {
-                q: "Какая функция вычисляет среднее?",
-                options: ["SUM", "COUNT", "AVG", "MIN", "MEAN"],
-                correct: 2
-            },
-            {
-                q: "Чем оконная функция отличается от агрегатной?",
-                options: ["Удаляет строки", "Требует только GROUP BY", "Меняет тип данных", "Не объединяет строки в одну", "Работает только с текстом"],
-                correct: 3
-            },
-            {
-                q: "Что делает OVER()?",
-                options: ["Сортирует таблицу", "Определяет окно для вычислений", "Фильтрует строки", "Удаляет дубли", "Создаёт новую таблицу"],
-                correct: 1
-            },
-            {
-                q: "PARTITION BY … в OVER() означает:",
-                options: ["Фильтрация", "Сортировку", "Создание временной таблицы", "Разделение окна на группы", "Удаление столбцов"],
-                correct: 3
-            },
-            {
-                q: "Какая конструкция является оконной?",
-                options: ["SUM(sales) OVER()", "SELECT OVER()", "LIMIT OVER()", "DELETE OVER()", "WINDOW SUM()"],
-                correct: 0
-            },
-            {
-                q: "ROW_NUMBER() OVER() делает:",
-                options: ["Суммирует значения", "Нумерует строки", "Фильтрует строки", "Удаляет NULL", "Создаёт индексы"],
-                correct: 1
-            },
-            {
-                q: "ORDER BY внутри OVER():",
-                options: ["Фильтрует", "Группирует", "Определяет порядок в окне", "Удаляет дубли", "Обнуляет значения"],
-                correct: 2
-            },
-            {
-                q: "SUM(value) OVER() вернёт:",
-                options: ["Среднее", "Общую сумму на каждой строке", "Минимум", "NULL", "Разницу между строками"],
-                correct: 1
-            },
-            {
-                q: "Если отсутствует PARTITION BY, окно является:",
-                options: ["Общим для всех строк", "Ошибочным", "Нулевым", "Локальным", "Случайным"],
-                correct: 0
-            },
-            {
-                q: "Что делает INNER JOIN?",
-                options: ["Возвращает все строки обеих таблиц", "Возвращает совпадающие строки", "Только левую таблицу", "Только правую", "Дублирует строки"],
-                correct: 1
-            },
-            {
-                q: "LEFT JOIN возвращает:",
-                options: ["Только совпадающие", "Все строки правой", "Все строки левой + совпадающие справа", "Декартово произведение", "Только строки без совпадений"],
-                correct: 2
-            },
-            {
-                q: "FULL JOIN возвращает:",
-                options: ["Только совпадающие", "Только левые", "Только правые", "Все строки обеих таблиц", "Только NULL значения"],
-                correct: 3
-            },
-            {
-                q: "CROSS JOIN делает:",
-                options: ["Соединение по ключу", "Удаление дубликатов", "Декартово произведение", "Фильтрацию", "Сортировку"],
-                correct: 2
-            },
-            {
-                q: "NATURAL JOIN соединяет:",
-                options: ["По столбцам с одинаковыми именами", "Только по первичному ключу", "Только текстовые столбцы", "Только числовые", "По первой найденной колонке"],
-                correct: 0
-            },
-            {
-                q: "SELF JOIN — это:",
-                options: ["Соединение двух разных таблиц", "Соединение таблицы с самой собой", "Тип подзапроса", "Тип временной таблицы", "Соединение с внешней БД"],
-                correct: 1
-            },
-            {
-                q: "Для JOIN необходим оператор:",
-                options: ["ON или USING", "HAVING", "GROUP BY", "LIMIT", "ORDER BY"],
-                correct: 0
-            },
-            {
-                q: "RIGHT JOIN возвращает:",
-                options: ["Только совпадающие", "Только левые", "Все строки правой + совпадающие слева", "Все строки", "Только строки без совпадений"],
-                correct: 2
-            },
-            {
-                q: "Самый распространённый JOIN:",
-                options: ["FULL", "CROSS", "NATURAL", "INNER", "RIGHT"],
-                correct: 3
-            },
-            {
-                q: "Можно ли объединять более двух таблиц в JOIN?",
-                options: ["Да", "Нет", "Только с подзапросом", "Только с NATURAL JOIN", "Только в SELECT *"],
-                correct: 0
-            },
-            {
-                q: "Подзапрос — это:",
-                options: ["Тип JOIN", "Запрос внутри другого запроса", "Ограничение", "Функция", "Индекс"],
-                correct: 1
-            },
-            {
-                q: "Коррелированный подзапрос — это подзапрос:",
-                options: ["Независимый", "Зависящий от внешней строки", "Только в SELECT", "Только в HAVING", "Только в JOIN"],
-                correct: 1
-            },
-            {
-                q: "Оператор, часто используемый с подзапросом в WHERE:",
-                options: ["IN", "LIMIT", "JOIN", "TOP", "NEXT"],
-                correct: 0
-            },
-            {
-                q: "EXISTS проверяет:",
-                options: ["Тип данных", "Наличие хотя бы одной строки в подзапросе", "Уникальность", "Соединения", "Размер таблицы"],
-                correct: 1
-            }
+        correct: 2,
+      },
+      {
+        q: "Java тілінде массивтің бірінші элементінің индексі қандай?",
+        options: [
+          "1",
+          "0",
+          "-1",
+          "Өлшеміне байланысты",
+          "Жасалған кезде анықталады",
         ],
-        "variant4": [
-            {
-                q: "Что возвращает функция COUNT(*)?",
-                options: ["Количество ненулевых значений", "Количество строк", "Количество уникальных значений", "Количество столбцов", "Количество таблиц"],
-                correct: 1
-            },
-            {
-                q: "Что делает оператор GROUP BY в SQL?",
-                options: ["Сортирует строки", "Объединяет строки по условию", "Делит строки на группы для агрегирования", "Фильтрует по условию", "Удаляет дубликаты"],
-                correct: 2
-            },
-            {
-                q: "Какая функция вернёт количество уникальных значений?",
-                options: ["COUNT", "COUNT(DISTINCT col)", "UNIQUE", "MIN", "GROUP_COUNT"],
-                correct: 1
-            },
-            {
-                q: "Что делает агрегатная функция MAX()?",
-                options: ["Находит минимальное значение", "Находит сумму", "Находит максимальное значение", "Находит среднее", "Находит NULL"],
-                correct: 2
-            },
-            {
-                q: "Почему нельзя использовать столбец в SELECT без GROUP BY, если он не агрегатный?",
-                options: ["SQL не умеет их обрабатывать", "Возникает неоднозначность", "Запрос выполняется медленно", "Значения превращаются в NULL", "Таблица блокируется"],
-                correct: 1
-            },
-            {
-                q: "Для чего используется HAVING?",
-                options: ["Для сортировки", "Для фильтрации строк", "Для фильтрации групп", "Для удаления столбцов", "Для создания индексов"],
-                correct: 2
-            },
-            {
-                q: "Что возвращает AVG() OVER()?",
-                options: ["Среднее по всей таблице", "Среднее по строкам без объединения", "Количество строк", "Максимум по группе", "Функцию сортировки"],
-                correct: 0
-            },
-            {
-                q: "Какое окно будет использоваться, если не указать PARTITION BY и ORDER BY?",
-                options: ["Несуществующее", "Случайное", "Всё множество строк", "Только первая строка", "Только последняя строка"],
-                correct: 2
-            },
-            {
-                q: "Что делает оконная функция SUM(value) OVER(PARTITION BY category)?",
-                options: ["Возвращает сумму по всей таблице", "Возвращает сумму предыдущей строки", "Считает сумму по каждой категории", "Считает сумму уникальных значений", "Делает JOIN с другой таблицей"],
-                correct: 2
-            },
-            {
-                q: "Функция RANK() отличается от ROW_NUMBER() тем, что:",
-                options: ["Пропускает позиции при одинаковых значениях", "Сортирует только строки", "Удаляет дубли", "Объединяет группы", "Ускоряет сортировку"],
-                correct: 0
-            },
-            {
-                q: "Что делает DENSE_RANK()?",
-                options: ["Нумерует строки без пропусков рангов", "Всегда возвращает 1", "Удаляет строки", "Создаёт группы", "Объединяет данные"],
-                correct: 0
-            },
-            {
-                q: "Какой JOIN возвращает только совпадающие строки?",
-                options: ["RIGHT JOIN", "LEFT JOIN", "FULL JOIN", "INNER JOIN", "CROSS JOIN"],
-                correct: 3
-            },
-            {
-                q: "Что делает FULL OUTER JOIN?",
-                options: ["Соединяет по ключу только совпадающие", "Возвращает только строки без совпадений", "Возвращает все строки обеих таблиц", "Возвращает только левую таблицу", "Возвращает только правую таблицу"],
-                correct: 2
-            },
-            {
-                q: "Для чего используется CROSS JOIN?",
-                options: ["Для соединения по ключам", "Для удаления дубликатов", "Для декартового произведения", "Для фильтрации", "Для индексации"],
-                correct: 2
-            },
-            {
-                q: "Какой JOIN соединяет таблицу с самой собой?",
-                options: ["NATURAL JOIN", "SELF JOIN", "RIGHT JOIN", "CROSS JOIN", "UNION JOIN"],
-                correct: 1
-            },
-            {
-                q: "NATURAL JOIN использует:",
-                options: ["Одноимённые столбцы", "Первичные ключи", "Только числовые поля", "Только текстовые поля", "Случайное поле"],
-                correct: 0
-            },
-            {
-                q: "Что делает USING вместо ON?",
-                options: ["Удаляет столбец", "Объединяет таблицы по одинаковым столбцам", "Создаёт индекс", "Фильтрует строки", "Сортирует строки"],
-                correct: 1
-            },
-            {
-                q: "Что делает подзапрос в SELECT?",
-                options: ["Создаёт новую таблицу", "Возвращает значение для каждой строки", "Меняет структуру таблицы", "Удаляет строки", "Преобразует типы данных"],
-                correct: 1
-            },
-            {
-                q: "Что такое коррелированный подзапрос?",
-                options: ["Подзапрос без связи с основной таблицей", "Подзапрос, зависящий от текущей строки внешнего запроса", "Подзапрос только в HAVING", "Только в SELECT", "Только в JOIN"],
-                correct: 1
-            },
-            {
-                q: "Какой оператор часто используется с подзапросом в WHERE?",
-                options: ["INTO", "LIKE", "IN", "DROP", "JOIN"],
-                correct: 2
-            },
-            {
-                q: "Что делает EXISTS?",
-                options: ["Проверяет тип данных", "Проверяет наличие хотя бы одной строки", "Считает строки", "Объединяет таблицы", "Удаляет NULL"],
-                correct: 1
-            },
-            {
-                q: "Что делает ANY?",
-                options: ["Возвращает TRUE, если условие выполняется для любого значения подзапроса", "Возвращает сумму", "Выполняет соединение", "Удаляет значения", "Фильтрует NULL"],
-                correct: 0
-            },
-            {
-                q: "Что делает ALL?",
-                options: ["Сравнивает значение с каждым значением подзапроса", "Удаляет строки", "Объединяет таблицы", "Считает строки", "Находит максимум"],
-                correct: 0
-            },
-            {
-                q: "Можно ли использовать подзапрос в FROM?",
-                options: ["Да", "Нет", "Только в PostgreSQL", "Только с JOIN", "Только с агрегатами"],
-                correct: 0
-            },
-            {
-                q: "Что делает UNION?",
-                options: ["Добавляет строки без удаления дубликатов", "Объединяет строки и удаляет дубликаты", "Создаёт сортировку", "Проводит фильтрацию", "Делает JOIN"],
-                correct: 1
-            },
-            {
-                q: "Что делает UNION ALL?",
-                options: ["Удаляет дубликаты", "Объединяет строки и оставляет дубликаты", "Сортирует строки", "Фильтрует строки", "Меняет тип данных"],
-                correct: 1
-            },
-            {
-                q: "INTERSECT возвращает:",
-                options: ["Уникальные строки из обоих наборов", "Общие строки двух запросов", "Декартово произведение", "Строки с NULL", "Первую таблицу"],
-                correct: 1
-            },
-            {
-                q: "EXCEPT возвращает:",
-                options: ["Все строки", "Строки из первого набора, которых нет во втором", "Строки из второго набора", "Декартово произведение", "Дубли"],
-                correct: 1
-            },
-            {
-                q: "Что такое CTE (WITH)?",
-                options: ["Временный результат запроса", "Столбец", "Индекс", "JOIN", "Условие"],
-                correct: 0
-            },
-            {
-                q: "Что делает оконная рамка ROWS BETWEEN 1 PRECEDING AND CURRENT ROW?",
-                options: ["Считает только текущую строку", "Считает предыдущую и текущую строку", "Считает все строки", "Считает строки следующего раздела", "Считает только NULL"],
-                correct: 1
-            },
-            {
-                q: "Что делает LAG()?",
-                options: ["Возвращает следующее значение", "Возвращает предыдущее значение", "Возвращает сумму", "Удаляет строки", "Объединяет группы"],
-                correct: 1
-            },
-            {
-                q: "Что делает LEAD()?",
-                options: ["Возвращает предыдущее значение", "Возвращает следующее значение", "Возвращает максимум", "Удаляет дубликаты", "Преобразует данные"],
-                correct: 1
-            },
-            {
-                q: "Что делает агрегатная функция STRING_AGG()?",
-                options: ["Суммирует числа", "Объединяет строки в текст", "Удаляет пробелы", "Сортирует строки", "Возвращает NULL"],
-                correct: 1
-            },
-            {
-                q: "Какая функция позволяет получать накопительные суммы?",
-                options: ["SUM()", "SUM() OVER(ORDER BY col)", "COUNT()", "MIN()", "SUM(DISTINCT)"],
-                correct: 1
-            },
-            {
-                q: "Какой JOIN может вернуть больше строк, чем каждая из таблиц?",
-                options: ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL JOIN", "CROSS JOIN"],
-                correct: 4
-            },
-            {
-                q: "Что делает SELF JOIN?",
-                options: ["Делит таблицу", "Соединяет таблицу с самой собой", "Удаляет строки", "Выполняет сортировку", "Делает агрегирование"],
-                correct: 1
-            },
-            {
-                q: "Что делает USING(a, b)?",
-                options: ["Соединяет таблицы по двум одинаковым столбцам", "Сортирует данные", "Удаляет NULL", "Создаёт подзапрос", "Объединяет строки"],
-                correct: 0
-            },
-            {
-                q: "Что делает подзапрос в HAVING?",
-                options: ["Фильтрует строки внутри групп", "Сортирует данные", "Создаёт новую таблицу", "Удаляет дубликаты", "Создаёт индексы"],
-                correct: 0
-            },
-            {
-                q: "Какой запрос вернёт сотрудников, чья зарплата выше средней по отделу?",
-                options: ["salary > AVG(salary)", "salary > (SELECT AVG(salary) FROM employees GROUP BY dept)", "salary > ALL employees", "salary > SUM(salary)", "salary > MIN(salary)"],
-                correct: 1
-            },
-            {
-                q: "Что делает оконная функция COUNT() OVER(PARTITION BY dept)?",
-                options: ["Считает количество всех сотрудников", "Считает сотрудников в каждом отделе", "Считает только уникальных сотрудников", "Считает только NULL", "Объединяет отделы"],
-                correct: 1
-            }
+        correct: 1,
+      },
+      {
+        q: "Бағдарламалауда массив деген не?",
+        options: [
+          "Бірмәндісақтауүшін арналған жеке айнымалы",
+          "Индекспен қолжетімді, бір типтегі элементтердің реттелген жиыны",
+          "Әртүрлі типтегі элементтерден тұратын тізім",
+          "Мәліметтерді сақтау үшін арналған Java программалау тілінің арнайы әдісі",
+          "Объектіге бағытталған тәсілдегі кластың балама атауы",
         ],
-        "variant5": [
-            {
-                q: "ANY — это:",
-                options: ["Сравнение с любым из значений подзапроса", "Ограничение", "Функция", "Тип JOIN", "Тип сортировки"],
-                correct: 0
-            },
-            {
-                q: "Что вернёт запрос с оконным AVG()?",
-                options: ["Среднюю зарплату по всему отделу", "Среднюю зарплату среди всех сотрудников", "Накопленное среднее по зарплате в отделе, отсортированное по дате найма", "Среднюю зарплату из подзапроса", "Минимальную зарплату"],
-                correct: 2
-            },
-            {
-                q: "UNION ALL:",
-                options: ["Объединяет без удаления дубликатов", "Удаляет дубли", "Объединяет только уникальные", "Создаёт подзапрос", "Запрещает повторения"],
-                correct: 0
-            },
-            {
-                q: "Результат запроса с ALL:",
-                options: ["Всех сотрудников всех отделов", "Сотрудников с минимальной зарплатой", "Сотрудников отдела 3", "Сотрудников, у которых зарплата выше всех зарплат сотрудников отдела", "Сотрудников с одинаковыми зарплатами"],
-                correct: 3
-            },
-            {
-                q: "Результат запроса с UNION:",
-                options: ["Только города VIP-клиентов", "Только города, которых нет среди складов", "Города VIP-клиентов + города, отсутствующие среди складов", "Общие города между клиентами и складами", "Только города складов"],
-                correct: 2
-            },
-            {
-                q: "INTERSECT возвращает:",
-                options: ["Все строки", "Общие строки двух наборов", "Декартово произведение", "NULL", "Только первые строки"],
-                correct: 1
-            },
-            {
-                q: "EXCEPT выполняет:",
-                options: ["Объединение", "Пересечение", "Вычитание второго набора из первого", "Сортировку", "Дублирование"],
-                correct: 2
-            },
-            {
-                q: "Требование к запросам в UNION:",
-                options: ["Одинаковое число столбцов", "Одинаковые таблицы", "Один JOIN", "Только текстовые столбцы", "Наличие ORDER BY"],
-                correct: 0
-            },
-            {
-                q: "Можно ли использовать JOIN вместе с UNION?",
-                options: ["Да", "Нет", "Только внутри CTE", "Только с INTERSECT", "Только с подзапросами"],
-                correct: 0
-            },
-            {
-                q: "ORDER BY при UNION применяется:",
-                options: ["К каждому запросу", "Только один раз — в конце", "Только в первом", "Только во втором", "Никогда"],
-                correct: 1
-            },
-            {
-                q: "Типы данных в UNION должны быть:",
-                options: ["Одинаковыми", "Только числовыми", "Совместимыми по типу", "Только текстовыми", "С одинаковыми именами"],
-                correct: 2
-            },
-            {
-                q: "Итог запроса с HAVING и подзапросом:",
-                options: ["Все продукты", "Продукты с минимальными продажами", "Продукты, сумма продаж которых выше среднего уровня продаж по всем продуктам", "Только продукты со значением NULL", "Только продукты с нулевыми продажами"],
-                correct: 2
-            },
-            {
-                q: "Что делает запрос с RANK()?",
-                options: ["Выводит заказы всех клиентов", "Сортирует заказы без ранжирования", "Выводит заказы клиентов, у которых ≥5 заказов, и присваивает ранг по сумме", "Возвращает только клиентов, а не заказы", "Сортирует клиентов по имени"],
-                correct: 2
-            },
-            {
-                q: "Что вернёт UNION двух пустых наборов?",
-                options: ["NULL", "Ошибку", "Пустой набор", "Один NULL", "Набор из одной пустой строки"],
-                correct: 2
-            },
-            {
-                q: "Что вернёт чистый UNION без ALL?",
-                options: ["Уникальные строки из обоих наборов", "Декартово произведение", "Все строки", "Дубли", "Только строки первого набора"],
-                correct: 0
-            },
-            {
-                q: "Что вернёт запрос с HAVING SUM(salary) > 50000?",
-                options: ["Все департаменты", "Департаменты, где суммарная зарплата > 50000", "Только один департамент", "Ошибку", "Департаменты с NULL значениями"],
-                correct: 1
-            },
-            {
-                q: "Что делает SUM() OVER(PARTITION BY region)?",
-                options: ["Сумму продаж по каждому продавцу", "Общую сумму продаж", "Минимальную сумму", "Сумму продаж по каждому региону для каждой строки", "Сумму продаж за весь год"],
-                correct: 3
-            },
-            {
-                q: "LEFT JOIN + WHERE B.id IS NULL вернёт:",
-                options: ["Совпадающие строки", "Строки из A без совпадений в B", "Декартово произведение", "Ошибку", "Все строки из B"],
-                correct: 1
-            },
-            {
-                q: "Подзапрос salary > AVG(salary):",
-                options: ["Находит самых высокооплачиваемых сотрудников", "Находит сотрудников с зарплатой выше средней", "Находит сотрудников с максимальной зарплатой", "Удаляет сотрудников", "Находит сотрудников с минимальной зарплатой"],
-                correct: 1
-            },
-            {
-                q: "Результат INTERSECT:",
-                options: ["Все города", "Города клиентов", "Города, которые есть и среди клиентов, и среди поставщиков", "Города, которых нет среди поставщиков", "Города только поставщиков"],
-                correct: 2
-            },
-            {
-                q: "Что такое индекс в PostgreSQL?",
-                options: ["Копия таблицы", "Структура, ускоряющая поиск", "Тип транзакции", "Таблица настроек", "Средство резервного копирования"],
-                correct: 1
-            },
-            {
-                q: "Какой индекс подходит для поиска LIKE 'abc%'?",
-                options: ["Hash", "GIN", "B-tree", "BRIN", "GiST"],
-                correct: 2
-            },
-            {
-                q: "Почему большое количество индексов может замедлять вставку?",
-                options: ["Индексы увеличивают RAM", "Индексы блокируют SELECT", "Индексы обновляются при каждом INSERT", "Индексы удаляют старые данные", "Индексы ускоряют VACUUM"],
-                correct: 2
-            },
-            {
-                q: "Когда индекс может замедлить обновления?",
-                options: ["Когда таблица пустая", "Когда много индексов", "Когда таблица временная", "Когда SELECT слишком быстрый", "Когда есть материализованные VIEW"],
-                correct: 1
-            },
-            {
-                q: "Какая команда показывает план выполнения?",
-                options: ["SHOW PLAN", "PLAN VIEW", "EXPLAIN", "LOOK PLAN", "DESCRIBE PLAN"],
-                correct: 2
-            },
-            {
-                q: "Что показывает EXPLAIN ANALYZE?",
-                options: ["Любые ошибки", "Фактическое время выполнения запроса", "Количество индексов", "Логи транзакций", "Размер таблицы"],
-                correct: 1
-            },
-            {
-                q: "Почему вредно использовать SELECT *?",
-                options: ["Запрещено PostgreSQL", "Загружает лишние данные", "Удаляет индексы", "Замедляет VACUUM", "Нарушает права доступа"],
-                correct: 1
-            },
-            {
-                q: "Может ли оператор IN использовать индекс?",
-                options: ["Нет", "Да", "Только на числах", "Только на строках", "Только на NULL"],
-                correct: 1
-            },
-            {
-                q: "Когда LIKE не использует индекс?",
-                options: ["Когда строка длинная", "Когда шаблон начинается с %", "Когда столбец текстовый", "Когда индекс B-tree", "Когда используется COLLATE"],
-                correct: 1
-            },
-            {
-                q: "Почему выражение column + 1 = 10 может не использовать индекс?",
-                options: ["Индексы работают только со строками", "Индекс отключается при арифметике", "Функциональные выражения требуют полного сканирования", "Индекс нужно обновлять вручную", "Только уникальные индексы используются"],
-                correct: 1
-            },
-            {
-                q: "Для чего используются VIEW?",
-                options: ["Хранить копии данных", "Упрощать сложные запросы", "Ускорять VACUUM", "Создавать индексы", "Хранить логи"],
-                correct: 1
-            },
-            {
-                q: "Можно ли использовать JOIN во VIEW?",
-                options: ["Нет", "Только один", "Да", "Только INNER", "Только LEFT"],
-                correct: 2
-            },
-            {
-                q: "Отличие MATERIALIZED VIEW?",
-                options: ["Не поддерживает SELECT", "Хранит данные физически", "Автообновляется каждую секунду", "Не может содержать JOIN", "Не требует индексов"],
-                correct: 1
-            },
-            {
-                q: "Что делает REFRESH MATERIALIZED VIEW?",
-                options: ["Пересчитывает данные", "Удаляет таблицу", "Создаёт индексы", "Перезапускает БД", "Удаляет старые данные"],
-                correct: 0
-            },
-            {
-                q: "Можно ли вставлять данные в VIEW?",
-                options: ["Всегда", "Никогда", "Иногда, если структура простая", "Только суперпользователь", "Только при наличии индексов"],
-                correct: 2
-            },
-            {
-                q: "Зачем ограничивать доступ к VIEW?",
-                options: ["Чтобы уменьшить размер БД", "Чтобы скрыть конфиденциальные поля", "Чтобы ускорить индексацию", "Чтобы отключить транзакции", "Чтобы увеличить скорость SELECT"],
-                correct: 1
-            },
-            {
-                q: "Может ли VIEW скрывать технические поля?",
-                options: ["Нет", "Только временные", "Да", "Только админу", "Только через GRANT"],
-                correct: 2
-            },
-            {
-                q: "Когда MATERIALIZED VIEW предпочтительнее?",
-                options: ["Когда данные часто меняются", "Для быстрого чтения заранее рассчитанных данных", "Когда таблица маленькая", "Когда нет индексов", "Когда нужен внешний ключ"],
-                correct: 1
-            },
-            {
-                q: "Что такое партиционирование?",
-                options: ["Архивация данных", "Деление таблицы на части", "Индексация", "Репликация", "Создание VIEW"],
-                correct: 1
-            },
-            {
-                q: "Что ускоряет партиционирование?",
-                options: ["UPDATE", "SELECT по диапазону", "VACUUM", "JOIN", "INSERT"],
-                correct: 1
-            }
+        correct: 1,
+      },
+      {
+        q: "Мәндері бар 2×2 өлшемді екі өлшемді жиымды қалай инициализациялауға болады?",
+        options: [
+          "int[][] a = {{1, 2}, {3, 4}};",
+          "int[]a = {{1,24};",
+          "int[][] a = {1, 2, 3, 4};",
+          "int[][] a = new int[]{1,2,3,4};",
+          "int[][] a = [{1,2},{3,4}];",
         ],
-        "variant6": [
-            {
-                q: "Типы партиционирования:",
-                options: ["Только LIST", "Только RANGE", "RANGE, LIST, HASH", "Только HASH", "Только B-tree"],
-                correct: 2
-            },
-            {
-                q: "Для чего нужна родительская таблица?",
-                options: ["Хранит все данные", "Хранит структуру и правила разбиения", "Хранит индексы", "Хранит настройки логов", "Хранит VIEW"],
-                correct: 1
-            },
-            {
-                q: "Что делает PARTITION BY?",
-                options: ["Удаляет партиции", "Создаёт таблицу", "Определяет способ разбиения", "Обновляет статистику", "Пересоздаёт индекс"],
-                correct: 2
-            },
-            {
-                q: "Основной критерий выбора RANGE-партиции?",
-                options: ["Раздел по алфавиту", "Формат PK", "Значения даты или диапазона чисел", "Тип индекса", "Название таблицы"],
-                correct: 2
-            },
-            {
-                q: "Почему важно правильно выбирать ключ партиционирования?",
-                options: ["Определяет размер бэкапа", "Определяет используемые партиции в запросах", "Указывает роль пользователя", "Ускоряет EXPLAIN", "Повышает скорость VACUUM"],
-                correct: 1
-            },
-            {
-                q: "Могут ли партиции иметь свои индексы?",
-                options: ["Нет", "Только LIST", "Да", "Только HASH", "Только уникальные ключи"],
-                correct: 2
-            },
-            {
-                q: "Что будет, если данные не подходят ни под одну партицию?",
-                options: ["PostgreSQL создаст новую", "Ошибка", "Сохранит в родителя", "Запишет в лог", "Перенесёт в MATERIALIZED VIEW"],
-                correct: 1
-            },
-            {
-                q: "Можно ли добавить партиции позже?",
-                options: ["Нет", "Только до вставки данных", "Да", "Только суперпользователь", "Только при VACUUM"],
-                correct: 2
-            },
-            {
-                q: "Что такое constraint?",
-                options: ["Тип индекса", "Ограничение целостности данных", "Тип триггера", "Режим транзакций", "Планировщик задач"],
-                correct: 1
-            },
-            {
-                q: "Для чего нужен CHECK?",
-                options: ["Для настройки прав", "Для проверки значений по правилам", "Для логирования", "Для архивации", "Для индексации"],
-                correct: 1
-            },
-            {
-                q: "PRIMARY KEY отличается от UNIQUE тем, что:",
-                options: ["PRIMARY KEY допускает NULL", "UNIQUE всегда быстрее", "PRIMARY KEY запрещает NULL", "Они одинаковые", "PRIMARY KEY хранится только в памяти"],
-                correct: 2
-            },
-            {
-                q: "Зачем делить роли?",
-                options: ["Для экономии памяти", "Для безопасности", "Чтобы ускорить UPDATE", "Чтобы отключить WAL", "Чтобы ускорить SELECT"],
-                correct: 1
-            },
-            {
-                q: "Что делает GRANT?",
-                options: ["Удаляет таблицу", "Выдаёт права", "Форматирует БД", "Обновляет индексы", "Создаёт резервную копию"],
-                correct: 1
-            },
-            {
-                q: "Что делает REVOKE?",
-                options: ["Забирает ранее выданные права", "Запускает ANALYZE", "Создаёт нового пользователя", "Пересоздаёт таблицу", "Создаёт VIEW"],
-                correct: 0
-            },
-            {
-                q: "Можно ли выдать права только к одной таблице?",
-                options: ["Нет", "Да", "Только суперпользователь", "Только к VIEW", "Только к партиции"],
-                correct: 1
-            },
-            {
-                q: "Отличие шифрования от хеширования?",
-                options: ["Хеширование можно расшифровать", "Хеширование необратимо", "Шифрование всегда медленнее", "Отличий нет", "Шифрование нельзя использовать в VIEW"],
-                correct: 1
-            },
-            {
-                q: "Можно ли скрыть часть колонок от пользователя?",
-                options: ["Нет", "Да, через VIEW", "Только через триггеры", "Только через VACUUM", "Только через партицию"],
-                correct: 1
-            },
-            {
-                q: "Для чего нужен pg_dump?",
-                options: ["Для анализа логов", "Для резервного копирования", "Для VACUUM", "Для индексации", "Для мониторинга"],
-                correct: 1
-            },
-            {
-                q: "Что делает pg_restore?",
-                options: ["Создаёт бэкап", "Восстанавливает данные", "Удаляет дамп", "Сравнивает таблицы", "Ускоряет SELECT"],
-                correct: 1
-            },
-            {
-                q: "Отличие форматов plain и custom:",
-                options: ["Plain — бинарный", "Custom — текстовый", "Plain — SQL, custom — архивированный формат", "Они одинаковы", "Plain — только таблицы, custom — только схемы"],
-                correct: 2
-            },
-            {
-                q: "Можно ли сделать дамп одной таблицы?",
-                options: ["Нет", "Только через pgAdmin", "Да", "Только суперпользователь", "Только с индексами"],
-                correct: 2
-            },
-            {
-                q: "Как восстановить базу из дампа?",
-                options: ["DELETE + INSERT", "Через pg_restore или psql", "Через VACUUM", "Через ANALYZE", "Через REFRESH MATERIALIZED VIEW"],
-                correct: 1
-            },
-            {
-                q: "Как проверить корректность восстановления?",
-                options: ["Перезагрузить БД", "Сравнить данные до и после", "Обновить индексы", "Очистить журналы", "Сделать EXPLAIN ANALYZE"],
-                correct: 1
-            },
-            {
-                q: "Можно ли восстановить поверх существующей базы?",
-                options: ["Нет", "Да, если структура совпадает", "Только plain", "Только admin", "Только если база пустая"],
-                correct: 1
-            },
-            {
-                q: "Что делает CRON?",
-                options: ["Планировщик задач в Linux", "Оптимизатор селектов", "Архиватор", "Менеджер транзакций", "Планировщик VACUUM"],
-                correct: 0
-            },
-            {
-                q: "Можно ли выполнять SQL через CRON?",
-                options: ["Нет", "Да, через psql", "Только через GUI", "Только на Windows", "Только через pgAgent"],
-                correct: 1
-            },
-            {
-                q: "pgAgent используется для:",
-                options: ["Анализа логов", "Планирования SQL-заданий", "Создания партиций", "Настройки WAL", "Мониторинга таблиц"],
-                correct: 1
-            },
-            {
-                q: "Где смотреть ошибки pgAgent?",
-                options: ["В статистике таблиц", "В логах pgAgent", "В VIEW", "В системных ролях", "В партициях"],
-                correct: 1
-            },
-            {
-                q: "Какие уровни логов есть в PostgreSQL?",
-                options: ["LOW, MED, HIGH", "RED, YELLOW, GREEN", "ERROR, WARNING, INFO", "START, STOP, RELOAD", "DEBUG, TRACE"],
-                correct: 2
-            },
-            {
-                q: "Зачем включают логирование долгих запросов?",
-                options: ["Чтобы выключить индексы", "Чтобы находить медленные запросы", "Чтобы уменьшить нагрузку", "Чтобы ускорить INSERT", "Чтобы ускорить UPDATE"],
-                correct: 1
-            },
-            {
-                q: "Что такое VACUUM в PostgreSQL?",
-                options: ["Создание резервной копии", "Удаление неиспользуемых строк", "Индексация таблиц", "Разбиение на партиции", "Обновление ролей"],
-                correct: 1
-            },
-            {
-                q: "Для чего используется ANALYZE?",
-                options: ["Обновление статистики таблицы", "Создание индексов", "Резервное копирование", "Планирование CRON задач", "Шифрование данных"],
-                correct: 0
-            },
-            {
-                q: "Что делает EXPLAIN без ANALYZE?",
-                options: ["Показывает фактическое время выполнения", "Показывает план выполнения запроса", "Выполняет VACUUM", "Пересоздаёт индексы", "Сравнивает дампы"],
-                correct: 1
-            },
-            {
-                q: "Что такое B-tree индекс?",
-                options: ["Индекс для текстовых поисков", "Индекс по диапазону и равенству", "Индекс только для чисел", "Индекс для JSON", "Индекс для функций"],
-                correct: 1
-            },
-            {
-                q: "Что такое GIN индекс?",
-                options: ["Быстрый поиск по диапазону", "Полнотекстовый поиск и массивы", "Индекс только для чисел", "Индекс только для строк", "Резервное копирование таблицы"],
-                correct: 1
-            },
-            {
-                q: "Что такое BRIN индекс?",
-                options: ["Индекс для маленьких таблиц", "Индекс для больших таблиц с последовательными значениями", "Индекс для JSON", "Индекс для текстов", "Индекс для партиций"],
-                correct: 1
-            },
-            {
-                q: "Для чего нужен UNIQUE constraint?",
-                options: ["Для ускорения SELECT", "Для уникальности значений в столбце", "Для шифрования данных", "Для резервного копирования", "Для планирования задач"],
-                correct: 1
-            },
-            {
-                q: "Для чего используется FOREIGN KEY?",
-                options: ["Для резервного копирования", "Для связывания таблиц и поддержания целостности", "Для ускорения VACUUM", "Для шифрования данных", "Для разделения ролей"],
-                correct: 1
-            },
-            {
-                q: "Что такое NOT NULL constraint?",
-                options: ["Ограничение на уникальность", "Ограничение на обязательное заполнение столбца", "Ограничение на тип данных", "Ограничение на индексы", "Ограничение на VIEW"],
-                correct: 1
-            },
-            {
-                q: "Что делает pg_hba.conf?",
-                options: ["Настройка индексов", "Настройка аутентификации и доступа", "Настройка CRON задач", "Настройка журналов", "Настройка партиций"],
-                correct: 1
-            }
+        correct: 0,
+      },
+      {
+        q: "Екіөлшемді массивтегі ең үлкен элементті қалай табуға болады?",
+        options: [
+          "Arrays.max(arr) қолдану",
+          "Барлық элементтерді ішкі циклдармен салыстыру",
+          "arr.max() шақыру",
+          "Collections.max(arr) қолдану",
+          "Math.max(arr) қолдану",
         ],
-        "variant7": [
-            {
-                q: "Что такое шифрование данных в PostgreSQL?",
-                options: ["Хранение данных в бинарном виде", "Преобразование данных в защищённый формат", "Ограничение доступа", "Планирование задач", "Создание VIEW"],
-                correct: 1
-            },
-            {
-                q: "Что такое хеширование пароля?",
-                options: ["Преобразование пароля в безопасное значение", "Сравнение пароля с базой", "Шифрование таблицы", "Создание индекса", "Создание резервной копии"],
-                correct: 0
-            },
-            {
-                q: "Что такое ROLE в PostgreSQL?",
-                options: ["Тип индекса", "Пользователь или группа пользователей", "Тип партиции", "Планировщик задач", "Ограничение целостности"],
-                correct: 1
-            },
-            {
-                q: "Для чего используется GRANT OPTION?",
-                options: ["Для создания индексов", "Для передачи права выдачи привилегий", "Для шифрования данных", "Для резервного копирования", "Для мониторинга запросов"],
-                correct: 1
-            },
-            {
-                q: "Что делает pg_stat_activity?",
-                options: ["Отображает активные сессии", "Создаёт резервную копию", "Индексирует таблицы", "Планирует задачи CRON", "Шифрует данные"],
-                correct: 0
-            },
-            {
-                q: "Для чего используется REFRESH MATERIALIZED VIEW CONCURRENTLY?",
-                options: ["Удаляет старые данные", "Обновляет материализованное представление без блокировки", "Создаёт новый VIEW", "Пересоздаёт индекс", "Запускает VACUUM"],
-                correct: 1
-            },
-            {
-                q: "Что такое pruning в партиционировании?",
-                options: ["Удаление старых таблиц", "Чтение только нужных партиций", "Создание новых индексов", "Шифрование данных", "Проверка constraint"],
-                correct: 1
-            },
-            {
-                q: "Когда лучше использовать HASH-партиционирование?",
-                options: ["Для диапазонов дат", "Для равномерного распределения данных по партициям", "Для текстовых данных", "Для больших индексов", "Для резервного копирования"],
-                correct: 1
-            },
-            {
-                q: "Как проверить выполнение задания pgAgent?",
-                options: ["Через EXPLAIN", "Через логи pgAgent", "Через VACUUM", "Через REFRESH MATERIALIZED VIEW", "Через ANALYZE"],
-                correct: 1
-            },
-            {
-                q: "Для чего нужен уровень логов WARNING?",
-                options: ["Для критических ошибок", "Для предупреждений и потенциальных проблем", "Для информации о SELECT", "Для резервного копирования", "Для создания партиций"],
-                correct: 1
-            },
-            {
-                q: "Что делает лог ERROR?",
-                options: ["Указывает на успешные запросы", "Указывает на критические ошибки", "Указывает на предупреждения", "Указывает на медленные запросы", "Указывает на партиции"],
-                correct: 1
-            },
-            {
-                q: "Что такое long query logging?",
-                options: ["Логирование всех SELECT", "Логирование долгих запросов", "Логирование ошибок", "Логирование партиций", "Логирование индексов"],
-                correct: 1
-            },
-            {
-                q: "Что показывает pg_stat_user_tables?",
-                options: ["Состояние пользователей", "Статистику таблиц", "Логи ошибок", "Список индексов", "Настройки CRON"],
-                correct: 1
-            },
-            {
-                q: "Что делает pgAdmin?",
-                options: ["Администрирование PostgreSQL", "Шифрование данных", "Планирование CRON", "Создание VIEW", "Индексация таблиц"],
-                correct: 0
-            },
-            {
-                q: "Как настроить автоматический бэкап в Linux?",
-                options: ["Через EXPLAIN", "Через CRON", "Через VACUUM", "Через pg_stat_activity", "Через REFRESH MATERIALIZED VIEW"],
-                correct: 1
-            },
-            {
-                q: "Что такое WAL?",
-                options: ["Журнал предстоящих изменений базы", "Тип партиции", "Тип индекса", "Планировщик задач", "Ограничение целостности"],
-                correct: 0
-            },
-            {
-                q: "Что делает pg_basebackup?",
-                options: ["Полное резервное копирование базы", "Создание индексов", "Планирование CRON", "Создание VIEW", "Проверка constraint"],
-                correct: 0
-            },
-            {
-                q: "Что такое ROLLBACK?",
-                options: ["Подтверждение транзакции", "Отмена транзакции", "Создание индекса", "Резервное копирование", "Создание VIEW"],
-                correct: 1
-            },
-            {
-                q: "Что делает COMMIT?",
-                options: ["Отмена транзакции", "Подтверждение транзакции", "Создание индекса", "Создание VIEW", "Создание партиции"],
-                correct: 1
-            },
-            {
-                q: "Что такое SERIAL в PostgreSQL?",
-                options: ["Тип текста", "Автоинкрементное целое", "Тип даты", "Тип массива", "Тип партиции"],
-                correct: 1
-            },
-            {
-                q: "Что такое REINDEX?",
-                options: ["Создание новой таблицы", "Пересоздание индекса", "Обновление constraint", "Создание партиции", "Создание VIEW"],
-                correct: 1
-            },
-            {
-                q: "Что делает pg_stat_replication?",
-                options: ["Показывает статистику репликации", "Создаёт резервные копии", "Создаёт индексы", "Планирует CRON задачи", "Управляет VIEW"],
-                correct: 0
-            },
-            {
-                q: "Что такое TRUNCATE?",
-                options: ["Удаление данных из таблицы без журналирования", "Полное удаление базы", "Создание резервной копии", "Создание индекса", "Создание партиции"],
-                correct: 0
-            },
-            {
-                q: "Что такое TEMPORARY таблица?",
-                options: ["Таблица, которая сохраняется всегда", "Таблица, существующая только в сессии", "Таблица с ограничениями", "Таблица с VIEW", "Таблица для бэкапов"],
-                correct: 1
-            },
-            {
-                q: "Для чего используется pg_stat_activity.wait_event?",
-                options: ["Для анализа активных сессий и блокировок", "Для создания индексов", "Для резервного копирования", "Для шифрования данных", "Для REFRESH MATERIALIZED VIEW"],
-                correct: 0
-            },
-            {
-                q: "Что делает CREATE ROLE с LOGIN?",
-                options: ["Создаёт роль без возможности входа", "Создаёт пользователя с правом входа", "Создаёт VIEW", "Создаёт партицию", "Создаёт индекс"],
-                correct: 1
-            },
-            {
-                q: "Что такое SERIALIZABLE уровень изоляции?",
-                options: ["Минимальный уровень изоляции", "Максимальный уровень изоляции, предотвращающий аномалии", "Уровень для индексов", "Уровень для VIEW", "Уровень для CRON"],
-                correct: 1
-            },
-            {
-                q: "Что делает ALTER TABLE … ADD CONSTRAINT?",
-                options: ["Создаёт таблицу", "Добавляет ограничение целостности", "Создаёт индекс", "Создаёт VIEW", "Создаёт партицию"],
-                correct: 1
-            },
-            {
-                q: "Что делает pg_ctl?",
-                options: ["Управляет сервером PostgreSQL", "Создаёт индексы", "Создаёт бэкап", "Создаёт VIEW", "Создаёт CRON задачи"],
-                correct: 0
-            },
-            {
-                q: "Что такое EXCLUDE constraint?",
-                options: ["Ограничение уникальности", "Ограничение, запрещающее пересечение значений по правилам", "Ограничение на NULL", "Ограничение на VIEW", "Ограничение на партицию"],
-                correct: 1
-            },
-            {
-                q: "Какой подход к резервному копированию лучше всего уменьшает окно недоступности системы?",
-                options: ["Cold storage", "Hot-backup", "Offline-backup", "Архивирование логов", "Фрагментация дисков перед копированием"],
-                correct: 1
-            },
-            {
-                q: "Какая причина чаще всего приводит к логическим повреждениям данных?",
-                options: ["Ошибки приложения", "Ошибка RAM", "Перегрев CPU", "Блокировка порта", "Некорректное освещение серверной"],
-                correct: 0
-            },
-            {
-                q: "Что является обязательным при создании консистентного бэкапа базы данных?",
-                options: ["Перезапуск службы сети", "Очистка временной директории", "Снимок состояния транзакций (checkpoint)", "Установка антивируса", "Переключение системного времени"],
-                correct: 2
-            },
-            {
-                q: "Что является основной угрозой при использовании RAID как единственного способа защиты данных?",
-                options: ["RAID не защищает от логической порчи данных или удаления", "Медленная скорость", "Большой объём", "Зависимость от BIOS", "Требует обязательного Интернета"],
-                correct: 0
-            },
-            {
-                q: "Что отличается полным копированием от snapshot-а?",
-                options: ["Snapshot фиксирует состояние блока в конкретный момент", "Полный бэкап требует LVM", "Snapshot содержит только новые данные", "Snapshot всегда быстрее восстанавливается", "Snapshot выполняется только при выключенной системе"],
-                correct: 0
-            },
-            {
-                q: "При дифференциальном копировании данные сохраняются относительно…",
-                options: ["Последнего полного бэкапа", "Последнего snapshot", "Предыдущего инкрементного бэкапа", "Последней транзакции", "Первого бэкапа в цепочке"],
-                correct: 0
-            },
-            {
-                q: "Что является минусом инкрементной цепочки?",
-                options: ["Не подходит для больших данных", "Использует RAID", "Большой размер", "Сложность восстановления при длинной цепочке", "Требует отключения основного сервера"],
-                correct: 3
-            },
-            {
-                q: "Какой метод восстановления быстрее всего при сильной фрагментации данных?",
-                options: ["Incremental chain", "Differential restore", "Copy rollback", "Full restore", "Parallel merge метод"],
-                correct: 3
-            },
-            {
-                q: "Что такое \"consistent backup\" для СУБД?",
-                options: ["Применён RAID-1", "Бэкап создаётся только ночью", "Защита данных шифрованием", "Сохранены состояния транзакций, исключено частичное копирование", "Данные хранятся только в одном файле"],
-                correct: 3
-            },
-            {
-                q: "Что такое «business continuity» в контексте инфраструктуры БД?",
-                options: ["Непрерывная доступность критичных сервисов даже при аварии", "Наличие большого количества серверов", "Возможность изменить схему БД", "Хранение бэкапов в облаке", "Регулярное обновление интерфейса"],
-                correct: 0
-            }
+        correct: 1,
+      },
+      {
+        q: '"a,b,c" жолын "," бөлгіші арқылы қалай бөліктеп шығаруға болады?',
+        options: [
+          's.split[","]',
+          's.separate(",")',
+          'String.split(s, ",")',
+          's.divide(",")',
+          's.split(",")',
         ],
-        "variant8": [
-            {
-                q: "Что определяет RPO?",
-                options: ["Максимальное время отката данных", "Длительность простоя", "Стоимость хранения", "Объём логов", "Максимальное число копий в сутки"],
-                correct: 0
-            },
-            {
-                q: "Что определяет RTO?",
-                options: ["Максимальное допустимое время восстановления", "Количество копий", "Скорость роста данных", "Объём метаданных", "Частоту обновления ПО"],
-                correct: 0
-            },
-            {
-                q: "Что является примером локальной защиты данных?",
-                options: ["Google Drive", "NAS внутри сети", "Dropbox", "Amazon S3", "SSH-туннель"],
-                correct: 1
-            },
-            {
-                q: "Что является преимуществом облачного хранилища?",
-                options: ["Геораспределённость и отказоустойчивость", "Минимальный объём", "Низкое время доступа", "Отсутствие зависимости от интернета", "Возможность запускать ОС прямо в облаке"],
-                correct: 0
-            },
-            {
-                q: "Что означает гибридная стратегия бэкапа?",
-                options: ["Только инкрементные копии", "Только RAID-копии", "Архивирование только логов", "Локальные + облачные копии", "Использование исключительно горячих копий"],
-                correct: 3
-            },
-            {
-                q: "Что НЕ является преимуществом облачного бэкапа?",
-                options: ["Масштабируемость", "Автоматизация", "Доступность", "Низкая локальная скорость восстановления", "Возможность работать без сетевой карты"],
-                correct: 3
-            },
-            {
-                q: "Почему в Linux бэкапы часто делают через CLI-инструменты?",
-                options: ["CLI обеспечивает автоматизацию и сценарии", "Linux не поддерживает GUI", "CLI не требует root", "CLI всегда быстрее", "CLI автоматически шифрует данные"],
-                correct: 0
-            },
-            {
-                q: "Что нужно проверить перед созданием бэкапа БД?",
-                options: ["Доступность DNS", "Температуру CPU", "Версию видеодрайвера", "Согласованность данных и журналов транзакций", "Скорость вращения кулеров"],
-                correct: 3
-            },
-            {
-                q: "Какой базовый механизм резервирования существует почти во всех ОС?",
-                options: ["Копирование файлов на другой носитель", "Мониторинг температуры", "Логирование", "Отключение питания", "Перезагрузка перед каждым бэкапом"],
-                correct: 0
-            },
-            {
-                q: "Что обязательно делать после завершения бэкапа?",
-                options: ["Проверить контрольную сумму или целостность", "Перезагрузить ОС", "Удалить кэш", "Очистить корзину", "Установить обновления драйверов"],
-                correct: 0
-            },
-            {
-                q: "Ключевой параметр качества бэкапа – это:",
-                options: ["Версия ОС", "Целостность и читаемость данных", "Формат архива", "Объём", "Тип файловой системы"],
-                correct: 1
-            },
-            {
-                q: "Какие сервисы подходят для долговременного хранения?",
-                options: ["Discord CDN", "Steam Cloud", "Google Cloud Storage Nearline", "WebDAV локально", "WhatsApp Backup"],
-                correct: 2
-            },
-            {
-                q: "За что отвечает cron?",
-                options: ["Планирование автоматических задач", "Настройку firewall", "Мониторинг нагрузки", "Сбор логов ядра", "Управление файлами реестра"],
-                correct: 0
-            },
-            {
-                q: "Для чего используется Windows Task Scheduler?",
-                options: ["Работа с реестром", "Управление драйверами", "Автоматизация выполнения задач, включая бэкапы", "Настройка BIOS", "Изменение локализации Windows"],
-                correct: 2
-            },
-            {
-                q: "Что должно быть включено в регламент резервирования?",
-                options: ["Цветовая схема интерфейса", "Температура серверной", "Пошаговые процедуры восстановления и хранение копий", "Список ПО сотрудников", "Таблица с MAC-адресами всех ПК"],
-                correct: 2
-            },
-            {
-                q: "Что такое “backup repository”?",
-                options: ["Папка для логов", "Папка кэша", "LVM-том", "Хранилище бэкап-цепочек с metadata", "Любая папка, где есть 1 GB свободного места"],
-                correct: 3
-            },
-            {
-                q: "Недостаток полного бэкапа:",
-                options: ["Высокие требования к месту и времени создания", "Низкая надёжность", "Нет автоматизации", "Не поддерживает шифрование", "Требует отдельного RAID-контроллера"],
-                correct: 0
-            },
-            {
-                q: "Преимущество инкрементного метода:",
-                options: ["Наименьшее время создания копии", "Лучшее восстановление", "Наименьшее число файлов", "Не требует полного бэкапа", "Работает только в облаке"],
-                correct: 0
-            },
-            {
-                q: "Преимущество дифференциальных копий:",
-                options: ["Быстрее восстанавливаются, чем инкрементные", "Самые маленькие файлы", "Не требуют планировщика", "Используют меньше CPU", "Требуют обязательного RAID"],
-                correct: 0
-            },
-            {
-                q: "Использование дифференциального метода оправдано, когда:",
-                options: ["Важна скорость восстановления", "Нет RAID", "Минимальный объём данных", "Система работает на SSD", "Используются только виртуальные машины"],
-                correct: 0
-            },
-            {
-                q: "Что обязательно содержит DR-план?",
-                options: ["Список игр", "Цветовая схема", "Действия при аварии и ответственные лица", "История чатов", "Температура серверной"],
-                correct: 2
-            },
-            {
-                q: "Что НЕ входит в DR-план?",
-                options: ["Процесс восстановления", "Список отпусков сотрудников", "RPO / RTO", "Контакты ответственных", "Список тем для интерфейса"],
-                correct: 1
-            },
-            {
-                q: "Что снижает риск потери данных?",
-                options: ["Регулярная проверка целостности и бэкапов", "Перезагрузка сервера", "Чистка кэша", "Удаление программ", "Ежедневный дефрагмент диска"],
-                correct: 0
-            },
-            {
-                q: "Физическая угроза – это:",
-                options: ["Ошибка прав доступа", "Пожар или перегрев оборудования", "Ошибка SQL-запроса", "Смена пароля", "Установка новых драйверов"],
-                correct: 1
-            },
-            {
-                q: "Почему недостаток свободного места опасен?",
-                options: ["Может прервать цепочку инкрементов и привести к неконсистентности", "Уменьшает FPS", "Меняет права доступа", "Снижает скорость сети", "Останавливает работу всех cron-задач"],
-                correct: 0
-            },
-            {
-                q: "Какие данные копируются в первую очередь?",
-                options: ["Временные файлы", "Кэш браузера", "Критически важные системные и рабочие данные", "Медиафайлы", "Драйвера видеокарты"],
-                correct: 2
-            },
-            {
-                q: "Что важно делать при автоматизированных бэкапах?",
-                options: ["Удалять драйвера", "Менять шрифты", "Регулярно проверять логи выполнения", "Отключить журналирование", "Отключать сервер перед каждым бэкапом"],
-                correct: 2
-            },
-            {
-                q: "Зачем сохранять копии в разных геолокациях?",
-                options: ["Для ускорения загрузки", "Для экономии RAM", "Для уменьшения latency", "Для защиты от региональных аварий и катастроф", "Для удаления старых копий автоматически"],
-                correct: 3
-            },
-            {
-                q: "Что означает правило 3-2-1?",
-                options: ["3 HDD, 2 SSD, 1 VLAN", "3 облака, 2 VLAN, 1 firewall", "3 копии, 2 носителя, 1 копия вне площадки", "3 сервера, 2 VPN, 1 switch", "3 недели, 2 бэкапа, 1 ZIP-файл"],
-                correct: 2
-            },
-            {
-                q: "Преимущество локального хранения:",
-                options: ["Нет зависимости от сети, высокая скорость доступа", "Бесплатное обслуживание", "Неограниченное пространство", "Защищённость от пожара", "Не требует мониторинга"],
-                correct: 0
-            },
-            {
-                q: "Что может сделать бэкап непригодным к восстановлению?",
-                options: ["Отключение монитора", "Перезагрузка сервера", "Некорректное завершение копирования или повреждение блоков", "Изменение темы интерфейса", "Низкая яркость экрана"],
-                correct: 2
-            },
-            {
-                q: "Что необходимо регулярно тестировать?",
-                options: ["Производительность GPU", "Процедуры восстановления данных", "Папку Downloads", "Цветовую схему", "Нагрузку на процессор"],
-                correct: 1
-            },
-            {
-                q: "Что обеспечивает шифрование бэкапов?",
-                options: ["Защиту данных при утечке носителя", "Уменьшение размера", "Ускорение восстановления", "Уменьшение количества копий", "Возможность восстановить повреждённые сектора"],
-                correct: 0
-            },
-            {
-                q: "Минус облачного хранения:",
-                options: ["Автоматизация", "Репликация", "Зависимость от интернет-канала", "Масштабируемость", "Требование использовать VPN"],
-                correct: 2
-            },
-            {
-                q: "Если бэкап не создался, что делать?",
-                options: ["Проверить логи, права и конфигурацию задания", "Сменить тему", "Перезагрузить браузер", "Игнорировать", "Подождать неделю и попробовать снова"],
-                correct: 0
-            },
-            {
-                q: "Что учитывать при выборе метода резервирования?",
-                options: ["SLA, объём данных, скорость восстановления", "Музыкальные предпочтения", "Цвет корпуса ПК", "Мощность GPU", "Разрешение монитора"],
-                correct: 0
-            },
-            {
-                q: "Преимущество автоматического копирования:",
-                options: ["Минимизирует человеческие ошибки", "Требует постоянного контроля", "Снижает надёжность", "Уменьшает скорость сети", "Всегда требует отдельного сервера"],
-                correct: 0
-            },
-            {
-                q: "Успешность теста восстановления определяется тем, что…",
-                options: ["Восстановленные данные корректно работают", "Система выключилась", "Изменился размер файла", "Удалились старые копии", "Время восстановления стало больше"],
-                correct: 0
-            },
-            {
-                q: "Хорошая практика хранения бэкапов:",
-                options: ["Рабочий стол", "Хранение в корзине", "Отдельная площадка или удалённое хранилище", "Один диск", "Любая папка на системном диске"],
-                correct: 2
-            },
-            {
-                q: "Зачем документировать регламент копирования?",
-                options: ["Чтобы занять место", "Чтобы любой сотрудник мог правильно выполнить процедуру восстановления", "Чтобы изменить интерфейс", "Чтобы заполнять отчёты", "Чтобы увеличить размер архива"],
-                correct: 1
-            }
+        correct: 4,
+      },
+      {
+        q: "ArrayList-ке элементті қалай қосуға болады?",
+        options: [
+          "list.insert(element)",
+          "list.put(element)",
+          "list.push(element)",
+          "list.append(element)",
+          "list.add(element)",
         ],
-        "variant9": [
-            {
-                q: "Что является главной целью резервного копирования?",
-                options: ["Увеличение производительности", "Снижение нагрузки на сеть", "Возможность восстановления данных после сбоя", "Ускорение транзакций", "Сокращение количества логов"],
-                correct: 2
-            },
-            {
-                q: "Какой тип бэкапа позволяет восстановить состояние системы за конкретный день?",
-                options: ["Потоковый бэкап", "Прогнозируемый бэкап", "Архив логов", "Точечное восстановление (point-in-time)", "Временный снапшот"],
-                correct: 3
-            },
-            {
-                q: "Что является недостатком хранения единственной резервной копии?",
-                options: ["Увеличение скорости доступа", "Усложнение RTO", "Риск потери данных при повреждении носителя", "Избыточное архивирование", "Снижение размера метаданных"],
-                correct: 2
-            },
-            {
-                q: "Зачем выполнять шифрование резервных копий?",
-                options: ["Для ускорения чтения", "Для снижения RPO", "Для уменьшения размера бэкапа", "Для защиты данных при компрометации носителя", "Чтобы восстановление было быстрее"],
-                correct: 3
-            },
-            {
-                q: "Что требуется для организации оффсайт-хранения?",
-                options: ["RAID-контроллер", "Доступ к внешней площадке или облаку", "Низкая температура воздуха", "Переустановка ОС", "Режим энергосбережения"],
-                correct: 1
-            },
-            {
-                q: "Какое преимущество имеет копирование на ленточные носители?",
-                options: ["Высокая скорость случайного доступа", "Мгновенная репликация", "Низкая стоимость хранения в долгосрочной перспективе", "Возможность запуска ОС", "Отсутствие необходимости в каталогизации"],
-                correct: 2
-            },
-            {
-                q: "Основная задача тестирования восстановления — это…",
-                options: ["Проверка версии ОС", "Проверка температуры оборудования", "Подтверждение, что бэкап действительно пригоден к восстановлению", "Оптимизация дискового ввода-вывода", "Мониторинг нагрузки на сеть"],
-                correct: 2
-            },
-            {
-                q: "Что делает механизм \"continuous backup\"?",
-                options: ["Создаёт копии только ночью", "Сохраняет данные каждые 24 часа", "Записывает изменения почти в реальном времени", "Удаляет старые бэкапы автоматически", "Требует выключения сервера"],
-                correct: 2
-            },
-            {
-                q: "Что является преимуществом георепликации?",
-                options: ["Ускоренное индексирование", "Прозрачное кэширование диска", "Устойчивость к сбоям целой площадки", "Уменьшение количества логов", "Ускорение загрузки BIOS"],
-                correct: 2
-            },
-            {
-                q: "Что помогает сократить RTO при аварии?",
-                options: ["Наличие заранее подготовленной резервной инфраструктуры", "Увеличение размера файлов бэкапа", "Ежедневная перезагрузка сервера", "Минимальный объём ОЗУ", "Отключение журналирования"],
-                correct: 0
-            },
-            {
-                q: "Что необходимо для восстановления \"до момента сбоя\"?",
-                options: ["Полный бэкап", "Доступ к BIOS", "Набор транзакционных логов", "Смена пароля администратора", "Очистка кэша процессора"],
-                correct: 2
-            },
-            {
-                q: "Что характеризует \"offsite backup\"?",
-                options: ["Хранится на том же диске", "Хранится вне основной площадки", "Хранится в RAM", "Удаляется каждые сутки", "Хранится в кеше браузера"],
-                correct: 1
-            },
-            {
-                q: "Что делает backup rotation?",
-                options: ["Увеличивает скорость доступа", "Перемещает данные в разные сектора", "Автоматически удаляет или заменяет старые копии", "Отключает архивирование логов", "Перезапускает систему"],
-                correct: 2
-            },
-            {
-                q: "Какой фактор уменьшает вероятность успешного восстановления?",
-                options: ["Регулярные проверки", "Хранение копий вне площадки", "Отсутствие тестов восстановления", "Наличие инкрементных цепочек", "Использование хранилищ высокой доступности"],
-                correct: 2
-            },
-            {
-                q: "Что является целью DR-тестирования?",
-                options: ["Измерение пропускной способности сети", "Проверка работы видеодрайверов", "Проверка готовности команды и процедур восстановления", "Увеличение размера логов", "Оптимизация температуры сервера"],
-                correct: 2
-            },
-            {
-                q: "Почему важно иметь несколько уровней защиты данных?",
-                options: ["Для ускорения GPU", "Чтобы уменьшить нагрузку на DNS", "Для защиты от разных типов отказов", "Чтобы не использовать RPO", "Для оптимизации логирования"],
-                correct: 2
-            },
-            {
-                q: "Что является минусом слишком длинной цепочки инкрементов?",
-                options: ["Снижение качества изображений", "Сложность восстановления", "Увеличение скорости чтения", "Необходимость RAID", "Ускоренная индексация"],
-                correct: 1
-            },
-            {
-                q: "Что характеризует \"cold backup\"?",
-                options: ["Выполняется при полностью остановленной системе", "Выполняется только при активной системе", "Запускается каждые 10 секунд", "Не требует места хранения", "Работает без доступа к данным"],
-                correct: 0
-            },
-            {
-                q: "Почему важно разделять бэкапы и оригинальные данные?",
-                options: ["Чтобы увеличить размер диска", "Чтобы уменьшить RTO", "Чтобы исключить потерю данных при повреждении основной системы", "Чтобы ускорить сетевой адаптер", "Чтобы уменьшить нагрузку на CPU"],
-                correct: 2
-            },
-            {
-                q: "Что обеспечивает хранение копий на разных типах носителей?",
-                options: ["Улучшение графики", "Оптимизация SQL", "Дополнительную устойчивость к различным отказам", "Снижение времени загрузки ОС", "Уменьшение логов"],
-                correct: 2
-            },
-            {
-                q: "Что помогает защититься от заражения ransomware?",
-                options: ["Регулярные перезагрузки", "Бэкапы, которые недоступны для записи (immutable backup)", "Повышенная частота свопинга", "Смена видеокарты", "Использование устаревшей ОС"],
-                correct: 1
-            },
-            {
-                q: "Что улучшает читаемость процесса восстановления?",
-                options: ["Подсветка клавиатуры", "Жёсткое форматирование дисков", "Подробная документация шагов восстановления", "Перегрев оборудования", "Высокая частота монитора"],
-                correct: 2
-            },
-            {
-                q: "Почему важно хранить бэкапы в проверенном формате?",
-                options: ["Чтобы их можно было открыть сторонним ПО", "Чтобы улучшить производительность GPU", "Чтобы гарантировать совместимость восстановления", "Чтобы уменьшить время включения ПК", "Чтобы избежать перегрева"],
-                correct: 2
-            },
-            {
-                q: "Что ухудшает качество бэкапа?",
-                options: ["Корректная проверка контрольных сумм", "Хранение только одной копии", "Наличие нескольких поколений", "Хранение в холодном помещении", "Использование разных носителей"],
-                correct: 1
-            },
-            {
-                q: "Что такое \"incremental forever\"?",
-                options: ["Метод, где всегда делаются только полные копии", "Метод, при котором делается один полный бэкап и далее только инкременты", "Метод, основанный на RAID", "Метод восстановления БЕЗ логов", "Метод хранения на ленте"],
-                correct: 1
-            },
-            {
-                q: "Зачем нужна дедупликация в системах резервирования?",
-                options: ["Ускоряет сетевое соединение", "Уменьшает время обратного восстановления", "Сокращает занимаемое место, устраняя повторяющиеся блоки", "Увеличивает частоту процессора", "Переносит данные в GPU-память"],
-                correct: 2
-            },
-            {
-                q: "Что помогает снизить вероятность человеческой ошибки?",
-                options: ["Полное отсутствие автоматизации", "Наличие автоматизированных процессов копирования", "Использование только GUI", "Ручное редактирование конфигурации", "Отсутствие регламента"],
-                correct: 1
-            },
-            {
-                q: "Для чего используется \"staging area\" при бэкапах?",
-                options: ["Для временного хранения данных перед отправкой в основное хранилище", "Для очистки логов", "Для тестирования видеокарты", "Для удаления старых снапшотов", "Для обновления BIOS"],
-                correct: 0
-            },
-            {
-                q: "Что помогает контролировать качество бэкапов?",
-                options: ["Регулярные тесты восстановления", "Удаление всех копий", "Хранение только инкрементов", "Смена темы терминала", "Удаление метаданных"],
-                correct: 0
-            },
-            {
-                q: "Почему важно хранить несколько поколений резервных копий?",
-                options: ["Чтобы уменьшить нагрузку на ЦП", "Чтобы можно было откатиться на более ранние состояния", "Чтобы ускорить RAID", "Чтобы снизить размер архивов", "Чтобы уменьшить время тестирования"],
-                correct: 1
-            },
-            {
-                q: "Что может привести к невозможности восстановить данные?",
-                options: ["Наличие нескольких копий", "Повреждение метаданных бэкапа", "Использование надёжного носителя", "Тестирование восстановления", "Использование проверенных схем хранения"],
-                correct: 1
-            },
-            {
-                q: "Что такое \"retention policy\"?",
-                options: ["Список неисправных устройств", "Политика хранения и удаления старых бэкапов", "Описание всех пользователей", "Список драйверов системы", "Алгоритм сортировки файлов"],
-                correct: 1
-            },
-            {
-                q: "Что улучшает скорость восстановления больших данных?",
-                options: ["Использование медленных носителей", "Многоуровневое хранение (tiered storage)", "Отсутствие тестов", "Уменьшение количества копий", "Остановка сервера"],
-                correct: 1
-            },
-            {
-                q: "Что уменьшает риск потери бэкапов?",
-                options: ["Хранение копий на сервере, где выполняются операции", "Использование одного диска для всех функций", "Репликация и оффсайт-хранение", "Удаление снапшотов", "Хранение в RAM"],
-                correct: 2
-            },
-            {
-                q: "Какой подход снижает влияние на рабочую систему?",
-                options: ["Бэкап в рабочее время через полное копирование", "Использование снапшотов файловой системы", "Ре резервирование через ручное копирование", "Пауза всех приложений", "Отключение питания"],
-                correct: 1
-            },
-            {
-                q: "Что является преимуществом объектного хранения?",
-                options: ["Низкая производительность", "Ограниченная масштабируемость", "Возможность хранить огромные объемы данных с высокой надёжностью", "Зависимость от RAID", "Необходимость локального сервера"],
-                correct: 2
-            },
-            {
-                q: "Что снижает риск ошибки при восстановлении?",
-                options: ["Наличие чёткой документации", "Изменение интерфейса системы", "Использование случайных команд", "Сокращение числа тестов", "Полное отсутствие инструкций"],
-                correct: 0
-            },
-            {
-                q: "Что может привести к повреждению резервной копии?",
-                options: ["Корректная работа хранилища", "Ошибки файловой системы", "Резервирование в облаке", "Проверка CRC", "Использование нескольких копий"],
-                correct: 1
-            },
-            {
-                q: "Что важно учитывать при выборе локации для бэкапов?",
-                options: ["Местную влажность и температуру", "Доступность и отказоустойчивость площадки", "Цвет корпуса сервера", "Количество USB-портов", "Наличие RGB-подсветки"],
-                correct: 1
-            },
-            {
-                q: "Что помогает добиться минимального RPO?",
-                options: ["Полный бэкап раз в месяц", "Репликация или частое копирование логов", "Отключение хранения журналов", "Хранение в локальной папке", "Использование RAID-0"],
-                correct: 1
-            }
-        ]
-    }
+        correct: 4,
+      },
+      {
+        q: "Коллекциялардағы жалпыланған тип (generics) деген не? Мысалы List?",
+        options: [
+          "Жолдарды автоматты форматтайтын тізім",
+          "Коллекцияны белгілі типпен шектеу",
+          "Тек жолдармен жұмыс істейтін класс",
+          "Өлшемі автоматты өсетін массив",
+          "String[] массивінің баламасы",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java 8+ нұсқасында дата класстары қай пакеттің ішінде?",
+        options: [
+          "java.util",
+          "java.date",
+          "java.time",
+          "java.calendar",
+          "java.datetime",
+        ],
+        correct: 2,
+      },
+      {
+        q: "void қайтару типі нені білдіреді?",
+        options: [
+          "null қайтарады",
+          "0 қайтарады",
+          "Ешқандай мән қайтармайды",
+          "boolean қайтарады",
+          "Босжол қайтарады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Екі қайта жүктелген (overloaded) әдіс тек қайтарылатын мән типімен ғана ерекшелене ала ма?",
+        options: [
+          "Иә, бұл рұқсат етілген",
+          "Жоқ, қайта жүктеу тек параметрлер тізімімен анықталады",
+          "Иә, Java 11+ нұсқасында",
+          "Текпараметрлері де ерекшеленетін болса ғана",
+          "Текқайтарылатын қарапайым (primitive) типтер үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Класс әдісі (instance method) дегеніміз не?",
+        options: [
+          "Кластан тыс жарияланған және объектілермен байланыспаған функция",
+          "Объект арқылы шақырылатын және оның күйімен (деректерімен) жұмыс істейтін әдіс",
+          "Кластың өзіне тиесілі статикалық функция",
+          "Текобъектілерді жасау үшін қолданылатын арнайы әдіс",
+          "Басқа кластың ішінде орналасқан іштей салынған класс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да геттер мен сеттер атау ережесі қалай аталады?",
+        options: [
+          "CamelCase",
+          "JavaBeans (get/set + өріс атауы бас әріппен)",
+          "snake_case",
+          "PascalCase",
+          "Hungarian notation",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Ата-аналық кластың конструкторын қалай шақыруға болады?",
+        options: ["parent()", "base()", "super()", "this()", "super.new()"],
+        correct: 2,
+      },
+      {
+        q: "Егер ешқандай модификатор көрсетілмесе, әдепкі бойынша (by default) қайсысы қолданылады?",
+        options: [
+          "private",
+          "public",
+          "protected",
+          "package-private (қолжетімділік тек пакет шегінде)",
+          "final",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Мұрагерлікке негіз болатын (өзінен мұрагерлік алынатын) класс қалай аталады?",
+        options: [
+          "Бала класс",
+          "Туынды класс",
+          "Ата-аналық класс",
+          "Интерфейс",
+          "Абстрактілі класс",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Әдісті қайта анықтау (overriding) дегеніміз не?",
+        options: [
+          "Класта жаңа әдіс жасау",
+          "Туынды класта мұрагерлікке алынған әдістің іске асырылуын (реализациясын) ауыстыру",
+          "Ата-аналық кластың әдісін шақыру",
+          "Басқа атаумен әдіс жасау",
+          "Әдісті қайта жүктеу (overloading)",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Полиморфизмдегі типтерді келтіру (downcasting) дегеніміз не?",
+        options: [
+          "Әртүрлі сандық типтер арасындағы қарапайым (примитивті) деректер типтерін түрлендіру",
+          "Суперкласс сілтемесін туынды класс типіне айқын түрде келтіру: (Dog) animal",
+          "Деректерді жоғалтпай, кіші типті үлкен типке автоматты түрде түрлендіру",
+          "Класқа бірнеше ата-ананың болуына мүмкіндік беретін мұрагерлік механизмі",
+          "Жолдық (String) мәнді сандық деректер типіне түрлендіру",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да класс бір уақытта abstract және final бола ала ма?",
+        options: [
+          "Иә, егер класта бірде-бір абстракт әдіс болмаса және толық жүзеге асырылған болса",
+          "Жоқ, бұл мүмкін емес: abstract мұрагерлікті талап етеді, ал final мұрагерлікті тыйым салады",
+          "Иә, Java 11 нұсқасынан бастап код қауіпсіздігін арттыру үшін мұндай комбинацияға рұқсат берілген",
+          "Иә, бірақ тек класта өрістер болмаса және ол утилиталық класс ретінде қолданылса",
+          "Иә, бұл тек әдістері жоқ интерфейстерді жүзеге асыратын кластар үшін рұқсат етіледі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Интерфейс басқа интерфейстен мұрагерлікке алады ма?",
+        options: [
+          "Жоқ, интерфейстер мұраланбайды",
+          "Иә, extends арқылы: interface B extends A",
+          "Тек implements арқылы",
+          "Тек Java 11+",
+          "Тек бір интерфейс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Өңделмеген ерекше жағдай туындағанда не болады?",
+        options: [
+          "Бағдарлама жұмысын жалғастыра береді",
+          "JVM бағдарламаны қайта іске қосады",
+          "Бағдарлама шақырулар стегін (stack trace) шығарып, апатты түрде жұмысын тоқтатады",
+          "Ерекше жағдай ескерілмейді",
+          "Бағдарлама қатып қалады",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Егер toString() әдісі қайта анықталмаса (overriding), ол әдепкі бойынша нені қайтарады?",
+        options: [
+          "Объект туралы қосымша ақпаратсыз тек кластың қарапайым атауын",
+          "Егер объектіде қайта анықталған әдіс болмаса, null мәнін",
+          'Класс атауы + "@" + объектінің он алтылық хэш-коды',
+          'Объектінің типіне қарамастан "Object" жолын',
+          "Объектінің барлық өрістерінің кілт-мән форматындағы тізімін",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Java-дағы Map дегеніміз не?",
+        options: [
+          "Бұл деректерді экранда схемалар мен диаграммалар түрінде көрсетуге арналған графикалық модель",
+          "Бұл бір типті деректерді сақтауға арналған бекітілген ұзындықтағы массивтің арнайы түрі",
+          "Бұл тек индекстер бойынша жүгінуге болатын элементтердің реттелген тізімі",
+          "Бұл кілт-мән жұптарын сақтайтын ассоциативті деректер құрылымы",
+          "Бұл Stream API ағындарында деректерді түрлендіру және көрсету үшін қолданылатын әдіс",
+        ],
+        correct: 3,
+      },
+      {
+        q: "map.getOrDefault(key, defaultValue) әдісі не істейді?",
+        options: [
+          "Map-қа жаңа кілт қосады және ол кілт бұрыннан бар болса да, ол үшін әдепкі мәнді сақтайды",
+          "Кілтбойыншамәндіқайтарады, ал егер кілт табылмаса — defaultValue мәнін қайтарады",
+          "Map ішінде кілттің бар-жоғын тексереді және ол табылса, мәнін defaultValue-ге өзгертеді",
+          "Map-тың барлық элементтері үшін бірден ортақ әдепкі мән орнатады",
+          "Map-тан көрсетілген кілтті өшіреді және оған байланысты мәнді қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java Generics-те <? extends Number> нені білдіреді?",
+        options: [
+          "Типмұрагерлерді қолдану мүмкіндігінсіз, қатаң түрде Number класымен сәйкес келуі керек",
+          "Типшектеусіз кез келген тип болуы мүмкін (жолдар, күндер немесе пайдаланушы кластары)",
+          "Тип Number класы немесе оның кез келген туынды класы (подкласс) болуы тиіс",
+          "Бұлөрнектек int, double және float сияқты қарапайым деректер типтері үшін ғана қолданылады",
+          "Бұл Generics-ті қолдануға тыйым салатын және типтерді тексеруді өшіретін арнайы синтаксис",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Optional бос болса, мәнді немесе әдепкі мәнді қалай аламыз?",
+        options: [
+          "optional.orElse(defaultValue)",
+          "optional.get()",
+          "optional.getOrDefault(defaulValue)",
+          "optional.value(defaultValue)",
+          "optional.or(defaultValue)",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Апта күндерінің тізбегін (enum)қалайжариялауға болады?",
+        options: [
+          "class Day { MON, TUE, WED }",
+          "enum Day { MONDAY, TUESDAY, WEDNESDAY }",
+          "enum Day = { MONDAY, TUESDAY }",
+          "@Enum Day { MONDAY }",
+          "interface Day { MONDAY, TUESDAY }",
+        ],
+        correct: 1,
+      },
+      {
+        q: "JUnit-та жасыл нәтиже нені білдіреді?",
+        options: [
+          "Тестөткізіліп жіберілді",
+          "Ескерту бар",
+          "Тесторындалып жатыр",
+          "Тестсәттіөтті (PASS)",
+          "Компиляцияланбайды",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Регрессиялық тестілеу дегеніміз не?",
+        options: [
+          "Пайдаланушылардың максималды жүктемесі кезінде жүйенің жұмыс жылдамдығын тексеру",
+          "Өзгерістерден кейін ескі функционалдың бұзылмағанына көз жеткізу үшін қайта тестілеу",
+          "Жүйені тек өндірістік ортадағы (production) нақты деректермен тестілеу",
+          "Нұсқа шығар алдында тек жаңа функцияларды тестілеу",
+          "Сыртқы кітапханалар мен жүйенің сыртқы модульдерінің үйлесімділігін тексеру",
+        ],
+        correct: 1,
+      },
+      {
+        q: "HashMap дегеніміз не?",
+        options: [
+          "Сұрыпталған элементтер тізімі",
+          "Тександарға арналған тізім",
+          "Элементтердің FIFO (бірінші кірген — бірінші шығады) кезегі",
+          "Бекітілген ұзындықтағы массив",
+          "Кілт-мән жұптарын сақтайтын деректер құрылымы",
+        ],
+        correct: 4,
+      },
+    ],
+    variant9: [
+      {
+        q: "Scanner класы қай пакеттен импортталады?",
+        options: [
+          "java.io",
+          "java.util",
+          "java.lang",
+          "java.scan",
+          "java.input",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java тілінде бір таңбаны қай деректер типі сақтайды?",
+        options: ["String", "byte", "char", "text", "letter"],
+        correct: 2,
+      },
+      {
+        q: "Төмендегілердің қайсысы Java тілінде айнымалының дұрыс атауы болып табылады?",
+        options: ["1count", "my-var", "myVar", "class", "int"],
+        correct: 2,
+      },
+      {
+        q: "5 == 5 өрнегінің мәні неге тең?",
+        options: ["true", "false", "1", "0", "null"],
+        correct: 0,
+      },
+      {
+        q: "-- операторы не істей алады?",
+        options: [
+          "2-гебөледі",
+          "Мәнді 1-ге кемітеді",
+          "Мәнді 1-ге арттырады",
+          "Теріс дәрежеге шығарады",
+          "Екімәндісалыстырады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java тіліндегі тернарлық оператор деген не?",
+        options: [
+          "if-else қысқаша түрі: шарт ? мән1 : мән2",
+          "Үш айнымалыдан тұратын оператор",
+          "Үш шартқа арналған оператор",
+          "Биттік жылжыту операторы",
+          "Арнайы switch операторы",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Цикл ішіндегі break операторы не істейді?",
+        options: [
+          "Ағымдағы итерацияны өткізіп жібереді",
+          "Келесі циклге өтеді",
+          "Циклді қайта бастайды",
+          "Циклді бірден тоқтатады",
+          "Бағдарламаны аяқтайды",
+        ],
+        correct: 3,
+      },
+      {
+        q: "Java тіліндегі while циклінің синтаксисі қандай?",
+        options: [
+          "while x < 10 { }",
+          "while (x < 10) { }",
+          "while [x < 10] { }",
+          "while: x < 10 { }",
+          "while (x < 10)",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Нәтиже қандай: int sum = 0; for (int i = 1; i <= 3; i++) sum += i;?",
+        options: ["3", "5", "6", "9", "1"],
+        correct: 2,
+      },
+      {
+        q: 'Нәтиже қандай: for (int i = 0; i < 3; i++) { for (int j = 0; j < 2; j++) { System.out.print("*"); } }?',
+        options: ["**", "***", "******", "****", "*****"],
+        correct: 2,
+      },
+      {
+        q: "Math.random() не қайтарады?",
+        options: [
+          "Бүтін бөлігінсіз кездейсоқ бүтін сан",
+          "0.0 мен 1.0 аралығындағы double типті кездейсоқ сан",
+          "1-ден 100-ге дейінгі аралықтағы кездейсоқ сан",
+          "true немесе false мәндерінің кездейсоқ бірін",
+          "Unicode кестесінен кездейсоқ символ",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java тілінде arr массивінің ұзындығын қалай алуға болады?",
+        options: [
+          "arr.size()",
+          "arr.length()",
+          "arr.length",
+          "len(arr)",
+          "arr.count()",
+        ],
+        correct: 2,
+      },
+      {
+        q: "int[] arr массивіндегі ең үлкен элементті қалай табуға болады?",
+        options: [
+          "Arrays.max(arr) деген жоқ әдісті қолдану",
+          "Массивтің барлық элементтерін цикл арқылы қарап, ағымдағы максимуммен салыстыру",
+          "arr.max() әдісін тікелей шақыру",
+          "Бүкіл массивке бірден Math.max(arr) қолдану",
+          "Қарапайым int массивіне Collections.max(arr) қолдану",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да сатылы (jagged) жиым дегеніміз не?",
+        options: [
+          "Теріс индексті жиым",
+          "Жолдарының ұзындығы әртүрлі екі өлшемді жиым",
+          "Тақ сандардан тұратын жиым",
+          "Бос элементтері бар жиым",
+          "Тек жолдарға (String) арналған екі өлшемді жиымның арнайы түрі",
+        ],
+        correct: 1,
+      },
+      {
+        q: "int[][] arr = new int[3][4] массивіндегі элементтер саны қанша?",
+        options: ["7", "3", "4", "12", "34"],
+        correct: 3,
+      },
+      {
+        q: "s.substring(2, 5) әдісі не істейді?",
+        options: [
+          "2-ден 5-ке дейінгі таңбаларды өшіреді",
+          "2-ші индекстен 4-ке дейінгі ішкі жолды қайтарады (5 кірмейді)",
+          "2-ден 5-ке дейінгі (5-ті қоса алғанда) ішкі жолды қайтарады",
+          "2-ден 5-ке дейінгі таңбаларды ауыстырады",
+          "Жолдың ұзындығы қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Set пен List айырмашылығы неде?",
+        options: [
+          "Set элементтерді ретімен сақтайды",
+          "Set баяуырақ",
+          "List элементтерді айналып өтпейді",
+          "Set қайталанатын элементтерді сақтамайды",
+          "List ретсіз",
+        ],
+        correct: 3,
+      },
+      {
+        q: "List-тен элементті индекс бойынша қалай алуға болады?",
+        options: [
+          "list[0]",
+          "list.fetch(0)",
+          "list.element(0)",
+          "list.item(0)",
+          "list.get(0)",
+        ],
+        correct: 4,
+      },
+      {
+        q: 'Күнді "dd.MM.yyyy" форматына қалай айналдыруға болады?',
+        options: [
+          'date.toString("dd.MM.yyyy")',
+          'date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))',
+          'DateFormat.format(date, "dd.MM.yyyy")',
+          'date.toFormat("dd.MM.yyyy")',
+          'String.format(date, "dd.MM.yyyy")',
+        ],
+        correct: 1,
+      },
+      {
+        q: "Әдіс параметрлері деген не?",
+        options: [
+          "Қайтарылатын мәндер",
+          "Әдіске берілетін айнымалылар",
+          "Ішкіайнымалылар",
+          "Класс өрістері",
+          "Басқа әдістердің атауы",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Әдіс аргументтері дегеніміз не?",
+        options: [
+          "Әдіспараметрлерімен бірдей нәрсе",
+          "Қайтарылатын мән түрі",
+          "Әдісішіндегі айнымалылар",
+          "Жарияланымдағы параметрлердің атаулары",
+          "Әдісті шақыру кезінде берілетін нақты мәндер",
+        ],
+        correct: 4,
+      },
+      {
+        q: "Бір кластың негізінде қанша объект жасауға болады?",
+        options: [
+          "Тек біреу",
+          "10-нан аспайды",
+          "Кез келген мөлшерде",
+          "Тек екеу",
+          "JVM-ге байланысты",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Класта бірнеше конструктор болуы мүмкін бе?",
+        options: [
+          "Жоқ, тек біреу ғана",
+          "Иә, конструкторларды қайта жүктеу (overloading) арқылы",
+          "Тек абстрактілі кластарда",
+          "Тек Java 11+ нұсқасында",
+          "Тек екі конструктор",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Конструкторлар тізбегі (constructor chaining) нені білдіреді?",
+        options: [
+          "Объект жасалғаннан кейін конструкторды шақыру",
+          "Бір конструктордың ішінен this() немесе super() арқылы екіншісін шақыру",
+          "Бірнеше объектіні кезекпен жасау",
+          "Конструкторларды мұрагерлікке алу",
+          "Конструкторларды қайта жүктеу",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Класс өрістерін неліктен private етіп жасау керек?",
+        options: [
+          "Бағдарламаның жұмысын жылдамдату үшін",
+          "Инкапсуляция және деректерді қорғау үшін",
+          "Мұрагерлік (наследование) үшін",
+          "Статикалық әдістерде қолдану үшін",
+          "Объектілерді сериялау (serialization) үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Ата-аналық кластың әдістері мен конструкторларына жүгіну үшін қай кілттік сөз қолданылады?",
+        options: ["parent", "base", "super", "this", "extends"],
+        correct: 2,
+      },
+      {
+        q: "Әдісті қайта анықтау кезінде қай аннотацияны қолдану ұсынылады?",
+        options: ["@Overload", "@Override", "@Extend", "@Super", "@Redefine"],
+        correct: 1,
+      },
+      {
+        q: "Java-дағы абстрактілі класс дегеніміз не?",
+        options: [
+          "Өрістері де, әдістері де, логикасы да жоқ мүлдем бос класс",
+          "Тікелей объектісі жасалмайтын және құрамында абстрактілі әдістер болуы мүмкін класс",
+          "Тек static-әдістерден тұратын және объект күйі болмайтын класс",
+          "Конструкторлары болмайтын және тек деректер шаблоны ретінде қолданылатын класс",
+          "Қолданар алдында кем дегенде бір интерфейсті іске асыруға міндетті класс",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Абстракт әдіс қай жерде жариялануы керек?",
+        options: [
+          "Тек абстракт класта немесе интерфейсте",
+          "Кез келген класта",
+          "Тек интерфейсте",
+          "final класта",
+          "implements қолданылған класта",
+        ],
+        correct: 0,
+      },
+      {
+        q: "Java-да интерфейстен тікелей объект жасауға бола ма?",
+        options: [
+          "Иә, интерфейсті new арқылы тікелей жасауға болады",
+          "Жоқ, бірақ анонимді класс немесе лямбда өрнек арқылы жүзеге асыруға болады",
+          "Иә, егер тек default әдістер болса",
+          "Иә, Java 11-ден бастап болады",
+          "Иә, рефлексия арқылы жасауға болады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Санды нөлге бөлгенде қандай ерекше жағдай туындайды?",
+        options: [
+          "NullPointerException",
+          "ArrayIndexOutOfBoundsException",
+          "NumberFormatException",
+          "ArithmeticException",
+          "ClassCastException",
+        ],
+        correct: 3,
+      },
+      {
+        q: "equals() әдісі әдепкі бойынша (default) не істейді?",
+        options: [
+          "Объектілердің өрістерін салыстырады",
+          "Сілтемелерді салыстырады (== операторымен бірдей)",
+          "Хэш-кодтарды салыстырады",
+          "Объектілердің типтерін салыстырады",
+          "Әрқашан true қайтарады",
+        ],
+        correct: 1,
+      },
+      {
+        q: "HashMap-ке кілт-мән жұпын қалай қосуға болады?",
+        options: [
+          "map.add(key, value)",
+          "map.insert(key, value)",
+          "map.put(key, value)",
+          "map.set(key, value)",
+          "map.push(key, value)",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Map ішіндегі барлық кілт-мән жұптарын қалай аралап өтуге болады?",
+        options: [
+          "for (key : map)",
+          "for (Map.Entry<K,V> entry : map.entrySet())",
+          "for (map.keys()) each",
+          "map.forEach(key)",
+          "while (map.hasNext())",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Java-да Iterator не үшін қолданылады?",
+        options: [
+          "Коллекция элементтерін автоматты түрде сұрыптау үшін",
+          "Коллекция элементтерін бірінен соң бірін жүйелі түрде аралап шығу үшін",
+          "Коллекция элементтерін жадта сақтау үшін",
+          "Жаңадеректер коллекцияларын жасау үшін",
+          "Тізімдерде математикалық операцияларды орындау үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Optional.isPresent() әдісі не үшін қолданылады?",
+        options: [
+          "Мәнді алу үшін",
+          "Типті тексеру үшін",
+          "Жолға айналдыру үшін",
+          "Мәнбар-жоғын тексеру үшін (true/false)",
+          "Мәнді өшіру үшін",
+        ],
+        correct: 3,
+      },
+      {
+        q: "enum барлық мәндерін қалай алуға болады?",
+        options: [
+          "Day.all()",
+          "Day.list()",
+          "Day.values()",
+          "Day.getAll()",
+          "Enum.values(Day.class)",
+        ],
+        correct: 2,
+      },
+      {
+        q: "Бағдарламалауда логтау (logging) не үшін қолданылады?",
+        options: [
+          "Орындалу кезінде кодтағы қателерді автоматты түрде түзету үшін",
+          "Бағдарлама жұмысы туралы оқиғалар мен хабарларды кейін талдау үшін журналға жазу үшін",
+          "Кодты оңтайландыру арқылы бағдарламаның жұмысын жылдамдату үшін",
+          "Қосымшаның бастапқы кодын компиляциялау процесін алмастыру үшін",
+          "Әзірлеушінің қатысуынсыз бағдарламадан барлық қателерді жою үшін",
+        ],
+        correct: 1,
+      },
+      {
+        q: "Кіріс деректерін валидациялау дегеніміз не?",
+        options: [
+          "Деректерді пайдаланушыға көрсетпес бұрын форматтау",
+          "Деректердің бір типін екінші типке түрлендіру",
+          "Рұқсатсыз кіруден қорғау үшін деректерді шифрлау",
+          "Деректерді бағдарламада қолданбас бұрын олардың дұрыстығын тексеру",
+          "Деректерді файлға немесе деректер базасына сақтау",
+        ],
+        correct: 3,
+      },
+      {
+        q: "JUnit-тегі assertFalse(condition) дегеніміз не?",
+        options: [
+          "Шарттың ақиқат (true) екенін тексереді",
+          "Егер true болса, ерекше жағдай лақтырады",
+          "Мәнді false етіп орнатады",
+          "Егер false болса, тестті өткізіп жібереді",
+          "Шарттың жалған (false) екенін тексереді; егер true болса, тест өтпей қалады",
+        ],
+        correct: 4,
+      },
+    ],
+  },
 };
