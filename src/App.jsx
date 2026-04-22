@@ -6,7 +6,7 @@ import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from 'fir
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 const TIME_LIMIT = 20;
-const ADMIN_EMAIL = 'minamuha2020@gmail.com';
+const ADMIN_EMAILS = ['minamuha2020@gmail.com', 'toph89573@gmail.com'];
 
 const IconCode = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -395,7 +395,7 @@ export default function App() {
       if (user) {
         setIsAuthenticated(true);
         setCurrentUser({ name: user.displayName || user.email.split('@')[0], email: user.email, picture: user.photoURL || '' });
-        setIsAdmin(user.email === ADMIN_EMAIL);
+        setIsAdmin(ADMIN_EMAILS.includes(user.email));
       } else {
         setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false);
       }
