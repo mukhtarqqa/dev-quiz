@@ -59,16 +59,16 @@ const IconActivity = () => <svg width="18" height="18" viewBox="0 0 24 24" fill=
 const IconLogOut = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>;
 
 const SUBJECTS = [
-  { key: 'python', name: 'Python', lang: 'KZ', icon: <IconCode /> },
-  { key: 'db', name: 'Database', lang: 'KZ', icon: <IconDB /> },
-  { key: 'python_ru', name: 'Python', lang: 'RU', icon: <IconCode /> },
-  { key: 'db_ru', name: 'Database', lang: 'RU', icon: <IconDB /> },
+  { key: 'web', name: 'Web', lang: 'KZ', icon: <IconCode /> },
+  { key: 'java', name: 'Java', lang: 'KZ', icon: <IconCode /> },
+  { key: 'web_ru', name: 'Web', lang: 'RU', icon: <IconCode /> },
+  { key: 'java_ru', name: 'Java', lang: 'RU', icon: <IconCode /> },
 ];
 
 const i18n = {
   EN: {
     authSubtitle: "IT Assessment Platform",
-    authDesc: "Sign in to access technical assessments, track your performance, and compete across Python and Database topics.",
+    authDesc: "Sign in to access technical assessments, track your performance, and compete across Web and Java topics.",
     authBtn: "Continue with Google",
     authTag: "Secured · Academic Use Only",
     greeting: "Welcome back",
@@ -104,7 +104,7 @@ const i18n = {
   },
   RU: {
     authSubtitle: "Платформа IT-Тестирования",
-    authDesc: "Войдите, чтобы получить доступ к тестам по Python и БД, а также отслеживать свой прогресс.",
+    authDesc: "Войдите, чтобы получить доступ к тестам по Web и Java, а также отслеживать свой прогресс.",
     authBtn: "Войти через Google",
     authTag: "Безопасно · Только для обучения",
     greeting: "С возвращением",
@@ -140,7 +140,7 @@ const i18n = {
   },
   KZ: {
     authSubtitle: "IT-Тесттеу Платформасы",
-    authDesc: "Python және деректер қоры бойынша тесттерге қол жеткізу, прогресті бақылау үшін кіріңіз.",
+    authDesc: "Web және Java бойынша тесттерге қол жеткізу, прогресті бақылау үшін кіріңіз.",
     authBtn: "Google арқылы кіру",
     authTag: "Қауіпсіз · Тек оқу үшін",
     greeting: "Қайта оралуыңызбен",
@@ -178,7 +178,7 @@ const i18n = {
 
 function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTests }) {
   const [tab, setTab] = useState('reports');
-  const [subject, setSubject] = useState('python');
+  const [subject, setSubject] = useState('web');
 
   const deleteTest = async (id) => {
     if (!window.confirm("Удалить этот вариант?")) return;
@@ -286,10 +286,10 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
               <label>Subject</label>
               <div className="select-wrapper">
                 <select value={subject} onChange={e => setSubject(e.target.value)} className="input-field">
-                  <option value="python">Python (KZ)</option>
-                  <option value="db">Database (KZ)</option>
-                  <option value="python_ru">Python (RU)</option>
-                  <option value="db_ru">Database (RU)</option>
+                  <option value="web">Web (KZ)</option>
+                  <option value="java">Java (KZ)</option>
+                  <option value="web_ru">Web (RU)</option>
+                  <option value="java_ru">Java (RU)</option>
                 </select>
               </div>
             </div>
@@ -336,32 +336,25 @@ export default function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [activeScreen, setActiveScreen] = useState('menu');
   const [showReportModal, setShowReportModal] = useState(false);
-  const [reportText, setReportText] = useState('');
-  const [mergedDatabase, setMergedDatabase] = useState(database);
-  const [currentSubject, setCurrentSubject] = useState('');
-  const [questions, setQuestions] = useState([]);
-  const [qIndex, setQIndex] = useState(0);
-  const [score, setScore] = useState(0);
-  const [userAnswers, setUserAnswers] = useState([]);
-  const [timeLeft, setTimeLeft] = useState(TIME_LIMIT);
-  const [isAnswered, setIsAnswered] = useState(false);
-  const [timerRunning, setTimerRunning] = useState(false);
-  const [feedbackMsg, setFeedbackMsg] = useState({ text: '', type: '' });
-  const [reports, setReports] = useState([]);
-  const [dynamicTests, setDynamicTests] = useState([]);
-  const [theme, setTheme] = useState(localStorage.getItem('devquiz_theme') || 'cyan');
-  const [lang, setLang] = useState(localStorage.getItem('devquiz_lang') || 'EN');
-  const [mode, setMode] = useState(localStorage.getItem('devquiz_mode') || 'dark');
-  const [stats, setStats] = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
-  const [scrolled, setScrolled] = useState(false);
+  const [reportText, setReportText]           = useState('');
+  const [mergedDatabase, setMergedDatabase]   = useState(database);
+  const [currentSubject, setCurrentSubject]   = useState('');
+  const [questions, setQuestions]             = useState([]);
+  const [qIndex, setQIndex]                   = useState(0);
+  const [score, setScore]                     = useState(0);
+  const [userAnswers, setUserAnswers]         = useState([]);
+  const [timeLeft, setTimeLeft]               = useState(TIME_LIMIT);
+  const [isAnswered, setIsAnswered]           = useState(false);
+  const [timerRunning, setTimerRunning]       = useState(false);
+  const [feedbackMsg, setFeedbackMsg]         = useState({ text: '', type: '' });
+  const [reports, setReports]                 = useState([]);
+  const [dynamicTests, setDynamicTests]       = useState([]);
+  const [theme, setTheme]                     = useState(localStorage.getItem('devquiz_theme') || 'cyan');
+  const [lang, setLang]                       = useState(localStorage.getItem('devquiz_lang') || 'EN');
+  const [mode, setMode]                       = useState(localStorage.getItem('devquiz_mode') || 'dark');
+  const [stats, setStats]                     = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
   const timerRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  
   const text = i18n[lang] || i18n['EN'];
 
   useEffect(() => {
@@ -587,33 +580,22 @@ export default function App() {
 
       {/* ── HEADER ── */}
       {isAuthenticated && currentUser && activeScreen !== 'admin' && (
-        <header className={`app-header ${scrolled ? 'scrolled' : ''}`}>
-          <div className="header-inner">
-            <button className="app-title" onClick={() => setActiveScreen('menu')} style={{ color: 'inherit' }}>
-              DEV<span>QUIZ</span>
-            </button>
-
-            <div className="header-right">
-              <div className="lang-segment" style={{ background: 'var(--bg-active)', padding: '2px' }}>
-                <button className={lang === 'EN' ? 'active' : ''} onClick={() => setLang('EN')} style={{ padding: '4px 8px', fontSize: '0.65rem' }}>EN</button>
-                <button className={lang === 'KZ' ? 'active' : ''} onClick={() => setLang('KZ')} style={{ padding: '4px 8px', fontSize: '0.65rem' }}>KZ</button>
-                <button className={lang === 'RU' ? 'active' : ''} onClick={() => setLang('RU')} style={{ padding: '4px 8px', fontSize: '0.65rem' }}>RU</button>
-              </div>
-
-              <div className="user-profile" style={{
-                cursor: 'pointer',
-                border: '1px solid var(--glass-border)',
-                padding: '4px 8px',
-                borderRadius: '20px',
-                background: 'var(--bg-panel)',
-                transition: 'var(--t)'
-              }} onClick={() => setActiveScreen('profile')}>
-                <div className="user-info">
-                  <span className="user-name">{currentUser.name}</span>
-                </div>
-                {currentUser.picture && <img src={currentUser.picture} className="user-avatar" alt="" />}
-              </div>
+        <header className="app-header">
+          <button className="app-title" onClick={() => setActiveScreen('menu')} style={{color:'inherit'}}>
+            DEV<span>QUIZ</span>
+          </button>
+          <div className="user-profile" style={{
+            cursor:'pointer', 
+            border: '1px solid var(--border-mid)', 
+            padding: '4px 8px', 
+            borderRadius: '20px',
+            background: 'var(--bg-panel)',
+            transition: 'var(--t)'
+          }} onClick={() => setActiveScreen('profile')}>
+            <div className="user-info">
+              <span className="user-name">{currentUser.name}</span>
             </div>
+            {currentUser.picture && <img src={currentUser.picture} className="user-avatar" alt=""/>}
           </div>
         </header>
       )}
