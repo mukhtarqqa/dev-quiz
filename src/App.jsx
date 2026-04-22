@@ -6,49 +6,49 @@ import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from 'fir
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 const TIME_LIMIT = 20;
-const ADMIN_EMAILS = ['minamuha2020@gmail.com', 'toph89573@gmail.com'];
+const ADMIN_EMAILS = ['minamuha2020@gmail.com', 'toph89573@gmail.com', 'chikibanboni01@gmail.com'];
 
 const IconCode = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+    <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
   </svg>
 );
 const IconDB = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <ellipse cx="12" cy="5" rx="9" ry="3"/>
-    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+    <ellipse cx="12" cy="5" rx="9" ry="3" />
+    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
   </svg>
 );
 const IconAlert = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-    <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+    <line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
   </svg>
 );
 const IconSettings = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    <circle cx="12" cy="12" r="3" />
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
   </svg>
 );
 const IconArrow = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 18l6-6-6-6"/>
+    <path d="M9 18l6-6-6-6" />
   </svg>
 );
 const IconBack = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M19 12H5M12 19l-7-7 7-7"/>
+    <path d="M19 12H5M12 19l-7-7 7-7" />
   </svg>
 );
 const IconClose = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
 const IconCheck = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="20 6 9 17 4 12"/>
+    <polyline points="20 6 9 17 4 12" />
   </svg>
 );
 const IconMoon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>;
@@ -59,10 +59,10 @@ const IconActivity = () => <svg width="18" height="18" viewBox="0 0 24 24" fill=
 const IconLogOut = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>;
 
 const SUBJECTS = [
-  { key: 'python',    name: 'Python',   lang: 'KZ', icon: <IconCode /> },
-  { key: 'db',        name: 'Database', lang: 'KZ', icon: <IconDB /> },
-  { key: 'python_ru', name: 'Python',   lang: 'RU', icon: <IconCode /> },
-  { key: 'db_ru',     name: 'Database', lang: 'RU', icon: <IconDB /> },
+  { key: 'python', name: 'Python', lang: 'KZ', icon: <IconCode /> },
+  { key: 'db', name: 'Database', lang: 'KZ', icon: <IconDB /> },
+  { key: 'python_ru', name: 'Python', lang: 'RU', icon: <IconCode /> },
+  { key: 'db_ru', name: 'Database', lang: 'RU', icon: <IconDB /> },
 ];
 
 const i18n = {
@@ -185,13 +185,13 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
     try {
       await deleteDoc(doc(db, "dynamic_tests", id));
       onTestAdded();
-    } catch(e) { alert("Ошибка удаления: " + e.message); }
+    } catch (e) { alert("Ошибка удаления: " + e.message); }
   };
   const [variantName, setVariantName] = useState('');
   const [questions, setQuestions] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const addQuestion = () => setQuestions([...questions, { q: '', options: ['','','','',''], correct: 0 }]);
+  const addQuestion = () => setQuestions([...questions, { q: '', options: ['', '', '', '', ''], correct: 0 }]);
 
   const updateQuestion = (index, field, value) => {
     const n = [...questions]; n[index][field] = value; setQuestions(n);
@@ -207,9 +207,9 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
     if (!variantName.trim()) return alert('Введите название варианта');
     if (questions.length === 0) return alert('Добавьте хотя бы один вопрос');
     for (let i = 0; i < questions.length; i++) {
-      if (!questions[i].q.trim()) return alert(`Заполните текст вопроса ${i+1}`);
+      if (!questions[i].q.trim()) return alert(`Заполните текст вопроса ${i + 1}`);
       for (let j = 0; j < 5; j++) {
-        if (!questions[i].options[j].trim()) return alert(`Заполните вариант ответа ${j+1} в вопросе ${i+1}`);
+        if (!questions[i].options[j].trim()) return alert(`Заполните вариант ответа ${j + 1} в вопросе ${i + 1}`);
       }
     }
     setIsSubmitting(true);
@@ -218,7 +218,7 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
       alert('Тест успешно добавлен!');
       onTestAdded();
       setVariantName(''); setQuestions([]); setTab('reports');
-    } catch(e) {
+    } catch (e) {
       alert('Ошибка: ' + e.message);
     } finally {
       setIsSubmitting(false);
@@ -232,20 +232,20 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
         <button className="btn-icon" onClick={goBack}><IconClose /></button>
       </div>
       <div className="admin-tabs">
-        <button className={`admin-tab ${tab==='reports'?'active':''}`} onClick={() => setTab('reports')}>
+        <button className={`admin-tab ${tab === 'reports' ? 'active' : ''}`} onClick={() => setTab('reports')}>
           Reports ({reports.length})
         </button>
-        <button className={`admin-tab ${tab==='add_test'?'active':''}`} onClick={() => setTab('add_test')}>
+        <button className={`admin-tab ${tab === 'add_test' ? 'active' : ''}`} onClick={() => setTab('add_test')}>
           Create Test
         </button>
-        <button className={`admin-tab ${tab==='manage_tests'?'active':''}`} onClick={() => setTab('manage_tests')}>
+        <button className={`admin-tab ${tab === 'manage_tests' ? 'active' : ''}`} onClick={() => setTab('manage_tests')}>
           Manage Tests
         </button>
       </div>
       <div className="admin-content">
         {tab === 'reports' && (
           <div className="reports-list">
-            {reports.length === 0 && <p style={{fontSize:'.8rem',color:'var(--text-muted)',padding:'20px 0'}}>No reports found.</p>}
+            {reports.length === 0 && <p style={{ fontSize: '.8rem', color: 'var(--text-muted)', padding: '20px 0' }}>No reports found.</p>}
             {reports.map((r, i) => (
               <div key={i} className="report-card">
                 <div className="report-meta">
@@ -259,7 +259,7 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
                       <span className="badge">Screen</span> Quiz &nbsp;
                       <span className="badge">Q</span> {r.qIndex + 1}
                     </div>
-                  ) : <div/>}
+                  ) : <div />}
                   <button className="btn-text-danger" onClick={() => deleteReport(r.id)}>Delete</button>
                 </div>
               </div>
@@ -268,12 +268,12 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
         )}
         {tab === 'manage_tests' && (
           <div className="reports-list">
-            {dynamicTests.length === 0 && <p style={{fontSize:'.8rem',color:'var(--text-muted)'}}>Динамические тесты не найдены.</p>}
+            {dynamicTests.length === 0 && <p style={{ fontSize: '.8rem', color: 'var(--text-muted)' }}>Динамические тесты не найдены.</p>}
             {dynamicTests.map(t => (
               <div key={t.id} className="report-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <div style={{color:'var(--accent)', fontWeight:'bold', fontSize:'.85rem'}}>{t.variantName}</div>
-                  <div style={{fontSize:'.7rem', color:'var(--text-sub)', marginTop:'4px'}}>Предмет: {t.subject} | Вопросов: {t.questions?.length}</div>
+                  <div style={{ color: 'var(--accent)', fontWeight: 'bold', fontSize: '.85rem' }}>{t.variantName}</div>
+                  <div style={{ fontSize: '.7rem', color: 'var(--text-sub)', marginTop: '4px' }}>Предмет: {t.subject} | Вопросов: {t.questions?.length}</div>
                 </div>
                 <button className="btn-text-danger" onClick={() => deleteTest(t.id)}>Delete</button>
               </div>
@@ -297,7 +297,7 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
               <label>Variant Name</label>
               <input type="text" className="input-field" value={variantName} onChange={e => setVariantName(e.target.value)} placeholder="e.g. Variant 15" />
             </div>
-            <div className="form-divider"/>
+            <div className="form-divider" />
             <div className="section-title">Questions ({questions.length})</div>
             {questions.map((q, qi) => (
               <div key={qi} className="q-builder-card">
@@ -305,13 +305,13 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
                   <span>Question {qi + 1}</span>
                   <button className="btn-text-danger" onClick={() => removeQuestion(qi)}>Remove</button>
                 </div>
-                <textarea className="input-field textarea" placeholder="Question text" value={q.q} onChange={e => updateQuestion(qi, 'q', e.target.value)} rows="3"/>
+                <textarea className="input-field textarea" placeholder="Question text" value={q.q} onChange={e => updateQuestion(qi, 'q', e.target.value)} rows="3" />
                 <div className="options-builder">
                   {q.options.map((opt, oi) => (
                     <div key={oi} className="option-row">
                       <label className="radio-label">
-                        <input type="radio" name={`c-${qi}`} checked={q.correct===oi} onChange={() => updateQuestion(qi,'correct',oi)} />
-                        <span className="radio-custom"/>
+                        <input type="radio" name={`c-${qi}`} checked={q.correct === oi} onChange={() => updateQuestion(qi, 'correct', oi)} />
+                        <span className="radio-custom" />
                       </label>
                       <input type="text" className="input-field" placeholder={`Option ${OPTION_LETTERS[oi]}`} value={opt} onChange={e => updateOption(qi, oi, e.target.value)} />
                     </div>
@@ -332,29 +332,36 @@ function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTes
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser]         = useState(null);
-  const [isAdmin, setIsAdmin]                 = useState(false);
-  const [activeScreen, setActiveScreen]       = useState('menu');
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [activeScreen, setActiveScreen] = useState('menu');
   const [showReportModal, setShowReportModal] = useState(false);
-  const [reportText, setReportText]           = useState('');
-  const [mergedDatabase, setMergedDatabase]   = useState(database);
-  const [currentSubject, setCurrentSubject]   = useState('');
-  const [questions, setQuestions]             = useState([]);
-  const [qIndex, setQIndex]                   = useState(0);
-  const [score, setScore]                     = useState(0);
-  const [userAnswers, setUserAnswers]         = useState([]);
-  const [timeLeft, setTimeLeft]               = useState(TIME_LIMIT);
-  const [isAnswered, setIsAnswered]           = useState(false);
-  const [timerRunning, setTimerRunning]       = useState(false);
-  const [feedbackMsg, setFeedbackMsg]         = useState({ text: '', type: '' });
-  const [reports, setReports]                 = useState([]);
-  const [dynamicTests, setDynamicTests]       = useState([]);
-  const [theme, setTheme]                     = useState(localStorage.getItem('devquiz_theme') || 'cyan');
-  const [lang, setLang]                       = useState(localStorage.getItem('devquiz_lang') || 'EN');
-  const [mode, setMode]                       = useState(localStorage.getItem('devquiz_mode') || 'dark');
-  const [stats, setStats]                     = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
+  const [reportText, setReportText] = useState('');
+  const [mergedDatabase, setMergedDatabase] = useState(database);
+  const [currentSubject, setCurrentSubject] = useState('');
+  const [questions, setQuestions] = useState([]);
+  const [qIndex, setQIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [timeLeft, setTimeLeft] = useState(TIME_LIMIT);
+  const [isAnswered, setIsAnswered] = useState(false);
+  const [timerRunning, setTimerRunning] = useState(false);
+  const [feedbackMsg, setFeedbackMsg] = useState({ text: '', type: '' });
+  const [reports, setReports] = useState([]);
+  const [dynamicTests, setDynamicTests] = useState([]);
+  const [theme, setTheme] = useState(localStorage.getItem('devquiz_theme') || 'cyan');
+  const [lang, setLang] = useState(localStorage.getItem('devquiz_lang') || 'EN');
+  const [mode, setMode] = useState(localStorage.getItem('devquiz_mode') || 'dark');
+  const [stats, setStats] = useState(() => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 });
+  const [scrolled, setScrolled] = useState(false);
   const timerRef = useRef(null);
-  
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const text = i18n[lang] || i18n['EN'];
 
   useEffect(() => {
@@ -386,7 +393,7 @@ export default function App() {
       });
       setMergedDatabase(ddb);
       setDynamicTests(dynList);
-    } catch(e) { console.error(e); }
+    } catch (e) { console.error(e); }
   };
 
   useEffect(() => {
@@ -405,7 +412,7 @@ export default function App() {
 
   const handleSignIn = async () => {
     try { await signInWithPopup(auth, googleProvider); }
-    catch(err) { console.error(err); alert('Authentication failed.'); }
+    catch (err) { console.error(err); alert('Authentication failed.'); }
   };
 
   useEffect(() => {
@@ -485,14 +492,14 @@ export default function App() {
       const snap = await getDocs(query(collection(db, "reports"), orderBy("timestamp", "desc")));
       const reps = []; snap.forEach(doc => reps.push({ id: doc.id, ...doc.data() }));
       setReports(reps);
-    } catch(e) { console.error('Failed to load reports', e); }
+    } catch (e) { console.error('Failed to load reports', e); }
   };
 
   const deleteReport = async (id) => {
     try {
       await deleteDoc(doc(db, "reports", id));
       setReports(prev => prev.filter(r => r.id !== id));
-    } catch(e) { console.error('Failed to delete report', e); }
+    } catch (e) { console.error('Failed to delete report', e); }
   };
 
   const submitReport = async () => {
@@ -504,7 +511,7 @@ export default function App() {
         qIndex: activeScreen === 'quiz' ? qIndex : null
       });
       setShowReportModal(false); setReportText('');
-    } catch(e) { alert('Failed to send report.'); }
+    } catch (e) { alert('Failed to send report.'); }
   };
 
   const pct = questions.length > 0 ? Math.round((score / questions.length) * 100) : 0;
@@ -522,13 +529,14 @@ export default function App() {
 
   const subjectLabel = (key) => {
     const found = SUBJECTS.find(s => s.key === key);
-    return found ? `${found.name} · ${found.lang}` : key.replace('_ru','').toUpperCase();
+    return found ? `${found.name} · ${found.lang}` : key.replace('_ru', '').toUpperCase();
   };
 
   const timerDisplay = timeLeft < 10 ? `0:0${timeLeft}` : `0:${timeLeft}`;
 
   return (
     <div id="root">
+
 
       {/* ── AUTH ── */}
       {!isAuthenticated && (
@@ -539,22 +547,22 @@ export default function App() {
             <div className="auth-desc">
               {text.authDesc}
             </div>
-            
+
             <button id="auth-btn" onClick={handleSignIn}>
               <svg width="17" height="17" viewBox="0 0 48 48">
-                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
               </svg>
               {text.authBtn}
             </button>
-            <div className="auth-tag" style={{marginTop:'4px'}}>{text.authTag}</div>
+            <div className="auth-tag" style={{ marginTop: '4px' }}>{text.authTag}</div>
 
-            <div className="lang-selector" style={{marginTop:'12px', marginBottom:0}}>
-              <button className={`lang-btn ${lang==='EN'?'active':''}`} onClick={() => setLang('EN')}>EN</button>
-              <button className={`lang-btn ${lang==='KZ'?'active':''}`} onClick={() => setLang('KZ')}>KZ</button>
-              <button className={`lang-btn ${lang==='RU'?'active':''}`} onClick={() => setLang('RU')}>RU</button>
+            <div className="lang-selector" style={{ marginTop: '12px', marginBottom: 0 }}>
+              <button className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} onClick={() => setLang('EN')}>EN</button>
+              <button className={`lang-btn ${lang === 'KZ' ? 'active' : ''}`} onClick={() => setLang('KZ')}>KZ</button>
+              <button className={`lang-btn ${lang === 'RU' ? 'active' : ''}`} onClick={() => setLang('RU')}>RU</button>
             </div>
           </div>
         </div>
@@ -567,7 +575,7 @@ export default function App() {
             <div className="modal-header">Report Issue</div>
             <div className="modal-body">
               <textarea className="input-field textarea" rows="4" value={reportText}
-                onChange={e => setReportText(e.target.value)} placeholder="Describe the issue in detail..."/>
+                onChange={e => setReportText(e.target.value)} placeholder="Describe the issue in detail..." />
             </div>
             <div className="modal-actions">
               <button className="btn-secondary" onClick={() => setShowReportModal(false)}>Cancel</button>
@@ -579,22 +587,33 @@ export default function App() {
 
       {/* ── HEADER ── */}
       {isAuthenticated && currentUser && activeScreen !== 'admin' && (
-        <header className="app-header">
-          <button className="app-title" onClick={() => setActiveScreen('menu')} style={{color:'inherit'}}>
-            DEV<span>QUIZ</span>
-          </button>
-          <div className="user-profile" style={{
-            cursor:'pointer', 
-            border: '1px solid var(--border-mid)', 
-            padding: '4px 8px', 
-            borderRadius: '20px',
-            background: 'var(--bg-panel)',
-            transition: 'var(--t)'
-          }} onClick={() => setActiveScreen('profile')}>
-            <div className="user-info">
-              <span className="user-name">{currentUser.name}</span>
+        <header className={`app-header ${scrolled ? 'scrolled' : ''}`}>
+          <div className="header-inner">
+            <button className="app-title" onClick={() => setActiveScreen('menu')} style={{ color: 'inherit' }}>
+              DEV<span>QUIZ</span>
+            </button>
+
+            <div className="header-right">
+              <div className="lang-segment" style={{ background: 'var(--bg-active)', padding: '2px' }}>
+                <button className={lang === 'EN' ? 'active' : ''} onClick={() => setLang('EN')} style={{ padding: '4px 8px', fontSize: '0.65rem' }}>EN</button>
+                <button className={lang === 'KZ' ? 'active' : ''} onClick={() => setLang('KZ')} style={{ padding: '4px 8px', fontSize: '0.65rem' }}>KZ</button>
+                <button className={lang === 'RU' ? 'active' : ''} onClick={() => setLang('RU')} style={{ padding: '4px 8px', fontSize: '0.65rem' }}>RU</button>
+              </div>
+
+              <div className="user-profile" style={{
+                cursor: 'pointer',
+                border: '1px solid var(--glass-border)',
+                padding: '4px 8px',
+                borderRadius: '20px',
+                background: 'var(--bg-panel)',
+                transition: 'var(--t)'
+              }} onClick={() => setActiveScreen('profile')}>
+                <div className="user-info">
+                  <span className="user-name">{currentUser.name}</span>
+                </div>
+                {currentUser.picture && <img src={currentUser.picture} className="user-avatar" alt="" />}
+              </div>
             </div>
-            {currentUser.picture && <img src={currentUser.picture} className="user-avatar" alt=""/>}
           </div>
         </header>
       )}
@@ -604,7 +623,7 @@ export default function App() {
         <div className="main-layout">
 
           {/* MENU */}
-          <div className={`screen ${activeScreen==='menu'?'active':''}`}>
+          <div className={`screen ${activeScreen === 'menu' ? 'active' : ''}`}>
             <div className="menu-header">
               <div className="menu-greeting">{text.greeting}, {currentUser.name}!</div>
               <div className="menu-title">{text.selectAssesment}</div>
@@ -635,7 +654,7 @@ export default function App() {
           </div>
 
           {/* VARIANTS */}
-          <div className={`screen ${activeScreen==='variants'?'active':''}`}>
+          <div className={`screen ${activeScreen === 'variants' ? 'active' : ''}`}>
             <div className="screen-header">
               <button className="btn-icon" onClick={() => setActiveScreen('menu')}><IconBack /></button>
               <div className="screen-title">{subjectLabel(currentSubject)}</div>
@@ -648,8 +667,8 @@ export default function App() {
               {mergedDatabase[currentSubject] && Object.keys(mergedDatabase[currentSubject]).map((key, i) => (
                 <button key={key} className="list-item" onClick={() => startQuiz(key)}>
                   <div className="item-left">
-                    <div className="item-index">{String(i+1).padStart(2,'0')}</div>
-                    <div className="item-name">{key.startsWith('Variant') || key.startsWith('variant') ? key.replace('variant','Variant ') : `Variant ${i+1} · ${key}`}</div>
+                    <div className="item-index">{String(i + 1).padStart(2, '0')}</div>
+                    <div className="item-name">{key.startsWith('Variant') || key.startsWith('variant') ? key.replace('variant', 'Variant ') : `Variant ${i + 1} · ${key}`}</div>
                   </div>
                   <IconArrow />
                 </button>
@@ -658,16 +677,16 @@ export default function App() {
           </div>
 
           {/* QUIZ */}
-          <div className={`screen quiz-screen ${activeScreen==='quiz'?'active':''}`}>
+          <div className={`screen quiz-screen ${activeScreen === 'quiz' ? 'active' : ''}`}>
             <div className="quiz-header">
               <div className="quiz-progress-text">
-                {String(qIndex+1).padStart(2,'0')} / {String(questions.length).padStart(2,'0')}
+                {String(qIndex + 1).padStart(2, '0')} / {String(questions.length).padStart(2, '0')}
               </div>
-              <div className={`quiz-timer ${timerDanger?'danger':''}`}>{timerDisplay}</div>
+              <div className={`quiz-timer ${timerDanger ? 'danger' : ''}`}>{timerDisplay}</div>
               <button className="btn-icon" onClick={quitQuiz}><IconClose /></button>
             </div>
             <div className="progress-bar">
-              <div className="progress-fill" style={{ width: `${progressPct}%` }}/>
+              <div className="progress-fill" style={{ width: `${progressPct}%` }} />
             </div>
             <div className="question-text">{questions[qIndex]?.q}</div>
             <div className="options-container">
@@ -691,7 +710,7 @@ export default function App() {
           </div>
 
           {/* RESULT */}
-          <div className={`screen ${activeScreen==='result'?'active':''}`}>
+          <div className={`screen ${activeScreen === 'result' ? 'active' : ''}`}>
             <div className="result-hero">
               <div className="result-score-wrap">
                 <div className="result-score">{pct}%</div>
@@ -727,19 +746,19 @@ export default function App() {
           </div>
 
           {/* PROFILE */}
-          <div className={`screen ${activeScreen==='profile'?'active':''}`}>
-            <div className="screen-header" style={{marginBottom:'24px'}}>
+          <div className={`screen ${activeScreen === 'profile' ? 'active' : ''}`}>
+            <div className="screen-header" style={{ marginBottom: '24px' }}>
               <button className="btn-icon" onClick={() => setActiveScreen('menu')}><IconBack /></button>
               <div className="screen-title">{text.profile}</div>
             </div>
-            
+
             <div className="settings-container">
               {/* Account Hero */}
               <div className="profile-hero">
-                {currentUser.picture && <img src={currentUser.picture} className="user-avatar" style={{width:'56px', height:'56px'}} alt=""/>}
+                {currentUser.picture && <img src={currentUser.picture} className="user-avatar" style={{ width: '56px', height: '56px' }} alt="" />}
                 <div>
-                  <div style={{fontSize:'1.1rem', fontWeight:'700', color:'var(--text-main)'}}>{currentUser.name}</div>
-                  <div style={{color:'var(--text-sub)', fontSize:'.85rem'}}>{currentUser.email}</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: '700', color: 'var(--text-main)' }}>{currentUser.name}</div>
+                  <div style={{ color: 'var(--text-sub)', fontSize: '.85rem' }}>{currentUser.email}</div>
                 </div>
               </div>
 
@@ -748,11 +767,11 @@ export default function App() {
               <div className="settings-group">
                 <div className="settings-row">
                   <div className="settings-row-title"><IconActivity /> {text.solvedQ}</div>
-                  <div style={{fontSize:'1rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.solved}</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--accent)' }}>{stats.solved}</div>
                 </div>
                 <div className="settings-row">
                   <div className="settings-row-title"><IconCheck /> {text.correctQ}</div>
-                  <div style={{fontSize:'1rem', fontWeight:'bold', color:'var(--accent)'}}>{stats.score}</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--accent)' }}>{stats.score}</div>
                 </div>
               </div>
 
@@ -795,17 +814,17 @@ export default function App() {
 
               {/* Actions */}
               <div className="settings-group">
-                <a href="https://t.me/zhumabekov047" target="_blank" rel="noopener noreferrer" className="settings-row" style={{textDecoration:'none', cursor:'pointer'}}>
-                  <div className="settings-row-title" style={{color:'var(--text-main)'}}>
+                <a href="https://t.me/zhumabekov047" target="_blank" rel="noopener noreferrer" className="settings-row" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                  <div className="settings-row-title" style={{ color: 'var(--text-main)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                      <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
                     </svg>
                     {text.support}
                   </div>
                   <IconArrow />
                 </a>
-                <button className="settings-row" style={{width:'100%', background:'none', border:'none', cursor:'pointer'}} onClick={() => signOut(auth)}>
-                  <div className="settings-row-title" style={{color:'var(--red)'}}><IconLogOut /> {text.signOut}</div>
+                <button className="settings-row" style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer' }} onClick={() => signOut(auth)}>
+                  <div className="settings-row-title" style={{ color: 'var(--red)' }}><IconLogOut /> {text.signOut}</div>
                 </button>
               </div>
 
