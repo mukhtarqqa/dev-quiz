@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { auth, googleProvider, db } from './firebase';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
-import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
 // Checkpoint
-import { ADMIN_EMAILS, TIME_LIMIT, SUBJECT_KEYS, i18n } from './constants';
+import { ADMIN_EMAILS, TIME_LIMIT, SUBJECT_KEYS, MAX_DEVICES, i18n } from './constants';
 import { IconCode }  from './icons';
 
 // ── Screen components ────────────────────────────────────────────────────────
@@ -30,6 +30,7 @@ export default function App() {
   const [currentUser,     setCurrentUser]     = useState(null);
   const [isAdmin,         setIsAdmin]         = useState(false);
   const [hasAccess,       setHasAccess]       = useState(false);
+  const [deviceBlocked,   setDeviceBlocked]   = useState(false);
 
   // ── Navigation ──
   const [activeScreen,    setActiveScreen]    = useState('menu');
@@ -89,6 +90,14 @@ export default function App() {
 
   useEffect(() => {
     fetchDynamicTests();
+
+    // Generate or retrieve a unique device ID
+    let deviceId = localStorage.getItem('devquiz_device_id');
+    if (!deviceId) {
+      deviceId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now().toString(36);
+      localStorage.setItem('devquiz_device_id', deviceId);
+    }
+
     const unsub = onAuthStateChanged(auth, user => {
       if (user) {
         setIsAuthenticated(true);
@@ -100,34 +109,52 @@ export default function App() {
         setCurrentUser(userInfo);
         setIsAdmin(ADMIN_EMAILS.includes(user.email));
         
-        // Check access
-        const checkAccess = async () => {
+        // Check access + device limit
+        const checkAccessAndDevice = async () => {
           if (ADMIN_EMAILS.includes(user.email)) {
             setHasAccess(true);
+            setDeviceBlocked(false);
             return;
           }
           try {
             const userRef = doc(db, 'users', user.email);
             const userSnap = await getDoc(userRef);
             if (userSnap.exists()) {
-              setHasAccess(userSnap.data().hasAccess === true);
+              const data = userSnap.data();
+              setHasAccess(data.hasAccess === true);
+
+              // Device limit check
+              const devices = data.devices || [];
+              if (devices.includes(deviceId)) {
+                // Already registered — OK
+                setDeviceBlocked(false);
+              } else if (devices.length < MAX_DEVICES) {
+                // Register new device
+                await updateDoc(userRef, { devices: arrayUnion(deviceId) });
+                setDeviceBlocked(false);
+              } else {
+                // Too many devices
+                setDeviceBlocked(true);
+              }
             } else {
               await setDoc(userRef, {
                 email: user.email,
                 name: userInfo.name,
                 hasAccess: false,
+                devices: [deviceId],
                 createdAt: new Date().toISOString()
               });
               setHasAccess(false);
+              setDeviceBlocked(false);
             }
           } catch (e) {
             console.error("Access check failed:", e);
             setHasAccess(false);
           }
         };
-        checkAccess();
+        checkAccessAndDevice();
       } else {
-        setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false); setHasAccess(false);
+        setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false); setHasAccess(false); setDeviceBlocked(false);
       }
     });
     return () => unsub();
@@ -207,6 +234,19 @@ export default function App() {
   const handleSignIn = async () => {
     try { await signInWithPopup(auth, googleProvider); }
     catch (err) { console.error(err); alert('Authentication failed.'); }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      const deviceId = localStorage.getItem('devquiz_device_id');
+      if (currentUser && deviceId) {
+        const userRef = doc(db, 'users', currentUser.email);
+        await updateDoc(userRef, { devices: arrayRemove(deviceId) });
+      }
+    } catch (e) {
+      console.error('Failed to remove device:', e);
+    }
+    auth.signOut();
   };
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -297,6 +337,20 @@ export default function App() {
         <AuthOverlay text={text} lang={lang} setLang={setLang} onSignIn={handleSignIn} />
       )}
 
+      {/* Device limit overlay */}
+      {isAuthenticated && deviceBlocked && (
+        <div className="device-blocked-overlay">
+          <div className="device-blocked-card">
+            <div className="device-blocked-icon">🔒</div>
+            <h2>{text.deviceBlockedTitle}</h2>
+            <p>{text.deviceBlockedDesc}</p>
+            <button className="btn primary" onClick={handleSignOut}>
+              {text.signOut}
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Bug-report modal */}
       {showReportModal && (
         <ReportModal
@@ -320,7 +374,7 @@ export default function App() {
       )}
 
       {/* All screens */}
-      {isAuthenticated && (
+      {isAuthenticated && !deviceBlocked && (
         <div className="main-layout">
 
           <MenuScreen
@@ -386,6 +440,7 @@ export default function App() {
             theme={theme} setTheme={setTheme}
             lang={lang}   setLang={setLang}
             onBack={() => setActiveScreen('menu')}
+            onSignOut={handleSignOut}
           />
 
           {activeScreen === 'admin' && isAdmin && (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import {
   IconBack, IconArrow,
@@ -19,7 +18,7 @@ const THEME_COLORS = {
   yellow: '#ffc107',
 };
 
-export default function ProfileScreen({ text, isActive, currentUser, stats, mode, setMode, theme, setTheme, lang, setLang, onBack }) {
+export default function ProfileScreen({ text, isActive, currentUser, stats, mode, setMode, theme, setTheme, lang, setLang, onBack, onSignOut }) {
   return (
     <div className={`screen ${isActive ? 'active' : ''}`}>
       {/* Header */}
@@ -118,7 +117,7 @@ export default function ProfileScreen({ text, isActive, currentUser, stats, mode
           <button
             className="settings-row"
             style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer' }}
-            onClick={() => signOut(auth)}
+            onClick={onSignOut}
           >
             <div className="settings-row-title" style={{ color: 'var(--red)' }}>
               <IconLogOut /> {text.signOut}

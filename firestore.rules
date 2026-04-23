@@ -29,7 +29,12 @@ service cloud.firestore {
     match /users/{email} {
       allow read: if request.auth != null && (request.auth.token.email == email || isAdmin());
       allow create: if request.auth != null && request.auth.token.email == email && request.resource.data.hasAccess == false;
-      allow update: if isAdmin();
+      // Пользователь может обновлять только поле devices, админ — всё
+      allow update: if isAdmin() || (
+        request.auth != null &&
+        request.auth.token.email == email &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['devices'])
+      );
     }
     
     // Статистика пользователей (если решите перенести из localStorage в будущем)

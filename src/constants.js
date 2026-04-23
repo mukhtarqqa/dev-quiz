@@ -1,6 +1,7 @@
 // ─── App-wide constants ────────────────────────────────────────────────────
 export const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 export const TIME_LIMIT = 20;
+export const MAX_DEVICES = 2;
 export const ADMIN_EMAILS = [
   'minamuha2020@gmail.com',
   'toph89573@gmail.com',
@@ -66,6 +67,8 @@ export const i18n = {
     buyWhatsApp: 'Buy via WhatsApp',
     buyTelegram: 'Buy via Telegram',
     purchaseMessage: 'Hello, I would like to buy access to the website.\nMy login: ',
+    deviceBlockedTitle: 'Device Limit Reached',
+    deviceBlockedDesc: 'This account is already active on 2 devices. Sign out from another device to continue.',
   },
   RU: {
     authSubtitle: 'Платформа IT-Тестирования',
@@ -110,6 +113,8 @@ export const i18n = {
     buyWhatsApp: 'Купить через WhatsApp',
     buyTelegram: 'Купить через Telegram',
     purchaseMessage: 'Здравствуйте, я хотел(а) купить доступ к сайту.\nМой логин: ',
+    deviceBlockedTitle: 'Лимит устройств',
+    deviceBlockedDesc: 'Этот аккаунт уже используется на 2 устройствах. Выйдите из аккаунта на другом устройстве.',
   },
   KZ: {
     authSubtitle: 'IT-Тесттеу Платформасы',
@@ -154,5 +159,7 @@ export const i18n = {
     buyWhatsApp: 'WhatsApp арқылы алу',
     buyTelegram: 'Telegram арқылы алу',
     purchaseMessage: 'Сәлеметсіз бе, мен сайтқа кіруге рұқсат сатып алғым келеді.\nМенің логинім: ',
+    deviceBlockedTitle: 'Құрылғы шектеуі',
+    deviceBlockedDesc: 'Бұл аккаунт 2 құрылғыда қолданылуда. Жалғастыру үшін басқа құрылғыдан шығыңыз.',
   },
 };
