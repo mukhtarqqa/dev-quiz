@@ -27,9 +27,12 @@
   --accent: hsl(185, 100%, 50%);
   --accent-dim: hsla(185, 100%, 50%, 0.1);
   --accent-glow: hsla(185, 100%, 50%, 0.3);
+  --accent-hover: hsl(185, 100%, 60%);
 
   --green: hsl(145, 100%, 65%);
+  --green-dim: hsla(145, 100%, 65%, 0.1);
   --red: hsl(350, 100%, 65%);
+  --red-dim: hsla(350, 100%, 65%, 0.1);
 
   /* ─── Glassmorphism ───────────────────────────────── */
   --glass-bg: hsla(240, 15%, 7%, 0.7);
@@ -107,7 +110,7 @@ body::after {
   opacity: 0.5;
 }
 
-#root {
+.app-container {
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
@@ -149,6 +152,7 @@ body::after {
   padding: 0;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .app-header.scrolled .header-inner {
@@ -159,8 +163,6 @@ body::after {
   border-top: none;
   padding: 14px 24px;
   box-shadow: none;
-  background: transparent;
-  backdrop-filter: none;
 }
 
 @media (max-width: 620px) {
@@ -487,6 +489,17 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+  border: 1px solid var(--glass-border);
+  padding: 4px 10px;
+  border-radius: 24px;
+  background: var(--bg-panel);
+  transition: var(--t);
+}
+
+.user-profile:hover {
+  border-color: var(--accent-dim);
+  background: var(--bg-hover);
 }
 
 .user-info {
@@ -750,12 +763,7 @@ button:disabled {
   transition: var(--t);
 }
 
-.quiz-timer.danger {
-  color: var(--red);
-  border-color: rgba(255, 60, 90, .4);
-  background: var(--red-dim);
-  animation: timerPulse .5s ease infinite alternate;
-}
+
 
 @keyframes timerPulse {
   from {
@@ -836,28 +844,22 @@ button:disabled {
 }
 
 .opt-btn.correct {
-  border-color: rgba(57, 255, 126, .4);
+  border-color: var(--green);
   background: var(--green-dim);
-  box-shadow: 0 0 14px rgba(57, 255, 126, .08);
+  box-shadow: 0 0 20px hsla(145, 100%, 65%, 0.1);
 }
 
-.opt-btn.correct .opt-letter {
-  color: var(--green);
-}
-
+.opt-btn.correct .opt-letter,
 .opt-btn.correct .opt-text {
   color: var(--green);
 }
 
 .opt-btn.wrong {
-  border-color: rgba(255, 60, 90, .4);
+  border-color: var(--red);
   background: var(--red-dim);
 }
 
-.opt-btn.wrong .opt-letter {
-  color: var(--red);
-}
-
+.opt-btn.wrong .opt-letter,
 .opt-btn.wrong .opt-text {
   color: var(--red);
 }
@@ -1147,7 +1149,7 @@ button:disabled {
 }
 
 .input-field.textarea {
-  resize: vertical;
+  resize: none;
   min-height: 88px;
 }
 
@@ -1520,6 +1522,15 @@ body.mode-light {
   --text-muted: hsl(240, 10%, 60%);
   --glass-bg: hsla(0, 0%, 100%, 0.8);
   --glass-border: hsla(0, 0%, 0%, 0.05);
+  --accent-dim: hsla(185, 100%, 45%, 0.1);
+  --accent-glow: hsla(185, 100%, 45%, 0.2);
+}
+
+.quiz-timer.danger {
+  color: var(--red);
+  border-color: var(--red);
+  background: var(--red-dim);
+  animation: timerPulse .5s ease infinite alternate;
 }
 
 /* ─── Settings Profile Styles ─────────────────────────────────────────── */
@@ -1619,6 +1630,200 @@ body:not(.mode-light) .settings-group {
   color: var(--text-main);
 }
 
+/* ─── Loader ─────────────────────────────────────────── */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 20px;
+  flex: 1;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--accent-dim);
+  border-bottom-color: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.loader-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 body:not(.mode-light) .lang-segment button.active {
   background: var(--border);
+}
+
+/* ─── Purchase Screen ─────────────────────────────────────────── */
+.purchase-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.purchase-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 16px;
+  padding: 40px 30px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: modalIn .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.purchase-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.purchase-close-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-main);
+  transform: rotate(90deg);
+}
+
+.purchase-card h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.purchase-desc {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.price-box {
+  padding: 20px;
+  border-radius: 12px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+.price-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.contact-us-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.btn.whatsapp-btn,
+.btn.telegram-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn.whatsapp-btn svg,
+.btn.telegram-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.btn.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E) !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
+}
+
+.btn.whatsapp-btn:hover {
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  transform: translateY(-3px);
+}
+
+.btn.telegram-btn {
+  background: linear-gradient(135deg, #2AABEE, #229ED9) !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 6px 15px rgba(42, 171, 238, 0.25);
+}
+
+.btn.telegram-btn:hover {
+  box-shadow: 0 8px 25px rgba(42, 171, 238, 0.45);
+  transform: translateY(-3px);
 }

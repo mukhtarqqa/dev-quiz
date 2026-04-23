@@ -11,7 +11,7 @@ export default function ResultScreen({ text, isActive, score, questions, userAns
       <div className="result-hero">
         <div className="result-score-wrap">
           <div className="result-score">{pct}%</div>
-          <div className="result-meta">{score} / {questions.length} correct</div>
+          <div className="result-meta">{score} / {questions.length}</div>
         </div>
         {userAnswers.some(a => !a.isCorrect) && (
           <div className="result-label">{text.reviewWrong}</div>

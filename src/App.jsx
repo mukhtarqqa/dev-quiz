@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { auth, googleProvider, db } from './firebase';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
-import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
+// Checkpoint
 import { ADMIN_EMAILS, TIME_LIMIT, SUBJECT_KEYS, i18n } from './constants';
 import { IconCode }  from './icons';
 
@@ -17,6 +18,7 @@ import QuizScreen     from './components/QuizScreen';
 import ResultScreen   from './components/ResultScreen';
 import ProfileScreen  from './components/ProfileScreen';
 import AdminDashboard from './components/AdminDashboard';
+import PurchaseScreen from './components/PurchaseScreen';
 
 // Inject icon into SUBJECTS (icons live in icons.jsx, not constants.js)
 const SUBJECTS = SUBJECT_KEYS.map(s => ({ ...s, icon: <IconCode /> }));
@@ -27,6 +29,7 @@ export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser,     setCurrentUser]     = useState(null);
   const [isAdmin,         setIsAdmin]         = useState(false);
+  const [hasAccess,       setHasAccess]       = useState(false);
 
   // ── Navigation ──
   const [activeScreen,    setActiveScreen]    = useState('menu');
@@ -89,14 +92,42 @@ export default function App() {
     const unsub = onAuthStateChanged(auth, user => {
       if (user) {
         setIsAuthenticated(true);
-        setCurrentUser({
+        const userInfo = {
           name:    user.displayName || user.email.split('@')[0],
           email:   user.email,
           picture: user.photoURL || '',
-        });
+        };
+        setCurrentUser(userInfo);
         setIsAdmin(ADMIN_EMAILS.includes(user.email));
+        
+        // Check access
+        const checkAccess = async () => {
+          if (ADMIN_EMAILS.includes(user.email)) {
+            setHasAccess(true);
+            return;
+          }
+          try {
+            const userRef = doc(db, 'users', user.email);
+            const userSnap = await getDoc(userRef);
+            if (userSnap.exists()) {
+              setHasAccess(userSnap.data().hasAccess === true);
+            } else {
+              await setDoc(userRef, {
+                email: user.email,
+                name: userInfo.name,
+                hasAccess: false,
+                createdAt: new Date().toISOString()
+              });
+              setHasAccess(false);
+            }
+          } catch (e) {
+            console.error("Access check failed:", e);
+            setHasAccess(false);
+          }
+        };
+        checkAccess();
       } else {
-        setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false);
+        setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false); setHasAccess(false);
       }
     });
     return () => unsub();
@@ -184,7 +215,11 @@ export default function App() {
   const selectSubject = (subj) => {
     if (!isAuthenticated) return;
     setCurrentSubject(subj);
-    setActiveScreen('variants');
+    if (!hasAccess && !isAdmin) {
+      setActiveScreen('purchase');
+    } else {
+      setActiveScreen('variants');
+    }
   };
 
   const subjectLabel = (key) => {
@@ -255,7 +290,7 @@ export default function App() {
   // Render
   // ─────────────────────────────────────────────────────────────────────────
   return (
-    <div id="root">
+    <div className="app-container">
 
       {/* Auth overlay (shown when not signed in) */}
       {!isAuthenticated && (
@@ -302,12 +337,20 @@ export default function App() {
 
           <VariantsScreen
             text={text}
+            isLoading={isLoading}
             isActive={activeScreen === 'variants'}
             subjectLabel={subjectLabel}
             currentSubject={currentSubject}
             mergedDatabase={mergedDatabase}
             onBack={() => setActiveScreen('menu')}
             onStartQuiz={startQuiz}
+          />
+
+          <PurchaseScreen
+            text={text}
+            currentUser={currentUser}
+            isActive={activeScreen === 'purchase'}
+            onBack={() => setActiveScreen('menu')}
           />
 
           <QuizScreen
