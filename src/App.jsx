@@ -127,30 +127,24 @@ export default function App() {
               createdAt: userSnap.exists() ? userSnap.data().createdAt : new Date().toISOString()
             }, { merge: true });
 
-            // Device limit check (admins bypass)
+            // One active session check (admins bypass)
             if (!ADMIN_EMAILS.includes(user.email)) {
-              const data = userSnap.exists() ? userSnap.data() : {};
-              const devices = data.devices || [];
-              if (devices.includes(deviceId)) {
-                setDeviceBlocked(false);
-              } else if (devices.length < MAX_DEVICES) {
-                await updateDoc(userRef, { devices: arrayUnion(deviceId) });
-                setDeviceBlocked(false);
-              } else {
-                setDeviceBlocked(true);
-              }
-            } else {
-              setDeviceBlocked(false);
+              await updateDoc(userRef, { currentSession: deviceId });
             }
+            setDeviceBlocked(false);
           } catch (e) { console.error("User init failed:", e); }
         };
         initUserAndDevice();
 
-        // Listen for real-time access changes
         const unsubUser = onSnapshot(userRef, (docSnap) => {
           if (docSnap.exists()) {
             const data = docSnap.data();
             setHasAccess(data.hasAccess === true || ADMIN_EMAILS.includes(user.email));
+
+            // Enforce single active session
+            if (!ADMIN_EMAILS.includes(user.email) && data.currentSession && data.currentSession !== deviceId) {
+              auth.signOut();
+            }
           } else {
             setHasAccess(ADMIN_EMAILS.includes(user.email));
           }
@@ -251,10 +245,13 @@ export default function App() {
       const deviceId = localStorage.getItem('devquiz_device_id');
       if (currentUser && deviceId) {
         const userRef = doc(db, 'users', currentUser.email);
-        await updateDoc(userRef, { devices: arrayRemove(deviceId) });
+        const snap = await getDoc(userRef);
+        if (snap.exists() && snap.data().currentSession === deviceId) {
+          await updateDoc(userRef, { currentSession: null });
+        }
       }
     } catch (e) {
-      console.error('Failed to remove device:', e);
+      console.error('Failed to remove session:', e);
     }
     auth.signOut();
   };

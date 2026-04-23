@@ -34,7 +34,7 @@ service cloud.firestore {
       allow update: if isAdmin() || (
         request.auth != null &&
         request.auth.token.email == email &&
-        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['devices', 'lastLogin', 'picture', 'name'])
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['devices', 'currentSession', 'lastLogin', 'picture', 'name'])
       );
     }
     
