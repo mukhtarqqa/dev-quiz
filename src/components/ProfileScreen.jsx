@@ -1,5 +1,4 @@
 import React from 'react';
-import { auth } from '../firebase';
 import {
   IconBack, IconArrow,
   IconActivity, IconCheck,
@@ -18,7 +17,33 @@ const THEME_COLORS = {
   yellow: '#ffc107',
 };
 
-export default function ProfileScreen({ text, isActive, currentUser, stats, mode, setMode, theme, setTheme, lang, setLang, onBack, onSignOut }) {
+function DeviceIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M8 21h8M12 17v4"/>
+    </svg>
+  );
+}
+
+export default function ProfileScreen({
+  text, isActive, currentUser, stats,
+  mode, setMode, theme, setTheme, lang, setLang,
+  onBack, onSignOut,
+  activeDevices = [], currentDeviceId, onRemoveDevice,
+}) {
+
+  const formatDate = (iso) => {
+    if (!iso) return '—';
+    try {
+      return new Date(iso).toLocaleString(
+        lang === 'RU' ? 'ru-RU' : lang === 'KZ' ? 'kk-KZ' : 'en-US',
+        { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }
+      );
+    } catch { return iso; }
+  };
+
   return (
     <div className={`screen ${isActive ? 'active' : ''}`}>
       {/* Header */}
@@ -28,14 +53,20 @@ export default function ProfileScreen({ text, isActive, currentUser, stats, mode
       </div>
 
       <div className="settings-container">
-        {/* Account hero */}
+
+        {/* ── Account hero ── */}
         <div className="profile-hero">
           {currentUser.picture && (
-            <img src={currentUser.picture} className="user-avatar" style={{ width: '56px', height: '56px' }} alt="" />
+            <img src={currentUser.picture} className="user-avatar"
+              style={{ width: '56px', height: '56px' }} alt="" />
           )}
           <div>
-            <div style={{ fontSize: '1.1rem', fontWeight: '700', color: 'var(--text-main)' }}>{currentUser.name}</div>
-            <div style={{ color: 'var(--text-sub)', fontSize: '.85rem' }}>{currentUser.email}</div>
+            <div style={{ fontSize: '1.1rem', fontWeight: '700', color: 'var(--text-main)' }}>
+              {currentUser.name}
+            </div>
+            <div style={{ color: 'var(--text-sub)', fontSize: '.85rem' }}>
+              {currentUser.email}
+            </div>
           </div>
         </div>
 
@@ -52,10 +83,46 @@ export default function ProfileScreen({ text, isActive, currentUser, stats, mode
           </div>
         </div>
 
+        {/* ── Active Devices ── */}
+        <div className="settings-group-label">{text.grpDevices}</div>
+        <div className="settings-group">
+          {activeDevices.length === 0 ? (
+            <div className="settings-row" style={{ color: 'var(--text-sub)', fontSize: '.85rem' }}>—</div>
+          ) : (
+            activeDevices.map((device, idx) => {
+              const isThis = device.id === currentDeviceId;
+              return (
+                <div key={device.id} className={`device-item${isThis ? ' device-item--current' : ''}`}>
+                  <div className="device-item__info">
+                    <div className="device-item__icon">
+                      <DeviceIcon />
+                    </div>
+                    <div className="device-item__meta">
+                      <div className="device-item__name">
+                        {text.deviceLabel} {idx + 1}
+                        {isThis && <span className="device-item__badge">{text.deviceThis}</span>}
+                      </div>
+                      <div className="device-item__time">
+                        {text.deviceLastLogin}: {formatDate(device.lastActive)}
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="device-item__remove"
+                    onClick={() => onRemoveDevice(device.id)}
+                    title={text.deviceRemove}
+                  >
+                    <IconLogOut />
+                  </button>
+                </div>
+              );
+            })
+          )}
+        </div>
+
         {/* ── Appearance ── */}
         <div className="settings-group-label">{text.grpAppearance}</div>
         <div className="settings-group">
-          {/* Light / Dark mode */}
           <div className="settings-row">
             <div className="settings-row-title">
               {mode === 'dark' ? <IconMoon /> : <IconSun />} {text.mode}
@@ -66,7 +133,6 @@ export default function ProfileScreen({ text, isActive, currentUser, stats, mode
             </div>
           </div>
 
-          {/* Accent theme picker */}
           <div className="settings-row">
             <div className="settings-row-title"><IconPalette /> {text.theme}</div>
             <div className="theme-picker">
@@ -124,6 +190,7 @@ export default function ProfileScreen({ text, isActive, currentUser, stats, mode
             </div>
           </button>
         </div>
+
       </div>
     </div>
   );

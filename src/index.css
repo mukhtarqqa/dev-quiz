@@ -2030,8 +2030,6 @@ body:not(.mode-light) .lang-segment button.active {
   align-items: center;
 }
 
-
-
 .device-blocked-card h2 {
   font-size: 1.4rem;
   font-weight: 800;
@@ -2050,3 +2048,103 @@ body:not(.mode-light) .lang-segment button.active {
   margin-top: 8px;
   width: 100%;
 }
+
+/* ─── Active Devices List (Profile) ──────────────────────────────────── */
+.device-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+  transition: background 0.2s ease;
+}
+.device-item:last-child { border-bottom: none; }
+.device-item:hover { background: rgba(255,255,255,0.03); }
+
+.device-item--current {
+  background: rgba(var(--accent-rgb, 0,229,255), 0.05);
+}
+.device-item--current:hover {
+  background: rgba(var(--accent-rgb, 0,229,255), 0.09);
+}
+
+.device-item__info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.device-item__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.device-item--current .device-item__icon {
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.device-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.device-item__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.device-item__badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb, 0,229,255), 0.12);
+  border: 1px solid rgba(var(--accent-rgb, 0,229,255), 0.3);
+  border-radius: 6px;
+  padding: 1px 7px;
+  line-height: 1.6;
+}
+
+.device-item__time {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.device-item__remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-sub);
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+.device-item__remove:hover {
+  color: var(--red);
+  background: rgba(255, 80, 80, 0.1);
+}
