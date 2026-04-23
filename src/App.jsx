@@ -112,6 +112,8 @@ export default function App() {
         // Real-time sync of user access/data + device limit
         const userRef = doc(db, 'users', user.email);
         
+        let sessionInitialized = false;
+
         // Initial creation/update + device check
         const initUserAndDevice = async () => {
           try {
@@ -131,6 +133,7 @@ export default function App() {
             if (!ADMIN_EMAILS.includes(user.email)) {
               await updateDoc(userRef, { currentSession: deviceId });
             }
+            sessionInitialized = true;
             setDeviceBlocked(false);
           } catch (e) { console.error("User init failed:", e); }
         };
@@ -143,7 +146,9 @@ export default function App() {
 
             // Enforce single active session
             if (!ADMIN_EMAILS.includes(user.email) && data.currentSession && data.currentSession !== deviceId) {
-              setDeviceBlocked(true);
+              if (sessionInitialized) {
+                setDeviceBlocked(true);
+              }
             }
           } else {
             setHasAccess(ADMIN_EMAILS.includes(user.email));
@@ -348,7 +353,6 @@ export default function App() {
       {isAuthenticated && deviceBlocked && (
         <div className="device-blocked-overlay">
           <div className="device-blocked-card">
-            <div className="device-blocked-icon">🔒</div>
             <h2>{text.sessionTerminatedTitle}</h2>
             <p>{text.sessionTerminatedDesc}</p>
             <button className="btn primary" onClick={handleSignOut} style={{ float: 'right' }}>

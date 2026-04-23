@@ -2030,15 +2030,13 @@ body:not(.mode-light) .lang-segment button.active {
   align-items: center;
 }
 
-.device-blocked-icon {
-  font-size: 3rem;
-  margin-bottom: 8px;
-}
+
 
 .device-blocked-card h2 {
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--red);
+  color: var(--accent);
+  text-shadow: 0 0 14px var(--accent-glow);
   letter-spacing: -0.02em;
 }
 
