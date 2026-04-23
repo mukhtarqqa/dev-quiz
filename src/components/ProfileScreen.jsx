@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  IconBack, IconArrow, IconClose,
+  IconBack, IconArrow,
   IconActivity, IconCheck,
   IconMoon, IconSun,
   IconPalette, IconGlobe,
@@ -39,7 +39,7 @@ function DeviceIcon({ isMobile }) {
 export default function ProfileScreen({
   text, isActive, currentUser, stats,
   mode, setMode, theme, setTheme, lang, setLang,
-  onBack, onSignOut, onRemoveDevice,
+  onBack, onSignOut,
   registeredDevices = [], currentDeviceId,
 }) {
 
@@ -114,19 +114,6 @@ export default function ProfileScreen({
                       </div>
                     </div>
                   </div>
-                  {!isThis && (
-                    <button 
-                      className="btn-icon" 
-                      style={{ color: 'var(--red)', opacity: 0.7 }}
-                      onClick={() => {
-                        if (window.confirm(lang === 'RU' ? 'Удалить это устройство?' : 'Remove this device?')) {
-                          onRemoveDevice(device.id);
-                        }
-                      }}
-                    >
-                      <IconClose />
-                    </button>
-                  )}
                 </div>
               );
             })
