@@ -1,0 +1,35 @@
+import React from 'react';
+import { CONTACT_TELEGRAM } from '../constants';
+
+function ShieldIcon() {
+  return (
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <line x1="12" y1="8" x2="12" y2="12"/>
+      <line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+  );
+}
+
+export default function DeviceBlockedScreen({ text }) {
+  return (
+    <div className="device-blocked-screen">
+      <div className="device-blocked-screen__card">
+        <div className="device-blocked-screen__icon">
+          <ShieldIcon />
+        </div>
+        <h2 className="device-blocked-screen__title">{text.deviceBlockedTitle}</h2>
+        <p className="device-blocked-screen__desc">{text.deviceBlockedDesc}</p>
+        <a
+          href={`https://t.me/${CONTACT_TELEGRAM}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="device-blocked-screen__link"
+        >
+          Telegram Support →
+        </a>
+      </div>
+    </div>
+  );
+}

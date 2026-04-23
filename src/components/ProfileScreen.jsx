@@ -31,7 +31,7 @@ export default function ProfileScreen({
   text, isActive, currentUser, stats,
   mode, setMode, theme, setTheme, lang, setLang,
   onBack, onSignOut,
-  activeDevices = [], currentDeviceId, onRemoveDevice,
+  registeredDevices = [], currentDeviceId,
 }) {
 
   const formatDate = (iso) => {
@@ -83,37 +83,29 @@ export default function ProfileScreen({
           </div>
         </div>
 
-        {/* ── Active Devices ── */}
+        {/* ── Registered Devices (read-only) ── */}
         <div className="settings-group-label">{text.grpDevices}</div>
         <div className="settings-group">
-          {activeDevices.length === 0 ? (
+          {registeredDevices.length === 0 ? (
             <div className="settings-row" style={{ color: 'var(--text-sub)', fontSize: '.85rem' }}>—</div>
           ) : (
-            activeDevices.map((device, idx) => {
+            registeredDevices.map((device, idx) => {
               const isThis = device.id === currentDeviceId;
               return (
                 <div key={device.id} className={`device-item${isThis ? ' device-item--current' : ''}`}>
                   <div className="device-item__info">
-                    <div className="device-item__icon">
-                      <DeviceIcon />
-                    </div>
+                    <div className="device-item__icon"><DeviceIcon /></div>
                     <div className="device-item__meta">
                       <div className="device-item__name">
                         {text.deviceLabel} {idx + 1}
                         {isThis && <span className="device-item__badge">{text.deviceThis}</span>}
                       </div>
                       <div className="device-item__time">
-                        {text.deviceLastLogin}: {formatDate(device.lastActive)}
+                        {text.deviceRegisteredAt}: {formatDate(device.registeredAt)}
                       </div>
                     </div>
                   </div>
-                  <button
-                    className="device-item__remove"
-                    onClick={() => onRemoveDevice(device.id)}
-                    title={text.deviceRemove}
-                  >
-                    <IconLogOut />
-                  </button>
+                  {/* No remove button — only admin can remove devices */}
                 </div>
               );
             })

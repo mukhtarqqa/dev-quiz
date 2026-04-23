@@ -19,6 +19,7 @@ import ResultScreen   from './components/ResultScreen';
 import ProfileScreen  from './components/ProfileScreen';
 import AdminDashboard from './components/AdminDashboard';
 import PurchaseScreen from './components/PurchaseScreen';
+import DeviceBlockedScreen from './components/DeviceBlockedScreen';
 
 // Inject icon into SUBJECTS (icons live in icons.jsx, not constants.js)
 const SUBJECTS = SUBJECT_KEYS.map(s => ({ ...s, icon: <IconCode /> }));
@@ -115,7 +116,7 @@ export default function App() {
         
         let sessionInitialized = false;
 
-        // ── Register device in devices[] array ──
+        // ── Register device permanently in registeredDevices[] ──
         const initUserAndDevice = async () => {
           try {
             const userSnap = await getDoc(userRef);
@@ -131,32 +132,27 @@ export default function App() {
               createdAt: data.createdAt || new Date().toISOString(),
             }, { merge: true });
 
-            // Manage devices array (admins bypass)
+            // Device binding (admins bypass)
             if (!ADMIN_EMAILS.includes(user.email)) {
-              const existing = Array.isArray(data.devices) ? data.devices : [];
-              const already  = existing.find(d => d.id === deviceId);
+              const existing = Array.isArray(data.registeredDevices) ? data.registeredDevices : [];
+              const alreadyRegistered = existing.find(d => d.id === deviceId);
 
-              let newDevices;
-              if (already) {
-                // Update lastActive for this device
-                newDevices = existing.map(d =>
-                  d.id === deviceId ? { ...d, lastActive: new Date().toISOString() } : d
-                );
+              if (alreadyRegistered) {
+                // Device already registered — allow in
+                setDeviceBlocked(false);
               } else if (existing.length < MAX_DEVICES) {
-                newDevices = [...existing, { id: deviceId, lastActive: new Date().toISOString() }];
+                // Slot available — register this device permanently
+                const newDevices = [...existing, { id: deviceId, registeredAt: new Date().toISOString() }];
+                await updateDoc(userRef, { registeredDevices: newDevices });
+                setDeviceBlocked(false);
               } else {
-                // Replace oldest device
-                const sorted = [...existing].sort((a, b) => new Date(a.lastActive) - new Date(b.lastActive));
-                newDevices = [
-                  ...sorted.slice(1),
-                  { id: deviceId, lastActive: new Date().toISOString() }
-                ];
+                // No slot — block immediately, do NOT modify registeredDevices
+                setDeviceBlocked(true);
+                return;
               }
-              await updateDoc(userRef, { devices: newDevices });
             }
 
             sessionInitialized = true;
-            setDeviceBlocked(false);
           } catch (e) { console.error('User init failed:', e); }
         };
         initUserAndDevice();
@@ -166,13 +162,13 @@ export default function App() {
             const data = docSnap.data();
             setHasAccess(data.hasAccess === true || ADMIN_EMAILS.includes(user.email));
 
-            const devices = Array.isArray(data.devices) ? data.devices : [];
-            setActiveDevices(devices);
+            const regDevices = Array.isArray(data.registeredDevices) ? data.registeredDevices : [];
+            setActiveDevices(regDevices);
 
-            // If our deviceId is no longer in the array → session was terminated remotely
+            // If our deviceId was removed by admin — block
             if (!ADMIN_EMAILS.includes(user.email) && sessionInitialized) {
-              const stillActive = devices.some(d => d.id === deviceId);
-              if (!stillActive) setDeviceBlocked(true);
+              const stillRegistered = regDevices.some(d => d.id === deviceId);
+              if (!stillRegistered) setDeviceBlocked(true);
             }
           } else {
             setHasAccess(ADMIN_EMAILS.includes(user.email));
@@ -270,39 +266,9 @@ export default function App() {
   };
 
   const handleSignOut = async () => {
-    try {
-      const deviceId = localStorage.getItem('devquiz_device_id');
-      if (currentUser && deviceId) {
-        const userRef = doc(db, 'users', currentUser.email);
-        const snap = await getDoc(userRef);
-        if (snap.exists()) {
-          const devices = Array.isArray(snap.data().devices) ? snap.data().devices : [];
-          const updated = devices.filter(d => d.id !== deviceId);
-          await updateDoc(userRef, { devices: updated });
-        }
-      }
-    } catch (e) {
-      console.error('Failed to remove device on sign out:', e);
-    }
+    // NOTE: we do NOT remove from registeredDevices on logout
+    // Devices remain permanently registered until admin resets them
     auth.signOut();
-  };
-
-  // Remove a specific device from Firestore (called from ProfileScreen)
-  const removeDevice = async (targetDeviceId) => {
-    try {
-      const userRef = doc(db, 'users', currentUser.email);
-      const snap = await getDoc(userRef);
-      if (snap.exists()) {
-        const devices = Array.isArray(snap.data().devices) ? snap.data().devices : [];
-        const updated = devices.filter(d => d.id !== targetDeviceId);
-        await updateDoc(userRef, { devices: updated });
-      }
-      // If user removed their own device, sign out
-      const myDeviceId = localStorage.getItem('devquiz_device_id');
-      if (targetDeviceId === myDeviceId) auth.signOut();
-    } catch (e) {
-      console.error('Failed to remove device:', e);
-    }
   };
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -393,17 +359,9 @@ export default function App() {
         <AuthOverlay text={text} lang={lang} setLang={setLang} onSignIn={handleSignIn} />
       )}
 
-      {/* Session terminated overlay */}
+      {/* Device binding block screen */}
       {isAuthenticated && deviceBlocked && (
-        <div className="device-blocked-overlay">
-          <div className="device-blocked-card">
-            <h2>{text.sessionTerminatedTitle}</h2>
-            <p>{text.sessionTerminatedDesc}</p>
-            <button className="btn primary" onClick={handleSignOut} style={{ float: 'right' }}>
-              {text.sessionTerminatedBtn}
-            </button>
-          </div>
-        </div>
+        <DeviceBlockedScreen text={text} />
       )}
 
       {/* Bug-report modal */}
@@ -496,9 +454,8 @@ export default function App() {
             lang={lang}   setLang={setLang}
             onBack={() => setActiveScreen('menu')}
             onSignOut={handleSignOut}
-            activeDevices={activeDevices}
+            registeredDevices={activeDevices}
             currentDeviceId={localStorage.getItem('devquiz_device_id')}
-            onRemoveDevice={removeDevice}
           />
 
           {activeScreen === 'admin' && isAdmin && (

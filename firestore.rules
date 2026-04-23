@@ -28,13 +28,15 @@ service cloud.firestore {
     // Пользователи (доступ к тестам)
     match /users/{email} {
       allow read: if request.auth != null && (request.auth.token.email == email || isAdmin());
-      allow create: if request.auth != null && request.auth.token.email == email && 
+      allow create: if request.auth != null && request.auth.token.email == email &&
                     (request.resource.data.hasAccess == false || isAdmin());
-      // Пользователь может обновлять только поле devices, админ — всё
+      // Пользователь может только добавлять своё устройство (append); удалять — только Admin
       allow update: if isAdmin() || (
         request.auth != null &&
         request.auth.token.email == email &&
-        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['devices', 'lastLogin', 'picture', 'name'])
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['registeredDevices', 'lastLogin', 'picture', 'name']) &&
+        request.resource.data.registeredDevices.size() <= 2 &&
+        request.resource.data.registeredDevices.size() >= resource.data.get('registeredDevices', []).size()
       );
     }
     

@@ -8,12 +8,13 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
   const [tab,          setTab]          = useState('reports');
   const [users,        setUsers]        = useState([]);
   const [searchQuery,  setSearchQuery]  = useState('');
+  const [devSearch,    setDevSearch]    = useState('');
   const [subject,      setSubject]      = useState('web');
   const [variantName,  setVariantName]  = useState('');
   const [questions,    setQuestions]    = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
-  const [userFilter,     setUserFilter]     = useState('all'); // all, access, no_access
+  const [userFilter,     setUserFilter]     = useState('all');
 
   /* ── Test management ── */
   const deleteTest = async (id) => {
@@ -48,7 +49,7 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
       snap.forEach(d => list.push({ id: d.id, ...d.data() }));
       setUsers(list);
     } catch (e) {
-      console.error("Failed to fetch users:", e);
+      console.error('Failed to fetch users:', e);
     } finally {
       setIsLoadingUsers(false);
     }
@@ -61,24 +62,56 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
       await updateDoc(userRef, { hasAccess: newStatus });
       setUsers(prev => prev.map(u => u.id === user.id ? { ...u, hasAccess: newStatus } : u));
     } catch (e) {
-      alert("Error updating access: " + e.message);
+      alert('Error updating access: ' + e.message);
     }
   };
 
-  React.useEffect(() => {
-    fetchUsers();
-  }, []);
+  /* ── Device management ── */
+  const removeDeviceFromUser = async (userEmail, deviceId) => {
+    try {
+      const userRef = doc(db, 'users', userEmail);
+      const user = users.find(u => u.id === userEmail);
+      if (!user) return;
+      const existing = Array.isArray(user.registeredDevices) ? user.registeredDevices : [];
+      const updated = existing.filter(d => d.id !== deviceId);
+      await updateDoc(userRef, { registeredDevices: updated });
+      setUsers(prev => prev.map(u =>
+        u.id === userEmail ? { ...u, registeredDevices: updated } : u
+      ));
+    } catch (e) {
+      alert('Error removing device: ' + e.message);
+    }
+  };
+
+  const resetAllDevices = async (userEmail) => {
+    if (!window.confirm('Сбросить все устройства этого пользователя?')) return;
+    try {
+      const userRef = doc(db, 'users', userEmail);
+      await updateDoc(userRef, { registeredDevices: [] });
+      setUsers(prev => prev.map(u =>
+        u.id === userEmail ? { ...u, registeredDevices: [] } : u
+      ));
+    } catch (e) {
+      alert('Error resetting devices: ' + e.message);
+    }
+  };
+
+  React.useEffect(() => { fetchUsers(); }, []);
 
   const filteredUsers = users.filter(u => {
-    const matchesSearch = u.email?.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    const matchesSearch = u.email?.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           u.name?.toLowerCase().includes(searchQuery.toLowerCase());
-    
     if (userFilter === 'access')    return matchesSearch && u.hasAccess === true;
     if (userFilter === 'no_access') return matchesSearch && u.hasAccess !== true;
     return matchesSearch;
   });
 
-  /* ── Submit ── */
+  const filteredDevUsers = users.filter(u =>
+    u.email?.toLowerCase().includes(devSearch.toLowerCase()) ||
+    u.name?.toLowerCase().includes(devSearch.toLowerCase())
+  );
+
+  /* ── Submit test ── */
   const submitTest = async () => {
     if (!variantName.trim())     return alert('Введите название варианта');
     if (questions.length === 0)  return alert('Добавьте хотя бы один вопрос');
@@ -100,6 +133,13 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
     }
   };
 
+  /* ── Device slot render ── */
+  const formatDate = (iso) => {
+    if (!iso) return null;
+    try { return new Date(iso).toLocaleDateString('ru-RU', { day: '2-digit', month: 'short', year: '2-digit' }); }
+    catch { return iso; }
+  };
+
   return (
     <div className="admin-container">
       {/* Header */}
@@ -111,9 +151,10 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
       {/* Tabs */}
       <div className="admin-tabs">
         {[
-          { id: 'reports',      label: `Reports (${reports.length})` },
-          { id: 'users',        label: `Users (${users.length})` },
-          { id: 'add_test',     label: 'Create Test' },
+          { id: 'reports',  label: `Reports (${reports.length})` },
+          { id: 'users',    label: `Users (${users.length})` },
+          { id: 'devices',  label: 'Devices' },
+          { id: 'add_test', label: 'Create Test' },
         ].map(t => (
           <button
             key={t.id}
@@ -153,7 +194,6 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
           </div>
         )}
 
-
         {/* ── Users tab ── */}
         {tab === 'users' && (
           <div className="users-management">
@@ -169,9 +209,9 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
             </div>
 
             <div className="search-bar">
-              <input 
-                type="text" 
-                placeholder="Search by email or name..." 
+              <input
+                type="text"
+                placeholder="Search by email or name..."
                 className="input-field"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
@@ -215,7 +255,7 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
                       </div>
                     </div>
                     <div className="user-mgmt-actions">
-                      <button 
+                      <button
                         className={`btn-access ${u.hasAccess ? 'active' : ''}`}
                         onClick={() => toggleAccess(u)}
                       >
@@ -229,10 +269,105 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
           </div>
         )}
 
+        {/* ── Devices tab ── */}
+        {tab === 'devices' && (
+          <div className="users-management">
+            <div className="admin-stats-bar">
+              <div className="stat-item">
+                <span className="stat-label">Total Users</span>
+                <span className="stat-value">{users.length}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Full Slots</span>
+                <span className="stat-value">
+                  {users.filter(u => Array.isArray(u.registeredDevices) && u.registeredDevices.length >= 2).length}
+                </span>
+              </div>
+            </div>
+
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search by email or name..."
+                className="input-field"
+                value={devSearch}
+                onChange={e => setDevSearch(e.target.value)}
+              />
+            </div>
+
+            {isLoadingUsers ? (
+              <p style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>Loading...</p>
+            ) : (
+              <div className="users-list">
+                {filteredDevUsers.length === 0 && (
+                  <p style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>No users found.</p>
+                )}
+                {filteredDevUsers.map(u => {
+                  const devs = Array.isArray(u.registeredDevices) ? u.registeredDevices : [];
+                  const slots = [devs[0] || null, devs[1] || null];
+                  return (
+                    <div key={u.id} className="user-mgmt-card">
+                      <div className="user-mgmt-info">
+                        <div className="user-mgmt-main-row">
+                          {u.picture && <img src={u.picture} alt="" className="user-mgmt-avatar" />}
+                          <div className="user-mgmt-main">
+                            <span className="user-mgmt-name">{u.name}</span>
+                            <span className="user-mgmt-email">{u.email}</span>
+                          </div>
+                        </div>
+
+                        {/* Device slots */}
+                        <div className="device-slots">
+                          {slots.map((dev, idx) => (
+                            <div
+                              key={idx}
+                              className={`device-slot ${dev ? 'device-slot--filled' : 'device-slot--empty'}`}
+                            >
+                              <div className="device-slot__label">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                                </svg>
+                                <span>Slot {idx + 1}</span>
+                              </div>
+                              {dev ? (
+                                <div className="device-slot__info">
+                                  <span className="device-slot__date">{formatDate(dev.registeredAt)}</span>
+                                  <button
+                                    className="device-slot__remove"
+                                    onClick={() => removeDeviceFromUser(u.id, dev.id)}
+                                    title="Remove this device"
+                                  >
+                                    ×
+                                  </button>
+                                </div>
+                              ) : (
+                                <span className="device-slot__empty-label">—</span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="user-mgmt-actions">
+                        <button
+                          className="btn-access"
+                          onClick={() => resetAllDevices(u.id)}
+                          style={{ fontSize: '0.78rem' }}
+                        >
+                          Reset All Devices
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* ── Create test tab ── */}
         {tab === 'add_test' && (
           <div className="add-test-form">
-            {/* Subject select */}
             <div className="form-group">
               <label>Subject</label>
               <div className="select-wrapper">
@@ -245,7 +380,6 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
               </div>
             </div>
 
-            {/* Variant name */}
             <div className="form-group">
               <label>Variant Name</label>
               <input
@@ -260,7 +394,6 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
             <div className="form-divider" />
             <div className="section-title">Questions ({questions.length})</div>
 
-            {/* Question cards */}
             {questions.map((q, qi) => (
               <div key={qi} className="q-builder-card">
                 <div className="q-builder-header">
