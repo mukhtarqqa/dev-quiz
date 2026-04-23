@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { auth, googleProvider, db } from './firebase';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
-import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from 'firebase/firestore';
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
 // Checkpoint
@@ -109,50 +109,60 @@ export default function App() {
         setCurrentUser(userInfo);
         setIsAdmin(ADMIN_EMAILS.includes(user.email));
         
-        // Check access + device limit
-        const checkAccessAndDevice = async () => {
-          if (ADMIN_EMAILS.includes(user.email)) {
-            setHasAccess(true);
-            setDeviceBlocked(false);
-            return;
-          }
+        // Real-time sync of user access/data + device limit
+        const userRef = doc(db, 'users', user.email);
+        
+        // Initial creation/update + device check
+        const initUserAndDevice = async () => {
           try {
-            const userRef = doc(db, 'users', user.email);
             const userSnap = await getDoc(userRef);
-            if (userSnap.exists()) {
-              const data = userSnap.data();
-              setHasAccess(data.hasAccess === true);
 
-              // Device limit check
+            // Save/update user profile data
+            await setDoc(userRef, {
+              email: user.email,
+              name: userInfo.name,
+              picture: userInfo.picture,
+              lastLogin: new Date().toISOString(),
+              hasAccess: userSnap.exists() ? userSnap.data().hasAccess : ADMIN_EMAILS.includes(user.email),
+              createdAt: userSnap.exists() ? userSnap.data().createdAt : new Date().toISOString()
+            }, { merge: true });
+
+            // Device limit check (admins bypass)
+            if (!ADMIN_EMAILS.includes(user.email)) {
+              const data = userSnap.exists() ? userSnap.data() : {};
               const devices = data.devices || [];
               if (devices.includes(deviceId)) {
-                // Already registered — OK
                 setDeviceBlocked(false);
               } else if (devices.length < MAX_DEVICES) {
-                // Register new device
                 await updateDoc(userRef, { devices: arrayUnion(deviceId) });
                 setDeviceBlocked(false);
               } else {
-                // Too many devices
                 setDeviceBlocked(true);
               }
             } else {
-              await setDoc(userRef, {
-                email: user.email,
-                name: userInfo.name,
-                hasAccess: false,
-                devices: [deviceId],
-                createdAt: new Date().toISOString()
-              });
-              setHasAccess(false);
               setDeviceBlocked(false);
             }
-          } catch (e) {
-            console.error("Access check failed:", e);
-            setHasAccess(false);
-          }
+          } catch (e) { console.error("User init failed:", e); }
         };
-        checkAccessAndDevice();
+        initUserAndDevice();
+
+        // Listen for real-time access changes
+        const unsubUser = onSnapshot(userRef, (docSnap) => {
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+            setHasAccess(data.hasAccess === true || ADMIN_EMAILS.includes(user.email));
+          } else {
+            setHasAccess(ADMIN_EMAILS.includes(user.email));
+          }
+        }, (err) => {
+          console.error("User listen failed:", err);
+          setHasAccess(ADMIN_EMAILS.includes(user.email));
+        });
+
+        return () => {
+          unsub();
+          unsubUser();
+        };
       } else {
         setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false); setHasAccess(false); setDeviceBlocked(false);
       }
