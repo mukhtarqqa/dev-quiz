@@ -69,7 +69,6 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
         {[
           { id: 'reports',      label: `Reports (${reports.length})` },
           { id: 'add_test',     label: 'Create Test' },
-          { id: 'manage_tests', label: 'Manage Tests' },
         ].map(t => (
           <button
             key={t.id}
@@ -109,25 +108,6 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
           </div>
         )}
 
-        {/* ── Manage tests tab ── */}
-        {tab === 'manage_tests' && (
-          <div className="reports-list">
-            {dynamicTests.length === 0 && (
-              <p style={{ fontSize: '.8rem', color: 'var(--text-muted)' }}>Динамические тесты не найдены.</p>
-            )}
-            {dynamicTests.map(t => (
-              <div key={t.id} className="report-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <div style={{ color: 'var(--accent)', fontWeight: 'bold', fontSize: '.85rem' }}>{t.variantName}</div>
-                  <div style={{ fontSize: '.7rem', color: 'var(--text-sub)', marginTop: '4px' }}>
-                    Предмет: {t.subject} | Вопросов: {t.questions?.length}
-                  </div>
-                </div>
-                <button className="btn-text-danger" onClick={() => deleteTest(t.id)}>Delete</button>
-              </div>
-            ))}
-          </div>
-        )}
 
         {/* ── Create test tab ── */}
         {tab === 'add_test' && (
