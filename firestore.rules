@@ -35,8 +35,8 @@ service cloud.firestore {
         request.auth != null &&
         request.auth.token.email == email &&
         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['registeredDevices', 'lastLogin', 'picture', 'name']) &&
-        request.resource.data.registeredDevices.size() <= 2 &&
-        request.resource.data.registeredDevices.size() >= resource.data.get('registeredDevices', []).size()
+        request.resource.data.get('registeredDevices', []).size() <= 2 &&
+        request.resource.data.get('registeredDevices', []).size() >= resource.data.get('registeredDevices', []).size()
       );
     }
     

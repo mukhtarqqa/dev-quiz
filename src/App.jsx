@@ -21,6 +21,27 @@ import AdminDashboard from './components/AdminDashboard';
 import PurchaseScreen from './components/PurchaseScreen';
 import DeviceBlockedScreen from './components/DeviceBlockedScreen';
 
+const getDeviceInfo = () => {
+  const ua = navigator.userAgent;
+  let os = 'Unknown OS';
+  let browser = 'Unknown Browser';
+  let isMobile = false;
+
+  if (/android/i.test(ua)) { os = 'Android'; isMobile = true; }
+  else if (/ipad|iphone|ipod/i.test(ua)) { os = 'iOS'; isMobile = true; }
+  else if (/windows nt/i.test(ua)) { os = 'Windows'; }
+  else if (/mac os x/i.test(ua)) { os = 'macOS'; }
+  else if (/linux/i.test(ua)) { os = 'Linux'; }
+
+  if (/chrome|crios/i.test(ua) && !/edge|edg|opr|opera/i.test(ua)) { browser = 'Chrome'; }
+  else if (/safari/i.test(ua) && !/chrome|crios/i.test(ua)) { browser = 'Safari'; }
+  else if (/firefox|fxios/i.test(ua)) { browser = 'Firefox'; }
+  else if (/edg/i.test(ua)) { browser = 'Edge'; }
+  else if (/opr|opera/i.test(ua)) { browser = 'Opera'; }
+
+  return { os, browser, isMobile };
+};
+
 // Inject icon into SUBJECTS (icons live in icons.jsx, not constants.js)
 const SUBJECTS = SUBJECT_KEYS.map(s => ({ ...s, icon: <IconCode /> }));
 
@@ -122,15 +143,23 @@ export default function App() {
             const userSnap = await getDoc(userRef);
             const data = userSnap.exists() ? userSnap.data() : {};
 
-            // Profile fields
-            await setDoc(userRef, {
-              email: user.email,
-              name: userInfo.name,
-              picture: userInfo.picture,
-              lastLogin: new Date().toISOString(),
-              hasAccess: data.hasAccess !== undefined ? data.hasAccess : ADMIN_EMAILS.includes(user.email),
-              createdAt: data.createdAt || new Date().toISOString(),
-            }, { merge: true });
+            // Profile fields - conditionally create vs update
+            if (!userSnap.exists()) {
+              await setDoc(userRef, {
+                email: user.email,
+                name: userInfo.name,
+                picture: userInfo.picture,
+                lastLogin: new Date().toISOString(),
+                hasAccess: ADMIN_EMAILS.includes(user.email),
+                createdAt: new Date().toISOString(),
+              });
+            } else {
+              await updateDoc(userRef, {
+                name: userInfo.name,
+                picture: userInfo.picture,
+                lastLogin: new Date().toISOString(),
+              });
+            }
 
             // Device binding (admins bypass)
             if (!ADMIN_EMAILS.includes(user.email)) {
@@ -142,7 +171,14 @@ export default function App() {
                 setDeviceBlocked(false);
               } else if (existing.length < MAX_DEVICES) {
                 // Slot available — register this device permanently
-                const newDevices = [...existing, { id: deviceId, registeredAt: new Date().toISOString() }];
+                const devInfo = getDeviceInfo();
+                const newDevices = [...existing, { 
+                  id: deviceId, 
+                  registeredAt: new Date().toISOString(),
+                  os: devInfo.os,
+                  browser: devInfo.browser,
+                  isMobile: devInfo.isMobile
+                }];
                 await updateDoc(userRef, { registeredDevices: newDevices });
                 setDeviceBlocked(false);
               } else {

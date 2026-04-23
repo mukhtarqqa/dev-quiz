@@ -17,7 +17,15 @@ const THEME_COLORS = {
   yellow: '#ffc107',
 };
 
-function DeviceIcon() {
+function DeviceIcon({ isMobile }) {
+  if (isMobile) {
+    return (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+      </svg>
+    );
+  }
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
       stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -94,10 +102,10 @@ export default function ProfileScreen({
               return (
                 <div key={device.id} className={`device-item${isThis ? ' device-item--current' : ''}`}>
                   <div className="device-item__info">
-                    <div className="device-item__icon"><DeviceIcon /></div>
+                    <div className="device-item__icon"><DeviceIcon isMobile={device.isMobile} /></div>
                     <div className="device-item__meta">
                       <div className="device-item__name">
-                        {text.deviceLabel} {idx + 1}
+                        {device.os ? `${device.browser} on ${device.os}` : `${text.deviceLabel} ${idx + 1}`}
                         {isThis && <span className="device-item__badge">{text.deviceThis}</span>}
                       </div>
                       <div className="device-item__time">
