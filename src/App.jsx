@@ -52,6 +52,7 @@ export default function App() {
   const [isAdmin,         setIsAdmin]         = useState(false);
   const [hasAccess,       setHasAccess]       = useState(false);
   const [deviceBlocked,   setDeviceBlocked]   = useState(false);
+  const [isDeviceChecking, setIsDeviceChecking] = useState(true);
   const [activeDevices,   setActiveDevices]   = useState([]);
 
   // ── Navigation ──
@@ -138,6 +139,7 @@ export default function App() {
 
         // ── Register device permanently in registeredDevices[] ──
         const initUserAndDevice = async () => {
+          setIsDeviceChecking(true);
           try {
             const userSnap = await getDoc(userRef);
             const data = userSnap.exists() ? userSnap.data() : {};
@@ -189,6 +191,7 @@ export default function App() {
 
             sessionInitialized = true;
           } catch (e) { console.error('User init failed:', e); }
+          finally { setIsDeviceChecking(false); }
         };
         initUserAndDevice();
 
@@ -399,7 +402,7 @@ export default function App() {
       )}
 
       {/* Device binding block screen */}
-      {isAuthenticated && deviceBlocked && (
+      {isAuthenticated && !isDeviceChecking && deviceBlocked && (
         <DeviceBlockedScreen text={text} currentUser={currentUser} />
       )}
 
@@ -427,7 +430,7 @@ export default function App() {
       )}
 
       {/* All screens */}
-      {isAuthenticated && !deviceBlocked && (
+      {isAuthenticated && !isDeviceChecking && !deviceBlocked && (
         <div className="main-layout">
 
           <MenuScreen

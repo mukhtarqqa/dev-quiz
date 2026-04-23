@@ -81,6 +81,8 @@ export const i18n = {
     submit: 'Submit',
     reportSuccess: 'Report sent successfully!',
     reportError: 'Failed to send report.',
+    supportBtn: 'Telegram Support →',
+    supportMessage: 'Hello! My device is blocked. Account: ',
   },
   RU: {
     authSubtitle: 'Платформа IT-Тестирования',
@@ -139,6 +141,8 @@ export const i18n = {
     submit: 'Отправить',
     reportSuccess: 'Сообщение отправлено!',
     reportError: 'Ошибка при отправке.',
+    supportBtn: 'Поддержка Telegram →',
+    supportMessage: 'Здравствуйте! Мое устройство заблокировано. Аккаунт: ',
   },
   KZ: {
     authSubtitle: 'IT-Тесттеу Платформасы',
@@ -197,5 +201,7 @@ export const i18n = {
     submit: 'Жіберу',
     reportSuccess: 'Хабарлама жіберілді!',
     reportError: 'Жіберу қатесі.',
+    supportBtn: 'Telegram Қолдау →',
+    supportMessage: 'Сәлеметсіз бе! Менің құрылғым бұғатталған. Аккаунт: ',
   },
 };

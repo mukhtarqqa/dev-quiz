@@ -14,7 +14,7 @@ function ShieldIcon() {
 
 export default function DeviceBlockedScreen({ text, currentUser }) {
   const handleSupport = () => {
-    const message = encodeURIComponent(`Здравствуйте! Мое устройство заблокировано. Аккаунт: ${currentUser?.email}`);
+    const message = encodeURIComponent(`${text.supportMessage}${currentUser?.email}`);
     window.open(`https://t.me/${CONTACT_TELEGRAM}?text=${message}`, '_blank');
   };
 
@@ -31,7 +31,7 @@ export default function DeviceBlockedScreen({ text, currentUser }) {
           className="device-blocked-screen__link"
           style={{ border: 'none', cursor: 'pointer' }}
         >
-          Telegram Support →
+          {text.supportBtn}
         </button>
       </div>
     </div>
