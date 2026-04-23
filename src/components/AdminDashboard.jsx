@@ -18,11 +18,11 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
 
   /* ── Test management ── */
   const deleteTest = async (id) => {
-    if (!window.confirm('Удалить этот вариант?')) return;
+    if (!window.confirm('Delete this variant?')) return;
     try {
       await deleteDoc(doc(db, 'dynamic_tests', id));
       onTestAdded();
-    } catch (e) { alert('Ошибка удаления: ' + e.message); }
+    } catch (e) { alert('Delete failed: ' + e.message); }
   };
 
   /* ── Question builder helpers ── */
@@ -84,7 +84,7 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
   };
 
   const resetAllDevices = async (userEmail) => {
-    if (!window.confirm('Сбросить все устройства этого пользователя?')) return;
+    if (!window.confirm('Reset all devices for this user?')) return;
     try {
       const userRef = doc(db, 'users', userEmail);
       await updateDoc(userRef, { registeredDevices: [] });
@@ -113,21 +113,21 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
 
   /* ── Submit test ── */
   const submitTest = async () => {
-    if (!variantName.trim())     return alert('Введите название варианта');
-    if (questions.length === 0)  return alert('Добавьте хотя бы один вопрос');
+    if (!variantName.trim())     return alert('Please enter variant name');
+    if (questions.length === 0)  return alert('Please add at least one question');
     for (let i = 0; i < questions.length; i++) {
-      if (!questions[i].q.trim()) return alert(`Заполните текст вопроса ${i + 1}`);
+      if (!questions[i].q.trim()) return alert(`Please enter question text for question ${i + 1}`);
       for (let j = 0; j < 5; j++)
-        if (!questions[i].options[j].trim()) return alert(`Заполните вариант ответа ${j + 1} в вопросе ${i + 1}`);
+        if (!questions[i].options[j].trim()) return alert(`Please enter option ${OPTION_LETTERS[j]} for question ${i + 1}`);
     }
     setIsSubmitting(true);
     try {
       await addDoc(collection(db, 'dynamic_tests'), { subject, variantName, questions });
-      alert('Тест успешно добавлен!');
+      alert('Test deployed successfully!');
       onTestAdded();
       setVariantName(''); setQuestions([]); setTab('reports');
     } catch (e) {
-      alert('Ошибка: ' + e.message);
+      alert('Error: ' + e.message);
     } finally {
       setIsSubmitting(false);
     }

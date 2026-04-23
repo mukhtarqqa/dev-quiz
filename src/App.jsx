@@ -4,7 +4,6 @@ import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc, updateDoc, arrayRemove, onSnapshot } from 'firebase/firestore';
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
-// Checkpoint
 import { ADMIN_EMAILS, TIME_LIMIT, SUBJECT_KEYS, MAX_DEVICES, i18n } from './constants';
 import { IconCode }  from './icons';
 
@@ -214,14 +213,17 @@ export default function App() {
           setHasAccess(ADMIN_EMAILS.includes(user.email));
         });
 
-        return () => {
-          unsub();
-          unsubUser();
-        };
+        return () => unsubUser();
       } else {
-        setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false); setHasAccess(false); setDeviceBlocked(false); setActiveDevices([]);
+        setIsAuthenticated(false);
+        setCurrentUser(null);
+        setIsAdmin(false);
+        setHasAccess(false);
+        setDeviceBlocked(false);
+        setActiveDevices([]);
       }
     });
+
     return () => unsub();
   }, []);
 
