@@ -25,9 +25,15 @@ service cloud.firestore {
       allow read, delete: if isAdmin();
     }
     
+    // Данные пользователей и доступ (paywall)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      allow list: if isAdmin();
+    }
+    
     // Статистика пользователей (если решите перенести из localStorage в будущем)
     match /user_stats/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin());
     }
   }
 }
