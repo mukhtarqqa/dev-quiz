@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { database }           from './questions';
 import { auth, googleProvider, db } from './firebase';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
@@ -32,12 +31,15 @@ export default function App() {
   // ── Navigation ──
   const [activeScreen,    setActiveScreen]    = useState('menu');
 
+  // ── Loading state ──
+  const [isLoading,       setIsLoading]       = useState(true);
+
   // ── Report modal ──
   const [showReportModal, setShowReportModal] = useState(false);
   const [reportText,      setReportText]      = useState('');
 
-  // ── Database (local + cloud merged) ──
-  const [mergedDatabase,  setMergedDatabase]  = useState(database);
+  // ── Database (cloud only) ──
+  const [mergedDatabase,  setMergedDatabase]  = useState({});
   const [dynamicTests,    setDynamicTests]    = useState([]);
   const [reports,         setReports]         = useState([]);
 
@@ -107,21 +109,26 @@ export default function App() {
   // Firebase helpers
   // ─────────────────────────────────────────────────────────────────────────
   const fetchDynamicTests = async () => {
+    setIsLoading(true);
     try {
       const snap = await getDocs(collection(db, 'dynamic_tests'));
-      const ddb  = JSON.parse(JSON.stringify(database));
+      const newDB = {};
       const dynList = [];
       snap.forEach(d => {
         const data = d.data();
         dynList.push({ id: d.id, ...data });
         if (data.subject && data.variantName && data.questions) {
-          if (!ddb[data.subject]) ddb[data.subject] = {};
-          ddb[data.subject][data.variantName] = data.questions;
+          if (!newDB[data.subject]) newDB[data.subject] = {};
+          newDB[data.subject][data.variantName] = data.questions;
         }
       });
-      setMergedDatabase(ddb);
+      setMergedDatabase(newDB);
       setDynamicTests(dynList);
-    } catch (e) { console.error(e); }
+    } catch (e) {
+      console.error("Fetch failed:", e);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const openAdmin = async () => {
@@ -276,6 +283,7 @@ export default function App() {
             currentUser={currentUser}
             subjects={SUBJECTS}
             isAdmin={isAdmin}
+            isLoading={isLoading}
             isActive={activeScreen === 'menu'}
             onSelectSubject={selectSubject}
             onOpenAdmin={openAdmin}

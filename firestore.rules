@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Функция проверки, является ли пользователь админом
+    // В React-приложении ADMIN_EMAILS прописаны в константах, 
+    // здесь мы можем продублировать логику или проверять кастомные клеймы.
+    function isAdmin() {
+      return request.auth != null && (
+        request.auth.token.email == 'mukhtarqqa@gmail.com' || 
+        request.auth.token.email == 'toph889@gmail.com'
+      );
+    }
+
+    // Динамические тесты
+    match /dynamic_tests/{testId} {
+      allow read: if request.auth != null;
+      allow write: if isAdmin();
+    }
+
+    // Баг-репорты
+    match /reports/{reportId} {
+      allow create: if request.auth != null;
+      allow read, delete: if isAdmin();
+    }
+    
+    // Статистика пользователей (если решите перенести из localStorage в будущем)
+    match /user_stats/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
