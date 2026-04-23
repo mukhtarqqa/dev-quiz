@@ -100,32 +100,39 @@ export default function App() {
         setCurrentUser(userInfo);
         setIsAdmin(ADMIN_EMAILS.includes(user.email));
         
-        // Check access
-        const checkAccess = async () => {
-          if (ADMIN_EMAILS.includes(user.email)) {
-            setHasAccess(true);
-            return;
-          }
+        // Check and sync user access/data
+        const syncUser = async () => {
           try {
             const userRef = doc(db, 'users', user.email);
             const userSnap = await getDoc(userRef);
-            if (userSnap.exists()) {
-              setHasAccess(userSnap.data().hasAccess === true);
-            } else {
-              await setDoc(userRef, {
-                email: user.email,
-                name: userInfo.name,
-                hasAccess: false,
-                createdAt: new Date().toISOString()
-              });
-              setHasAccess(false);
+            
+            let currentAccess = false;
+            
+            if (ADMIN_EMAILS.includes(user.email)) {
+              currentAccess = true;
+            } else if (userSnap.exists()) {
+              currentAccess = userSnap.data().hasAccess === true;
             }
+
+            // Always update/create user record to keep it in the list
+            await setDoc(userRef, {
+              email: user.email,
+              name: userInfo.name,
+              picture: userInfo.picture,
+              lastLogin: new Date().toISOString(),
+              // Only set hasAccess to false if it's a new user and NOT an admin
+              hasAccess: userSnap.exists() ? userSnap.data().hasAccess : currentAccess,
+              createdAt: userSnap.exists() ? userSnap.data().createdAt : new Date().toISOString()
+            }, { merge: true });
+
+            setHasAccess(currentAccess);
           } catch (e) {
-            console.error("Access check failed:", e);
-            setHasAccess(false);
+            console.error("Sync user failed:", e);
+            // Fallback for admins even if DB fails
+            setHasAccess(ADMIN_EMAILS.includes(user.email));
           }
         };
-        checkAccess();
+        syncUser();
       } else {
         setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false); setHasAccess(false);
       }

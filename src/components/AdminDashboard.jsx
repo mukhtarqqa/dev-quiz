@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import { collection, addDoc, deleteDoc, doc, getDocs, updateDoc, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase';
 import { IconClose } from '../icons';
 import { OPTION_LETTERS } from '../constants';
 
 export default function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTests }) {
   const [tab,          setTab]          = useState('reports');
+  const [users,        setUsers]        = useState([]);
+  const [searchQuery,  setSearchQuery]  = useState('');
   const [subject,      setSubject]      = useState('web');
   const [variantName,  setVariantName]  = useState('');
   const [questions,    setQuestions]    = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoadingUsers, setIsLoadingUsers] = useState(false);
+  const [userFilter,     setUserFilter]     = useState('all'); // all, access, no_access
 
   /* ── Test management ── */
   const deleteTest = async (id) => {
@@ -33,6 +37,46 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
   const removeQuestion = (index) => {
     const n = [...questions]; n.splice(index, 1); setQuestions(n);
   };
+
+  /* ── User management ── */
+  const fetchUsers = async () => {
+    setIsLoadingUsers(true);
+    try {
+      const q = query(collection(db, 'users'), orderBy('createdAt', 'desc'));
+      const snap = await getDocs(q);
+      const list = [];
+      snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+      setUsers(list);
+    } catch (e) {
+      console.error("Failed to fetch users:", e);
+    } finally {
+      setIsLoadingUsers(false);
+    }
+  };
+
+  const toggleAccess = async (user) => {
+    try {
+      const userRef = doc(db, 'users', user.id);
+      const newStatus = !user.hasAccess;
+      await updateDoc(userRef, { hasAccess: newStatus });
+      setUsers(prev => prev.map(u => u.id === user.id ? { ...u, hasAccess: newStatus } : u));
+    } catch (e) {
+      alert("Error updating access: " + e.message);
+    }
+  };
+
+  React.useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const filteredUsers = users.filter(u => {
+    const matchesSearch = u.email?.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          u.name?.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    if (userFilter === 'access')    return matchesSearch && u.hasAccess === true;
+    if (userFilter === 'no_access') return matchesSearch && u.hasAccess !== true;
+    return matchesSearch;
+  });
 
   /* ── Submit ── */
   const submitTest = async () => {
@@ -68,6 +112,7 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
       <div className="admin-tabs">
         {[
           { id: 'reports',      label: `Reports (${reports.length})` },
+          { id: 'users',        label: `Users (${users.length})` },
           { id: 'add_test',     label: 'Create Test' },
         ].map(t => (
           <button
@@ -108,6 +153,81 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
           </div>
         )}
 
+
+        {/* ── Users tab ── */}
+        {tab === 'users' && (
+          <div className="users-management">
+            <div className="admin-stats-bar">
+              <div className="stat-item">
+                <span className="stat-label">Total Users</span>
+                <span className="stat-value">{users.length}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">With Access</span>
+                <span className="stat-value">{users.filter(u => u.hasAccess).length}</span>
+              </div>
+            </div>
+
+            <div className="search-bar">
+              <input 
+                type="text" 
+                placeholder="Search by email or name..." 
+                className="input-field"
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+              />
+            </div>
+
+            <div className="filter-chips">
+              {[
+                { id: 'all',       label: 'All' },
+                { id: 'access',    label: 'With Access' },
+                { id: 'no_access', label: 'No Access' },
+              ].map(f => (
+                <button
+                  key={f.id}
+                  className={`chip ${userFilter === f.id ? 'active' : ''}`}
+                  onClick={() => setUserFilter(f.id)}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+
+            {isLoadingUsers ? (
+              <p style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>Loading users...</p>
+            ) : (
+              <div className="users-list">
+                {filteredUsers.length === 0 && <p style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>No users found.</p>}
+                {filteredUsers.map(u => (
+                  <div key={u.id} className="user-mgmt-card">
+                    <div className="user-mgmt-info">
+                      <div className="user-mgmt-main-row">
+                        {u.picture && <img src={u.picture} alt="" className="user-mgmt-avatar" />}
+                        <div className="user-mgmt-main">
+                          <span className="user-mgmt-name">{u.name}</span>
+                          <span className="user-mgmt-email">{u.email}</span>
+                        </div>
+                      </div>
+                      <div className="user-mgmt-meta">
+                        <span className="user-mgmt-date">Joined: {u.createdAt ? new Date(u.createdAt).toLocaleDateString() : 'N/A'}</span>
+                        <span className="user-mgmt-date">Last login: {u.lastLogin ? new Date(u.lastLogin).toLocaleDateString() : 'N/A'}</span>
+                      </div>
+                    </div>
+                    <div className="user-mgmt-actions">
+                      <button 
+                        className={`btn-access ${u.hasAccess ? 'active' : ''}`}
+                        onClick={() => toggleAccess(u)}
+                      >
+                        {u.hasAccess ? 'Revoke Access' : 'Grant Access'}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* ── Create test tab ── */}
         {tab === 'add_test' && (

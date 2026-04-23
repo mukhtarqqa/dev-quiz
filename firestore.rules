@@ -28,7 +28,8 @@ service cloud.firestore {
     // Пользователи (доступ к тестам)
     match /users/{email} {
       allow read: if request.auth != null && (request.auth.token.email == email || isAdmin());
-      allow create: if request.auth != null && request.auth.token.email == email && request.resource.data.hasAccess == false;
+      allow create: if request.auth != null && request.auth.token.email == email && 
+                    (request.resource.data.hasAccess == false || isAdmin());
       allow update: if isAdmin();
     }
     

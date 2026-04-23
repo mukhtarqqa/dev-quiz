@@ -1289,6 +1289,178 @@ select.input-field {
   color: var(--text-sub);
 }
 
+/* ─── Users Management ─── */
+.users-management {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-stats-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.stat-item {
+  flex: 1;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--bg-active);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: var(--t);
+}
+
+.chip:hover {
+  border-color: var(--border-hi);
+  color: var(--text-sub);
+}
+
+.chip.active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-mgmt-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--t);
+}
+
+.user-mgmt-card:hover {
+  border-color: var(--border-hi);
+  transform: translateY(-2px);
+  background: var(--bg-hover);
+}
+
+.user-mgmt-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-mgmt-main-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-mgmt-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-mid);
+  background: var(--bg-active);
+}
+
+.user-mgmt-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-mgmt-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.user-mgmt-email {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.user-mgmt-meta {
+  display: flex;
+  gap: 12px;
+}
+
+.user-mgmt-date {
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-access {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: var(--t);
+  border: 1px solid var(--border-mid);
+  color: var(--text-muted);
+}
+
+.btn-access.active {
+  background: var(--green-dim);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.btn-access.active:hover {
+  background: var(--red-dim);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.btn-access:not(.active):hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+
 .add-test-form {
   display: flex;
   flex-direction: column;
