@@ -62,6 +62,7 @@ export default function App() {
   const [stats, setStats] = useState(
     () => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 }
   );
+  const [scrolled, setScrolled] = useState(false);
 
   const text = i18n[lang] || i18n['EN'];
 
@@ -73,6 +74,12 @@ export default function App() {
     if (mode === 'light') document.body.classList.add('mode-light');
     localStorage.setItem('devquiz_theme', theme);
   }, [theme, mode]);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => { localStorage.setItem('devquiz_mode', mode); }, [mode]);
   useEffect(() => { localStorage.setItem('devquiz_lang',  lang); }, [lang]);
@@ -269,6 +276,9 @@ export default function App() {
       {isAuthenticated && currentUser && activeScreen !== 'admin' && (
         <AppHeader
           currentUser={currentUser}
+          scrolled={scrolled}
+          lang={lang}
+          setLang={setLang}
           onLogoClick={() => setActiveScreen('menu')}
           onAvatarClick={() => setActiveScreen('profile')}
         />
