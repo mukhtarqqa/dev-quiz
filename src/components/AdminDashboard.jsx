@@ -136,7 +136,13 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
   /* ── Device slot render ── */
   const formatDate = (iso) => {
     if (!iso) return null;
-    try { return new Date(iso).toLocaleDateString('ru-RU', { day: '2-digit', month: 'short', year: '2-digit' }); }
+    try { 
+      const d = new Date(iso);
+      const day = String(d.getDate()).padStart(2, '0');
+      const mon = String(d.getMonth() + 1).padStart(2, '0');
+      const yr  = String(d.getFullYear()).slice(-2);
+      return `${day}.${mon}.${yr}`;
+    }
     catch { return iso; }
   };
 
@@ -359,9 +365,8 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
                         <button
                           className="btn-access"
                           onClick={() => resetAllDevices(u.id)}
-                          style={{ fontSize: '0.78rem' }}
                         >
-                          Reset All Devices
+                          Reset Slots
                         </button>
                       </div>
                     </div>

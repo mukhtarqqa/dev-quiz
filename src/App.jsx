@@ -289,8 +289,9 @@ export default function App() {
         screen:    activeScreen,
         qIndex:    activeScreen === 'quiz' ? qIndex : null,
       });
+      alert(text.reportSuccess);
       setShowReportModal(false); setReportText('');
-    } catch { alert('Failed to send report.'); }
+    } catch { alert(text.reportError); }
   };
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -403,6 +404,7 @@ export default function App() {
       {/* Bug-report modal */}
       {showReportModal && (
         <ReportModal
+          text={text}
           reportText={reportText}
           setReportText={setReportText}
           onSubmit={submitReport}
