@@ -1482,12 +1482,6 @@ select.input-field {
 }
 
 .btn-access:hover {
-  border-color: var(--border-hi);
-  color: var(--text-sub);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.btn-access:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-dim);
@@ -1503,12 +1497,6 @@ select.input-field {
   background: var(--red-dim);
   border-color: var(--red);
   color: var(--red);
-}
-
-.btn-access:not(.active):hover {
-  background: var(--accent-dim);
-  border-color: var(--accent);
-  color: var(--accent);
 }
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { auth, googleProvider, db } from './firebase';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc, updateDoc, arrayRemove, onSnapshot } from 'firebase/firestore';
@@ -91,7 +91,7 @@ export default function App() {
   );
   const [scrolled, setScrolled] = useState(false);
 
-  const text = i18n[lang] || i18n['EN'];
+  const text = useMemo(() => i18n[lang] || i18n['EN'], [lang]);
 
   // ─────────────────────────────────────────────────────────────────────────
   // Effects
@@ -112,8 +112,6 @@ export default function App() {
   useEffect(() => { localStorage.setItem('devquiz_lang',  lang); }, [lang]);
 
   useEffect(() => {
-    fetchDynamicTests();
-
     // Generate or retrieve a unique device ID
     let deviceId = localStorage.getItem('devquiz_device_id');
     if (!deviceId) {
@@ -243,10 +241,12 @@ export default function App() {
   // ─────────────────────────────────────────────────────────────────────────
   // Firebase helpers
   // ─────────────────────────────────────────────────────────────────────────
-  const fetchDynamicTests = async () => {
+  // ─────────────────────────────────────────────────────────────────────────
+  // Firebase Real-time Listeners
+  // ─────────────────────────────────────────────────────────────────────────
+  useEffect(() => {
     setIsLoading(true);
-    try {
-      const snap = await getDocs(collection(db, 'dynamic_tests'));
+    const unsubTests = onSnapshot(collection(db, 'dynamic_tests'), (snap) => {
       const newDB = {};
       const dynList = [];
       snap.forEach(d => {
@@ -259,12 +259,14 @@ export default function App() {
       });
       setMergedDatabase(newDB);
       setDynamicTests(dynList);
-    } catch (e) {
-      console.error("Fetch failed:", e);
-    } finally {
       setIsLoading(false);
-    }
-  };
+    }, (err) => {
+      console.error("Sync failed:", err);
+      setIsLoading(false);
+    });
+
+    return () => unsubTests();
+  }, []);
 
   const openAdmin = async () => {
     if (!isAdmin) return;
@@ -506,7 +508,7 @@ export default function App() {
               <AdminDashboard
                 goBack={() => setActiveScreen('menu')}
                 reports={reports}
-                onTestAdded={fetchDynamicTests}
+                onTestAdded={() => {}}
                 deleteReport={deleteReport}
                 dynamicTests={dynamicTests}
               />
