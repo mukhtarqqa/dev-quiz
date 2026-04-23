@@ -4,6 +4,7 @@ import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
+// Checkpoint
 import { ADMIN_EMAILS, TIME_LIMIT, SUBJECT_KEYS, i18n } from './constants';
 import { IconCode }  from './icons';
 
