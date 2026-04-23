@@ -6,6 +6,7 @@ import {
   IconPalette, IconGlobe,
   IconTelegram, IconLogOut,
 } from '../icons';
+import { CONTACT_TELEGRAM } from '../constants';
 
 const THEME_COLORS = {
   cyan:   '#00e5ff',
@@ -167,18 +168,19 @@ export default function ProfileScreen({
 
         {/* ── Actions ── */}
         <div className="settings-group">
-          <a
-            href="https://t.me/zhumabekov047"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              const message = encodeURIComponent(`Здравствуйте! Нужна помощь по аккаунту: ${currentUser.email}`);
+              window.open(`https://t.me/${CONTACT_TELEGRAM}?text=${message}`, '_blank');
+            }}
             className="settings-row"
-            style={{ textDecoration: 'none', cursor: 'pointer' }}
+            style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'none' }}
           >
             <div className="settings-row-title" style={{ color: 'var(--text-main)' }}>
               <IconTelegram /> {text.support}
             </div>
             <IconArrow />
-          </a>
+          </button>
 
           <button
             className="settings-row"

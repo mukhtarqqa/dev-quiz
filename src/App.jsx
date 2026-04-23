@@ -397,7 +397,7 @@ export default function App() {
 
       {/* Device binding block screen */}
       {isAuthenticated && deviceBlocked && (
-        <DeviceBlockedScreen text={text} />
+        <DeviceBlockedScreen text={text} currentUser={currentUser} />
       )}
 
       {/* Bug-report modal */}
