@@ -23,4 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
+# Data & Scripts (Excluded from Git)
 questions.js
+src/questions.js
+src/new_database.json
+analyze_questions.*
+upload_questions.*
+src/temp_questions.js
+*.ps1

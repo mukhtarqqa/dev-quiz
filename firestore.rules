@@ -7,8 +7,9 @@ service cloud.firestore {
     // здесь мы можем продублировать логику или проверять кастомные клеймы.
     function isAdmin() {
       return request.auth != null && (
-        request.auth.token.email == 'mukhtarqqa@gmail.com' || 
-        request.auth.token.email == 'toph889@gmail.com'
+        request.auth.token.email == 'minamuha2020@gmail.com' || 
+        request.auth.token.email == 'toph89573@gmail.com' || 
+        request.auth.token.email == 'chikibanboni01@gmail.com'
       );
     }
 
