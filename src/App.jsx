@@ -143,7 +143,7 @@ export default function App() {
 
             // Enforce single active session
             if (!ADMIN_EMAILS.includes(user.email) && data.currentSession && data.currentSession !== deviceId) {
-              auth.signOut();
+              setDeviceBlocked(true);
             }
           } else {
             setHasAccess(ADMIN_EMAILS.includes(user.email));
@@ -344,15 +344,15 @@ export default function App() {
         <AuthOverlay text={text} lang={lang} setLang={setLang} onSignIn={handleSignIn} />
       )}
 
-      {/* Device limit overlay */}
+      {/* Session terminated overlay */}
       {isAuthenticated && deviceBlocked && (
         <div className="device-blocked-overlay">
           <div className="device-blocked-card">
             <div className="device-blocked-icon">🔒</div>
-            <h2>{text.deviceBlockedTitle}</h2>
-            <p>{text.deviceBlockedDesc}</p>
-            <button className="btn primary" onClick={handleSignOut}>
-              {text.signOut}
+            <h2>{text.sessionTerminatedTitle}</h2>
+            <p>{text.sessionTerminatedDesc}</p>
+            <button className="btn primary" onClick={handleSignOut} style={{ float: 'right' }}>
+              {text.sessionTerminatedBtn}
             </button>
           </div>
         </div>
