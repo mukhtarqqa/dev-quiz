@@ -30,13 +30,12 @@ service cloud.firestore {
       allow read: if request.auth != null && (request.auth.token.email == email || isAdmin());
       allow create: if request.auth != null && request.auth.token.email == email &&
                     (request.resource.data.hasAccess == false || isAdmin());
-      // Пользователь может только добавлять своё устройство (append); удалять — только Admin
+      // Пользователь может обновлять свои данные и управлять списком устройств
       allow update: if isAdmin() || (
         request.auth != null &&
         request.auth.token.email == email &&
         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['registeredDevices', 'lastLogin', 'picture', 'name']) &&
-        request.resource.data.get('registeredDevices', []).size() <= 2 &&
-        request.resource.data.get('registeredDevices', []).size() >= resource.data.get('registeredDevices', []).size()
+        request.resource.data.get('registeredDevices', []).size() <= 2
       );
     }
     

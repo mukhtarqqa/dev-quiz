@@ -119,7 +119,11 @@ export default function App() {
       localStorage.setItem('devquiz_device_id', deviceId);
     }
 
+    let unsubUser = null;
+
     const unsub = onAuthStateChanged(auth, user => {
+      if (unsubUser) { unsubUser(); unsubUser = null; }
+
       if (user) {
         setIsAuthenticated(true);
         const userInfo = {
@@ -193,7 +197,7 @@ export default function App() {
         };
         initUserAndDevice();
 
-        const unsubUser = onSnapshot(userRef, (docSnap) => {
+        unsubUser = onSnapshot(userRef, (docSnap) => {
           if (docSnap.exists()) {
             const data = docSnap.data();
             setHasAccess(data.hasAccess === true || ADMIN_EMAILS.includes(user.email));
@@ -213,8 +217,6 @@ export default function App() {
           console.error('User listen failed:', err);
           setHasAccess(ADMIN_EMAILS.includes(user.email));
         });
-
-        return () => unsubUser();
       } else {
         setIsAuthenticated(false);
         setCurrentUser(null);
@@ -225,7 +227,10 @@ export default function App() {
       }
     });
 
-    return () => unsub();
+    return () => {
+      unsub();
+      if (unsubUser) unsubUser();
+    };
   }, []);
 
   // Timer countdown
@@ -310,8 +315,21 @@ export default function App() {
   };
 
   const handleSignOut = async () => {
-    // NOTE: we do NOT remove from registeredDevices on logout
-    // Devices remain permanently registered until admin resets them
+    try {
+      const deviceId = localStorage.getItem('devquiz_device_id');
+      if (currentUser && deviceId) {
+        const userRef = doc(db, 'users', currentUser.email);
+        const userSnap = await getDoc(userRef);
+        if (userSnap.exists()) {
+          const data = userSnap.data();
+          const existing = Array.isArray(data.registeredDevices) ? data.registeredDevices : [];
+          const updated = existing.filter(d => d.id !== deviceId);
+          await updateDoc(userRef, { registeredDevices: updated });
+        }
+      }
+    } catch (e) {
+      console.error('Failed to remove device on logout:', e);
+    }
     auth.signOut();
   };
 
