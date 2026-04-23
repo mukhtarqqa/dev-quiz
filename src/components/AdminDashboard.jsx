@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import React, { useState, useEffect } from 'react';
+import { collection, addDoc, deleteDoc, doc, updateDoc, increment, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 import { IconClose } from '../icons';
 import { OPTION_LETTERS } from '../constants';
@@ -10,6 +10,41 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
   const [variantName,  setVariantName]  = useState('');
   const [questions,    setQuestions]    = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState('');
+
+  // ── Access Management ──
+  useEffect(() => {
+    const unsub = onSnapshot(collection(db, 'users'), (snap) => {
+      const usersList = [];
+      snap.forEach(d => usersList.push({ id: d.id, ...d.data() }));
+      setUsers(usersList);
+    });
+    return () => unsub();
+  }, []);
+
+  const grantAccess = async (userId) => {
+    await updateDoc(doc(db, 'users', userId), {
+      isPaid: true,
+      paidUntil: Date.now() + 30 * 24 * 60 * 60 * 1000,
+      attemptsLeft: 3
+    });
+  };
+
+  const revokeAccess = async (userId) => {
+    await updateDoc(doc(db, 'users', userId), { isPaid: false });
+  };
+
+  const useAttempt = async (userId) => {
+    await updateDoc(doc(db, 'users', userId), { attemptsLeft: increment(-1) });
+  };
+
+  const filteredUsers = users.filter(u => 
+    u.email?.toLowerCase().includes(search.toLowerCase()) || 
+    u.id.includes(search)
+  );
+
 
   /* ── Test management ── */
   const deleteTest = async (id) => {
@@ -69,6 +104,7 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
         {[
           { id: 'reports',      label: `Reports (${reports.length})` },
           { id: 'add_test',     label: 'Create Test' },
+          { id: 'users',        label: 'Access Management' },
         ].map(t => (
           <button
             key={t.id}
@@ -102,6 +138,50 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
                     </div>
                   ) : <div />}
                   <button className="btn-text-danger" onClick={() => deleteReport(r.id)}>Delete</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* ── Users tab ── */}
+        {tab === 'users' && (
+          <div className="reports-list">
+            <div className="form-group" style={{ marginBottom: '15px' }}>
+              <input 
+                type="text" 
+                placeholder="Search by email..." 
+                className="input-field" 
+                value={search}
+                onChange={e => setSearch(e.target.value)} 
+              />
+            </div>
+            
+            {filteredUsers.length === 0 && (
+              <p style={{ fontSize: '.8rem', color: 'var(--text-muted)' }}>No users found.</p>
+            )}
+
+            {filteredUsers.map(u => (
+              <div key={u.id} className="report-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <div style={{ color: 'var(--text-main)', fontWeight: 'bold', fontSize: '.85rem' }}>{u.email}</div>
+                  <div style={{ fontSize: '.7rem', color: 'var(--text-sub)', marginTop: '4px' }}>
+                    Status: <span style={{ color: u.isPaid ? 'var(--green)' : 'var(--red)' }}>
+                      {u.isPaid ? 'Оплачено' : 'Нет доступа'}
+                    </span> | Attempts: {u.attemptsLeft || 0}
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '8px', flexDirection: 'column', alignItems: 'flex-end' }}>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    {!u.isPaid ? (
+                      <button className="btn-primary" style={{ padding: '6px 12px', fontSize: '0.7rem' }} onClick={() => grantAccess(u.id)}>Выдать</button>
+                    ) : (
+                      <button className="btn-secondary" style={{ padding: '6px 12px', fontSize: '0.7rem', color: 'var(--red)', borderColor: 'var(--border)' }} onClick={() => revokeAccess(u.id)}>Отменить</button>
+                    )}
+                  </div>
+                  <button className="btn-secondary" style={{ padding: '6px 12px', fontSize: '0.7rem' }} onClick={() => useAttempt(u.id)} disabled={!u.attemptsLeft}>
+                    -1 попытка
+                  </button>
                 </div>
               </div>
             ))}

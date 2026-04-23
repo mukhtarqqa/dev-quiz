@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { auth, googleProvider, db } from './firebase';
-import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
-import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
+import { signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
+import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, setDoc, getDoc } from 'firebase/firestore';
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
 import { ADMIN_EMAILS, TIME_LIMIT, SUBJECT_KEYS, i18n } from './constants';
@@ -17,6 +17,7 @@ import QuizScreen     from './components/QuizScreen';
 import ResultScreen   from './components/ResultScreen';
 import ProfileScreen  from './components/ProfileScreen';
 import AdminDashboard from './components/AdminDashboard';
+import BuyAccessScreen from './components/BuyAccessScreen';
 
 // Inject icon into SUBJECTS (icons live in icons.jsx, not constants.js)
 const SUBJECTS = SUBJECT_KEYS.map(s => ({ ...s, icon: <IconCode /> }));
@@ -86,15 +87,41 @@ export default function App() {
 
   useEffect(() => {
     fetchDynamicTests();
-    const unsub = onAuthStateChanged(auth, user => {
+    const unsub = onAuthStateChanged(auth, async user => {
       if (user) {
+        // Check or create user doc
+        const userRef = doc(db, 'users', user.uid);
+        let userSnap = await getDoc(userRef);
+        
+        if (!userSnap.exists()) {
+          await setDoc(userRef, {
+            uid: user.uid,
+            email: user.email,
+            isPaid: false,
+            attemptsLeft: 0,
+            createdAt: new Date().toISOString()
+          });
+          userSnap = await getDoc(userRef);
+        }
+        
+        const userData = userSnap.data();
+        
         setIsAuthenticated(true);
         setCurrentUser({
           name:    user.displayName || user.email.split('@')[0],
           email:   user.email,
           picture: user.photoURL || '',
+          ...userData
         });
-        setIsAdmin(ADMIN_EMAILS.includes(user.email));
+        
+        const isAdminUser = ADMIN_EMAILS.includes(user.email);
+        setIsAdmin(isAdminUser);
+
+        if (isAdminUser || userData.isPaid) {
+          setActiveScreen('menu');
+        } else {
+          setActiveScreen('buy-access');
+        }
       } else {
         setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false);
       }
@@ -192,7 +219,15 @@ export default function App() {
     return found ? `${found.name} · ${found.lang}` : key.replace('_ru', '').toUpperCase();
   };
 
-  const startQuiz = (key) => {
+  const startQuiz = async (key) => {
+    if (currentUser && !isAdmin && currentUser.attemptsLeft > 0) {
+      try {
+        await updateDoc(doc(db, 'users', currentUser.uid), { attemptsLeft: increment(-1) });
+        setCurrentUser(prev => ({...prev, attemptsLeft: prev.attemptsLeft - 1}));
+      } catch (e) {
+        console.error('Failed to decrement attempts', e);
+      }
+    }
     setQuestions(mergedDatabase[currentSubject][key]);
     setQIndex(0); setScore(0); setUserAnswers([]);
     setIsAnswered(false); setFeedbackMsg({ text: '', type: '' });
@@ -273,7 +308,7 @@ export default function App() {
       )}
 
       {/* Persistent header */}
-      {isAuthenticated && currentUser && activeScreen !== 'admin' && (
+      {isAuthenticated && currentUser && activeScreen !== 'admin' && activeScreen !== 'buy-access' && (
         <AppHeader
           currentUser={currentUser}
           scrolled={scrolled}
@@ -287,6 +322,10 @@ export default function App() {
       {/* All screens */}
       {isAuthenticated && (
         <div className="main-layout">
+
+          {activeScreen === 'buy-access' && (
+            <BuyAccessScreen onLogout={() => signOut(auth)} />
+          )}
 
           <MenuScreen
             text={text}
