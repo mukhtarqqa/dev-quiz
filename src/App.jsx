@@ -314,6 +314,21 @@ export default function App() {
     catch (err) { console.error(err); alert('Authentication failed.'); }
   };
 
+  const handleRemoveDevice = async (idToRemove) => {
+    if (!currentUser) return;
+    try {
+      const userRef = doc(db, 'users', currentUser.email);
+      const userSnap = await getDoc(userRef);
+      if (userSnap.exists()) {
+        const existing = Array.isArray(userSnap.data().registeredDevices) ? userSnap.data().registeredDevices : [];
+        const updated = existing.filter(d => d.id !== idToRemove);
+        await updateDoc(userRef, { registeredDevices: updated });
+      }
+    } catch (e) {
+      console.error('Failed to remove device:', e);
+    }
+  };
+
   const handleSignOut = async () => {
     try {
       const deviceId = localStorage.getItem('devquiz_device_id');
@@ -423,7 +438,11 @@ export default function App() {
 
       {/* Device binding block screen */}
       {isAuthenticated && !isDeviceChecking && deviceBlocked && (
-        <DeviceBlockedScreen text={text} currentUser={currentUser} />
+        <DeviceBlockedScreen 
+          text={text} 
+          currentUser={currentUser} 
+          onSignOut={handleSignOut}
+        />
       )}
 
       {/* Bug-report modal */}
@@ -517,6 +536,7 @@ export default function App() {
             lang={lang}   setLang={setLang}
             onBack={() => setActiveScreen('menu')}
             onSignOut={handleSignOut}
+            onRemoveDevice={handleRemoveDevice}
             registeredDevices={activeDevices}
             currentDeviceId={localStorage.getItem('devquiz_device_id')}
           />

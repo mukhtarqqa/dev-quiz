@@ -12,7 +12,7 @@ function ShieldIcon() {
   );
 }
 
-export default function DeviceBlockedScreen({ text, currentUser }) {
+export default function DeviceBlockedScreen({ text, currentUser, onSignOut }) {
   const handleSupport = () => {
     const message = encodeURIComponent(`${text.supportMessage}${currentUser?.email}`);
     window.open(`https://t.me/${CONTACT_TELEGRAM}?text=${message}`, '_blank');
@@ -26,13 +26,24 @@ export default function DeviceBlockedScreen({ text, currentUser }) {
         </div>
         <h2 className="device-blocked-screen__title">{text.deviceBlockedTitle}</h2>
         <p className="device-blocked-screen__desc">{text.deviceBlockedDesc}</p>
-        <button
-          onClick={handleSupport}
-          className="device-blocked-screen__link"
-          style={{ border: 'none', cursor: 'pointer' }}
-        >
-          {text.supportBtn}
-        </button>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', marginTop: '8px' }}>
+          <button
+            onClick={handleSupport}
+            className="btn secondary"
+            style={{ width: '100%' }}
+          >
+            {text.supportBtn}
+          </button>
+          
+          <button
+            onClick={onSignOut}
+            className="btn-text"
+            style={{ color: 'var(--text-sub)', fontSize: '0.85rem', cursor: 'pointer', background: 'none', border: 'none' }}
+          >
+            {text.signOut}
+          </button>
+        </div>
       </div>
     </div>
   );
