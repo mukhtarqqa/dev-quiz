@@ -1687,3 +1687,143 @@ body:not(.mode-light) .settings-group {
 body:not(.mode-light) .lang-segment button.active {
   background: var(--border);
 }
+
+/* ─── Purchase Screen ─────────────────────────────────────────── */
+.purchase-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.purchase-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 16px;
+  padding: 40px 30px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: modalIn .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.purchase-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.purchase-close-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-main);
+  transform: rotate(90deg);
+}
+
+.purchase-card h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.purchase-desc {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.price-box {
+  padding: 20px;
+  border-radius: 12px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+.price-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.contact-us-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.btn.whatsapp-btn,
+.btn.telegram-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn.whatsapp-btn svg,
+.btn.telegram-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.btn.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E) !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
+}
+
+.btn.whatsapp-btn:hover {
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  transform: translateY(-3px);
+}
+
+.btn.telegram-btn {
+  background: linear-gradient(135deg, #2AABEE, #229ED9) !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 6px 15px rgba(42, 171, 238, 0.25);
+}
+
+.btn.telegram-btn:hover {
+  box-shadow: 0 8px 25px rgba(42, 171, 238, 0.45);
+  transform: translateY(-3px);
+}

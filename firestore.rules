@@ -24,6 +24,13 @@ service cloud.firestore {
       allow create: if request.auth != null;
       allow read, delete: if isAdmin();
     }
+
+    // Пользователи (доступ к тестам)
+    match /users/{email} {
+      allow read: if request.auth != null && (request.auth.token.email == email || isAdmin());
+      allow create: if request.auth != null && request.auth.token.email == email && request.resource.data.hasAccess == false;
+      allow update: if isAdmin();
+    }
     
     // Статистика пользователей (если решите перенести из localStorage в будущем)
     match /user_stats/{userId} {
