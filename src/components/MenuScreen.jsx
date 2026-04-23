@@ -1,7 +1,16 @@
 import React from 'react';
 import { IconAlert, IconSettings, IconArrow } from '../icons';
 
-export default function MenuScreen({ text, currentUser, subjects, isAdmin, isActive, onSelectSubject, onOpenAdmin, onOpenReport }) {
+export default function MenuScreen({ text, currentUser, subjects, isAdmin, isLoading, isActive, onSelectSubject, onOpenAdmin, onOpenReport }) {
+  if (isLoading && isActive) {
+    return (
+      <div className="loader-container">
+        <div className="loader" />
+        <div className="loader-text">Loading Subjects...</div>
+      </div>
+    );
+  }
+
   return (
     <div className={`screen ${isActive ? 'active' : ''}`}>
       <div className="menu-header">

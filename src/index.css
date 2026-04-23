@@ -1149,7 +1149,7 @@ button:disabled {
 }
 
 .input-field.textarea {
-  resize: vertical;
+  resize: none;
   min-height: 88px;
 }
 
@@ -1628,6 +1628,60 @@ body:not(.mode-light) .settings-group {
   background: var(--bg-panel);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   color: var(--text-main);
+}
+
+/* ─── Loader ─────────────────────────────────────────── */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 20px;
+  flex: 1;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--accent-dim);
+  border-bottom-color: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.loader-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 body:not(.mode-light) .lang-segment button.active {

@@ -1,7 +1,16 @@
 import React from 'react';
 import { IconBack, IconArrow } from '../icons';
 
-export default function VariantsScreen({ text, isActive, subjectLabel, currentSubject, mergedDatabase, onBack, onStartQuiz }) {
+export default function VariantsScreen({ text, isActive, isLoading, subjectLabel, currentSubject, mergedDatabase, onBack, onStartQuiz }) {
+  if (isLoading && isActive) {
+    return (
+      <div className="loader-container">
+        <div className="loader" />
+        <div className="loader-text">Loading Variants...</div>
+      </div>
+    );
+  }
+
   const variants = mergedDatabase[currentSubject]
     ? Object.keys(mergedDatabase[currentSubject]).sort((a, b) => {
         const numA = parseInt(a.replace(/\\D/g, ''));

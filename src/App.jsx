@@ -302,6 +302,7 @@ export default function App() {
 
           <VariantsScreen
             text={text}
+            isLoading={isLoading}
             isActive={activeScreen === 'variants'}
             subjectLabel={subjectLabel}
             currentSubject={currentSubject}
