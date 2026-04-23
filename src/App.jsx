@@ -248,7 +248,7 @@ export default function App() {
   // Render
   // ─────────────────────────────────────────────────────────────────────────
   return (
-    <div id="root">
+    <div className="app-container">
 
       {/* Auth overlay (shown when not signed in) */}
       {!isAuthenticated && (
