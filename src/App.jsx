@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { auth, googleProvider, db } from './firebase';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
-import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
 // Checkpoint
@@ -100,39 +100,42 @@ export default function App() {
         setCurrentUser(userInfo);
         setIsAdmin(ADMIN_EMAILS.includes(user.email));
         
-        // Check and sync user access/data
-        const syncUser = async () => {
+        // Real-time sync of user access/data
+        const userRef = doc(db, 'users', user.email);
+        
+        // Initial creation/update of the record
+        const initUser = async () => {
           try {
-            const userRef = doc(db, 'users', user.email);
             const userSnap = await getDoc(userRef);
-            
-            let currentAccess = false;
-            
-            if (ADMIN_EMAILS.includes(user.email)) {
-              currentAccess = true;
-            } else if (userSnap.exists()) {
-              currentAccess = userSnap.data().hasAccess === true;
-            }
-
-            // Always update/create user record to keep it in the list
             await setDoc(userRef, {
               email: user.email,
               name: userInfo.name,
               picture: userInfo.picture,
               lastLogin: new Date().toISOString(),
-              // Only set hasAccess to false if it's a new user and NOT an admin
-              hasAccess: userSnap.exists() ? userSnap.data().hasAccess : currentAccess,
+              hasAccess: userSnap.exists() ? userSnap.data().hasAccess : ADMIN_EMAILS.includes(user.email),
               createdAt: userSnap.exists() ? userSnap.data().createdAt : new Date().toISOString()
             }, { merge: true });
+          } catch (e) { console.error("User init failed:", e); }
+        };
+        initUser();
 
-            setHasAccess(currentAccess);
-          } catch (e) {
-            console.error("Sync user failed:", e);
-            // Fallback for admins even if DB fails
+        // Listen for changes (real-time access update)
+        const unsubUser = onSnapshot(userRef, (docSnap) => {
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+            setHasAccess(data.hasAccess === true || ADMIN_EMAILS.includes(user.email));
+          } else {
             setHasAccess(ADMIN_EMAILS.includes(user.email));
           }
+        }, (err) => {
+          console.error("User listen failed:", err);
+          setHasAccess(ADMIN_EMAILS.includes(user.email));
+        });
+
+        return () => {
+          unsub();
+          unsubUser();
         };
-        syncUser();
       } else {
         setIsAuthenticated(false); setCurrentUser(null); setIsAdmin(false); setHasAccess(false);
       }
