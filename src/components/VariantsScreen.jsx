@@ -3,7 +3,12 @@ import { IconBack, IconArrow } from '../icons';
 
 export default function VariantsScreen({ text, isActive, subjectLabel, currentSubject, mergedDatabase, onBack, onStartQuiz }) {
   const variants = mergedDatabase[currentSubject]
-    ? Object.keys(mergedDatabase[currentSubject])
+    ? Object.keys(mergedDatabase[currentSubject]).sort((a, b) => {
+        const numA = parseInt(a.replace(/\\D/g, ''));
+        const numB = parseInt(b.replace(/\\D/g, ''));
+        if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+        return a.localeCompare(b);
+      })
     : [];
 
   const formatVariantName = (key, index) => {
