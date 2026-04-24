@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { collection, addDoc, deleteDoc, doc, getDocs, updateDoc, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase';
-import { IconClose } from '../icons';
+import { IconBack } from '../icons';
 import { OPTION_LETTERS } from '../constants';
 
 export default function AdminDashboard({ goBack, reports, onTestAdded, deleteReport, dynamicTests }) {
@@ -148,28 +148,30 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
 
   return (
     <div className="admin-container">
-      {/* Header */}
-      <div className="admin-header">
-        <h2>Admin Panel</h2>
-        <button className="btn-icon" onClick={goBack}><IconClose /></button>
-      </div>
+      <div className="admin-nav-sticky">
+        {/* Header */}
+        <div className="admin-header">
+          <button className="btn-icon" onClick={goBack}><IconBack /></button>
+          <h2>Admin Panel</h2>
+        </div>
 
-      {/* Tabs */}
-      <div className="admin-tabs">
-        {[
-          { id: 'reports',  label: `Reports (${reports.length})` },
-          { id: 'users',    label: `Users (${users.length})` },
-          { id: 'devices',  label: 'Devices' },
-          { id: 'add_test', label: 'Create Test' },
-        ].map(t => (
-          <button
-            key={t.id}
-            className={`admin-tab ${tab === t.id ? 'active' : ''}`}
-            onClick={() => setTab(t.id)}
-          >
-            {t.label}
-          </button>
-        ))}
+        {/* Tabs */}
+        <div className="admin-tabs">
+          {[
+            { id: 'reports',  label: `Reports (${reports.length})` },
+            { id: 'users',    label: `Users (${users.length})` },
+            { id: 'devices',  label: 'Devices' },
+            { id: 'add_test', label: 'Create Test' },
+          ].map(t => (
+            <button
+              key={t.id}
+              className={`admin-tab ${tab === t.id ? 'active' : ''}`}
+              onClick={() => setTab(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="admin-content">
