@@ -2,10 +2,10 @@ import React from 'react';
 import { IconClose } from '../icons';
 import { OPTION_LETTERS } from '../constants';
 
-export default function QuizScreen({ text, isActive, questions, qIndex, timeLeft, isAnswered, feedbackMsg, userAnswers, onAnswer, onNext, onQuit }) {
-  const timerDanger  = timeLeft <= 5;
+export default function QuizScreen({ text, isActive, questions, qIndex, timeLeft, isTimerEnabled, isAnswered, feedbackMsg, userAnswers, onAnswer, onNext, onQuit }) {
+  const timerDanger  = isTimerEnabled && timeLeft <= 5;
   const progressPct  = questions.length > 0 ? (qIndex / questions.length) * 100 : 0;
-  const timerDisplay = timeLeft < 10 ? `0:0${timeLeft}` : `0:${timeLeft}`;
+  const timerDisplay = isTimerEnabled ? (timeLeft < 10 ? `0:0${timeLeft}` : `0:${timeLeft}`) : '∞';
 
   const getOptClass = (i) => {
     if (!isAnswered) return 'opt-btn';

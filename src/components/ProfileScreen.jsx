@@ -4,7 +4,7 @@ import {
   IconActivity, IconCheck,
   IconMoon, IconSun,
   IconPalette, IconGlobe,
-  IconTelegram, IconLogOut,
+  IconTelegram, IconLogOut, IconTimer
 } from '../icons';
 import { CONTACT_TELEGRAM } from '../constants';
 
@@ -39,6 +39,7 @@ function DeviceIcon({ isMobile }) {
 export default function ProfileScreen({
   text, isActive, currentUser, stats,
   mode, setMode, theme, setTheme, lang, setLang,
+  isTimerEnabled, setIsTimerEnabled,
   onBack, onSignOut,
   registeredDevices = [], currentDeviceId,
 }) {
@@ -161,6 +162,13 @@ export default function ProfileScreen({
               {['EN', 'KZ', 'RU'].map(l => (
                 <button key={l} className={lang === l ? 'active' : ''} onClick={() => setLang(l)}>{l}</button>
               ))}
+            </div>
+          </div>
+          <div className="settings-row">
+            <div className="settings-row-title"><IconTimer /> {text.timerSetting}</div>
+            <div className="lang-segment">
+              <button className={!isTimerEnabled ? 'active' : ''} onClick={() => setIsTimerEnabled(false)}>{text.timerOff}</button>
+              <button className={isTimerEnabled ? 'active' : ''} onClick={() => setIsTimerEnabled(true)}>{text.timerOn}</button>
             </div>
           </div>
         </div>

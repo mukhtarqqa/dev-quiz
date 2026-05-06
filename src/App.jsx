@@ -90,6 +90,7 @@ export default function App() {
     () => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 }
   );
   const [scrolled, setScrolled] = useState(false);
+  const [isTimerEnabled, setIsTimerEnabled] = useState(localStorage.getItem('devquiz_timer') !== 'false');
 
   const text = useMemo(() => i18n[lang] || i18n['EN'], [lang]);
 
@@ -110,6 +111,7 @@ export default function App() {
 
   useEffect(() => { localStorage.setItem('devquiz_mode', mode); }, [mode]);
   useEffect(() => { localStorage.setItem('devquiz_lang',  lang); }, [lang]);
+  useEffect(() => { localStorage.setItem('devquiz_timer', isTimerEnabled); }, [isTimerEnabled]);
 
   useEffect(() => {
     // Generate or retrieve a unique device ID
@@ -235,13 +237,13 @@ export default function App() {
 
   // Timer countdown
   useEffect(() => {
-    if (timerRunning && timeLeft > 0) {
+    if (isTimerEnabled && timerRunning && timeLeft > 0) {
       timerRef.current = setTimeout(() => setTimeLeft(p => p - 1), 1000);
-    } else if (timerRunning && timeLeft <= 0) {
+    } else if (isTimerEnabled && timerRunning && timeLeft <= 0) {
       handleTimeout();
     }
     return () => clearTimeout(timerRef.current);
-  }, [timeLeft, timerRunning]);
+  }, [timeLeft, timerRunning, isTimerEnabled]);
 
   // ─────────────────────────────────────────────────────────────────────────
   // Firebase helpers
@@ -337,7 +339,17 @@ export default function App() {
   };
 
   const startQuiz = (key) => {
-    setQuestions(mergedDatabase[currentSubject][key]);
+    const originalQuestions = mergedDatabase[currentSubject][key];
+    const randomizedQuestions = originalQuestions.map(q => {
+      const optionsWithIndex = q.options.map((opt, idx) => ({ text: opt, isCorrect: idx === q.correct }));
+      for (let i = optionsWithIndex.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [optionsWithIndex[i], optionsWithIndex[j]] = [optionsWithIndex[j], optionsWithIndex[i]];
+      }
+      const newCorrectIndex = optionsWithIndex.findIndex(o => o.isCorrect);
+      return { ...q, options: optionsWithIndex.map(o => o.text), correct: newCorrectIndex };
+    });
+    setQuestions(randomizedQuestions);
     setQIndex(0); setScore(0); setUserAnswers([]);
     setIsAnswered(false); setFeedbackMsg({ text: '', type: '' });
     setTimeLeft(TIME_LIMIT); setTimerRunning(true);
@@ -478,6 +490,7 @@ export default function App() {
             questions={questions}
             qIndex={qIndex}
             timeLeft={timeLeft}
+            isTimerEnabled={isTimerEnabled}
             isAnswered={isAnswered}
             feedbackMsg={feedbackMsg}
             userAnswers={userAnswers}
@@ -504,6 +517,7 @@ export default function App() {
             mode={mode}   setMode={setMode}
             theme={theme} setTheme={setTheme}
             lang={lang}   setLang={setLang}
+            isTimerEnabled={isTimerEnabled} setIsTimerEnabled={setIsTimerEnabled}
             onBack={() => setActiveScreen('menu')}
             onSignOut={handleSignOut}
             registeredDevices={activeDevices}
