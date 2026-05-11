@@ -15,6 +15,7 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [userFilter,     setUserFilter]     = useState('all');
+  const [devFilter,      setDevFilter]      = useState('all');
 
   /* ── Test management ── */
   const deleteTest = async (id) => {
@@ -106,10 +107,14 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
     return matchesSearch;
   });
 
-  const filteredDevUsers = users.filter(u =>
-    u.email?.toLowerCase().includes(devSearch.toLowerCase()) ||
-    u.name?.toLowerCase().includes(devSearch.toLowerCase())
-  );
+  const filteredDevUsers = users.filter(u => {
+    const matchesSearch = u.email?.toLowerCase().includes(devSearch.toLowerCase()) ||
+                          u.name?.toLowerCase().includes(devSearch.toLowerCase());
+    const devs = Array.isArray(u.registeredDevices) ? u.registeredDevices : [];
+    if (devFilter === 'full') return matchesSearch && devs.length >= 2;
+    if (devFilter === 'not_full') return matchesSearch && devs.length < 2;
+    return matchesSearch;
+  });
 
   /* ── Submit test ── */
   const submitTest = async () => {
@@ -301,6 +306,22 @@ export default function AdminDashboard({ goBack, reports, onTestAdded, deleteRep
                 value={devSearch}
                 onChange={e => setDevSearch(e.target.value)}
               />
+            </div>
+
+            <div className="filter-chips">
+              {[
+                { id: 'all',      label: 'All' },
+                { id: 'full',     label: 'Full Slots' },
+                { id: 'not_full', label: 'Not Full' },
+              ].map(f => (
+                <button
+                  key={f.id}
+                  className={`chip ${devFilter === f.id ? 'active' : ''}`}
+                  onClick={() => setDevFilter(f.id)}
+                >
+                  {f.label}
+                </button>
+              ))}
             </div>
 
             {isLoadingUsers ? (

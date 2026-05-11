@@ -350,15 +350,17 @@ export default function App() {
 
   const startQuiz = (key) => {
     const originalQuestions = mergedDatabase[currentSubject][key];
-    const randomizedQuestions = originalQuestions.map(q => {
+    // Shuffle the list of questions
+    const shuffledQuestions = shuffleArray([...originalQuestions]);
+    
+    // Shuffle options for each question
+    const randomizedQuestions = shuffledQuestions.map(q => {
       const optionsWithIndex = q.options.map((opt, idx) => ({ text: opt, isCorrect: idx === q.correct }));
-      for (let i = optionsWithIndex.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [optionsWithIndex[i], optionsWithIndex[j]] = [optionsWithIndex[j], optionsWithIndex[i]];
-      }
-      const newCorrectIndex = optionsWithIndex.findIndex(o => o.isCorrect);
-      return { ...q, options: optionsWithIndex.map(o => o.text), correct: newCorrectIndex };
+      const shuffledOptions = shuffleArray(optionsWithIndex);
+      const newCorrectIndex = shuffledOptions.findIndex(o => o.isCorrect);
+      return { ...q, options: shuffledOptions.map(o => o.text), correct: newCorrectIndex };
     });
+
     setQuestions(randomizedQuestions);
     setQIndex(0); setScore(0); setUserAnswers([]);
     setIsAnswered(false); setFeedbackMsg({ text: '', type: '' });
