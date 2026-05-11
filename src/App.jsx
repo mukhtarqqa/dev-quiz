@@ -5,17 +5,17 @@ import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, getDoc, se
 
 // ── Constants & i18n ────────────────────────────────────────────────────────
 import { ADMIN_EMAILS, TIME_LIMIT, SUBJECT_KEYS, MAX_DEVICES, i18n } from './constants';
-import { IconCode }  from './icons';
+import { IconCode } from './icons';
 
 // ── Screen components ────────────────────────────────────────────────────────
-import AuthOverlay    from './components/AuthOverlay';
-import AppHeader      from './components/AppHeader';
-import ReportModal    from './components/ReportModal';
-import MenuScreen     from './components/MenuScreen';
+import AuthOverlay from './components/AuthOverlay';
+import AppHeader from './components/AppHeader';
+import ReportModal from './components/ReportModal';
+import MenuScreen from './components/MenuScreen';
 import VariantsScreen from './components/VariantsScreen';
-import QuizScreen     from './components/QuizScreen';
-import ResultScreen   from './components/ResultScreen';
-import ProfileScreen  from './components/ProfileScreen';
+import QuizScreen from './components/QuizScreen';
+import ResultScreen from './components/ResultScreen';
+import ProfileScreen from './components/ProfileScreen';
 import AdminDashboard from './components/AdminDashboard';
 import PurchaseScreen from './components/PurchaseScreen';
 import DeviceBlockedScreen from './components/DeviceBlockedScreen';
@@ -45,47 +45,57 @@ const getDeviceInfo = () => {
 const SUBJECTS = SUBJECT_KEYS.map(s => ({ ...s, icon: <IconCode /> }));
 
 // ─────────────────────────────────────────────────────────────────────────────
+const shuffleArray = (array) => {
+  const newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 export default function App() {
   // ── Auth ──
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [currentUser,     setCurrentUser]     = useState(null);
-  const [isAdmin,         setIsAdmin]         = useState(false);
-  const [hasAccess,       setHasAccess]       = useState(false);
-  const [deviceBlocked,   setDeviceBlocked]   = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [hasAccess, setHasAccess] = useState(false);
+  const [deviceBlocked, setDeviceBlocked] = useState(false);
   const [isDeviceChecking, setIsDeviceChecking] = useState(true);
-  const [activeDevices,   setActiveDevices]   = useState([]);
+  const [activeDevices, setActiveDevices] = useState([]);
 
   // ── Navigation ──
-  const [activeScreen,    setActiveScreen]    = useState('menu');
+  const [activeScreen, setActiveScreen] = useState('menu');
 
   // ── Loading state ──
-  const [isLoading,       setIsLoading]       = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // ── Report modal ──
   const [showReportModal, setShowReportModal] = useState(false);
-  const [reportText,      setReportText]      = useState('');
+  const [reportText, setReportText] = useState('');
 
   // ── Database (cloud only) ──
-  const [mergedDatabase,  setMergedDatabase]  = useState({});
-  const [dynamicTests,    setDynamicTests]    = useState([]);
-  const [reports,         setReports]         = useState([]);
+  const [mergedDatabase, setMergedDatabase] = useState({});
+  const [dynamicTests, setDynamicTests] = useState([]);
+  const [reports, setReports] = useState([]);
 
   // ── Quiz state ──
-  const [currentSubject,  setCurrentSubject]  = useState('');
-  const [questions,       setQuestions]       = useState([]);
-  const [qIndex,          setQIndex]          = useState(0);
-  const [score,           setScore]           = useState(0);
-  const [userAnswers,     setUserAnswers]     = useState([]);
-  const [timeLeft,        setTimeLeft]        = useState(TIME_LIMIT);
-  const [isAnswered,      setIsAnswered]      = useState(false);
-  const [timerRunning,    setTimerRunning]    = useState(false);
-  const [feedbackMsg,     setFeedbackMsg]     = useState({ text: '', type: '' });
+  const [currentSubject, setCurrentSubject] = useState('');
+  const [questions, setQuestions] = useState([]);
+  const [qIndex, setQIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [timeLeft, setTimeLeft] = useState(TIME_LIMIT);
+  const [isAnswered, setIsAnswered] = useState(false);
+  const [timerRunning, setTimerRunning] = useState(false);
+  const [feedbackMsg, setFeedbackMsg] = useState({ text: '', type: '' });
   const timerRef = useRef(null);
 
   // ── Appearance / i18n ──
   const [theme, setTheme] = useState(localStorage.getItem('devquiz_theme') || 'cyan');
-  const [lang,  setLang]  = useState(localStorage.getItem('devquiz_lang')  || 'EN');
-  const [mode,  setMode]  = useState(localStorage.getItem('devquiz_mode')  || 'dark');
+  const [lang, setLang] = useState(localStorage.getItem('devquiz_lang') || 'EN');
+  const [mode, setMode] = useState(localStorage.getItem('devquiz_mode') || 'dark');
   const [stats, setStats] = useState(
     () => JSON.parse(localStorage.getItem('devquiz_stats')) || { solved: 0, score: 0 }
   );
@@ -110,7 +120,7 @@ export default function App() {
   }, []);
 
   useEffect(() => { localStorage.setItem('devquiz_mode', mode); }, [mode]);
-  useEffect(() => { localStorage.setItem('devquiz_lang',  lang); }, [lang]);
+  useEffect(() => { localStorage.setItem('devquiz_lang', lang); }, [lang]);
   useEffect(() => { localStorage.setItem('devquiz_timer', isTimerEnabled); }, [isTimerEnabled]);
 
   useEffect(() => {
@@ -129,16 +139,16 @@ export default function App() {
       if (user) {
         setIsAuthenticated(true);
         const userInfo = {
-          name:    user.displayName || user.email.split('@')[0],
-          email:   user.email,
+          name: user.displayName || user.email.split('@')[0],
+          email: user.email,
           picture: user.photoURL || '',
         };
         setCurrentUser(userInfo);
         setIsAdmin(ADMIN_EMAILS.includes(user.email));
-        
+
         // Real-time sync of user access/data + device limit
         const userRef = doc(db, 'users', user.email);
-        
+
         let sessionInitialized = false;
 
         // ── Register device permanently in registeredDevices[] ──
@@ -177,8 +187,8 @@ export default function App() {
               } else if (existing.length < MAX_DEVICES) {
                 // Slot available — register this device permanently
                 const devInfo = getDeviceInfo();
-                const newDevices = [...existing, { 
-                  id: deviceId, 
+                const newDevices = [...existing, {
+                  id: deviceId,
                   registeredAt: new Date().toISOString(),
                   os: devInfo.os,
                   browser: devInfo.browser,
@@ -296,12 +306,12 @@ export default function App() {
     if (!reportText.trim()) return;
     try {
       await addDoc(collection(db, 'reports'), {
-        text:      reportText,
+        text: reportText,
         userEmail: currentUser.email,
-        userName:  currentUser.name,
+        userName: currentUser.name,
         timestamp: new Date().toISOString(),
-        screen:    activeScreen,
-        qIndex:    activeScreen === 'quiz' ? qIndex : null,
+        screen: activeScreen,
+        qIndex: activeScreen === 'quiz' ? qIndex : null,
       });
       alert(text.reportSuccess);
       setShowReportModal(false); setReportText('');
@@ -370,7 +380,7 @@ export default function App() {
     const correct = questions[qIndex].correct;
     const ok = idx === correct;
     if (ok) { setScore(s => s + 1); setFeedbackMsg({ text: text.correct, type: 'success' }); }
-    else    { setFeedbackMsg({ text: text.incorrect, type: 'error' }); }
+    else { setFeedbackMsg({ text: text.incorrect, type: 'error' }); }
     recordAnswer(idx, ok);
   };
 
@@ -420,9 +430,9 @@ export default function App() {
 
       {/* Device binding block screen */}
       {isAuthenticated && !isDeviceChecking && deviceBlocked && (
-        <DeviceBlockedScreen 
-          text={text} 
-          currentUser={currentUser} 
+        <DeviceBlockedScreen
+          text={text}
+          currentUser={currentUser}
           onSignOut={handleSignOut}
         />
       )}
@@ -514,9 +524,9 @@ export default function App() {
             isActive={activeScreen === 'profile'}
             currentUser={currentUser}
             stats={stats}
-            mode={mode}   setMode={setMode}
+            mode={mode} setMode={setMode}
             theme={theme} setTheme={setTheme}
-            lang={lang}   setLang={setLang}
+            lang={lang} setLang={setLang}
             isTimerEnabled={isTimerEnabled} setIsTimerEnabled={setIsTimerEnabled}
             onBack={() => setActiveScreen('menu')}
             onSignOut={handleSignOut}
@@ -529,7 +539,7 @@ export default function App() {
               <AdminDashboard
                 goBack={() => setActiveScreen('menu')}
                 reports={reports}
-                onTestAdded={() => {}}
+                onTestAdded={() => { }}
                 deleteReport={deleteReport}
                 dynamicTests={dynamicTests}
               />
