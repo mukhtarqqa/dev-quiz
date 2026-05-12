@@ -368,25 +368,34 @@ export default function App() {
     setActiveScreen('quiz');
   };
 
-  // Random Questions: pick 1 random question from every variant in the current subject
+  // Random Questions: pool all questions from every variant, pick 40 random unique ones
+  const RANDOM_QUIZ_COUNT = 40;
   const startRandomQuiz = () => {
     const subjectData = mergedDatabase[currentSubject];
     if (!subjectData) return;
     const variantKeys = Object.keys(subjectData);
     if (variantKeys.length === 0) return;
 
-    const picked = variantKeys.map(key => {
+    // Collect every question from every variant into one flat pool
+    const pool = variantKeys.flatMap(key => {
       const qs = subjectData[key];
-      if (!qs || qs.length === 0) return null;
-      const q = qs[Math.floor(Math.random() * qs.length)];
-      // Shuffle options
+      if (!qs || qs.length === 0) return [];
+      return qs.map(q => ({ ...q, _fromVariant: key }));
+    });
+
+    // Shuffle the pool and take up to RANDOM_QUIZ_COUNT
+    const shuffledPool = shuffleArray(pool);
+    const selected = shuffledPool.slice(0, RANDOM_QUIZ_COUNT);
+
+    // Shuffle answer options for each selected question
+    const randomizedQuestions = selected.map(q => {
       const optionsWithIndex = q.options.map((opt, idx) => ({ text: opt, isCorrect: idx === q.correct }));
       const shuffledOptions = shuffleArray(optionsWithIndex);
       const newCorrectIndex = shuffledOptions.findIndex(o => o.isCorrect);
-      return { ...q, options: shuffledOptions.map(o => o.text), correct: newCorrectIndex, _fromVariant: key };
-    }).filter(Boolean);
+      return { ...q, options: shuffledOptions.map(o => o.text), correct: newCorrectIndex };
+    });
 
-    setQuestions(shuffleArray(picked));
+    setQuestions(randomizedQuestions);
     setQIndex(0); setScore(0); setUserAnswers([]);
     setIsAnswered(false); setFeedbackMsg({ text: '', type: '' });
     setTimeLeft(TIME_LIMIT); setTimerRunning(true);

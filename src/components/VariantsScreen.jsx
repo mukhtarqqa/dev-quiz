@@ -56,7 +56,7 @@ export default function VariantsScreen({ text, isActive, isLoading, subjectLabel
               <div className="random-quiz-title">{text.randomTest || 'Random Questions'}</div>
               <div className="random-quiz-desc">{text.randomTestDesc || `One random question from each of the ${variants.length} variants`}</div>
             </div>
-            <div className="random-quiz-count">{variants.length}q</div>
+            <div className="random-quiz-count">40q</div>
           </button>
         </div>
       )}
