@@ -368,6 +368,31 @@ export default function App() {
     setActiveScreen('quiz');
   };
 
+  // Random Questions: pick 1 random question from every variant in the current subject
+  const startRandomQuiz = () => {
+    const subjectData = mergedDatabase[currentSubject];
+    if (!subjectData) return;
+    const variantKeys = Object.keys(subjectData);
+    if (variantKeys.length === 0) return;
+
+    const picked = variantKeys.map(key => {
+      const qs = subjectData[key];
+      if (!qs || qs.length === 0) return null;
+      const q = qs[Math.floor(Math.random() * qs.length)];
+      // Shuffle options
+      const optionsWithIndex = q.options.map((opt, idx) => ({ text: opt, isCorrect: idx === q.correct }));
+      const shuffledOptions = shuffleArray(optionsWithIndex);
+      const newCorrectIndex = shuffledOptions.findIndex(o => o.isCorrect);
+      return { ...q, options: shuffledOptions.map(o => o.text), correct: newCorrectIndex, _fromVariant: key };
+    }).filter(Boolean);
+
+    setQuestions(shuffleArray(picked));
+    setQIndex(0); setScore(0); setUserAnswers([]);
+    setIsAnswered(false); setFeedbackMsg({ text: '', type: '' });
+    setTimeLeft(TIME_LIMIT); setTimerRunning(true);
+    setActiveScreen('quiz');
+  };
+
   const handleTimeout = () => {
     if (isAnswered) return;
     setFeedbackMsg({ text: text.timeUp, type: 'error' });
@@ -487,6 +512,7 @@ export default function App() {
             mergedDatabase={mergedDatabase}
             onBack={() => setActiveScreen('menu')}
             onStartQuiz={startQuiz}
+            onStartRandomQuiz={startRandomQuiz}
           />
 
           <PurchaseScreen
