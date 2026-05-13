@@ -40,6 +40,7 @@ export default function ProfileScreen({
   text, isActive, currentUser, stats,
   mode, setMode, theme, setTheme, lang, setLang,
   isTimerEnabled, setIsTimerEnabled,
+  isAutoConfirm, setIsAutoConfirm,
   onBack, onSignOut,
   registeredDevices = [], currentDeviceId,
 }) {
@@ -169,6 +170,13 @@ export default function ProfileScreen({
             <div className="lang-segment">
               <button className={!isTimerEnabled ? 'active' : ''} onClick={() => setIsTimerEnabled(false)}>{text.timerOff}</button>
               <button className={isTimerEnabled ? 'active' : ''} onClick={() => setIsTimerEnabled(true)}>{text.timerOn}</button>
+            </div>
+          </div>
+          <div className="settings-row">
+            <div className="settings-row-title"><IconCheck /> {text.autoConfirmSetting}</div>
+            <div className="lang-segment">
+              <button className={!isAutoConfirm ? 'active' : ''} onClick={() => setIsAutoConfirm(false)}>{text.autoConfirmOff}</button>
+              <button className={isAutoConfirm ? 'active' : ''} onClick={() => setIsAutoConfirm(true)}>{text.autoConfirmOn}</button>
             </div>
           </div>
         </div>

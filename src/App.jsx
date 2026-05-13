@@ -101,6 +101,7 @@ export default function App() {
   );
   const [scrolled, setScrolled] = useState(false);
   const [isTimerEnabled, setIsTimerEnabled] = useState(localStorage.getItem('devquiz_timer') !== 'false');
+  const [isAutoConfirm, setIsAutoConfirm] = useState(localStorage.getItem('devquiz_autoconfirm') === 'true');
 
   const text = useMemo(() => i18n[lang] || i18n['EN'], [lang]);
 
@@ -122,6 +123,7 @@ export default function App() {
   useEffect(() => { localStorage.setItem('devquiz_mode', mode); }, [mode]);
   useEffect(() => { localStorage.setItem('devquiz_lang', lang); }, [lang]);
   useEffect(() => { localStorage.setItem('devquiz_timer', isTimerEnabled); }, [isTimerEnabled]);
+  useEffect(() => { localStorage.setItem('devquiz_autoconfirm', isAutoConfirm); }, [isAutoConfirm]);
 
   useEffect(() => {
     // Generate or retrieve a unique device ID
@@ -538,6 +540,7 @@ export default function App() {
             qIndex={qIndex}
             timeLeft={timeLeft}
             isTimerEnabled={isTimerEnabled}
+            isAutoConfirm={isAutoConfirm}
             isAnswered={isAnswered}
             feedbackMsg={feedbackMsg}
             userAnswers={userAnswers}
@@ -565,6 +568,7 @@ export default function App() {
             theme={theme} setTheme={setTheme}
             lang={lang} setLang={setLang}
             isTimerEnabled={isTimerEnabled} setIsTimerEnabled={setIsTimerEnabled}
+            isAutoConfirm={isAutoConfirm} setIsAutoConfirm={setIsAutoConfirm}
             onBack={() => setActiveScreen('menu')}
             onSignOut={handleSignOut}
             registeredDevices={activeDevices}

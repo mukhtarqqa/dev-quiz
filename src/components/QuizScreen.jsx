@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IconClose } from '../icons';
 import { OPTION_LETTERS } from '../constants';
 
-export default function QuizScreen({ text, isActive, questions, qIndex, timeLeft, isTimerEnabled, isAnswered, feedbackMsg, userAnswers, onAnswer, onNext, onQuit }) {
+export default function QuizScreen({ text, isActive, questions, qIndex, timeLeft, isTimerEnabled, isAutoConfirm, isAnswered, feedbackMsg, userAnswers, onAnswer, onNext, onQuit }) {
   const timerDanger  = isTimerEnabled && timeLeft <= 5;
   const progressPct  = questions.length > 0 ? (qIndex / questions.length) * 100 : 0;
   const timerDisplay = isTimerEnabled ? (timeLeft < 10 ? `0:0${timeLeft}` : `0:${timeLeft}`) : '∞';
@@ -17,6 +17,15 @@ export default function QuizScreen({ text, isActive, questions, qIndex, timeLeft
   };
 
   const isLastQuestion = qIndex + 1 >= questions.length;
+
+  useEffect(() => {
+    if (isAnswered && isAutoConfirm && isActive) {
+      const t = setTimeout(() => {
+        onNext();
+      }, 1000); // 1s delay so user can see correct/incorrect feedback
+      return () => clearTimeout(t);
+    }
+  }, [isAnswered, isAutoConfirm, isActive, onNext]);
 
   return (
     <div className={`screen quiz-screen ${isActive ? 'active' : ''}`}>
@@ -58,7 +67,7 @@ export default function QuizScreen({ text, isActive, questions, qIndex, timeLeft
       )}
 
       {/* Next button */}
-      {isAnswered && (
+      {isAnswered && !isAutoConfirm && (
         <div className="quiz-footer">
           <button className="btn-primary full-width" onClick={onNext}>
             {isLastQuestion ? text.viewResults : text.nextQ}
