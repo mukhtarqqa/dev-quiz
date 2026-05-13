@@ -22,7 +22,7 @@ export default function QuizScreen({ text, isActive, questions, qIndex, timeLeft
     if (isAnswered && isAutoConfirm && isActive) {
       const t = setTimeout(() => {
         onNext();
-      }, 1000); // 1s delay so user can see correct/incorrect feedback
+      }, 125); // 125ms delay so user can briefly see correct/incorrect feedback
       return () => clearTimeout(t);
     }
   }, [isAnswered, isAutoConfirm, isActive, onNext]);
